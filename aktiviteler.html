@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aktiviteler — TOR Thermal | Doğa, Su Sporları, Fitness ve Çocuk Aktiviteleri</title>
+<meta name="description" content="Tor Thermal'de trekkingden kaya tırmanışına, su sporlarından çocuk atölyelerine her yaşa uygun aktiviteler. Doğa, macera, fitness ve sosyal alanlar tek yarımadada.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Aktiviteler — TOR Thermal">
+<meta property="og:description" content="Trekkingden kaya tırmanışına, su sporlarından çocuk atölyelerine — her anı dolu dolu yaşayın.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/render/r02.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="aktiviteler.html">Aktiviteler</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Sayfaya özel küçük ek stiller -->
+<style>
+  /* Numaralı liste (Su Sporları) */
+  .su-liste{ display:flex; flex-direction:column; gap:6px; }
+  .su-madde{
+    display:flex; gap:22px; align-items:flex-start;
+    padding:20px 4px; border-bottom:1px solid var(--cizgi);
+    transition:transform .25s ease;
+  }
+  .su-madde:last-child{ border-bottom:none; }
+  .su-madde:hover{ transform:translateX(6px); }
+  .su-no{
+    font-family:var(--serif); font-size:clamp(34px,4vw,48px); line-height:1;
+    color:var(--turkuaz); opacity:.55; font-variant-numeric:tabular-nums;
+    flex-shrink:0; min-width:64px;
+  }
+  .su-madde h3{ margin-bottom:4px; font-size:19px; }
+  .su-madde p{ margin:0; color:var(--soluk); font-size:14.8px; }
+
+  /* Yuvarlak görselli takım sporları */
+  .daire-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:36px; margin-top:44px; text-align:center;
+  }
+  .daire-oge img{
+    width:160px; height:160px; border-radius:50%; object-fit:cover;
+    margin:0 auto 18px; box-shadow:var(--golge-kucuk);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .daire-oge:hover img{ transform:scale(1.06); box-shadow:var(--golge); }
+  .daire-oge h3{ font-size:19px; margin-bottom:6px; }
+  .daire-oge p{ font-size:14.5px; color:var(--soluk); margin:0 auto; max-width:32ch; }
+
+  /* Görselsiz zarif metin kartı (Çocuk Wellness) */
+  .metin-kart{
+    background:linear-gradient(140deg, var(--lacivert), #2A3A66);
+    color:#fff; display:flex; flex-direction:column; justify-content:center;
+    padding:30px 26px; text-align:center;
+  }
+  .metin-kart h3{ color:#fff; }
+  .metin-kart p{ color:#C3D0E2 !important; margin-bottom:0 !important; }
+  .metin-kart .mk-simge{ font-family:var(--serif); font-size:34px; color:var(--turkuaz-acik); line-height:1; margin-bottom:12px; }
+
+  /* Sosyal alanlar — çizgi-alt vurgulu sekmeler */
+  .sosyal-sekmeler{
+    display:flex; gap:6px; flex-wrap:wrap; margin-bottom:36px;
+    border-bottom:1.5px solid var(--cizgi);
+  }
+  .sosyal-sekmeler .mevsim-sekme{
+    border:none; background:none; border-radius:0; padding:13px 20px 15px;
+    font-size:15px; color:var(--soluk); position:relative;
+  }
+  .sosyal-sekmeler .mevsim-sekme::after{
+    content:""; position:absolute; left:20px; right:20px; bottom:-1.5px;
+    height:3px; background:var(--turkuaz); border-radius:3px 3px 0 0;
+    transform:scaleX(0); transition:transform .3s ease;
+  }
+  .sosyal-sekmeler .mevsim-sekme:hover{ color:var(--lacivert); }
+  .sosyal-sekmeler .mevsim-sekme.aktif{ background:none; color:var(--lacivert); }
+  .sosyal-sekmeler .mevsim-sekme.aktif::after{ transform:scaleX(1); }
+  .sosyal-panel.aktif{ grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; }
+</style>
+
+<!-- ============ (1) SAYFA BAŞLIĞI ============ -->
+<section class="sayfa-baslik">
+  <div class="arka"><img src="assets/img/render/r02.png" alt="Tor Thermal yerleşke genel görünümü" loading="eager"></div>
+  <div class="ic">
+    <div class="kirinti gorun"><a href="index.html">Ana Sayfa</a> / Aktiviteler</div>
+    <h1 class="gorun">Aktiviteler</h1>
+    <p class="alt gorun">Her Anı Dolu Dolu Yaşayın</p>
+  </div>
+</section>
+
+<!-- ============ (2) GİRİŞ ============ -->
+<section>
+  <div class="ic iki-kolon">
+    <div>
+      <div class="gozkasi gorun">Aktiviteler</div>
+      <h2 class="gorun">Tor Thermal'de Keşfedilecek Benzersiz Aktiviteler</h2>
+      <p class="bolum-giris gorun">Tor Thermal, her yaştan ve her zevkten misafirine benzersiz deneyimler sunmak için tasarlandı. Trekkingden kaya tırmanışına, su sporlarından çocuk atölyelerine uzanan geniş aktivite yelpazesi, yarımadadaki her gününüzü farklı bir keşfe dönüştürür. Profesyonel eğitmenler eşliğinde ve güvenlik ekipmanlarıyla yürütülen programlar, ailenizin tüm üyeleri için düşünüldü.</p>
+      <div class="bosluk-kucuk"></div>
+      <a class="btn btn-birincil btn-kucuk gorun" href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div class="cerceve gorun"><img src="assets/img/render/r01.png" alt="Tor Thermal yerleşke ve aktivite alanları render görünümü" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ (3) DOĞA VE MACERA ============ -->
+<section class="buz-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">Doğa ile İç İçe</div>
+    <h2 class="gorun">Doğa ve Macera Aktiviteleri</h2>
+    <p class="bolum-giris gorun">Yarımadanın ormanları, kayalıkları ve patikaları; profesyonel eğitmenler eşliğinde ve güvenlik ekipmanlarıyla keşfe hazır.</p>
+    <div class="kart-grid gorun">
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/trekking.jpg" alt="Trekking — ormanda doğa yürüyüşü parkuru" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Trekking</h3><p>Özel parkurlarda doğa yürüyüşleriyle huzurlu bir kaçış.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/dag-yuruyusu.jpg" alt="Dağ yürüyüşü — manzaralı yamaç rotası" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Dağ Yürüyüşü</h3><p>Zorluk seviyesi ayarlanabilir rotalarla nefes kesen manzaralara ulaşın.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/kaya-tirmanisi.jpg" alt="Kaya tırmanışı — güvenlik ekipmanlı tırmanış duvarı" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Kaya Tırmanışı</h3><p>Profesyonel eğitmenler eşliğinde sınırlarınızı keşfedin.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/ileri-kaya.jpg" alt="İleri kaya tırmanışı — deneyimli tırmanıcılar için zorlu rota" loading="lazy"></div>
+        <div class="kart-icerik"><h3>İleri Kaya Tırmanışı</h3><p>Deneyimli tırmanıcılar için zorlu rotalar.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/macera-parkuru.jpg" alt="Macera parkuru — ip ve engel istasyonları" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Macera Parkuru</h3><p>Engel parkurlarında fiziksel dayanıklılığı test edin.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/sudusen-selalesi.jpg" alt="Sudüşen Şelalesi — günlük gezi rotası durağı" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Günlük Gezi Rotaları</h3><p>Rehber eşliğinde bölgenin tarihi ve doğal güzellikleri.</p><a class="kart-link" href="kesif-rotalari.html">Keşif Rotalarını Gör</a></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/atv.jpg" alt="ATV — engebeli arazi parkurunda sürüş" loading="lazy"></div>
+        <div class="kart-icerik"><h3>ATV</h3><p>Yasa uygun parkurlarla doğanın engebeli arazilerini keşfedin.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/binicilik.jpg" alt="Binicilik kulübü — eğitmen eşliğinde at binme" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Binicilik Kulübü</h3><p>Profesyonel eğitmenlerle binicilik becerilerinizi geliştirin.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ (4) KIŞ SPORLARI ============ -->
+<section class="koyu">
+  <div class="ic iki-kolon">
+    <div class="cerceve gorun"><img src="assets/img/ai/kayak.jpg" alt="Kayak — karla kaplı pistte kış sporları" loading="lazy"></div>
+    <div>
+      <div class="gozkasi gorun">Beyaz Sezon</div>
+      <h2 class="gorun">Kış Sporları</h2>
+      <p class="bolum-giris gorun">Tor Thermal'e yakın karla kaplı dağlar, kış aylarında her seviyeye uygun pistleriyle sizi bekliyor. Uludağ, Kartepe ve Kartalkaya gibi Türkiye'nin önde gelen kayak merkezleri kolay ulaşılabilir mesafede; gün boyu pistlerin ardından termal suyun sıcaklığına dönmenin ayrıcalığı ise yalnızca burada.</p>
+      <div class="bosluk-kucuk"></div>
+      <a class="btn btn-birincil gorun" href="lokasyon.html">Kış Rotaları</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ (5) SU SPORLARI ============ -->
+<section>
+  <div class="ic">
+    <div class="gozkasi gorun">Suyun İki Hali</div>
+    <h2 class="gorun">Su Sporları ve Aktiviteler</h2>
+    <div class="bosluk-kucuk"></div>
+    <div class="iki-kolon">
+      <div class="cerceve gorun"><img src="assets/img/ai/jetski.jpg" alt="Jetski — Marmara'da su sporları" loading="lazy"></div>
+      <div class="su-liste gorun">
+        <div class="su-madde">
+          <span class="su-no">01</span>
+          <div><h3>Kano</h3><p>Sakin sularda kürek çekerek doğanın güzelliklerini sudan keşfedin.</p></div>
+        </div>
+        <div class="su-madde">
+          <span class="su-no">02</span>
+          <div><h3>Yüzme</h3><p>Yıl boyu ısıtılan havuzlarda dinlendirici bir su deneyimi yaşayın.</p></div>
+        </div>
+        <div class="su-madde">
+          <span class="su-no">03</span>
+          <div><h3>Dalış</h3><p>Profesyonel eğitmenler eşliğinde su altı dünyasını keşfedin.</p></div>
+        </div>
+        <div class="su-madde">
+          <span class="su-no">04</span>
+          <div><h3>Jetski</h3><p>Denge ve hız becerilerinizi geliştirirken büyük kas gruplarınızı çalıştırın.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ (6) SPOR VE FITNESS ============ -->
+<section class="kum-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">Aktif Yaşam</div>
+    <h2 class="gorun">Spor ve Fitness</h2>
+    <p class="bolum-giris gorun">Modern ekipmanlar ve profesyonel eğitmenler eşliğinde; her yaşa ve her seviyeye uygun programlar.</p>
+    <div class="kart-grid gorun">
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/spor-kulubu.jpg" alt="Spor kulübü — tam donanımlı salon" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Spor Kulübü</h3><p>Profesyonel eğitmenler ve çeşitli programlarla tam donanımlı kulüp.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/fitness.jpg" alt="Fitness salonu — modern ekipmanlar" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Fitness</h3><p>Modern ekipmanlarla her seviyeye özel programlar.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/kardiyo.jpg" alt="Kardiyo alanı — koşu bantları ve bisikletler" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Kardiyo</h3><p>Koşu bantları ve bisikletlerle dayanıklılığınızı geliştirin.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/pilates.jpg" alt="Pilates stüdyosu — duruş odaklı çalışma" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Pilates</h3><p>Duruş odaklı çalışmalarla kaslarınızı güçlendirin.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/yoga.jpg" alt="Yoga dersi — huzurlu stüdyo ortamı" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Yoga</h3><p>Farklı seviyelere uygun derslerle iç huzurunuzu bulun.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/studyo-dersleri.jpg" alt="Stüdyo dersleri — grup antrenmanı" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Stüdyo Dersleri</h3><p>Zumba, aerobik ve step dersleriyle dinamik antrenmanlar.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ (7) TAKIM VE RAKET SPORLARI ============ -->
+<section>
+  <div class="ic orta">
+    <div class="gozkasi gorun">Birlikte Oynayın</div>
+    <h2 class="gorun">Takım ve Raket Sporları</h2>
+    <div class="daire-grid gorun">
+      <div class="daire-oge">
+        <img src="assets/img/ai/cim-futbol.jpg" alt="Çim futbol sahası" loading="lazy">
+        <h3>Çim Futbol Sahası</h3>
+        <p>Doğal çim zeminde dostluk maçları ve turnuvalar.</p>
+      </div>
+      <div class="daire-oge">
+        <img src="assets/img/ai/tenis-padel.jpg" alt="Tenis ve padel tenis kortları" loading="lazy">
+        <h3>Tenis &amp; Padel Tenis Kortları</h3>
+        <p>Modern kortlarda tenisin klasik ve dinamik halleri.</p>
+      </div>
+      <div class="daire-oge">
+        <img src="assets/img/ai/basketbol.jpg" alt="Basketbol sahası" loading="lazy">
+        <h3>Basketbol</h3>
+        <p>Her seviyeye uygun sahalarda rekabetçi maçların keyfini çıkarın.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ (8) ÇOCUKLARA YÖNELİK AKTİVİTELER ============ -->
+<section class="buz-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">Küçük Misafirler</div>
+    <h2 class="gorun">Çocuklara Yönelik Aktiviteler</h2>
+    <p class="bolum-giris gorun">Oyundan bilime, mutfaktan seramiğe — çocukların hem eğlendiği hem geliştiği güvenli atölyeler ve alanlar.</p>
+    <div class="kart-grid gorun">
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/oyun-terapisi.jpg" alt="Çocuk kulübü — oyun atölyesi" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Çocuk Kulübü</h3><p>Uzman ekip gözetiminde yaş gruplarına özel oyun ve gelişim programları.</p><a class="kart-link" href="cocuk-kulubu.html">Çocuk Kulübünü Keşfet</a></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/uzay-kulubu.jpg" alt="İnteraktif eğitim atölyesi — bilim ve teknoloji" loading="lazy"></div>
+        <div class="kart-icerik"><h3>İnteraktif Eğitim Atölyeleri</h3><p>Bilim, sanat ve teknolojiyle öğrenmeyi eğlenceli kılar.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/robotik-atolye.jpg" alt="Robotik kodlama atölyesi" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Robotik Kodlama</h3><p>Robot tasarlayıp kodlayarak problem çözme becerileri kazanın.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/paintball.jpg" alt="Paintball sahası" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Paintball</h3><p>Güvenlik ekipmanlarıyla takım ruhunu geliştiren heyecanlı oyunlar.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/morf-aquapark.jpg" alt="Aqua park — kaydıraklı çocuk su oyun alanı" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Aqua Park</h3><p>Çocuklar için güvenli kaydıraklı su oyun alanı.</p></div>
+      </article>
+      <article class="kart metin-kart">
+        <div class="mk-simge" aria-hidden="true">~</div>
+        <h3>Çocuk Wellness Programları</h3>
+        <p>Yoga, pilates ve nefes teknikleriyle beden-zihin dengesi.</p>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/hobi-bahcesi.jpg" alt="Hobi bahçesi — çocuklarla ekim dikim" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Hobi Bahçesi</h3><p>Toprağa dokunarak ekim, bakım ve hasadı deneyimleyin.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/pisirme-dersi.jpg" alt="Çocuklar için pişirme dersi" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Pişirme Dersleri</h3><p>Şef eşliğinde eğlenceli ve öğretici mutfak atölyeleri.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/muzik-odasi.jpg" alt="Müzik odası — enstrüman atölyesi" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Müzik Odası</h3><p>Enstrümanlarla tanışma ve ritim atölyeleri.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/seramik-atolyesi.jpg" alt="Seramik atölyesi — çamurla şekillendirme" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Seramik Atölyesi</h3><p>Çamura şekil vererek el becerisi ve yaratıcılığı geliştirin.</p></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/glamping.jpg" alt="Glamping alanı — konforlu doğa kampı çadırları" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Glamping Alanları</h3><p>Konforlu çadırlarda ailece doğayla iç içe kamp deneyimi.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ (9) SOSYAL ALANLAR ============ -->
+<section>
+  <div class="ic">
+    <div class="gozkasi gorun">Bir Arada Olmak</div>
+    <h2 class="gorun">Sosyal Alanlar</h2>
+    <p class="bolum-giris gorun">Sevdiklerinizle keyifli anlar geçirebileceğiniz, konforlu ve huzurlu sosyal alanlar sizi bekliyor.</p>
+    <div class="bosluk-kucuk"></div>
+    <div class="gorun" data-mevsim-grup>
+      <div class="sosyal-sekmeler">
+        <button class="mevsim-sekme aktif" data-mevsim-sekme="doga">Doğa ve Manzara Deneyimi</button>
+        <button class="mevsim-sekme" data-mevsim-sekme="dinlenme">Dinlenme ve Konfor Alanları</button>
+        <button class="mevsim-sekme" data-mevsim-sekme="kultur">Kültür ve Eğlence</button>
+      </div>
+      <div class="mevsim-panel sosyal-panel aktif" data-mevsim-panel="doga">
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/seyir-terasi.jpg" alt="Seyir terası — deniz ve orman manzarası" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Seyir Terasları</h3><p>Muhteşem doğa manzarası sunan huzurlu özel alanlar.</p></div>
+        </article>
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/morf-plaj.jpg" alt="Özel kumsal plaj — sakin deniz kıyısı" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Özel Kumsal Plaj</h3><p>Sakin atmosferde güneş ve deniz keyfi.</p></div>
+        </article>
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/gokyuzu-gozlem.jpg" alt="Gökyüzü gözlem alanı — teleskop ve yıldızlı gece" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Gökyüzü Gözlem Alanları</h3><p>Teleskoplarla yıldızları keşfedin.</p></div>
+        </article>
+      </div>
+      <div class="mevsim-panel sosyal-panel" data-mevsim-panel="dinlenme">
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/ritual-5-hamam.jpg" alt="Hamam — mermer ve buharlı geleneksel mekân" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Hamam</h3><p>Geleneksel Türk hamamında buharla arının.</p></div>
+        </article>
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/yuzme.jpg" alt="Açık havuz — doğa içinde yüzme" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Açık Havuz</h3><p>Doğanın içinde geniş açık havuzlar.</p></div>
+        </article>
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/kapali-havuz.jpg" alt="Kapalı havuz — her mevsim yüzme" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Kapalı Havuz</h3><p>Her mevsim yüzme keyfi.</p></div>
+        </article>
+      </div>
+      <div class="mevsim-panel sosyal-panel" data-mevsim-panel="kultur">
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/golf-sahasi.jpg" alt="Golf ve konser alanları — açık hava etkinlik sahası" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Golf &amp; Konser Alanları</h3><p>Açık havada golf ve müzik dolu konserler.</p></div>
+        </article>
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/acik-hava-sinemasi.jpg" alt="Açık hava sineması — yıldızların altında film gösterimi" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Açık Hava Sineması</h3><p>Yıldızların altında film keyfi.</p></div>
+        </article>
+        <article class="kart">
+          <div class="kart-medya"><img src="assets/img/ai/amfi-tiyatro.jpg" alt="Amfi tiyatro — gün batımı sahne performansı" loading="lazy"></div>
+          <div class="kart-icerik"><h3>Amfi Tiyatro</h3><p>Gün batımında sahne performansları.</p></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ (10) DEVRE MÜLK TİPLERİ ============ -->
+<section class="kum-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">Konaklama</div>
+    <h2 class="gorun">Devre Mülk Tipleri</h2>
+    <p class="bolum-giris gorun">Her aile ihtiyacına uygun konforlu konaklama.</p>
+    <div class="kart-grid gorun">
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/daire-salon.jpg" alt="1+1 delüks daire — örnek salon" loading="lazy"></div>
+        <div class="kart-icerik"><h3>1+1 Delüks Daire</h3><p>48–62 m², 4 kişiye kadar; orman veya deniz manzaralı, tam donanımlı suit.</p><a class="kart-link" href="daireler.html">İncele</a></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/render/r02.png" alt="2+1 daire — blok dış görünümü" loading="lazy"></div>
+        <div class="kart-icerik"><h3>2+1 Daire</h3><p>86–104 m², 6 kişiye kadar; ferah salon ve manzaralı balkonlu aile dairesi.</p><a class="kart-link" href="daireler.html">İncele</a></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/morf-villa.jpg" alt="Villa — deniz manzaralı villa bölgesi" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Villa</h3><p>254–310 m², çift katlı; özel bahçeli ve termal su erişimli 3+1 / 4+1 villalar.</p><a class="kart-link" href="daireler.html">İncele</a></div>
+      </article>
+    </div>
+    <div class="bosluk-kucuk"></div>
+    <div class="orta gorun"><a class="btn btn-koyu" href="daireler.html">Tümünü Gör</a></div>
+  </div>
+</section>
+
+<!-- ============ SON CTA ============ -->
+<section style="padding-top:0;">
+  <div class="ic">
+    <div class="cta-serit gorun">
+      <div>
+        <div class="gozkasi" style="color:var(--bakir-acik);">Baskısız Satış İlkemiz</div>
+        <h2>Aktiviteleri Yerinde Deneyimleyin</h2>
+        <p>Deneyim Günü'nde yerleşkeyi gezin, aktivite alanlarını görün, termal suyu deneyin — karar tamamen size ait.</p>
+      </div>
+      <a class="btn btn-birincil" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>
+    </div>
+    <p class="temsili orta gorun">Aktivite görselleri temsilîdir.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
+      <a href="aktiviteler.html">Aktiviteler</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Aktivite görselleri temsilîdir; aktiviteler profesyonel eğitmenler eşliğinde ve güvenlik ekipmanlarıyla yürütülür. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<a class="wa-balon" href="https://wa.me/902126716968?text=Merhaba%2C%20Tor%20Thermal%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9.9-4.7-.3-.6c-.9-1.6-1.4-3.4-1.4-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.7 10.8-10.2 10.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+</body>
+</html>

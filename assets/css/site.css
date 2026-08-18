@@ -98,6 +98,11 @@ p{ max-width:70ch; }
 .ust-cta:hover{ background:var(--turkuaz-acik); }
 .menu-dugme{ display:none; }
 
+/* 9 maddeli menü masaüstünde tek satırda kalsın (taşma önlemi) */
+@media (min-width:1021px){
+  .ust-menu a{ font-size:13px; padding:9px 10px; }
+}
+
 /* Mobil menü */
 @media (max-width:1020px){
   .ust-menu{
