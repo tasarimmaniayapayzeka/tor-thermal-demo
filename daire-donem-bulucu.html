@@ -330,8 +330,10 @@
       <h4>Keşfet</h4>
       <a href="kesfet.html">Vaziyet Planı</a>
       <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
       <a href="wellness.html">Longevity &amp; Wellness</a>
       <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
       <a href="lokasyon.html">Lokasyon</a>
     </div>
     <div>
@@ -340,6 +342,8 @@
       <a href="nasil-calisir.html">Nasıl Çalışır?</a>
       <a href="guvence.html">Tor Holding Güvencesi</a>
       <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
       <a href="deneyim-gunu.html">Deneyim Günü</a>
     </div>
     <div>
@@ -442,6 +446,19 @@
     gostergeler[1].disabled = false;
   });
   el("btnAdim1").addEventListener("click", function () { gitAdim(2); });
+
+  /* ---------- URL ?tip= parametresi: ADIM 1'de tipi ön-seç ---------- */
+  var urlTip = new URLSearchParams(location.search).get("tip");
+  if (urlTip) {
+    var girdiler = tipGrid.querySelectorAll('input[name="tipSecim"]');
+    for (var gi = 0; gi < girdiler.length; gi++) {
+      if (girdiler[gi].value === urlTip) {
+        girdiler[gi].checked = true;
+        girdiler[gi].dispatchEvent(new Event("change", { bubbles: true }));
+        break;
+      }
+    }
+  }
 
   /* ---------- ADIM 2: 52 haftalık takvim ---------- */
   var haftaGrid = el("haftaGrid");

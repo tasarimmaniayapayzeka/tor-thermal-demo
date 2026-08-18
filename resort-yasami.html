@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resort Yaşamı &amp; Konfor — Housekeeping, Akıllı Ev, Anahtar Teslim | TOR Thermal Yalova Armutlu</title>
+<meta name="description" content="Tor Thermal'de konfor bir vaat değil, işleyen bir sistem: her ziyarette temiz konaklama, 3 günde bir housekeeping, akıllı ev teknolojisi, anahtar teslim eşyalı daireler, Detoks Kafe ve 5 yıldızlı otel olanakları.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Resort Yaşamı &amp; Konfor — TOR Thermal">
+<meta property="og:description" content="Her ziyarette temiz konaklama, akıllı ev teknolojisi ve anahtar teslim eşyalı daireler: bavulunuzu alıp gelin.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/ai/housekeeping.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* Resort Yaşamı sayfasına özel küçük eklemeler (site token'larıyla) */
+
+/* --- Housekeeping temizlik ritmi infografiği --- */
+.ritim-serit{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+  background:var(--cizgi); border-radius:var(--radius); overflow:hidden;
+  margin-top:26px; box-shadow:var(--golge-kucuk);
+}
+.ritim-adim{
+  background:var(--beyaz); padding:20px 20px 18px; position:relative;
+  transition:background .3s ease;
+}
+.ritim-adim:hover{ background:var(--turkuaz-buz); }
+.ritim-adim .no{
+  font-family:var(--serif); font-size:30px; color:var(--turkuaz-acik);
+  line-height:1; display:block; margin-bottom:10px;
+}
+.ritim-adim b{ display:block; color:var(--lacivert); font-size:14.5px; margin-bottom:4px; }
+.ritim-adim small{ display:block; color:var(--soluk); font-size:12.8px; line-height:1.55; }
+@media (max-width:720px){ .ritim-serit{ grid-template-columns:1fr; } }
+
+/* --- Akıllı ev demo paneli --- */
+.akilli-panel{
+  background:rgba(255,255,255,.06); border:1px solid var(--cizgi-koyu);
+  border-radius:var(--radius); padding:8px 22px; margin-top:26px;
+}
+.akilli-satir{
+  display:flex; align-items:center; gap:16px; padding:15px 0;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.akilli-satir:last-child{ border-bottom:none; }
+.akilli-satir .simge{
+  width:42px; height:42px; flex:0 0 42px; border-radius:12px;
+  background:rgba(62,143,174,.18); display:flex; align-items:center; justify-content:center;
+}
+.akilli-satir .simge svg{ width:22px; height:22px; stroke:var(--turkuaz-acik); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.akilli-bilgi{ flex:1; min-width:0; }
+.akilli-bilgi b{ display:block; color:#fff; font-size:14.5px; }
+.akilli-bilgi small{ display:block; color:#9FB0C4; font-size:12.5px; margin-top:1px; }
+.anahtar{
+  width:48px; height:27px; flex:0 0 48px; border-radius:999px; border:none; cursor:pointer;
+  background:#39496F; position:relative; transition:background .25s ease; padding:0;
+}
+.anahtar::after{
+  content:""; position:absolute; top:3px; left:3px; width:21px; height:21px;
+  border-radius:50%; background:#fff; transition:left .25s ease;
+  box-shadow:0 2px 6px rgba(0,0,0,.35);
+}
+.anahtar.acik{ background:var(--turkuaz); }
+.anahtar.acik::after{ left:24px; }
+.anahtar:focus-visible{ outline:2px solid var(--turkuaz-acik); outline-offset:2px; }
+
+/* --- Anahtar teslim eşya kartları --- */
+.esya-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr));
+  gap:18px; margin-top:40px;
+}
+.esya-kart{
+  background:var(--beyaz); border-radius:var(--radius); padding:24px 22px 22px;
+  box-shadow:var(--golge-kucuk); border-top:4px solid var(--turkuaz);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.esya-kart:hover{ transform:translateY(-6px); box-shadow:var(--golge); }
+.esya-ikon{
+  width:52px; height:52px; border-radius:14px; background:var(--turkuaz-buz);
+  display:flex; align-items:center; justify-content:center; margin-bottom:14px;
+}
+.esya-ikon svg{ width:28px; height:28px; stroke:var(--lacivert); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.esya-kart h3{ font-size:17px; margin-bottom:4px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.esya-kart .adet{
+  font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--turkuaz); background:var(--turkuaz-buz);
+  border-radius:999px; padding:3px 10px;
+}
+.esya-liste{ list-style:none; padding:0; margin:10px 0 0; }
+.esya-liste li{
+  font-size:13.4px; color:var(--soluk); padding:5px 0 5px 20px; position:relative; line-height:1.5;
+}
+.esya-liste li::before{ content:"✓"; position:absolute; left:0; color:var(--turkuaz); font-weight:800; }
+
+/* --- Bavul bandı --- */
+.bavul-band{
+  margin-top:40px; background:var(--lacivert); border-radius:var(--radius);
+  padding:34px 40px; color:#fff; display:flex; align-items:center; gap:26px; flex-wrap:wrap;
+  position:relative; overflow:hidden;
+}
+.bavul-band::before{
+  content:""; position:absolute; right:-70px; bottom:-90px; width:280px; height:280px;
+  border-radius:50%; background:radial-gradient(circle, rgba(62,143,174,.4), transparent 70%);
+}
+.bavul-band .simge{
+  width:62px; height:62px; flex:0 0 62px; border-radius:16px;
+  background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center;
+}
+.bavul-band .simge svg{ width:32px; height:32px; stroke:#fff; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.bavul-band h3{ color:#fff; font-size:clamp(20px,2.6vw,27px); margin:0 0 4px; }
+.bavul-band p{ color:#B9C6DA; margin:0; font-size:14.8px; }
+
+/* --- Mobil uygulama özellik listesi --- */
+.yakinda-rozet{
+  display:inline-block; background:var(--bakir); color:#fff; border-radius:999px;
+  font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  padding:5px 14px; margin-left:12px; vertical-align:3px;
+}
+.app-ozellik{ list-style:none; padding:0; margin:28px 0 0; display:grid; gap:12px; }
+.app-ozellik li{
+  background:var(--beyaz); border-radius:12px; padding:15px 20px;
+  display:flex; gap:16px; align-items:center; box-shadow:var(--golge-kucuk);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.app-ozellik li:hover{ transform:translateX(7px); box-shadow:var(--golge); }
+.app-ozellik .no{
+  font-family:var(--serif); font-size:26px; color:var(--turkuaz-acik);
+  line-height:1; flex:0 0 auto; min-width:38px;
+}
+.app-ozellik b{ display:block; color:var(--lacivert); font-size:15px; }
+.app-ozellik small{ display:block; color:var(--soluk); font-size:13px; margin-top:1px; }
+
+/* --- Detoks Kafe geniş şeridi --- */
+.detoks-serit{ position:relative; overflow:hidden; padding:120px 0; color:#fff; background:var(--lacivert-derin); }
+.detoks-serit .arka{ position:absolute; inset:0; }
+.detoks-serit .arka img{ width:100%; height:100%; object-fit:cover; }
+.detoks-serit .arka::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(100deg, rgba(12,20,40,.88) 12%, rgba(12,20,40,.55) 52%, rgba(12,20,40,.25));
+}
+.detoks-serit .ic{ position:relative; z-index:2; }
+.detoks-serit h2{ color:#fff; }
+.detoks-serit .bolum-giris{ color:#C3D0DE; }
+.koktel-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px; margin-top:32px; max-width:780px;
+}
+.koktel{
+  background:rgba(12,20,40,.5); backdrop-filter:blur(9px);
+  border:1px solid rgba(255,255,255,.22); border-radius:12px; padding:18px 20px;
+  transition:transform .25s ease, background .25s ease, border-color .25s ease;
+}
+.koktel:hover{ transform:translateY(-5px); background:rgba(12,20,40,.72); border-color:var(--turkuaz-acik); }
+.koktel b{ display:block; color:#fff; font-size:15px; margin-bottom:3px; }
+.koktel small{ display:block; color:#C8D5E2; font-size:12.8px; line-height:1.55; }
+
+/* --- CTA çift buton --- */
+.cta-butonlar{ display:flex; gap:14px; flex-wrap:wrap; margin-left:auto; }
+.cta-serit .cta-butonlar .btn{ margin-left:0; } /* site.css'teki tekil buton kuralını etkisizleştir */
+@media (max-width:760px){ .cta-butonlar{ margin-left:0; } }
+</style>
+</head>
+<body>
+
+<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ SAYFA BAŞLIĞI ============ -->
+<section class="sayfa-baslik">
+  <div class="arka"><img src="assets/img/ai/housekeeping.jpg" alt="Housekeeping ekibi daireyi tatile hazırlıyor" loading="eager"></div>
+  <div class="ic">
+    <div class="kirinti"><a href="index.html">Ana Sayfa</a> · Resort Yaşamı &amp; Konfor</div>
+    <h1>Resort Yaşamı &amp; Konfor</h1>
+    <p class="alt">Tatilin en değerli kısmı, hiçbir şeyle uğraşmamaktır. Housekeeping'den akıllı ev teknolojisine, anahtar teslim eşyalı dairelerden Detoks Kafe'ye — Tor Thermal'de konfor, işleyen bir sistemdir.</p>
+  </div>
+</section>
+
+<!-- ============ 1 · HOUSEKEEPING ============ -->
+<section>
+  <div class="ic iki-kolon">
+    <div class="cerceve gorun">
+      <video autoplay muted loop playsinline poster="assets/img/ai/housekeeping.jpg" data-yedek-gorsel="assets/img/ai/housekeeping.jpg" aria-label="Housekeeping ekibinin daire hazırlığından görüntüler">
+        <source src="assets/video/housekeeping.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div>
+      <div class="gozkasi gorun">Housekeeping</div>
+      <h2 class="gorun">Kapıyı Açtığınızda Her Şey Hazır</h2>
+      <p class="bolum-giris gorun">Devre mülkün en yorucu yanı, "gelince temizlik" derdidir. Tor Thermal'de bu dert yok: profesyonel housekeeping ekibi, siz gelmeden dairenizi otel standardında hazırlar; siz ayrıldıktan sonra da bir sonraki döneme kadar bakımını üstlenir.</p>
+      <div class="rozet-band gorun">
+        <span class="rozet">Her ziyarette temiz konaklama</span>
+        <span class="rozet">3 günde bir düzenli temizlik</span>
+        <span class="rozet">Her tatil dönemi sonunda kapsamlı temizlik</span>
+      </div>
+      <div class="ritim-serit gorun">
+        <div class="ritim-adim">
+          <span class="no">01</span>
+          <b>Siz Gelmeden</b>
+          <small>Havalandırma, tekstil yenileme ve otel standardında hazırlık — daireniz sizi ilk günkü gibi karşılar.</small>
+        </div>
+        <div class="ritim-adim">
+          <span class="no">02</span>
+          <b>Konaklama Boyunca</b>
+          <small>3 günde bir düzenli temizlik; havlu ve nevresim değişimiyle kesintisiz otel konforu.</small>
+        </div>
+        <div class="ritim-adim">
+          <span class="no">03</span>
+          <b>Dönem Sonunda</b>
+          <small>Kapsamlı temizlik ve envanter kontrolü; eviniz bir sonraki tatilinize kadar emin ellerde.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 · AKILLI EV ============ -->
+<section class="koyu">
+  <div class="ic iki-kolon">
+    <div>
+      <div class="gozkasi gorun">Akıllı Ev Teknolojisi</div>
+      <h2 class="gorun">Daireniz, Siz Söylemeden Anlar</h2>
+      <p class="bolum-giris gorun">Her daire ve villa akıllı ev sistemiyle teslim edilir. İklimlendirmeyi, aydınlatma senaryolarını ve termal su kontrolünü tek panelden yönetirsiniz: plajdan dönmeden salonunuz ısınsın, akşam yemeğinde ışıklar kendiliğinden yumuşasın.</p>
+      <div class="akilli-panel gorun" data-akilli-panel>
+        <div class="akilli-satir">
+          <div class="simge" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v10"/><circle cx="12" cy="17" r="4"/><path d="M12 3a2.5 2.5 0 0 1 2.5 2.5V13"/><path d="M12 3a2.5 2.5 0 0 0-2.5 2.5V13"/></svg>
+          </div>
+          <div class="akilli-bilgi">
+            <b>İklim Kontrolü</b>
+            <small data-durum data-acik="Salon 22,5° — geliş saatinize göre hazırlanıyor" data-kapali="Beklemede — enerji tasarruf modunda">Salon 22,5° — geliş saatinize göre hazırlanıyor</small>
+          </div>
+          <button class="anahtar acik" type="button" role="switch" aria-checked="true" aria-label="İklim kontrolünü aç veya kapat"></button>
+        </div>
+        <div class="akilli-satir">
+          <div class="simge" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.4 10.9c.7.5 1.4 1.4 1.4 2.1h4c0-.7.7-1.6 1.4-2.1A6 6 0 0 0 12 3z"/></svg>
+          </div>
+          <div class="akilli-bilgi">
+            <b>Aydınlatma Senaryosu</b>
+            <small data-durum data-acik="Akşam senaryosu — sıcak beyaz, %40 yoğunluk" data-kapali="Tüm ışıklar kapalı">Akşam senaryosu — sıcak beyaz, %40 yoğunluk</small>
+          </div>
+          <button class="anahtar acik" type="button" role="switch" aria-checked="true" aria-label="Aydınlatma senaryosunu aç veya kapat"></button>
+        </div>
+        <div class="akilli-satir">
+          <div class="simge" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 15c2-2.5 4-2.5 6 0s4 2.5 6 0 3-2 4-1"/><path d="M4 19c2-2.5 4-2.5 6 0s4 2.5 6 0 3-2 4-1"/><path d="M12 3c-2.2 2.6-3.5 4.6-3.5 6.3A3.5 3.5 0 0 0 12 12.8a3.5 3.5 0 0 0 3.5-3.5C15.5 7.6 14.2 5.6 12 3z"/></svg>
+          </div>
+          <div class="akilli-bilgi">
+            <b>Termal Su Kontrolü</b>
+            <small data-durum data-acik="Termal su hattı açık — banyo kullanıma hazırlanıyor" data-kapali="Termal su hattı kapalı">Termal su hattı açık — banyo kullanıma hazırlanıyor</small>
+          </div>
+          <button class="anahtar acik" type="button" role="switch" aria-checked="true" aria-label="Termal su kontrolünü aç veya kapat"></button>
+        </div>
+      </div>
+      <p class="temsili gorun" style="color:#8FA2BC;">Panel görünümü temsilîdir; anahtarlara dokunarak deneyebilirsiniz. Nihai arayüz proje teslim aşamasında netleşir.</p>
+    </div>
+    <div class="cerceve gorun"><img src="assets/img/ai/akilli-ev.jpg" alt="Akıllı ev kontrol paneli ile yönetilen daire salonu" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ 3 · ANAHTAR TESLİM EŞYALI ============ -->
+<section class="kum-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">Anahtar Teslim</div>
+    <h2 class="gorun">Eşyalı Teslim: Beş Grup, Eksiksiz Bir Ev</h2>
+    <p class="bolum-giris gorun">Daireniz boş bir kabuk olarak değil; ankastresinden nevresimine, tenceresinden akıllı ev sistemine kadar yaşamaya hazır teslim edilir. Resmî teslim kapsamındaki beş grup aşağıda — hiçbirini siz taşımazsınız.</p>
+    <div class="esya-grid" id="esyaGrid">
+      <!-- Kartlar assets/data/daireler.js içindeki TOR_ESYA verisinden oluşturulur -->
+      <noscript><p>Eşya listesi için lütfen JavaScript'i etkinleştirin.</p></noscript>
+    </div>
+    <div class="bavul-band gorun">
+      <div class="simge" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M9 8v12"/><path d="M15 8v12"/></svg>
+      </div>
+      <div>
+        <h3>Bavulunuzu alıp gelin — gerisi hazır.</h3>
+        <p>Tek taşıyacağınız şey kişisel eşyalarınız. Mobilyası kurulu, mutfağı donatılmış, yatağı yapılmış bir eve giriş yaparsınız.</p>
+      </div>
+    </div>
+    <p class="temsili gorun">Eşya listesi resmî teklif dosyasındaki anahtar teslim kapsamını yansıtır; marka ve modeller proje geliştiricisi tarafından belirlenir.</p>
+  </div>
+</section>
+
+<!-- ============ 4 · MOBİL UYGULAMA ============ -->
+<section>
+  <div class="ic iki-kolon">
+    <div class="cerceve gorun"><img src="assets/img/ai/mobil-uygulama.jpg" alt="Tor Thermal mobil uygulaması ile rezervasyon yapan misafir" loading="lazy"></div>
+    <div>
+      <div class="gozkasi gorun">Cebinizdeki Resort<span class="yakinda-rozet">Yakında</span></div>
+      <h2 class="gorun">Tek Uygulama, Bütün Yarımada</h2>
+      <p class="bolum-giris gorun">Tor Thermal mobil uygulaması, resortun tüm hizmetlerini telefonunuza taşıyor. Havuz kenarından kalkmadan spa saatinizi ayarlayın, dönüş yolculuğunuzu planlayın.</p>
+      <ul class="app-ozellik gorun">
+        <li><span class="no">01</span><span><b>Spa Rezervasyonu</b><small>Terapi ve kür saatlerinizi uygulamadan seçin, sıra beklemeyin.</small></span></li>
+        <li><span class="no">02</span><span><b>Limuzin Çağırma</b><small>İskeleden kapınıza özel transfer — tek dokunuşla.</small></span></li>
+        <li><span class="no">03</span><span><b>Deniz Uçağı Ayarlama</b><small>İstanbul bağlantınız için deniz uçağı planlaması uygulamadan.</small></span></li>
+        <li><span class="no">04</span><span><b>7/24 Oda Servisi</b><small>Gündüz gece fark etmez; talebiniz dakikalar içinde kapınızda.</small></span></li>
+        <li><span class="no">05</span><span><b>Yiyecek &amp; İçecek Siparişi</b><small>Restoran ve kafe menüleri cebinizde; havuz başına servis edilir.</small></span></li>
+      </ul>
+      <p class="temsili gorun">Uygulama özellikleri resmî tanıtım sunumundan alınmıştır; yayına alınma takvimi proje geliştiricisi tarafından duyurulacaktır.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · DETOKS KAFE ============ -->
+<section class="detoks-serit">
+  <div class="arka"><img src="assets/img/ai/detoks-kafe.jpg" alt="Detoks Kafe'de taze sebze ve meyve bazlı alkolsüz içecekler" loading="lazy"></div>
+  <div class="ic">
+    <div class="gozkasi gorun" style="color:var(--bakir-acik);">Detoks Kafe</div>
+    <h2 class="gorun">Alkolsüz Kokteylin de Bir Sanatı Var</h2>
+    <p class="bolum-giris gorun">Termal ritüelin ardından bedeninizi ağırlaştırmayan bir keyif: Detoks Kafe'de soğuk sıkım sebze-meyve suları ve alkolsüz imza kokteyller, wellness felsefesinin sofradaki devamı olarak hazırlanır. Amaç arınma hissinizi desteklemek; tazeliği bölge üreticisinin ürünleri sağlar.</p>
+    <div class="koktel-grid gorun">
+      <div class="koktel"><b>Yarımada Yeşili</b><small>Ispanak, salatalık, elma ve taze zencefil — güne hafif bir başlangıç.</small></div>
+      <div class="koktel"><b>Marmara Esintisi</b><small>Yeşil çay bazlı, nane ve misket limonlu buzlu imza kokteyl.</small></div>
+      <div class="koktel"><b>Altın Kök</b><small>Zerdeçal, havuç ve portakalın sıcak tonlarında soğuk sıkım karışım.</small></div>
+      <div class="koktel"><b>Fener Kızılı</b><small>Pancar, nar ve frenk üzümüyle gün batımı renginde bir bardak.</small></div>
+    </div>
+    <p class="temsili gorun" style="color:#9FB0C4;">Menü temsilîdir. İçecekler tedavi amaçlı değildir; özel beslenme gereksinimleriniz için hekiminize danışınız.</p>
+  </div>
+</section>
+
+<!-- ============ 6 · 5 YILDIZLI OTEL ============ -->
+<section class="buz-zemin">
+  <div class="ic iki-kolon">
+    <div>
+      <div class="gozkasi gorun">Misafirleriniz İçin</div>
+      <h2 class="gorun">Yerleşkenin Kalbinde 5 Yıldızlı Bir Otel</h2>
+      <p class="bolum-giris gorun">Devre mülk sahipleri yarımadanın tek konuğu değil: yerleşke bünyesindeki 5 yıldızlı otel; spa merkezi, gurme restoranı ve termal olanaklarıyla misafirlerinizi otel standardında ağırlar. Kalabalık bir aile buluşmasında ya da beklenmedik konuklarınız geldiğinde, eviniz dar gelmez.</p>
+      <div class="rozet-band gorun">
+        <span class="rozet">Spa &amp; Wellness Merkezi</span>
+        <span class="rozet">Gurme Restoran</span>
+        <span class="rozet">Termal Havuz Olanakları</span>
+        <span class="rozet">Oda Servisi</span>
+      </div>
+      <div class="bosluk-kucuk"></div>
+      <a class="btn btn-koyu gorun" href="kesfet.html">Yerleşkeyi Vaziyet Planında Görün</a>
+    </div>
+    <div class="cerceve gorun"><img src="assets/img/ai/restoran.jpg" alt="Otelin deniz manzaralı gurme restoranında akşam servisi" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ SON CTA ============ -->
+<section style="padding-top:0;">
+  <div class="ic">
+    <div class="cta-serit gorun">
+      <div>
+        <div class="gozkasi" style="color:var(--bakir-acik);">Konforu Yerinde Görün</div>
+        <h2>Anlatmak Yerine Yaşatmayı Tercih Ederiz</h2>
+        <p>Deneyim Günü'nde housekeeping standardını, akıllı ev sistemini ve eşyalı örnek daireyi kendi gözlerinizle görün; size uyan daireyi birlikte bulalım.</p>
+      </div>
+      <div class="cta-butonlar">
+        <a class="btn btn-birincil" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>
+        <a class="btn btn-hayalet" href="daireler.html">Daireleri İnceleyin</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<a class="wa-balon" href="https://wa.me/902126716968?text=Merhaba%2C%20Tor%20Thermal%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9.9-4.7-.3-.6c-.9-1.6-1.4-3.4-1.4-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.7 10.8-10.2 10.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="assets/data/daireler.js"></script>
+<script>
+/* Resort Yaşamı — sayfa içi davranışlar (ana.js'ten ÖNCE koşar ki
+   dinamik .gorun kartları görünürlük gözlemcisine yakalansın) */
+(function () {
+  "use strict";
+
+  /* --- TOR_ESYA kartlarını üret --- */
+  var kap = document.getElementById("esyaGrid");
+  if (kap && window.TOR_ESYA) {
+    var ikonlar = {
+      "Beyaz Eşyalar": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16"/><circle cx="8" cy="5.5" r="0.5"/><circle cx="11.5" cy="5.5" r="0.5"/><rect x="7.5" y="11" width="9" height="6" rx="1"/></svg>',
+      "Mobilya": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M3 13a2 2 0 0 1 4 0v1h10v-1a2 2 0 0 1 4 0v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M6 19v2"/><path d="M18 19v2"/></svg>',
+      "Mutfak Ekipmanları": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h14v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M3 11h2"/><path d="M19 11h2"/><path d="M9 8c0-1 .5-1.6.5-2.6"/><path d="M12 8c0-1 .5-1.6.5-2.6"/><path d="M15 8c0-1 .5-1.6.5-2.6"/></svg>',
+      "Ev Tekstili": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5"/><path d="M3 18h18"/><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M3 21v-3"/><path d="M21 21v-3"/></svg>',
+      "Teknoloji": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M9 21h6"/><path d="M12 17v4"/></svg>'
+    };
+    var varsayilan = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg>';
+    window.TOR_ESYA.forEach(function (grup) {
+      var kalemler = grup.icerik.split(", ");
+      var kart = document.createElement("article");
+      kart.className = "esya-kart gorun";
+      kart.innerHTML =
+        '<div class="esya-ikon">' + (ikonlar[grup.grup] || varsayilan) + '</div>' +
+        '<h3>' + grup.grup + ' <span class="adet">' + kalemler.length + ' kalem</span></h3>' +
+        '<ul class="esya-liste">' +
+        kalemler.map(function (k) { return '<li>' + k.charAt(0).toLocaleUpperCase("tr-TR") + k.slice(1) + '</li>'; }).join("") +
+        '</ul>';
+      kap.appendChild(kart);
+    });
+  }
+
+  /* --- Akıllı ev demo paneli anahtarları --- */
+  document.querySelectorAll("[data-akilli-panel] .anahtar").forEach(function (anahtar) {
+    anahtar.addEventListener("click", function () {
+      var acik = !anahtar.classList.contains("acik");
+      anahtar.classList.toggle("acik", acik);
+      anahtar.setAttribute("aria-checked", acik ? "true" : "false");
+      var durum = anahtar.closest(".akilli-satir").querySelector("[data-durum]");
+      if (durum) durum.textContent = durum.getAttribute(acik ? "data-acik" : "data-kapali");
+    });
+  });
+
+  /* --- Video yüklenemezse poster görseline düş --- */
+  document.querySelectorAll("video[data-yedek-gorsel]").forEach(function (video) {
+    function yedegeGec() {
+      if (video.dataset.yedeklendi) return;
+      video.dataset.yedeklendi = "1";
+      var img = document.createElement("img");
+      img.src = video.getAttribute("data-yedek-gorsel");
+      img.alt = video.getAttribute("aria-label") || "";
+      img.loading = "lazy";
+      video.replaceWith(img);
+    }
+    video.addEventListener("error", yedegeGec);
+    var son = video.querySelector("source:last-of-type");
+    if (son) son.addEventListener("error", yedegeGec);
+  });
+})();
+</script>
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+</body>
+</html>

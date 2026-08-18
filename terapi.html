@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellness Terapileri — 13 Uygulamanın Detayı | TOR Thermal Yalova Armutlu</title>
+<meta name="description" content="Aqua therapy'den çamur banyosuna: Tor Thermal Wellness Merkezi'ndeki 13 terapinin detayları — desteklediği alanlar, kimler için uygun olduğu ve seans notları. İçerikler bilgilendirme amaçlıdır.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Wellness Terapileri — TOR Thermal">
+<meta property="og:description" content="13 wellness terapisinin detayları: desteklediği alanlar, kimler için, seans notları. Longevity odaklı termal resort yaşamı.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/ai/aqua-terapi.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* Terapi sayfasına özel küçük eklemeler (site token'larıyla) */
+.terapi-rozet{
+  display:inline-block; margin-top:18px;
+  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+  backdrop-filter:blur(8px); color:#fff; padding:7px 16px; border-radius:999px;
+  font-size:12px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
+}
+.terapi-yerlesim{ display:grid; grid-template-columns:1.55fr 1fr; gap:46px; align-items:start; }
+@media (max-width:920px){ .terapi-yerlesim{ grid-template-columns:1fr; } }
+.terapi-govde p{ color:var(--soluk); font-size:16px; }
+.terapi-govde p b{ color:var(--lacivert); }
+
+.terapi-ozet{
+  position:sticky; top:104px; background:var(--beyaz); border-radius:var(--radius);
+  box-shadow:var(--golge); overflow:hidden;
+}
+.terapi-ozet .medya{ aspect-ratio:16/10; overflow:hidden; }
+.terapi-ozet .medya img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.terapi-ozet:hover .medya img{ transform:scale(1.04); }
+.terapi-ozet .govde{ padding:24px 26px 26px; }
+.terapi-ozet h3{ font-size:18px; margin-bottom:10px; }
+.ozet-madde{
+  display:flex; gap:10px; align-items:flex-start; font-size:13.8px; color:var(--soluk);
+  padding:8px 0; border-bottom:1px dashed var(--cizgi);
+}
+.ozet-madde:last-of-type{ border-bottom:none; }
+.ozet-madde svg{ width:17px; height:17px; fill:var(--turkuaz); flex:0 0 auto; margin-top:3px; }
+.ozet-madde b{ color:var(--lacivert); }
+.terapi-ozet .btn{ display:block; width:100%; text-align:center; margin-top:12px; }
+.btn-wa{ background:#25D366; color:#fff; box-shadow:0 10px 26px rgba(37,211,102,.32); }
+.btn-wa:hover{ background:#1FBF5B; }
+
+.fayda-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-top:38px; }
+.fayda{
+  background:var(--beyaz); border-radius:var(--radius); padding:24px 24px 22px;
+  box-shadow:var(--golge-kucuk); border-top:4px solid var(--turkuaz);
+  font-size:14.6px; color:var(--murekkep); font-weight:600; line-height:1.55;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.fayda:hover{ transform:translateY(-6px); box-shadow:var(--golge); }
+.fayda svg{ width:32px; height:32px; fill:var(--turkuaz); display:block; margin-bottom:14px; }
+
+.kimler-kutu{ background:var(--beyaz); border-radius:var(--radius); padding:30px 32px 28px; box-shadow:var(--golge-kucuk); border-left:4px solid var(--turkuaz); }
+.kimler-kutu p{ font-size:15px; color:var(--soluk); margin:0; }
+.seans-kutu{ background:var(--lacivert); color:#C9D6E2; border-radius:var(--radius); padding:30px 32px 28px; box-shadow:var(--golge); }
+.seans-kutu h3{ color:#fff; }
+.seans-kutu p{ font-size:14.6px; color:#AEBDD2; margin:0; }
+
+.saglik-not{
+  background:var(--beyaz); border-left:4px solid var(--bakir); border-radius:12px;
+  padding:20px 24px; font-size:13.5px; color:var(--soluk); box-shadow:var(--golge-kucuk);
+}
+.koyu .saglik-not{ background:rgba(255,255,255,.06); color:#9FB0C4; box-shadow:none; }
+
+.terapi-gecis{ display:flex; justify-content:space-between; gap:14px; margin-top:38px; flex-wrap:wrap; }
+.terapi-gecis a{
+  text-decoration:none; font-weight:700; font-size:14px; color:var(--turkuaz);
+  background:var(--beyaz); border:1.5px solid var(--cizgi); border-radius:999px;
+  padding:11px 22px; transition:all .2s ease;
+}
+.terapi-gecis a:hover{ border-color:var(--turkuaz); transform:translateY(-2px); box-shadow:var(--golge-kucuk); }
+
+/* Diğer terapiler mini şeridi (ritual-serit kalıbı) */
+.ritual-mini .ritual-adim{ flex:0 0 min(230px,70vw); }
+.ritual-mini .ritual-adim img{ aspect-ratio:4/3; }
+.ritual-mini .ritual-no{ font-size:32px; top:10px; left:12px; }
+.ritual-mini .bilgi{ padding:12px 16px 16px; }
+.ritual-mini h3{ font-size:15.5px; margin:0; }
+a.ritual-adim{ text-decoration:none; transition:transform .3s ease, box-shadow .3s ease; }
+a.ritual-adim:hover{ transform:translateY(-6px); box-shadow:0 18px 50px rgba(0,0,0,.45); }
+a.ritual-adim:hover img{ opacity:1; }
+
+/* 13'lü dizin ızgarası */
+.dizin-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; margin-top:40px; }
+.dizin-kart{
+  background:var(--beyaz); border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--golge-kucuk); text-decoration:none; display:flex; flex-direction:column;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.dizin-kart:hover{ transform:translateY(-6px); box-shadow:var(--golge); }
+.dizin-kart .medya{ aspect-ratio:16/10; overflow:hidden; position:relative; }
+.dizin-kart .medya img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.dizin-kart:hover .medya img{ transform:scale(1.06); }
+.dizin-no{
+  position:absolute; top:12px; left:14px; font-family:var(--serif); font-size:30px;
+  color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.55); line-height:1;
+}
+.dizin-kart .bilgi{ padding:18px 20px 20px; display:flex; flex-direction:column; flex:1; }
+.dizin-kart h3{ font-size:17px; margin-bottom:6px; }
+.dizin-kart p{ font-size:13.6px; color:var(--soluk); margin:0 0 14px; }
+.dizin-kart .kart-link{ margin-top:auto; }
+</style>
+</head>
+<body>
+
+<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<main id="terapiSayfa">
+  <noscript>
+    <section class="sayfa-baslik">
+      <div class="ic">
+        <div class="kirinti"><a href="index.html">Ana Sayfa</a> · <a href="wellness.html">Longevity &amp; Wellness</a> · Terapiler</div>
+        <h1>Wellness Terapileri</h1>
+        <p class="alt">Bu sayfa etkileşimli içerik kullanır. Terapilerin özetine <a href="wellness.html" style="color:var(--turkuaz-acik);">Longevity &amp; Wellness</a> sayfasından ulaşabilirsiniz.</p>
+      </div>
+    </section>
+  </noscript>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<a class="wa-balon" href="https://wa.me/902126716968?text=Merhaba%2C%20Tor%20Thermal%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9.9-4.7-.3-.6c-.9-1.6-1.4-3.4-1.4-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.7 10.8-10.2 10.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="assets/data/terapiler.js"></script>
+<script>
+/* Terapi sayfası: URL ?id= parametresine göre tek terapi detayı ya da 13'lü dizin. */
+(function () {
+  "use strict";
+  var LISTE = window.TOR_TERAPILER || [];
+  var kap = document.getElementById("terapiSayfa");
+  if (!kap || !LISTE.length) return;
+
+  var SAGLIK_NOT = "İçerikler bilgilendirme amaçlıdır, tedavi vaadi değildir; hekiminize danışınız.";
+  var IK_CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 16.2 5.8 12.5l-1.4 1.4 5.1 5.1L20 8.5 18.6 7.1z"/></svg>';
+  var IK_DAMLA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.7c3.7 4.5 6.5 7.9 6.5 11.1a6.5 6.5 0 0 1-13 0C5.5 10.6 8.3 7.2 12 2.7z"/></svg>';
+
+  function kacis(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function no(i) { return (i + 1 < 10 ? "0" : "") + (i + 1); }
+  function waLink(t) {
+    return "https://wa.me/902126716968?text=" +
+      encodeURIComponent("Merhaba, Tor Thermal'de " + t.ad + " hakkında bilgi almak istiyorum.");
+  }
+
+  var id = new URLSearchParams(location.search).get("id");
+  var idx = -1;
+  for (var i = 0; i < LISTE.length; i++) { if (LISTE[i].id === id) { idx = i; break; } }
+
+  /* ---------- Tek terapi detay görünümü ---------- */
+  function detayCiz(t, i) {
+    document.title = t.ad + " — Wellness Terapileri | TOR Thermal Yalova Armutlu";
+    var meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", t.ad + ": " + t.kisa + " Desteklediği alanlar, kimler için uygun olduğu ve seans notu. İçerikler bilgilendirme amaçlıdır.");
+
+    var onceki = LISTE[(i - 1 + LISTE.length) % LISTE.length];
+    var sonraki = LISTE[(i + 1) % LISTE.length];
+
+    var paragraflar = t.uzun.map(function (p) {
+      return '<p class="gorun">' + kacis(p) + "</p>";
+    }).join("");
+
+    var faydalar = t.faydalar.map(function (f, k) {
+      return '<div class="fayda gorun" style="transition-delay:' + (k % 4) * 70 + 'ms">' + IK_DAMLA + kacis(f) + "</div>";
+    }).join("");
+
+    var digerleri = LISTE.filter(function (d) { return d.id !== t.id; }).map(function (d) {
+      var sira = LISTE.indexOf(d);
+      return '<a class="ritual-adim" href="terapi.html?id=' + encodeURIComponent(d.id) + '">' +
+        '<span class="ritual-no">' + no(sira) + "</span>" +
+        '<img src="' + d.img + '" alt="' + kacis(d.ad) + ' — temsilî görsel" loading="lazy">' +
+        '<div class="bilgi"><h3>' + kacis(d.ad) + "</h3></div></a>";
+    }).join("");
+
+    kap.innerHTML =
+      /* Sayfa başlığı — terapinin görseli arka planda */
+      '<section class="sayfa-baslik">' +
+        '<div class="arka"><img src="' + t.img + '" alt="' + kacis(t.ad) + ' — Tor Thermal Wellness Merkezi, temsilî görsel" loading="eager"></div>' +
+        '<div class="ic">' +
+          '<div class="kirinti"><a href="index.html">Ana Sayfa</a> · <a href="wellness.html">Longevity &amp; Wellness</a> · ' + kacis(t.ad) + "</div>" +
+          "<h1>" + kacis(t.ad) + "</h1>" +
+          '<p class="alt">' + kacis(t.kisa) + "</p>" +
+          '<div class="terapi-rozet">Wellness Merkezi · Terapi ' + no(i) + " / " + LISTE.length + "</div>" +
+        "</div>" +
+      "</section>" +
+
+      /* Anlatım + yapışkan özet kartı */
+      "<section>" +
+        '<div class="ic terapi-yerlesim">' +
+          '<div class="terapi-govde">' +
+            '<div class="gozkasi gorun">Terapiyi Tanıyın</div>' +
+            '<h2 class="gorun">Nasıl Bir Deneyim?</h2>' +
+            paragraflar +
+            '<div class="bosluk-kucuk"></div>' +
+            '<div class="saglik-not gorun">' + SAGLIK_NOT + "</div>" +
+            '<div class="terapi-gecis gorun">' +
+              '<a href="terapi.html?id=' + encodeURIComponent(onceki.id) + '">← ' + kacis(onceki.ad) + "</a>" +
+              '<a href="terapi.html?id=' + encodeURIComponent(sonraki.id) + '">' + kacis(sonraki.ad) + " →</a>" +
+            "</div>" +
+          "</div>" +
+          '<aside class="terapi-ozet gorun" aria-label="Terapi özeti">' +
+            '<div class="medya"><img src="' + t.img + '" alt="' + kacis(t.ad) + ' — temsilî görsel" loading="lazy"></div>' +
+            '<div class="govde">' +
+              "<h3>Bir Bakışta</h3>" +
+              '<div class="ozet-madde">' + IK_CHECK + "<span><b>Konum:</b> Sağlık &amp; Wellness Merkezi</span></div>" +
+              '<div class="ozet-madde">' + IK_CHECK + "<span><b>Format:</b> Kişiye özel program içinde planlanır</span></div>" +
+              '<div class="ozet-madde">' + IK_CHECK + "<span><b>Rezervasyon:</b> Ön görüşme ve randevuyla</span></div>" +
+              '<div class="ozet-madde">' + IK_CHECK + "<span><b>Görsel:</b> Temsilî konsept çalışması</span></div>" +
+              '<a class="btn btn-birincil btn-kucuk" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>' +
+              '<a class="btn btn-wa btn-kucuk" href="' + waLink(t) + '" target="_blank" rel="noopener">WhatsApp\'tan Sorun</a>' +
+            "</div>" +
+          "</aside>" +
+        "</div>" +
+      "</section>" +
+
+      /* Faydalar — ikonlu infografik grid */
+      '<section class="buz-zemin">' +
+        '<div class="ic">' +
+          '<div class="gozkasi gorun">Neye Katkı Sağlar?</div>' +
+          '<h2 class="gorun">Desteklediği Alanlar</h2>' +
+          '<p class="bolum-giris gorun">Aşağıdaki başlıklar bir tedavi vaadi değil; bu uygulamanın kişisel wellness programınıza sunduğu katkı alanlarıdır.</p>' +
+          '<div class="fayda-grid">' + faydalar + "</div>" +
+          '<p class="temsili gorun">' + SAGLIK_NOT + "</p>" +
+        "</div>" +
+      "</section>" +
+
+      /* Kimler için + seans notu */
+      '<section class="kum-zemin">' +
+        '<div class="ic iki-kolon" style="align-items:stretch;">' +
+          '<div class="kimler-kutu gorun">' +
+            '<div class="gozkasi">Kimler İçin?</div>' +
+            "<h3>Bu Deneyim Size Göre mi?</h3>" +
+            "<p>" + kacis(t.kimlerIcin) + "</p>" +
+          "</div>" +
+          '<div class="seans-kutu gorun">' +
+            '<div class="gozkasi" style="color:var(--bakir-acik);">Seans Notu</div>' +
+            "<h3>Planlama ve Güvenlik</h3>" +
+            "<p>" + kacis(t.seansNotu) + "</p>" +
+          "</div>" +
+        "</div>" +
+      "</section>" +
+
+      /* Diğer terapiler — yatay kaydırmalı mini şerit */
+      '<section class="koyu">' +
+        '<div class="ic">' +
+          '<div class="gozkasi gorun">Keşfetmeye Devam Edin</div>' +
+          '<h2 class="gorun">Diğer Terapiler</h2>' +
+          '<p class="bolum-giris gorun">Kişisel programınız bu uygulamalardan harmanlanır; her biri ayrı bir detay sayfasıyla sizi bekliyor.</p>' +
+          '<div class="bosluk-kucuk"></div>' +
+          '<div class="ritual-serit ritual-mini gorun">' + digerleri + "</div>" +
+          '<p class="temsili gorun" style="color:#8FA2BC;">' + SAGLIK_NOT + "</p>" +
+        "</div>" +
+      "</section>" +
+
+      /* Randevu CTA */
+      "<section>" +
+        '<div class="ic">' +
+          '<div class="cta-serit gorun">' +
+            "<div>" +
+              '<div class="gozkasi" style="color:var(--bakir-acik);">Önce Deneyimleyin</div>' +
+              "<h2>Bu Deneyimi Yerinde Yaşayın</h2>" +
+              "<p>Deneyim Günü'nde Wellness Merkezi'ni gezin, uzman ekiple tanışın ve programınızı birlikte planlayın. Karar, size ait.</p>" +
+            "</div>" +
+            '<div style="display:flex; gap:12px; flex-wrap:wrap; margin-left:auto;">' +
+              '<a class="btn btn-birincil" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>' +
+              '<a class="btn btn-hayalet" href="' + waLink(t) + '" target="_blank" rel="noopener">WhatsApp</a>' +
+            "</div>" +
+          "</div>" +
+        "</div>" +
+      "</section>";
+  }
+
+  /* ---------- 13 terapinin dizin görünümü ---------- */
+  function dizinCiz() {
+    var kartlar = LISTE.map(function (t, k) {
+      return '<a class="dizin-kart gorun" style="transition-delay:' + (k % 4) * 60 + 'ms" href="terapi.html?id=' + encodeURIComponent(t.id) + '">' +
+        '<div class="medya"><img src="' + t.img + '" alt="' + kacis(t.ad) + ' — temsilî görsel" loading="lazy"><span class="dizin-no">' + no(k) + "</span></div>" +
+        '<div class="bilgi"><h3>' + kacis(t.ad) + "</h3><p>" + kacis(t.kisa) + '</p><span class="kart-link">Detayı İncele</span></div>' +
+      "</a>";
+    }).join("");
+
+    kap.innerHTML =
+      '<section class="sayfa-baslik">' +
+        '<div class="arka"><img src="assets/img/ai/aqua-terapi.jpg" alt="Tor Thermal Wellness Merkezi aqua terapi havuzu — temsilî görsel" loading="eager"></div>' +
+        '<div class="ic">' +
+          '<div class="kirinti"><a href="index.html">Ana Sayfa</a> · <a href="wellness.html">Longevity &amp; Wellness</a> · Terapiler</div>' +
+          "<h1>13 Terapi, 13 Ayrı Hikâye</h1>" +
+          '<p class="alt">Aqua therapy\'den çamur banyosuna: Wellness Merkezi\'ndeki her uygulamanın detayını, kimler için uygun olduğunu ve seans notlarını ayrı ayrı inceleyin.</p>' +
+          '<div class="terapi-rozet">Sağlık &amp; Wellness Merkezi · Terapi Rehberi</div>' +
+        "</div>" +
+      "</section>" +
+
+      "<section>" +
+        '<div class="ic">' +
+          '<div class="gozkasi gorun">Wellness Merkezi</div>' +
+          '<h2 class="gorun">Size İyi Gelecek Olanı Seçin</h2>' +
+          '<p class="bolum-giris gorun">Kişisel programınız bu 13 uygulamadan harmanlanır. Hiçbiri tek başına bir vaat değildir; her biri, uzman ekibin planladığı bütüncül programı destekler. Karta tıklayın, detayına inin.</p>' +
+          '<div class="dizin-grid">' + kartlar + "</div>" +
+          '<div class="bosluk"></div>' +
+          '<div class="ic-dar gorun" style="padding:0;"><p class="saglik-not">' + SAGLIK_NOT + "</p></div>" +
+        "</div>" +
+      "</section>" +
+
+      /* Sayılarla wellness — sayaç bandı */
+      '<section class="koyu" style="padding:56px 0;">' +
+        '<div class="ic">' +
+          '<div class="sayac-band">' +
+            '<div class="sayac"><div class="deger" data-hedef="13">0</div><div class="etiket">Wellness Terapisi</div></div>' +
+            '<div class="sayac"><div class="deger" data-hedef="4">0</div><div class="etiket">Sütunlu Metod</div></div>' +
+            '<div class="sayac"><div class="deger" data-hedef="7">0</div><div class="etiket">Adımlı Tor Ritüeli</div></div>' +
+            '<div class="sayac"><div class="deger" data-hedef="2">0</div><div class="etiket">Ayrı Termal Bölüm (Kadın · Erkek)</div></div>' +
+            '<div class="sayac"><div class="deger" data-hedef="60">0<span class="birim"> dk</span></div><div class="etiket">İstanbul\'a (yaklaşık)</div></div>' +
+          "</div>" +
+        "</div>" +
+      "</section>" +
+
+      /* Randevu CTA */
+      "<section>" +
+        '<div class="ic">' +
+          '<div class="cta-serit gorun">' +
+            "<div>" +
+              '<div class="gozkasi" style="color:var(--bakir-acik);">Önce Deneyimleyin</div>' +
+              "<h2>Termal Suyu Bir Gün Boyunca Yaşayın</h2>" +
+              "<p>Deneyim Günü'nde havuzları deneyin, wellness ekibiyle tanışın, size uygun terapileri birlikte belirleyin.</p>" +
+            "</div>" +
+            '<a class="btn btn-birincil" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>' +
+          "</div>" +
+        "</div>" +
+      "</section>";
+  }
+
+  if (idx > -1) { detayCiz(LISTE[idx], idx); } else { dizinCiz(); }
+})();
+</script>
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+</body>
+</html>

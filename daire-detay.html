@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daire &amp; Villa Detayı — Kat Planları ve Oda Dökümü | TOR Thermal</title>
+<meta name="description" content="Tor Thermal'in 8 konut tipinin detayı: resmî kat planları, oda oda m² dökümü, 2D→3D plan görünümü, anahtar teslim eşya listesi, temsilî dönem takvimi ve ödeme çerçevesi.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Daire &amp; Villa Detayı — TOR Thermal">
+<meta property="og:description" content="Resmî kat planları, oda oda m² dökümü ve 2D→3D plan görünümüyle 8 konut tipinin detay sayfası.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/ai/daire-salon.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Resort",
+  "name": "Tor Thermal — Longevity & Wellness Resort",
+  "description": "Yalova Armutlu'da termal su, deniz ve ormanın buluştuğu longevity odaklı devre mülk resortu.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Armutlu", "addressRegion": "Yalova", "addressCountry": "TR" },
+  "telephone": "+90-212-671-69-68",
+  "url": "https://torthermal.com",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Termal Havuzlar (Kadın & Erkek Ayrı)" },
+    { "@type": "LocationFeatureSpecification", "name": "Aqua Park" },
+    { "@type": "LocationFeatureSpecification", "name": "Sağlık ve Wellness Merkezi" },
+    { "@type": "LocationFeatureSpecification", "name": "Füniküler ve Seyir Terasları" },
+    { "@type": "LocationFeatureSpecification", "name": "Özel Plaj" }
+  ]
+}
+</script>
+<style>
+/* ============ daire-detay sayfasına özel eklentiler — tasarım sistemi token'larıyla ============ */
+
+/* Başlıkta mini künye */
+.kunye-band{ display:flex; gap:10px; flex-wrap:wrap; margin-top:24px; }
+.kunye{
+  background:rgba(255,255,255,.1); backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.22); border-radius:999px;
+  padding:8px 18px; font-size:13px; color:#DCE6F0; font-weight:600; letter-spacing:.03em;
+}
+.kunye b{ color:#fff; font-variant-numeric:tabular-nums; }
+
+/* ---- Plandan Hayata: sahne ---- */
+.plan-sahne{
+  position:relative; border-radius:var(--radius); overflow:hidden;
+  background:#fff; box-shadow:var(--golge); aspect-ratio:16/10;
+}
+@media (max-width:700px){ .plan-sahne{ aspect-ratio:4/5; } }
+.plan-sahne img, .plan-sahne video{ position:absolute; inset:0; width:100%; height:100%; }
+.plan-sahne img{ object-fit:contain; padding:16px; background:#fff; }
+.plan-katman-2d{ z-index:1; }
+.plan-katman-3d{ z-index:2; opacity:0; }
+.plan-video{ z-index:3; object-fit:cover; background:#000; display:none; }
+.plan-sahne.mod-video .plan-video{ display:block; }
+.plan-sahne.mod-otomatik .plan-katman-3d{ animation:planGecis 4s ease-in-out infinite alternate; }
+@keyframes planGecis{ from{ opacity:0; transform:scale(1); } to{ opacity:1; transform:scale(1.02); } }
+.plan-sahne.mod-2d .plan-katman-3d{ opacity:0; transition:opacity .8s ease; }
+.plan-sahne.mod-3d .plan-katman-3d{ opacity:1; transition:opacity .8s ease; }
+@media (prefers-reduced-motion: reduce){
+  .plan-sahne.mod-otomatik .plan-katman-3d{ animation:none; opacity:1; }
+}
+.plan-etiket{
+  position:absolute; z-index:5; top:14px; left:14px;
+  background:rgba(12,20,40,.78); color:#fff; font-size:11.5px; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; padding:7px 15px; border-radius:999px;
+  pointer-events:none;
+}
+.plan-kontrol{
+  display:flex; gap:18px; flex-wrap:wrap; align-items:center;
+  justify-content:space-between; margin-top:20px;
+}
+.plan-kontrol .grup{ display:flex; gap:10px; flex-wrap:wrap; }
+.koyu .morf-sekme{ background:rgba(255,255,255,.94); }
+.koyu .morf-sekme.aktif{ background:var(--turkuaz); border-color:var(--turkuaz); color:#fff; }
+.kontrol-baslik{
+  font-size:11px; letter-spacing:.22em; text-transform:uppercase; font-weight:700;
+  color:#8FA2BC; width:100%; margin-bottom:-2px;
+}
+
+/* ---- Oda dökümü ---- */
+.oda-tahmini{ color:var(--bakir); font-weight:800; }
+.oda-dis{ color:var(--turkuaz); font-weight:800; }
+.m2-bar-kap{ width:100%; min-width:120px; background:var(--fildisi-koyu); border-radius:99px; height:6px; overflow:hidden; }
+.m2-bar{
+  height:100%; border-radius:99px; min-width:6px;
+  background:linear-gradient(90deg, var(--turkuaz), var(--turkuaz-acik));
+  transform-origin:left; transition:width .8s ease;
+}
+tr.ara-toplam td{ background:var(--fildisi); font-weight:700; color:var(--lacivert); }
+tr.genel-toplam td{ background:var(--lacivert); color:#fff; font-weight:700; border-bottom:none; }
+tr.genel-toplam:hover td{ background:var(--lacivert); }
+.tablo-dipnot{ font-size:12.5px; color:var(--soluk); line-height:1.7; margin-top:14px; }
+
+/* ---- Galeri ---- */
+.galeri-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:38px; }
+.galeri-kutu{
+  position:relative; border:none; padding:0; cursor:zoom-in; border-radius:var(--radius);
+  overflow:hidden; box-shadow:var(--golge-kucuk); aspect-ratio:4/3; background:var(--lacivert-derin);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.galeri-kutu:hover{ transform:translateY(-5px); box-shadow:var(--golge); }
+.galeri-kutu img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.galeri-kutu:hover img{ transform:scale(1.06); }
+.galeri-kutu::after{
+  content:"⤢"; position:absolute; right:12px; bottom:10px;
+  background:rgba(12,20,40,.72); color:#fff; width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:16px;
+  opacity:0; transition:opacity .25s ease;
+}
+.galeri-kutu:hover::after{ opacity:1; }
+.isik-kutu{
+  position:fixed; inset:0; z-index:400; background:rgba(12,20,40,.93);
+  display:none; align-items:center; justify-content:center; padding:28px; flex-direction:column; gap:14px;
+}
+.isik-kutu.acik{ display:flex; }
+.isik-kutu img{ max-width:min(1100px,94vw); max-height:82vh; border-radius:12px; box-shadow:0 30px 80px rgba(0,0,0,.55); }
+.isik-kutu .isik-yazi{ color:#C3D0DE; font-size:13.5px; margin:0; }
+.isik-kapat{
+  position:absolute; top:20px; right:24px; background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.3); color:#fff; width:44px; height:44px;
+  border-radius:50%; font-size:20px; cursor:pointer; line-height:1;
+}
+.isik-kapat:hover{ background:rgba(255,255,255,.24); }
+
+/* ---- Anahtar teslim ---- */
+.esya-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:16px; margin-top:38px; }
+.esya-kart{
+  background:var(--beyaz); border-radius:var(--radius); padding:24px 22px;
+  box-shadow:var(--golge-kucuk); border-top:4px solid var(--turkuaz);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.esya-kart:hover{ transform:translateY(-5px); box-shadow:var(--golge); border-top-color:var(--bakir); }
+.esya-kart .no{ font-family:var(--serif); font-size:26px; color:var(--bakir); line-height:1; margin-bottom:10px; }
+.esya-kart h3{ font-size:16.5px; margin-bottom:8px; }
+.esya-kart p{ font-size:13.5px; color:var(--soluk); margin:0; line-height:1.65; }
+
+/* ---- Ödeme akışı ---- */
+.odeme-akis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(205px,1fr)); gap:14px; margin-top:32px; }
+.odeme-adim{
+  background:var(--beyaz); border-radius:12px; padding:22px 20px;
+  box-shadow:var(--golge-kucuk); position:relative;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.odeme-adim:hover{ transform:translateY(-4px); box-shadow:var(--golge); }
+.odeme-adim .no{
+  width:34px; height:34px; border-radius:50%; background:var(--lacivert); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px;
+  font-family:var(--serif); margin-bottom:12px;
+}
+.odeme-adim b{ color:var(--lacivert); display:block; margin-bottom:5px; font-size:15px; }
+.odeme-adim small{ color:var(--soluk); font-size:13px; line-height:1.6; display:block; }
+
+/* ---- 52 hafta şeridi ---- */
+.hafta-serit{ display:grid; grid-template-columns:repeat(52,1fr); gap:3px; margin-top:28px; }
+@media (max-width:760px){ .hafta-serit{ grid-template-columns:repeat(26,1fr); } }
+.hafta{
+  height:36px; border-radius:5px; cursor:default;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.hafta:hover{ transform:translateY(-4px); box-shadow:0 8px 16px rgba(17,27,54,.18); }
+.hafta.musait{ background:var(--turkuaz-buz); }
+.hafta.opsiyonlu{ background:var(--bakir-acik); }
+.hafta.satildi{ background:#C9CFD8; }
+.hafta.sez-bahar{ border-top:4px solid #7FA96B; }
+.hafta.sez-yaz{ border-top:4px solid #3E8FAE; }
+.hafta.sez-sonbahar{ border-top:4px solid #C08A4E; }
+.hafta.sez-kis{ border-top:4px solid #6E8FB5; }
+.lejant{ display:flex; gap:20px; flex-wrap:wrap; margin-top:18px; font-size:13px; color:var(--soluk); }
+.lejant span{ display:flex; align-items:center; gap:8px; }
+.lejant i{ width:15px; height:15px; border-radius:4px; display:inline-block; }
+.hafta-ozet{ display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+.hafta-ozet .kutu{
+  background:var(--beyaz); border-radius:12px; padding:12px 20px; box-shadow:var(--golge-kucuk);
+  font-size:13.5px; font-weight:600; color:var(--lacivert);
+}
+.hafta-ozet .kutu b{ font-family:var(--serif); font-size:21px; color:var(--turkuaz); margin-right:5px; font-variant-numeric:tabular-nums; }
+
+/* ---- Diğer tipler şeridi ---- */
+.diger-serit{ display:flex; gap:14px; overflow-x:auto; padding:8px 4px 22px; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; }
+.diger-serit::-webkit-scrollbar{ height:8px; }
+.diger-serit::-webkit-scrollbar-thumb{ background:var(--turkuaz); border-radius:99px; }
+.diger-kart{
+  flex:0 0 235px; scroll-snap-align:start; background:var(--beyaz); border-radius:12px;
+  padding:18px 20px; box-shadow:var(--golge-kucuk); text-decoration:none;
+  transition:transform .3s ease, box-shadow .3s ease; border:1.5px solid transparent;
+}
+.diger-kart:hover{ transform:translateY(-5px); box-shadow:var(--golge); border-color:var(--turkuaz); }
+.diger-kart .ad{ font-family:var(--serif); font-size:16px; color:var(--lacivert); font-weight:600; line-height:1.3; display:block; margin-bottom:8px; }
+.diger-kart .veri{ font-size:12.5px; color:var(--soluk); display:block; line-height:1.6; }
+.diger-kart .git{ font-size:13px; font-weight:700; color:var(--turkuaz); display:block; margin-top:10px; }
+.diger-kart:hover .git::after{ content:" →"; }
+
+/* ---- Seçim ekranı ---- */
+.tip-rozet{
+  position:absolute; top:12px; left:12px; z-index:2;
+  background:rgba(12,20,40,.78); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; padding:6px 14px; border-radius:999px;
+}
+.secim-kunye{ font-size:12.8px; color:var(--murekkep); font-weight:600; margin:0 0 14px; line-height:1.7; }
+.secim-kunye .num{ color:var(--lacivert); }
+
+/* CTA çift buton */
+.cta-butonlar{ display:flex; gap:14px; flex-wrap:wrap; margin-left:auto; }
+@media (max-width:760px){ .cta-butonlar{ margin-left:0; } }
+</style>
+</head>
+<body>
+
+<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ SAYFA BAŞLIĞI ============ -->
+<section class="sayfa-baslik">
+  <div class="arka"><img id="baslikArka" src="assets/img/render/r02.png" alt="Tor Thermal konut bloklarının resmî proje görseli"></div>
+  <div class="ic">
+    <div class="kirinti"><a href="index.html">Ana Sayfa</a> · <a href="daireler.html">Daireler</a> · <span id="kirintiTip">Tip Detayı</span></div>
+    <h1 id="sayfaH1">Daire &amp; Villa Detayı</h1>
+    <p class="alt" id="sayfaOzet">Resmî kat planları, oda oda m² dökümü ve anahtar teslim standardıyla; seçtiğiniz tipin tüm detayı tek sayfada.</p>
+    <div class="kunye-band" id="kunyeBand"></div>
+  </div>
+</section>
+
+<noscript>
+  <section><div class="ic">
+    <p>Bu sayfa detayları görüntülemek için JavaScript kullanır. Tüm tiplerin karşılaştırmalı listesi için
+    <a href="daireler.html">Daireler &amp; Villalar</a> sayfasını ziyaret edebilirsiniz.</p>
+  </div></section>
+</noscript>
+
+<!-- ============ SEÇİM EKRANI (parametre yoksa) ============ -->
+<section id="secimBolum" hidden>
+  <div class="ic">
+    <div class="gozkasi gorun">Tip Seçimi</div>
+    <h2 class="gorun">Sekiz Tip, Tek Standart: Anahtar Teslim</h2>
+    <p class="bolum-giris gorun">1+1 delüks suitten 4+1 deniz manzaralı villaya — bir tip seçin; kat planını, oda dökümünü ve dönem takvimini görün. m² bilgileri resmî listedendir.</p>
+    <div class="kart-grid" id="secimGrid"></div>
+    <div class="bosluk-kucuk"></div>
+    <div class="orta gorun"><a class="btn btn-koyu" href="daireler.html">Tüm Tipleri Tabloda Karşılaştırın</a></div>
+  </div>
+</section>
+
+<!-- ============ DETAY MODU ============ -->
+<div id="detayKap" hidden>
+
+  <!-- (2) PLANDAN HAYATA -->
+  <section class="koyu">
+    <div class="ic">
+      <div class="gozkasi gorun">Plandan Hayata</div>
+      <h2 class="gorun">Kat Planı Gözünüzün Önünde Üç Boyuta Kalkıyor</h2>
+      <p class="bolum-giris gorun">Resmî mimari plan ile üç boyutlu görünüm arasında geçiş yapın; her odanın yerini, ışığını ve akışını plan üzerinde okuyun.</p>
+      <div class="bosluk-kucuk"></div>
+      <div class="gorun">
+        <div class="plan-sahne mod-otomatik" id="planSahne">
+          <span class="plan-etiket" id="planEtiket">2D Plan ↔ 3D Görünüm · Otomatik Geçiş</span>
+          <img class="plan-katman-2d" id="plan2d" alt="">
+          <img class="plan-katman-3d" id="plan3d" alt="" aria-hidden="true">
+          <video class="plan-video" id="planVideo" muted loop playsinline preload="auto" aria-label="Kat planından üç boyutlu görünüme geçiş videosu"></video>
+        </div>
+        <div class="plan-kontrol">
+          <div class="grup" id="katSekmeleri" hidden>
+            <span class="kontrol-baslik">Kat Seçimi</span>
+            <button type="button" class="morf-sekme aktif" id="katZemin" aria-pressed="true">Zemin Kat</button>
+            <button type="button" class="morf-sekme" id="katBir" aria-pressed="false">1. Kat</button>
+          </div>
+          <div class="grup" role="group" aria-label="Plan görünüm modu">
+            <span class="kontrol-baslik">Görünüm</span>
+            <button type="button" class="morf-sekme" id="modVideo" hidden aria-pressed="false">3D Tanıtım Videosu</button>
+            <button type="button" class="morf-sekme aktif" id="modOtomatik" aria-pressed="true">Otomatik Geçiş</button>
+            <button type="button" class="morf-sekme" id="mod2d" aria-pressed="false">2D Plan</button>
+            <button type="button" class="morf-sekme" id="mod3d" aria-pressed="false">3D Görünüm</button>
+          </div>
+        </div>
+        <p class="temsili" style="color:#8FA2BC;">Kat planları resmî proje dosyasındandır. 3D görünüm ve video, yapay zekâ destekli temsilî çalışmadır; bağlayıcı taahhüt içermez.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- (3) ODA DÖKÜMÜ -->
+  <section>
+    <div class="ic">
+      <div class="gozkasi gorun">Oda Dökümü</div>
+      <h2 class="gorun">Her Metrekare, Kalem Kalem</h2>
+      <p class="bolum-giris gorun">Aşağıdaki döküm resmî teklif dosyasındaki plan ölçülerinden derlenmiştir. Çubuklar, her odanın en büyük odaya oranını gösterir.</p>
+      <div class="tablo-kap gorun">
+        <table id="odaTablo">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="tablo-dipnot gorun" id="odaDipnot"></div>
+    </div>
+  </section>
+
+  <!-- (4) SAYAÇ BANDI -->
+  <section class="koyu" style="padding:56px 0;">
+    <div class="ic">
+      <div class="sayac-band" id="sayacBand"></div>
+    </div>
+  </section>
+
+  <!-- (5) GALERİ -->
+  <section class="kum-zemin">
+    <div class="ic">
+      <div class="gozkasi gorun">Galeri</div>
+      <h2 class="gorun">İçeride Sizi Bekleyen Atmosfer</h2>
+      <p class="bolum-giris gorun">Örnek daire ve proje görselleri; büyütmek için görsele dokunun.</p>
+      <div class="galeri-grid gorun" id="galeriGrid"></div>
+      <p class="temsili gorun">Görseller temsilî proje ve konsept çalışmalarıdır; teslim edilen dairede malzeme ve dekorasyon farklılık gösterebilir.</p>
+    </div>
+  </section>
+
+  <!-- (6) ANAHTAR TESLİM -->
+  <section>
+    <div class="ic">
+      <div class="gozkasi gorun">Anahtar Teslim</div>
+      <h2 class="gorun">Bavulunuzu Alın, Gelin: Eksiksiz Teslim Standardı</h2>
+      <p class="bolum-giris gorun">Her tip; beyaz eşyasından ev tekstiline, akıllı ev sisteminden mutfak gereçlerine kadar tam donanımlı teslim edilir. Beş grupta tüm içerik:</p>
+      <div class="esya-grid gorun" id="esyaGrid"></div>
+    </div>
+  </section>
+
+  <!-- (7) ÖDEME ÇERÇEVESİ -->
+  <section class="buz-zemin">
+    <div class="ic">
+      <div class="gozkasi gorun">Ödeme Çerçevesi</div>
+      <h2 class="gorun">Açık Defter İlkesiyle, Sürprizsiz Plan</h2>
+      <p class="bolum-giris gorun">Ödeme koşullarımız tüm tipler için aynıdır ve kamuya açıktır. Ayrıntılar ve örnek sözleşme <a href="acik-defter.html">Açık Defter</a> sayfasındadır.</p>
+      <div class="rozet-band gorun" id="odemeRozet"></div>
+      <div class="odeme-akis gorun" id="odemeAkis"></div>
+      <p class="temsili gorun">Temsilîdir — ödeme çerçevesi bilgilendirme amaçlıdır; güncel koşullar satış ofisinden teyit edilir. Sözleşme öncesi 14 gün cayma hakkınız saklıdır.</p>
+      <p class="temsili gorun" id="odemeKurum"></p>
+    </div>
+  </section>
+
+  <!-- DÖNEM TAKVİMİ -->
+  <section>
+    <div class="ic">
+      <div class="gozkasi gorun">Dönem Takvimi</div>
+      <h2 class="gorun">52 Haftalık Yıl Haritası</h2>
+      <p class="bolum-giris gorun">Devre mülkte her hafta bir dönemdir. Aşağıdaki şerit, yılın genel doluluk görünümünü sezon sezon gösterir; üst çizgi rengi sezonu belirtir.</p>
+      <div class="hafta-serit gorun" id="haftaSerit" role="img" aria-label="52 haftalık temsilî müsaitlik şeridi"></div>
+      <div class="lejant gorun">
+        <span><i style="background:var(--turkuaz-buz);"></i> Müsait</span>
+        <span><i style="background:var(--bakir-acik);"></i> Opsiyonlu</span>
+        <span><i style="background:#C9CFD8;"></i> Satıldı</span>
+        <span><i style="background:#7FA96B;"></i> İlkbahar</span>
+        <span><i style="background:#3E8FAE;"></i> Yaz</span>
+        <span><i style="background:#C08A4E;"></i> Sonbahar</span>
+        <span><i style="background:#6E8FB5;"></i> Kış</span>
+      </div>
+      <div class="hafta-ozet gorun" id="haftaOzet"></div>
+      <p class="temsili gorun">Temsilîdir — müsaitlik şeridi demo amaçlıdır; güncel dönem envanteri satış ofisinden teyit edilir.</p>
+    </div>
+  </section>
+
+  <!-- (8) ÇİFT CTA -->
+  <section style="padding-top:0;">
+    <div class="ic">
+      <div class="cta-serit gorun">
+        <div>
+          <div class="gozkasi" style="color:var(--bakir-acik);">Sonraki Adım</div>
+          <h2 id="ctaBaslik">Bu Tiple Haftanızı Eşleştirin</h2>
+          <p>Dönem Bulucu'da 52 haftalık takvimden haftanızı seçin, temsilî ödeme planınızı anında görün — ya da tek mesajla satış ekibine bağlanın.</p>
+        </div>
+        <div class="cta-butonlar">
+          <a class="btn btn-birincil" id="ctaDonem" href="daire-donem-bulucu.html">Bu Tiple Dönem Seç</a>
+          <a class="btn btn-hayalet" id="ctaWa" href="#" target="_blank" rel="noopener">WhatsApp'tan Sorun</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DİĞER TİPLER -->
+  <section class="kum-zemin" style="padding:64px 0;">
+    <div class="ic">
+      <div class="gozkasi gorun">Diğer Tipler</div>
+      <h2 class="gorun" style="font-size:clamp(22px,2.8vw,30px);">Kararsız mısınız? Diğer Tiplere Göz Atın</h2>
+      <div class="diger-serit gorun" id="digerSerit"></div>
+    </div>
+  </section>
+
+</div><!-- /detayKap -->
+
+<!-- Işık kutusu (galeri büyütme) -->
+<div class="isik-kutu" id="isikKutu" role="dialog" aria-modal="true" aria-label="Görsel büyütme">
+  <button type="button" class="isik-kapat" id="isikKapat" aria-label="Kapat">×</button>
+  <img id="isikGorsel" alt="">
+  <div class="isik-yazi" id="isikYazi"></div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<a class="wa-balon" href="https://wa.me/902126716968?text=Merhaba%2C%20Tor%20Thermal%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9.9-4.7-.3-.6c-.9-1.6-1.4-3.4-1.4-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.7 10.8-10.2 10.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="assets/data/daireler.js"></script>
+<script src="assets/data/donemler.js"></script>
+<script src="assets/data/odalar.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var tipler   = window.TOR_DAIRELER || [];
+  var odaVeri  = window.TOR_ODALAR   || {};
+  var donemler = window.TOR_DONEMLER || [];
+  var odeme    = window.TOR_ODEME    || {};
+
+  /* ---------- yardımcılar ---------- */
+  function fm(n, hane) {
+    return Number(n).toLocaleString("tr-TR", { maximumFractionDigits: (hane == null ? 2 : hane) });
+  }
+  function aralik(min, maks) {
+    return (min === maks) ? fm(min) : fm(min) + "–" + fm(maks);
+  }
+  function planKeyBul(id) {
+    if (id === "3p1-villa") return "villa3";
+    if (id === "4p1-villa") return "villa4";
+    if (id.indexOf("1p1") === 0) return "1p1";
+    if (id.indexOf("2p1") === 0) return "2p1";
+    if (id.indexOf("3p1") === 0) return "3p1";
+    return null;
+  }
+  function el(id) { return document.getElementById(id); }
+
+  /* Tip başına görsel seçimleri */
+  function tipGorseli(t) {
+    var harita = {
+      "1p1-deluks": "assets/img/ai/daire-salon.jpg",
+      "1p1-deniz":  "assets/img/render/r05.png",
+      "2p1-deluks": "assets/img/render/r02.png",
+      "2p1-deniz":  "assets/img/render/r16.jpg",
+      "3p1-deluks": "assets/img/render/r13.jpg",
+      "3p1-deniz":  "assets/img/render/r01.png",
+      "3p1-villa":  "assets/img/ai/morf-villa.jpg",
+      "4p1-villa":  "assets/img/render/r20.jpg"
+    };
+    return harita[t.id] || "assets/img/render/r02.png";
+  }
+  function baslikArkasi(t) {
+    if (t.tip === "villa") return "assets/img/ai/morf-villa.jpg";
+    if (t.manzara === "Deniz") return "assets/img/render/r16.jpg";
+    return "assets/img/render/r02.png";
+  }
+  function galeriListesi(t) {
+    var liste = [{ src: "assets/img/ai/daire-salon.jpg", alt: "Örnek daire salonu — tam eşyalı, anahtar teslim iç mekân standardı" }];
+    if (t.tip === "villa") {
+      liste.push({ src: "assets/img/ai/morf-villa.jpg", alt: "Villa bölgesinin yapay zekâ destekli konsept görseli" });
+      liste.push({ src: "assets/img/render/r16.jpg", alt: "Deniz cepheli yerleşimin resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r05.png", alt: "Yerleşke genel görünümünün resmî proje görseli" });
+    } else if (t.manzara === "Deniz") {
+      liste.push({ src: "assets/img/render/r05.png", alt: "Deniz manzaralı blokların resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r16.jpg", alt: "Sahil hattı ve blokların resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r02.png", alt: "Konut sokağının akşam saatlerindeki resmî proje görseli" });
+    } else {
+      liste.push({ src: "assets/img/render/r02.png", alt: "Konut sokağının akşam saatlerindeki resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r13.jpg", alt: "Yerleşke iç avlusunun resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r01.png", alt: "Tor Thermal yerleşkesinin genel resmî proje görseli" });
+    }
+    return liste;
+  }
+
+  /* ---------- URL parametresi ---------- */
+  var params = new URLSearchParams(location.search);
+  var istenen = (params.get("tip") || "").trim().toLowerCase();
+  var tip = null;
+  tipler.forEach(function (t) { if (t.id === istenen) tip = t; });
+
+  if (!tip) { listeModu(); } else { detayModu(tip); }
+
+  /* ================= SEÇİM EKRANI ================= */
+  function listeModu() {
+    document.title = "Daire & Villa Tipleri — Seçim | TOR Thermal";
+    el("sayfaH1").textContent = "Size Uygun Tipi Seçin";
+    el("sayfaOzet").textContent = "Sekiz daire ve villa tipi; hepsinde aynı standart: tapulu devre mülk, tam eşyalı ve akıllı ev sistemli anahtar teslim.";
+    el("kirintiTip").textContent = "Tip Seçimi";
+    el("secimBolum").hidden = false;
+
+    var grid = el("secimGrid");
+    tipler.forEach(function (t) {
+      var kart = document.createElement("article");
+      kart.className = "kart gorun";
+      kart.innerHTML =
+        '<div class="kart-medya">' +
+          '<span class="tip-rozet">' + (t.tip === "villa" ? "Villa" : "Daire") + '</span>' +
+          '<img src="' + tipGorseli(t) + '" alt="' + t.ad + ' için temsilî proje görseli" loading="lazy">' +
+        '</div>' +
+        '<div class="kart-icerik">' +
+          '<h3>' + t.ad + '</h3>' +
+          '<p>' + t.ozet + '</p>' +
+          '<p class="secim-kunye">' +
+            '<span class="num">' + aralik(t.brutMin, t.brutMaks) + ' m²</span> brüt · ' +
+            '<span class="num">' + aralik(t.netMin, t.netMaks) + ' m²</span> net<br>' +
+            t.kisi + ' kişiye kadar · ' + t.manzara + ' manzara' +
+          '</p>' +
+          '<a class="kart-link" href="daire-detay.html?tip=' + encodeURIComponent(t.id) + '">Detayı Gör</a>' +
+        '</div>';
+      grid.appendChild(kart);
+    });
+  }
+
+  /* ================= DETAY MODU ================= */
+  function detayModu(t) {
+    var planKey = planKeyBul(t.id);
+    var od = odaVeri[planKey] || null;
+    var villaMi = (t.tip === "villa");
+
+    document.title = t.ad + " — Kat Planı ve Oda Dökümü | TOR Thermal";
+    el("detayKap").hidden = false;
+
+    /* (1) Başlık */
+    el("sayfaH1").textContent = t.ad;
+    el("sayfaOzet").textContent = t.ozet;
+    el("kirintiTip").textContent = t.ad;
+    var arka = el("baslikArka");
+    arka.src = baslikArkasi(t);
+    arka.alt = t.ad + " için temsilî proje görseli";
+    el("kunyeBand").innerHTML =
+      '<span class="kunye">Brüt <b>' + aralik(t.brutMin, t.brutMaks) + ' m²</b></span>' +
+      '<span class="kunye">Net <b>' + aralik(t.netMin, t.netMaks) + ' m²</b></span>' +
+      '<span class="kunye"><b>' + t.kisi + '</b> kişiye kadar</span>' +
+      '<span class="kunye"><b>' + t.manzara + '</b> manzara</span>';
+
+    /* (2) Plandan Hayata */
+    planKur(t, planKey, od, villaMi);
+
+    /* (3) Oda dökümü */
+    if (od) odaTablosuKur(od, villaMi, t);
+
+    /* (4) Sayaç bandı */
+    el("sayacBand").innerHTML =
+      '<div class="sayac"><div class="deger" data-hedef="' + t.brutMaks + '">0<span class="birim"> m²</span></div><div class="etiket">Brüt · ' + aralik(t.brutMin, t.brutMaks) + ' m²</div></div>' +
+      '<div class="sayac"><div class="deger" data-hedef="' + t.netMaks + '">0<span class="birim"> m²</span></div><div class="etiket">Net · ' + aralik(t.netMin, t.netMaks) + ' m²</div></div>' +
+      '<div class="sayac"><div class="deger" data-hedef="' + t.kisi + '">0</div><div class="etiket">Kişiye Kadar</div></div>' +
+      '<div class="sayac"><div class="deger" style="font-size:clamp(19px,2.2vw,28px); line-height:1.3; padding-top:8px;">' + t.manzara + '</div><div class="etiket">Manzara</div></div>';
+
+    /* (5) Galeri */
+    var galeri = el("galeriGrid");
+    galeriListesi(t).forEach(function (g) {
+      var dugme = document.createElement("button");
+      dugme.type = "button";
+      dugme.className = "galeri-kutu";
+      dugme.setAttribute("aria-label", g.alt + " — büyüt");
+      dugme.innerHTML = '<img src="' + g.src + '" alt="' + g.alt + '" loading="lazy">';
+      dugme.addEventListener("click", function () { isikAc(g.src, g.alt); });
+      galeri.appendChild(dugme);
+    });
+
+    /* (6) Anahtar teslim */
+    var esyaGrid = el("esyaGrid");
+    (window.TOR_ESYA || []).forEach(function (grup, i) {
+      var kart = document.createElement("article");
+      kart.className = "esya-kart";
+      kart.innerHTML =
+        '<div class="no">0' + (i + 1) + '</div>' +
+        '<h3>' + grup.grup + '</h3>' +
+        '<p>' + grup.icerik + '</p>';
+      esyaGrid.appendChild(kart);
+    });
+
+    /* (7) Ödeme çerçevesi */
+    var pesinat = Math.round((odeme.pesinatOrani || 0.30) * 100);
+    var taksit = odeme.taksitAy || 18;
+    var indirim = Math.round((odeme.pesinIndirimOrani || 0.25) * 100);
+    el("odemeRozet").innerHTML =
+      '<span class="rozet">%' + pesinat + ' peşinat + ' + taksit + ' ay taksit</span>' +
+      '<span class="rozet">Peşin ödemede %' + indirim + ' indirim</span>' +
+      '<span class="rozet">Tapulu devre mülk</span>' +
+      '<span class="rozet">14 gün cayma hakkı</span>' +
+      '<span class="rozet">Anahtar teslim eşyalı</span>';
+    el("odemeAkis").innerHTML =
+      '<div class="odeme-adim"><span class="no">1</span><b>Deneyim &amp; Karar</b><small>Deneyim Günü\'nde yerleşkeyi gezin; sözleşme örneğini evinize götürün, baskısız karar verin.</small></div>' +
+      '<div class="odeme-adim"><span class="no">2</span><b>Sözleşme &amp; %' + pesinat + ' Peşinat</b><small>İmzadan sonra 14 gün cayma hakkınız saklıdır. Peşin ödemeyi tercih ederseniz %' + indirim + ' indirim uygulanır.</small></div>' +
+      '<div class="odeme-adim"><span class="no">3</span><b>' + taksit + ' Ay Taksit</b><small>Kalan tutar ' + taksit + ' ay eşit taksitle ödenir; ara ödeme baskısı yoktur.</small></div>' +
+      '<div class="odeme-adim"><span class="no">4</span><b>Tapu &amp; Teslim</b><small>Devre mülk tapunuz adınıza tescil edilir; daireniz tam eşyalı teslim edilir.</small></div>';
+    el("odemeKurum").textContent = "Ödeme altyapısı: " + (odeme.banka || "—") + " · Geliştirici: " + (odeme.gelistirici || "—");
+
+    /* Dönem takvimi şeridi */
+    haftaSeridiKur();
+
+    /* (8) Çift CTA */
+    el("ctaBaslik").textContent = t.ad + " ile Haftanızı Eşleştirin";
+    el("ctaDonem").href = "daire-donem-bulucu.html?tip=" + encodeURIComponent(t.id);
+    el("ctaWa").href = "https://wa.me/902126716968?text=" +
+      encodeURIComponent("Merhaba, Tor Thermal " + t.ad + " hakkında bilgi ve müsait dönemleri öğrenmek istiyorum.");
+
+    /* Diğer tipler */
+    var serit = el("digerSerit");
+    tipler.forEach(function (d) {
+      if (d.id === t.id) return;
+      var a = document.createElement("a");
+      a.className = "diger-kart";
+      a.href = "daire-detay.html?tip=" + encodeURIComponent(d.id);
+      a.innerHTML =
+        '<span class="ad">' + d.ad + '</span>' +
+        '<span class="veri num">' + aralik(d.brutMin, d.brutMaks) + ' m² brüt · ' + d.kisi + ' kişi<br>' + d.manzara + ' manzara</span>' +
+        '<span class="git">Detayı Gör</span>';
+      serit.appendChild(a);
+    });
+  }
+
+  /* ---------- Plandan Hayata kurulum ---------- */
+  function planKur(t, planKey, od, villaMi) {
+    var sahne = el("planSahne");
+    var img2d = el("plan2d");
+    var img3d = el("plan3d");
+    var video = el("planVideo");
+    var etiket = el("planEtiket");
+    if (!od) return;
+
+    var plan2dYol = od.plan || od.planZemin;
+    var plan3dYol = "assets/img/ai/plan3d-" + (villaMi ? "villa" : planKey) + ".jpg";
+    var videoYol  = "assets/video/plan3d-" + (villaMi ? "villa" : planKey) + ".mp4";
+
+    img2d.src = plan2dYol;
+    img2d.alt = t.ad + " resmî kat planı (2D)";
+    img3d.src = plan3dYol;
+    img3d.alt = t.ad + " üç boyutlu plan görünümü (temsilî)";
+
+    /* Villa kat sekmeleri */
+    if (villaMi && od.planZemin && od.planKat1) {
+      el("katSekmeleri").hidden = false;
+      var katZemin = el("katZemin"), katBir = el("katBir");
+      function katSec(dugme, yol, ek) {
+        [katZemin, katBir].forEach(function (b) {
+          b.classList.toggle("aktif", b === dugme);
+          b.setAttribute("aria-pressed", b === dugme ? "true" : "false");
+        });
+        img2d.src = yol;
+        img2d.alt = t.ad + " resmî kat planı — " + ek;
+      }
+      katZemin.addEventListener("click", function () { katSec(katZemin, od.planZemin, "zemin kat"); });
+      katBir.addEventListener("click", function () { katSec(katBir, od.planKat1, "1. kat"); });
+    }
+
+    /* Görünüm modları */
+    var modDugmeler = { video: el("modVideo"), otomatik: el("modOtomatik"), "2d": el("mod2d"), "3d": el("mod3d") };
+    var etiketler = {
+      video: "3D Tanıtım Videosu",
+      otomatik: "2D Plan ↔ 3D Görünüm · Otomatik Geçiş",
+      "2d": "2D Mimari Plan",
+      "3d": "3D Görünüm (Temsilî)"
+    };
+    function modAyarla(mod) {
+      sahne.className = "plan-sahne mod-" + mod;
+      Object.keys(modDugmeler).forEach(function (k) {
+        modDugmeler[k].classList.toggle("aktif", k === mod);
+        modDugmeler[k].setAttribute("aria-pressed", k === mod ? "true" : "false");
+      });
+      etiket.textContent = etiketler[mod];
+      if (mod === "video") { video.play && video.play().catch(function () {}); }
+      else { video.pause && video.pause(); }
+    }
+    modDugmeler.otomatik.addEventListener("click", function () { modAyarla("otomatik"); });
+    modDugmeler["2d"].addEventListener("click", function () { modAyarla("2d"); });
+    modDugmeler["3d"].addEventListener("click", function () { modAyarla("3d"); });
+    modDugmeler.video.addEventListener("click", function () { modAyarla("video"); });
+
+    /* Video: varsa otomatik oynat; yoksa sessizce CSS crossfade'e düş.
+       Dosya sonradan eklendiğinde bu kod değişmeden video devreye girer. */
+    video.addEventListener("loadeddata", function () {
+      modDugmeler.video.hidden = false;
+      modAyarla("video");
+    });
+    video.addEventListener("error", function () {
+      modDugmeler.video.hidden = true;
+      if (sahne.classList.contains("mod-video")) modAyarla("otomatik");
+    });
+    video.src = videoYol;
+    video.load();
+  }
+
+  /* ---------- Oda tablosu ---------- */
+  function odaTablosuKur(od, villaMi, t) {
+    var tablo = el("odaTablo");
+    var katVar = od.odalar.some(function (o) { return !!o.kat; });
+    var maxM2 = 0;
+    od.odalar.forEach(function (o) { if (o.m2 > maxM2) maxM2 = o.m2; });
+
+    var thead = "<tr><th>Oda</th>" + (katVar ? "<th>Kat</th>" : "") +
+                '<th class="num">m²</th><th style="width:26%;">Alan Payı</th></tr>';
+    tablo.querySelector("thead").innerHTML = thead;
+
+    var tbody = tablo.querySelector("tbody");
+    var tahminiVar = false, disVar = false;
+
+    function satir(o) {
+      var isaret = "";
+      if (o.tahmini) { tahminiVar = true; isaret += ' <span class="oda-tahmini" title="Adlandırma plan görselinden yorumlanmıştır">*</span>'; }
+      if (o.dis)     { disVar = true;     isaret += ' <span class="oda-dis" title="Bahçe / dış alan">†</span>'; }
+      var katAd = o.kat === "zemin" ? "Zemin" : (o.kat === "kat1" ? "1. Kat" : "—");
+      var oran = Math.max(4, Math.round((o.m2 / maxM2) * 100));
+      var tr = document.createElement("tr");
+      tr.innerHTML =
+        "<td><b>" + o.ad + "</b>" + isaret + "</td>" +
+        (katVar ? "<td>" + katAd + "</td>" : "") +
+        '<td class="num">' + fm(o.m2) + "</td>" +
+        '<td><div class="m2-bar-kap"><div class="m2-bar" style="width:' + oran + '%"></div></div></td>';
+      tbody.appendChild(tr);
+    }
+    function araToplam(ad, deger) {
+      var tr = document.createElement("tr");
+      tr.className = "ara-toplam";
+      tr.innerHTML = "<td>" + ad + "</td>" + (katVar ? "<td></td>" : "") +
+        '<td class="num">' + fm(deger) + "</td><td></td>";
+      tbody.appendChild(tr);
+    }
+
+    var icToplam = 0;
+    if (katVar) {
+      var katlar = [{ k: "zemin", ad: "Zemin Kat" }, { k: "kat1", ad: "1. Kat" }];
+      katlar.forEach(function (kat) {
+        var toplamKat = 0;
+        od.odalar.forEach(function (o) {
+          if (o.kat !== kat.k) return;
+          satir(o);
+          if (!o.dis) toplamKat += o.m2;
+        });
+        araToplam(kat.ad + " Oda Toplamı (iç mekân)", toplamKat);
+        icToplam += toplamKat;
+      });
+    } else {
+      od.odalar.forEach(function (o) { satir(o); if (!o.dis) icToplam += o.m2; });
+    }
+
+    var genel = document.createElement("tr");
+    genel.className = "genel-toplam";
+    var genelDeger = (od.toplamNet != null) ? od.toplamNet : icToplam;
+    var genelAd = (od.toplamNet != null) ? "Toplam Net Alan" : "Oda Toplamı (iç mekân)";
+    genel.innerHTML = "<td>" + genelAd + "</td>" + (katVar ? "<td></td>" : "") +
+      '<td class="num">' + fm(genelDeger) + ' m²</td><td></td>';
+    tbody.appendChild(genel);
+
+    var dipnot = [];
+    dipnot.push("m² değerleri resmî teklif dosyasındaki plan ölçülerinden derlenmiştir. Resmî net alan aralığı: <b class=\"num\">" + aralik(t.netMin, t.netMaks) + " m²</b>.");
+    if (tahminiVar) dipnot.push('<span class="oda-tahmini">*</span> Adlandırma plan görselinden yorumlanmıştır; m² değeri resmîdir.');
+    if (disVar) dipnot.push('<span class="oda-dis">†</span> Bahçe / dış alan — iç mekân toplamına dahil edilmemiştir.');
+    if (od.toplamNet == null) dipnot.push("Oda toplamı, plan üzerindeki oda ölçülerinin aritmetik toplamıdır; balkon, merdiven boşluğu ve duvar düşümleri nedeniyle resmî net alan hesabından farklılık gösterebilir.");
+    el("odaDipnot").innerHTML = dipnot.join("<br>");
+  }
+
+  /* ---------- 52 hafta şeridi ---------- */
+  function haftaSeridiKur() {
+    var serit = el("haftaSerit");
+    var sayilar = { musait: 0, opsiyonlu: 0, satildi: 0 };
+    var durumAd = { musait: "Müsait", opsiyonlu: "Opsiyonlu", satildi: "Satıldı" };
+    donemler.forEach(function (d) {
+      sayilar[d.durum]++;
+      var kutu = document.createElement("div");
+      kutu.className = "hafta " + d.durum + " sez-" + d.sezon;
+      kutu.title = "Hafta " + d.hafta + " · " + d.sezonAd + " · " + durumAd[d.durum];
+      serit.appendChild(kutu);
+    });
+    el("haftaOzet").innerHTML =
+      '<div class="kutu"><b>' + sayilar.musait + '</b> hafta müsait</div>' +
+      '<div class="kutu"><b>' + sayilar.opsiyonlu + '</b> hafta opsiyonlu</div>' +
+      '<div class="kutu"><b>' + sayilar.satildi + '</b> hafta satıldı</div>';
+  }
+
+  /* ---------- Işık kutusu ---------- */
+  var isikKutu = el("isikKutu");
+  function isikAc(src, alt) {
+    el("isikGorsel").src = src;
+    el("isikGorsel").alt = alt;
+    el("isikYazi").textContent = alt;
+    isikKutu.classList.add("acik");
+    el("isikKapat").focus();
+  }
+  function isikKapat() { isikKutu.classList.remove("acik"); }
+  el("isikKapat").addEventListener("click", isikKapat);
+  isikKutu.addEventListener("click", function (e) { if (e.target === isikKutu) isikKapat(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") isikKapat(); });
+})();
+</script>
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+</body>
+</html>

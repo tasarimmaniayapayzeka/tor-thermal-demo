@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keşif Rotaları — Bozburun Feneri, Şelaleler ve Saklı Göl | TOR Thermal Yalova Armutlu</title>
+<meta name="description" content="Tor Thermal'den günübirlik doğa rotaları: fünikülerle Bozburun Feneri, Sudüşen ve Erikli şelaleleri, tarihi taş köprü ve orman içinde saklı Dipsiz Göl. Süre, zorluk ve mevsim önerileriyle bölge gezi rehberi.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Keşif Rotaları — TOR Thermal | Yarımadadan Başlayan Doğa Rehberi">
+<meta property="og:description" content="Fünikülerle fenere, orman patikasından şelaleye: Tor Thermal'den günübirlik beş keşif rotası.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/ai/sudusen-selalesi.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Tor Thermal Keşif Rotaları — Armutlu Yarımadası ve Yalova Çevresi",
+  "description": "Tor Thermal resortundan günübirlik ulaşılan doğa ve kültür rotaları.",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "item": { "@type": "TouristAttraction", "name": "Bozburun Feneri", "description": "Armutlu Yarımadası'nın ucundaki tarihi deniz feneri; fünikülerle ulaşılan seyir terası." } },
+    { "@type": "ListItem", "position": 2, "item": { "@type": "TouristAttraction", "name": "Sudüşen Şelalesi", "description": "Yalova Termal ormanlarında ahşap patikayla ulaşılan şelale." } },
+    { "@type": "ListItem", "position": 3, "item": { "@type": "TouristAttraction", "name": "Tarihi Taş Köprü", "description": "Dere yatağı üzerinde tek kemerli tarihi taş köprü." } },
+    { "@type": "ListItem", "position": 4, "item": { "@type": "TouristAttraction", "name": "Erikli Şelalesi", "description": "Erikli Yaylası'nın serin suları ve yayla kahvaltısıyla ünlü şelale rotası." } },
+    { "@type": "ListItem", "position": 5, "item": { "@type": "TouristAttraction", "name": "Dipsiz Göl", "description": "Orman içinde saklı, efsanesiyle bilinen yayla gölü." } }
+  ]
+}
+</script>
+<style>
+/* ---- kesif-rotalari.html'e özel küçük ekler ---- */
+[id]{ scroll-margin-top:110px; }
+
+/* Patika: hızlı geçiş infografiği */
+.patika{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:12px;
+  position:relative; margin-top:44px;
+}
+.patika::before{
+  content:""; position:absolute; top:26px; left:9%; right:9%;
+  border-top:2px dashed #CBC2AF; z-index:0;
+}
+.patika a{
+  position:relative; z-index:1; display:block; text-decoration:none;
+  text-align:center; color:var(--murekkep);
+}
+.patika .nokta{
+  width:52px; height:52px; border-radius:50%; margin:0 auto 12px;
+  background:var(--beyaz); border:2px solid var(--turkuaz);
+  color:var(--lacivert); font-family:var(--serif); font-size:19px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:var(--golge-kucuk);
+  transition:transform .25s ease, background .25s ease, color .25s ease;
+}
+.patika a:hover .nokta{ transform:translateY(-5px) scale(1.06); background:var(--turkuaz); color:#fff; }
+.patika .ad{ font-size:13px; font-weight:700; line-height:1.35; }
+.patika .uzaklik{ display:block; font-size:11.5px; color:var(--soluk); font-weight:600; margin-top:3px; }
+@media (max-width:760px){
+  .patika{ grid-template-columns:repeat(2,1fr); row-gap:26px; }
+  .patika::before{ display:none; }
+}
+
+/* Rota bölümleri */
+.rota-gorsel{
+  position:relative; border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--golge); aspect-ratio:4/3; background:var(--lacivert-derin);
+}
+.rota-gorsel img{
+  width:100%; height:100%; object-fit:cover; transition:transform .7s ease;
+}
+.rota-gorsel:hover img{ transform:scale(1.05); }
+.rota-gorsel .no{
+  position:absolute; top:14px; left:20px; z-index:2;
+  font-family:var(--serif); font-size:52px; color:#fff; line-height:1;
+  text-shadow:0 2px 16px rgba(0,0,0,.55);
+}
+.gorsel-rozet{
+  position:absolute; left:16px; bottom:16px; z-index:2;
+  background:rgba(12,20,40,.72); backdrop-filter:blur(6px);
+  color:#fff; font-size:12.5px; font-weight:700; letter-spacing:.06em;
+  padding:7px 16px; border-radius:999px;
+  display:flex; align-items:center; gap:8px;
+}
+.gorsel-rozet svg{ width:13px; height:13px; stroke:var(--turkuaz-acik); fill:none; stroke-width:2; }
+
+/* Mini meta rozetleri: süre / zorluk / mevsim */
+.rota-meta{ display:flex; gap:10px; flex-wrap:wrap; margin:20px 0 6px; }
+.meta-rozet{
+  background:var(--beyaz); border:1px solid var(--cizgi); border-radius:999px;
+  padding:8px 16px; font-size:12.5px; font-weight:700; color:var(--lacivert);
+  display:flex; align-items:center; gap:8px;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.meta-rozet:hover{ transform:translateY(-2px); box-shadow:var(--golge-kucuk); }
+.meta-rozet svg{ width:15px; height:15px; stroke:var(--turkuaz); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.meta-rozet small{ font-weight:600; color:var(--soluk); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; }
+.zorluk-noktalar{ display:inline-flex; gap:4px; }
+.zorluk-noktalar span{
+  width:8px; height:8px; border-radius:50%; background:var(--cizgi);
+}
+.zorluk-noktalar span.dolu{ background:var(--bakir); }
+.koyu .meta-rozet{ background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.18); color:#DCE6F0; }
+.koyu .meta-rozet small{ color:#8FA2BC; }
+.koyu .zorluk-noktalar span{ background:rgba(255,255,255,.22); }
+.koyu .zorluk-noktalar span.dolu{ background:var(--bakir-acik); }
+
+/* Rota notları listesi */
+.rota-notlar{ list-style:none; padding:0; margin:16px 0 0; max-width:56ch; }
+.rota-notlar li{
+  position:relative; padding:9px 0 9px 26px; color:var(--soluk);
+  font-size:14.5px; line-height:1.55; border-bottom:1px dashed var(--cizgi);
+}
+.rota-notlar li:last-child{ border-bottom:none; }
+.rota-notlar li::before{
+  content:""; position:absolute; left:6px; top:17px;
+  width:7px; height:7px; border-radius:50%; background:var(--bakir);
+}
+
+/* Dipsiz Göl — görselsiz koyu kart */
+.gol-kart{
+  position:relative; max-width:860px; margin:44px auto 0;
+  background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius); padding:56px 48px; text-align:center; overflow:hidden;
+}
+@media (max-width:640px){ .gol-kart{ padding:40px 24px; } }
+.gol-kart::before{
+  content:""; position:absolute; inset:-30%; z-index:0; pointer-events:none;
+  background:
+    repeating-radial-gradient(circle at 22% 18%, transparent 0 42px, rgba(127,184,206,.09) 42px 44px),
+    repeating-radial-gradient(circle at 82% 78%, transparent 0 56px, rgba(210,167,104,.07) 56px 58px);
+}
+.gol-kart > *{ position:relative; z-index:1; }
+.gol-pin{ width:64px; height:64px; margin:0 auto 18px; display:block; }
+.gol-pin path, .gol-pin circle{ stroke:var(--bakir-acik); stroke-width:1.6; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+.gol-kart h2{ margin-bottom:10px; }
+.gol-kart .fisilti{
+  font-family:var(--serif); font-style:italic; color:#C3D0DE; font-size:17.5px;
+  max-width:46ch; margin:0 auto 18px;
+}
+.gol-kart p{ margin-left:auto; margin-right:auto; }
+.gol-kart .rota-meta{ justify-content:center; }
+
+/* Keşif günü akışı */
+.gun-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px; margin-top:40px;
+}
+.gun-kart{
+  background:var(--beyaz); border-radius:var(--radius); padding:26px 22px 24px;
+  box-shadow:var(--golge-kucuk); border-top:4px solid var(--turkuaz);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.gun-kart:hover{ transform:translateY(-6px); box-shadow:var(--golge); }
+.gun-kart.bakir-ust{ border-top-color:var(--bakir); }
+.gun-kart .saat{
+  font-family:var(--serif); font-size:30px; color:var(--lacivert);
+  line-height:1; font-variant-numeric:tabular-nums;
+}
+.gun-kart h3{ font-size:16.5px; margin:12px 0 6px; }
+.gun-kart p{ font-size:13.8px; color:var(--soluk); margin:0; }
+
+/* CTA şeridinde çift buton */
+.cta-butonlar{ display:flex; gap:12px; flex-wrap:wrap; margin-left:auto; }
+.cta-butonlar .btn{ margin-left:0; }
+@media (max-width:760px){ .cta-butonlar{ margin-left:0; } }
+</style>
+</head>
+<body>
+
+<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ SAYFA BAŞLIĞI ============ -->
+<section class="sayfa-baslik">
+  <div class="arka"><img src="assets/img/ai/sudusen-selalesi.jpg" alt="Sudüşen Şelalesi'nin yosunlu kayalardan döküldüğü orman manzarası"></div>
+  <div class="ic">
+    <div class="kirinti"><a href="index.html">Ana Sayfa</a> · Keşif Rotaları</div>
+    <h1>Kapınızdan Başlayan Keşif Rotaları</h1>
+    <p class="alt">Termal günlerinizin arasına bir doğa molası ekleyin: fenerden şelaleye, taş köprüden saklı göle — hepsi yerleşkeden günübirlik mesafede.</p>
+  </div>
+</section>
+
+<!-- ============ GİRİŞ + PATİKA ============ -->
+<section id="patika">
+  <div class="ic">
+    <div class="gozkasi gorun">Bölge Rehberi</div>
+    <h2 class="gorun">Beş Rota, Bir Yarımada</h2>
+    <p class="bolum-giris gorun">Armutlu Yarımadası'nın şansı, iki dünyanın tam ortasında durması: bir yanda Marmara'nın maviliği, diğer yanda Samanlı Dağları'nın orman denizi. Tor Thermal'den yola çıkan beş rota derledik; kiminde fünikülere biniyorsunuz, kiminde ahşap bir patikada su sesini takip ediyorsunuz. Bir noktaya dokunun, rotaya inin.</p>
+    <div class="patika gorun" aria-label="Rota hızlı geçiş haritası">
+      <a href="#bozburun-feneri">
+        <span class="nokta">01</span>
+        <span class="ad">Bozburun Feneri</span>
+        <span class="uzaklik">Yerleşke içinde</span>
+      </a>
+      <a href="#sudusen-selalesi">
+        <span class="nokta">02</span>
+        <span class="ad">Sudüşen Şelalesi</span>
+        <span class="uzaklik">Araçla ~40 dk</span>
+      </a>
+      <a href="#tas-kopru">
+        <span class="nokta">03</span>
+        <span class="ad">Tarihi Taş Köprü</span>
+        <span class="uzaklik">Araçla ~40 dk</span>
+      </a>
+      <a href="#erikli-selalesi">
+        <span class="nokta">04</span>
+        <span class="ad">Erikli Şelalesi</span>
+        <span class="uzaklik">Araçla ~35 dk</span>
+      </a>
+      <a href="#dipsiz-gol">
+        <span class="nokta">05</span>
+        <span class="ad">Dipsiz Göl</span>
+        <span class="uzaklik">Araçla ~45 dk</span>
+      </a>
+    </div>
+    <p class="temsili gorun">Süreler yaklaşıktır; hava, mevsim ve yol koşullarına göre değişebilir. Rota planlaması için resepsiyondan güncel bilgi alabilirsiniz.</p>
+  </div>
+</section>
+
+<!-- ============ ROTA 01 — BOZBURUN FENERİ ============ -->
+<section id="bozburun-feneri" class="kum-zemin">
+  <div class="ic iki-kolon">
+    <div>
+      <div class="gozkasi gorun">Rota 01 · Yerleşke İçi</div>
+      <h2 class="gorun">Bozburun Feneri: Fünikülerle Ufka Yolculuk</h2>
+      <p class="bolum-giris gorun">Beş rotanın en yakını, kapınızın hemen önünde başlıyor. Yerleşkenin fünikülerine binin; kabin yamacı tırmanırken Marmara ayaklarınızın altında genişlesin. Yukarıda sizi seyir terası ve yarımadanın ucundaki tarihi Bozburun Feneri karşılıyor — yıllardır gemilere yol gösteren bu yapı, şimdi gün batımlarının en iyi izlendiği noktalardan biri.</p>
+      <div class="rota-meta gorun">
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <small>Süre</small> Füniküler + teras, ~1 saat
+        </span>
+        <span class="meta-rozet">
+          <small>Zorluk</small>
+          <span class="zorluk-noktalar" aria-label="Zorluk: kolay"><span class="dolu"></span><span></span><span></span></span>
+          Kolay
+        </span>
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
+          <small>Mevsim</small> Dört mevsim, en iyisi gün batımı
+        </span>
+      </div>
+      <ul class="rota-notlar gorun">
+        <li>Füniküler ve seyir terası resort sakinlerinin kullanımına yönelik planlanıyor; ayrı araç gerektirmez.</li>
+        <li>Gün batımından yaklaşık 45 dakika önce çıkın; ışık, feneri altın rengine boyar.</li>
+        <li>Teras rüzgâr alabilir; yazın bile ince bir üst katman iyi gelir.</li>
+      </ul>
+      <div class="bosluk-kucuk"></div>
+      <a class="btn btn-koyu btn-kucuk gorun" href="kesfet.html">Vaziyet Planında Feneri Görün</a>
+    </div>
+    <div class="rota-gorsel gorun">
+      <span class="no" aria-hidden="true">01</span>
+      <img src="assets/img/ai/ritual-7-funikuler.jpg" alt="Füniküler kabini gün batımında Bozburun Feneri'ne ve seyir terasına tırmanıyor" loading="lazy">
+      <span class="gorsel-rozet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Yerleşke içinde</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROTA 02 — SUDÜŞEN ŞELALESİ ============ -->
+<section id="sudusen-selalesi">
+  <div class="ic iki-kolon">
+    <div class="rota-gorsel gorun">
+      <span class="no" aria-hidden="true">02</span>
+      <img src="assets/img/ai/sudusen-selalesi.jpg" alt="Sudüşen Şelalesi yosun kaplı kayalardan orman içindeki havuza dökülüyor" loading="lazy">
+      <span class="gorsel-rozet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Araçla ~40 dk</span>
+    </div>
+    <div>
+      <div class="gozkasi gorun">Rota 02 · Orman Patikası</div>
+      <h2 class="gorun">Sudüşen Şelalesi: Suyun Sesini Takip Edin</h2>
+      <p class="bolum-giris gorun">Yalova Termal'in ardındaki kayın ve çınar ormanında, ahşap yürüyüş platformlarıyla döşenmiş bir patika sizi şelaleye taşır. Yol boyunca dere hep yanınızdadır; son virajı döndüğünüzde su, yosunlu kayalardan katman katman dökülür. Serin, gölgeli ve fotoğrafa doymayan bir rota — dönüşte Termal'in tarihi hamam meydanında çay molası klasiktir.</p>
+      <div class="rota-meta gorun">
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <small>Süre</small> Yürüyüş ~30-40 dk
+        </span>
+        <span class="meta-rozet">
+          <small>Zorluk</small>
+          <span class="zorluk-noktalar" aria-label="Zorluk: kolay-orta"><span class="dolu"></span><span class="dolu"></span><span></span></span>
+          Kolay-Orta
+        </span>
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-3 7-7 7z"/></svg>
+          <small>Mevsim</small> İlkbahar — su debisi en yüksek
+        </span>
+      </div>
+      <ul class="rota-notlar gorun">
+        <li>Ahşap platformlar nemli havada kayganlaşabilir; kaymaz tabanlı ayakkabı önerilir.</li>
+        <li>Sabah erken saatlerde patika sakindir; kuş sesi eşliğinde yürürsünüz.</li>
+        <li>Rota, Yalova Termal kaplıca yerleşimiyle birleştirilerek yarım günlük geziye dönüştürülebilir.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROTA 03 — TARİHİ TAŞ KÖPRÜ ============ -->
+<section id="tas-kopru" class="buz-zemin">
+  <div class="ic iki-kolon">
+    <div>
+      <div class="gozkasi gorun">Rota 03 · Kültür Durağı</div>
+      <h2 class="gorun">Tarihi Taş Köprü: Zamanın Üzerinden Geçin</h2>
+      <p class="bolum-giris gorun">Dere yatağının üzerinde asırlardır duran tek kemerli taş köprü, bölgenin en zarif kültür duraklarından. Kesme taşların arasından sarkan sarmaşıklar, altından akan suyun sesi ve çevresindeki çınar gölgeleri; kısa ama akılda kalan bir mola vaat eder. Kemerin tam ortasında durup dereye bakmak — buranın küçük ritüeli budur.</p>
+      <div class="rota-meta gorun">
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <small>Süre</small> Mola ~30 dk
+        </span>
+        <span class="meta-rozet">
+          <small>Zorluk</small>
+          <span class="zorluk-noktalar" aria-label="Zorluk: kolay"><span class="dolu"></span><span></span><span></span></span>
+          Kolay
+        </span>
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-3 7-7 7z"/></svg>
+          <small>Mevsim</small> Sonbahar — çınarlar renklenince
+        </span>
+      </div>
+      <ul class="rota-notlar gorun">
+        <li>Araç yoluna yakındır; yürüme mesafesi kısadır, her yaş için uygundur.</li>
+        <li>Şelale rotalarıyla aynı güzergâhta birleştirilebilir; sürücünüze tek günlük tur olarak planlatın.</li>
+        <li>Gün ortası ışığında taş dokusu fotoğraflarda en iyi sonucu verir.</li>
+      </ul>
+      <div class="bosluk-kucuk"></div>
+      <a class="btn btn-koyu btn-kucuk gorun" href="lokasyon.html">Ulaşım Seçeneklerini Görün</a>
+    </div>
+    <div class="rota-gorsel gorun">
+      <span class="no" aria-hidden="true">03</span>
+      <img src="assets/img/ai/tas-kopru.jpg" alt="Tek kemerli tarihi taş köprü, altından akan dere ve çevresindeki yeşillik" loading="lazy">
+      <span class="gorsel-rozet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Araçla ~40 dk</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROTA 04 — ERİKLİ ŞELALESİ ============ -->
+<section id="erikli-selalesi">
+  <div class="ic iki-kolon">
+    <div class="rota-gorsel gorun">
+      <span class="no" aria-hidden="true">04</span>
+      <img src="assets/img/ai/erikli-selalesi.jpg" alt="Erikli Şelalesi'nin yayladaki doğal havuzcuklara dökülen serin suları" loading="lazy">
+      <span class="gorsel-rozet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Araçla ~35 dk</span>
+    </div>
+    <div>
+      <div class="gozkasi gorun">Rota 04 · Yayla Sabahı</div>
+      <h2 class="gorun">Erikli Şelalesi: Yayla Kahvaltısıyla Taçlanan Rota</h2>
+      <p class="bolum-giris gorun">Erikli Yaylası'na tırmanan yol, her virajda Marmara'yı biraz daha aşağıda bırakır. Yaylaya vardığınızda sizi iki ödül bekler: doğal havuzcuklara dökülen serin şelale ve yayla evlerinin bahçesinde kurulan köy kahvaltısı. Sabah erken çıkın; kahvaltıdan önce şelaleye inen patikayı yürüyün, sofraya iştahla oturun.</p>
+      <div class="rota-meta gorun">
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <small>Süre</small> Yarım gün, kahvaltı dahil
+        </span>
+        <span class="meta-rozet">
+          <small>Zorluk</small>
+          <span class="zorluk-noktalar" aria-label="Zorluk: orta"><span class="dolu"></span><span class="dolu"></span><span></span></span>
+          Orta — patika eğimli
+        </span>
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.5 1.5M16.9 16.9l1.5 1.5M5.6 18.4l1.5-1.5M16.9 7.1l1.5-1.5"/></svg>
+          <small>Mevsim</small> Yaz — şehir sıcağından kaçış
+        </span>
+      </div>
+      <ul class="rota-notlar gorun">
+        <li>Şelaleye inen son bölüm eğimlidir; yürüyüş ayakkabısı ve su şişesi bulundurun.</li>
+        <li>Hafta sonları yayla kahvaltıcıları yoğun olabilir; erken varış rahatlık sağlar.</li>
+        <li>Dönüş yolunda köy pazarlarından yayla ürünleri alınabilir.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROTA 05 — DİPSİZ GÖL ============ -->
+<section id="dipsiz-gol" class="koyu">
+  <div class="ic">
+    <div class="orta">
+      <div class="gozkasi gorun">Rota 05 · Saklı Durak</div>
+      <h2 class="gorun">Dipsiz Göl</h2>
+    </div>
+    <div class="gol-kart gorun">
+      <svg class="gol-pin" viewBox="0 0 64 64" role="img" aria-label="Harita işareti">
+        <path d="M32 58S12 41 12 24a20 20 0 1 1 40 0c0 17-20 34-20 34z"/>
+        <circle cx="32" cy="24" r="7"/>
+        <path d="M22 24h-6M48 24h-6" opacity=".45"/>
+      </svg>
+      <p class="fisilti">Bu rotanın fotoğrafını bilerek koymadık. Bazı yerlerin ilk karesi, oraya kendi gözleriyle varanların hakkıdır.</p>
+      <p style="color:#9FB0C4; font-size:15.5px; max-width:60ch;">Orman yolunun bittiği yerde, ağaçların araladığı bir perdenin ardında durur Dipsiz Göl. Adını, dibinin bulunamadığını söyleyen eski bir yayla efsanesinden alır. Sabah sisinde yüzeyi ayna gibidir; çevresindeki çayırlar bölgenin en sevilen piknik ve fotoğraf duraklarındandır. Sessizliği bozan tek şey, ara sıra suya değen bir dal ya da uzaktan gelen çan sesidir.</p>
+      <div class="rota-meta">
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <small>Süre</small> Araçla ~45 dk + göl çevresi yürüyüşü
+        </span>
+        <span class="meta-rozet">
+          <small>Zorluk</small>
+          <span class="zorluk-noktalar" aria-label="Zorluk: kolay"><span class="dolu"></span><span></span><span></span></span>
+          Kolay
+        </span>
+        <span class="meta-rozet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-3 7-7 7z"/></svg>
+          <small>Mevsim</small> İlkbahar sisi ya da yaz piknikleri
+        </span>
+      </div>
+      <p class="temsili" style="color:#7286A3;">Orman içi yollar mevsime göre değişkenlik gösterebilir; çıkmadan önce resepsiyondan güncel yol durumu alınız.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAHAR AKTİVİTELERİ ============ -->
+<section class="kum-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">Mevsimin Ritmi</div>
+    <h2 class="gorun">Bahar Geldiğinde Yarımada Uyanır</h2>
+    <p class="bolum-giris gorun">Rotalar işin yalnızca yarısı. Bahar aylarında yerleşke çevresi, adrenalini doğayla buluşturan aktivitelerle canlanır — sabah termal havuzda başlayan gün, öğleden sonra orman yolunda devam eder.</p>
+    <div class="rozet-band gorun">
+      <span class="rozet">Trekking parkurları</span>
+      <span class="rozet">ATV safari</span>
+      <span class="rozet">Kaya tırmanışı</span>
+      <span class="rozet">Off-road güzergâhları</span>
+      <span class="rozet">Bisiklet &amp; sahil yürüyüşü</span>
+      <span class="rozet">Foto safari</span>
+    </div>
+    <p class="temsili gorun">Aktiviteler mevsim ve hava koşullarına bağlıdır; bir bölümü yerel operatörlerce düzenlenir. Yoğun fiziksel aktiviteler öncesinde sağlık durumunuzun uygunluğu için hekiminize danışınız.</p>
+  </div>
+</section>
+
+<!-- ============ KEŞİF GÜNÜ AKIŞI ============ -->
+<section>
+  <div class="ic">
+    <div class="gozkasi gorun">Küçük Bir Plan</div>
+    <h2 class="gorun">Bir Keşif Günü Nasıl Akar?</h2>
+    <p class="bolum-giris gorun">Rotayı seçtiniz; gerisi zarif bir ritim meselesi. Örnek bir gün akışı şöyle görünür — saatler tamamen size kalmış.</p>
+    <div class="gun-grid gorun">
+      <div class="gun-kart">
+        <div class="saat">08:00</div>
+        <h3>Güne Yavaş Başlayın</h3>
+        <p>Kahvaltının ardından resepsiyondan rota bilgisini ve yol durumunu alın.</p>
+      </div>
+      <div class="gun-kart">
+        <div class="saat">09:30</div>
+        <h3>Rotaya Çıkın</h3>
+        <p>Şelale, köprü ya da göl — seçtiğiniz durakta doğanın temposuna geçin.</p>
+      </div>
+      <div class="gun-kart">
+        <div class="saat">15:00</div>
+        <h3>Termal Dönüş</h3>
+        <p>Yürüyüşün yorgunluğunu yaklaşık 38° termal suda bırakın; kaslarınız teşekkür eder.</p>
+      </div>
+      <div class="gun-kart bakir-ust">
+        <div class="saat">19:00</div>
+        <h3>Fenerde Final</h3>
+        <p>Fünikülerle seyir terasına çıkın; günü Bozburun Feneri'nde, ufka karşı kapatın.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SON CTA ============ -->
+<section style="padding-top:0;">
+  <div class="ic">
+    <div class="cta-serit gorun">
+      <div>
+        <div class="gozkasi" style="color:var(--bakir-acik);">Deneyim Günü</div>
+        <h2>Rotaları Bir de Yerinde Konuşalım</h2>
+        <p>Deneyim Günü'nde yerleşkeyi gezin, termal suyu deneyin; çevre rotaları ekibimizle birlikte planlayın. Karar her zaman sizin, her zaman baskısız.</p>
+      </div>
+      <div class="cta-butonlar">
+        <a class="btn btn-birincil" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>
+        <a class="btn btn-hayalet" href="lokasyon.html">Ulaşım &amp; Lokasyon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<a class="wa-balon" href="https://wa.me/902126716968?text=Merhaba%2C%20Tor%20Thermal%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9.9-4.7-.3-.6c-.9-1.6-1.4-3.4-1.4-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.7 10.8-10.2 10.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Çocuk Kulübü &amp; Genç Keşif — Oyun, Uzay ve Robotik | TOR Thermal Yalova Armutlu</title>
+<meta name="description" content="Tor Thermal'de denetimli alanlar ebeveynlere huzur, çocuklara özgürce keşif sunar: Oyun Terapileri, Uzay İnceleme Kulübü ve Robotik Eğitim Kulübü; macera parkuru, saman labirent, mini golf ve gökyüzü gözlem geceleri.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Çocuk Kulübü &amp; Genç Keşif — TOR Thermal">
+<meta property="og:description" content="Denetimli alanlarla ebeveynlere huzur, çocuklara özgürce keşif: oyun, uzay ve robotik kulüpleri; macera parkuru ve gökyüzü gözlem geceleri.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/ai/oyun-terapisi.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* Çocuk Kulübü sayfasına özel küçük eklemeler — site token'larıyla */
+
+/* Yaş grubu infografiği */
+.yas-serit{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:40px; }
+.yas-kutu{
+  background:var(--beyaz); border-radius:var(--radius); padding:24px 24px 22px;
+  box-shadow:var(--golge-kucuk); border-top:5px solid var(--turkuaz);
+  transition:transform .3s ease, box-shadow .3s ease; position:relative; overflow:hidden;
+}
+.yas-kutu:hover{ transform:translateY(-6px); box-shadow:var(--golge); }
+.yas-kutu.mucit{ border-top-color:var(--bakir); }
+.yas-kutu.genc{ border-top-color:var(--lacivert); }
+.yas-kutu .aralik{
+  display:inline-block; font-family:var(--serif); font-size:30px; color:var(--lacivert);
+  line-height:1; margin-bottom:8px;
+}
+.yas-kutu .aralik small{ font-family:var(--sans); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--soluk); display:block; margin-top:6px; }
+.yas-kutu h3{ font-size:18px; margin-bottom:6px; }
+.yas-kutu p{ font-size:13.8px; color:var(--soluk); margin:0; }
+.yas-kutu::after{
+  content:""; position:absolute; right:-34px; bottom:-34px; width:110px; height:110px;
+  border-radius:50%; background:radial-gradient(circle, var(--turkuaz-buz), transparent 72%);
+  opacity:0; transition:opacity .4s ease;
+}
+.yas-kutu:hover::after{ opacity:1; }
+
+/* Üç kulüp büyük kartları */
+.kulup-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:44px; }
+.kulup-kart{
+  background:var(--beyaz); border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--golge-kucuk); display:flex; flex-direction:column; position:relative;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.kulup-kart:hover{ transform:translateY(-8px); box-shadow:var(--golge); }
+.kulup-kart .medya{ aspect-ratio:4/3; overflow:hidden; position:relative; }
+.kulup-kart .medya img{ width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
+.kulup-kart:hover .medya img{ transform:scale(1.06); }
+.kulup-kart .medya::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(12,20,40,.55), transparent 46%);
+}
+.kulup-no{
+  position:absolute; top:16px; left:18px; z-index:2; font-family:var(--serif);
+  font-size:42px; color:#fff; text-shadow:0 2px 16px rgba(0,0,0,.55); line-height:1;
+}
+.kulup-etiket{
+  position:absolute; bottom:14px; left:18px; z-index:2;
+  background:rgba(255,255,255,.16); backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.35); color:#fff; border-radius:999px;
+  font-size:11.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:6px 14px;
+}
+.kulup-kart .bilgi{ padding:24px 26px 26px; flex:1; display:flex; flex-direction:column; }
+.kulup-kart .bilgi h3{ margin-bottom:8px; }
+.kulup-kart .bilgi p{ font-size:14.6px; color:var(--soluk); margin:0 0 18px; }
+.kulup-kart .mini-liste{ list-style:none; margin:0 0 4px; padding:0; margin-top:auto; }
+.kulup-kart .mini-liste li{
+  font-size:13.2px; color:var(--soluk); padding:4px 0 4px 22px; position:relative;
+}
+.kulup-kart .mini-liste li::before{ content:"✓"; position:absolute; left:0; color:var(--turkuaz); font-weight:800; }
+
+/* Video çerçevesi */
+.video-cerceve{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--golge); background:#000; position:relative; }
+.video-cerceve video{ width:100%; aspect-ratio:16/10; object-fit:cover; }
+.video-not{
+  position:absolute; bottom:14px; right:16px; z-index:2;
+  background:rgba(12,20,40,.62); backdrop-filter:blur(6px); color:#DCE6F0;
+  font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:700;
+  padding:6px 14px; border-radius:999px;
+}
+.medya-yigin{ display:grid; gap:18px; }
+.medya-yigin .alt-gorsel{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--golge-kucuk); }
+.medya-yigin .alt-gorsel img{ width:100%; aspect-ratio:21/9; object-fit:cover; transition:transform .7s ease; }
+.medya-yigin .alt-gorsel:hover img{ transform:scale(1.05); }
+
+/* Vaziyet planı oyun rozetleri */
+.oyun-rozet-band{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+.oyun-rozet{
+  background:var(--beyaz); border:1.5px solid var(--cizgi); border-radius:999px;
+  padding:11px 24px; font-size:14px; font-weight:700; color:var(--lacivert);
+  display:flex; align-items:center; gap:10px;
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.oyun-rozet:hover{ transform:translateY(-3px); border-color:var(--turkuaz); box-shadow:var(--golge-kucuk); }
+.oyun-rozet svg{ width:20px; height:20px; stroke:var(--turkuaz); fill:none; stroke-width:1.8; flex:0 0 auto; }
+
+/* Güvenlik ilkeleri kutusu */
+.guvenlik-kap{
+  background:var(--beyaz); border-radius:var(--radius); box-shadow:var(--golge);
+  padding:44px 42px; border-top:6px solid var(--turkuaz); margin-top:44px;
+}
+@media (max-width:640px){ .guvenlik-kap{ padding:30px 24px; } }
+.guvenlik-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:28px; margin-top:26px; }
+.guvenlik-madde{ display:flex; gap:16px; align-items:flex-start; }
+.guvenlik-madde .simge{
+  flex:0 0 52px; width:52px; height:52px; border-radius:14px;
+  background:var(--turkuaz-buz); display:flex; align-items:center; justify-content:center;
+  transition:transform .3s ease, background .3s ease;
+}
+.guvenlik-madde:hover .simge{ transform:translateY(-4px) scale(1.05); background:var(--kum); }
+.guvenlik-madde .simge svg{ width:26px; height:26px; stroke:var(--lacivert); fill:none; stroke-width:1.7; }
+.guvenlik-madde h3{ font-size:16.5px; margin-bottom:5px; }
+.guvenlik-madde p{ font-size:13.6px; color:var(--soluk); margin:0; }
+</style>
+</head>
+<body>
+
+<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ SAYFA BAŞLIĞI ============ -->
+<section class="sayfa-baslik">
+  <div class="arka"><img src="assets/img/ai/oyun-terapisi.jpg" alt="Çocuk kulübü oyun atölyesinde renkli etkinlik alanı" loading="eager"></div>
+  <div class="ic">
+    <div class="kirinti"><a href="index.html">Ana Sayfa</a> · Çocuk Kulübü &amp; Genç Keşif</div>
+    <h1>Çocuk Kulübü &amp; Genç Keşif</h1>
+    <p class="alt">Siz termal suyun tadını çıkarırken, onlar kendi maceralarının kahramanı olsun. Denetimli alanlar ebeveynlere huzur, çocuklara özgürce keşif sunar.</p>
+  </div>
+</section>
+
+<!-- ============ GİRİŞ + YAŞ GRUBU İNFOGRAFİĞİ ============ -->
+<section>
+  <div class="ic">
+    <div class="gozkasi gorun">Ailelere Özel</div>
+    <h2 class="gorun">Ebeveynlere Huzur, Çocuklara Özgürce Keşif</h2>
+    <p class="bolum-giris gorun">Tor Thermal'de çocuk kulübü bir "oyalama alanı" değil, yerleşkenin kalbine yerleştirilmiş bir keşif kampüsüdür. Denetimli iç ve dış alanlarda, eğitimli ekip eşliğinde kurgulanan programlar; oyunun içine öğrenmeyi, öğrenmenin içine merakı saklar. Siz spa'da bir ritüeli tamamlarken, çocuğunuz belki bir robotu ilk kez yürütüyor, belki de teleskoptan Satürn'ün halkalarına ilk kez bakıyor olacak.</p>
+    <div class="yas-serit">
+      <article class="yas-kutu gorun">
+        <span class="aralik">4–7<small>Minik Kâşifler</small></span>
+        <h3>Oyunla Tanışma</h3>
+        <p>Renk, ritim ve hikâye temelli oyun atölyeleri; kısa süreli, bol molalı ve daima göz önünde bir program akışı.</p>
+      </article>
+      <article class="yas-kutu mucit gorun">
+        <span class="aralik">8–12<small>Genç Mucitler</small></span>
+        <h3>Yaparak Öğrenme</h3>
+        <p>Robotik setler, maket atölyeleri ve takım oyunları; merakı projeye dönüştüren rehberli etkinlikler.</p>
+      </article>
+      <article class="yas-kutu genc gorun">
+        <span class="aralik">13+<small>Genç Gözlemciler</small></span>
+        <h3>Derin Keşif</h3>
+        <p>Gökyüzü gözlem geceleri, ileri robotik projeleri ve macera parkuru; gençlere kendi alanlarını açan bir ritim.</p>
+      </article>
+    </div>
+    <p class="temsili gorun">Yaş aralıkları ve program içerikleri temsilîdir; dönemsel etkinlik takvimi resepsiyon ve mobil uygulama üzerinden duyurulur.</p>
+  </div>
+</section>
+
+<!-- ============ ÜÇ KULÜP ============ -->
+<section class="kum-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">Üç Kulüp, Tek Kampüs</div>
+    <h2 class="gorun">Oyun, Uzay ve Robotik: Her Merak İçin Bir Kapı</h2>
+    <p class="bolum-giris gorun">Her çocuğun merakı farklı yönden gelir. Tor Thermal'in üç kulübü bu yüzden birbirinin tekrarı değil, birbirinin tamamlayıcısıdır — bir gün oyunla başlayan keşif, ertesi gün gökyüzünde veya bir devre kartının üzerinde devam eder.</p>
+    <div class="kulup-grid">
+      <article class="kulup-kart gorun">
+        <div class="medya">
+          <span class="kulup-no">01</span>
+          <img src="assets/img/ai/oyun-terapisi.jpg" alt="Oyun atölyesinde eğitmen eşliğinde etkinlik yapan çocuklar" loading="lazy">
+          <span class="kulup-etiket">4–12 Yaş</span>
+        </div>
+        <div class="bilgi">
+          <h3>Oyun Terapileri</h3>
+          <p>Uzman eğitmenler eşliğinde kurgulanan oyun atölyeleri; hareket, hikâye ve el becerisini tek akışta buluşturur. Amaç yalnızca eğlence değil; paylaşmayı, sabrı ve birlikte üretmeyi oyunun doğal ritmi içinde desteklemektir. Her seans yaş grubuna göre planlanır.</p>
+          <ul class="mini-liste">
+            <li>Hikâye ve drama atölyeleri</li>
+            <li>El becerisi &amp; sanat köşeleri</li>
+            <li>Grup oyunları ve hareket alanı</li>
+          </ul>
+        </div>
+      </article>
+      <article class="kulup-kart gorun">
+        <div class="medya">
+          <span class="kulup-no">02</span>
+          <img src="assets/img/ai/uzay-kulubu.jpg" alt="Uzay İnceleme Kulübü'nde gezegen modelleri ve teleskop köşesi" loading="lazy">
+          <span class="kulup-etiket">7+ Yaş</span>
+        </div>
+        <div class="bilgi">
+          <h3>Uzay İnceleme Kulübü</h3>
+          <p>Gezegen maketleri, yıldız haritaları ve teleskop köşesiyle donatılmış kulüp; gündüz atölyede başlayan merakı, gece seyir teraslarındaki gözlem seanslarına taşır. Işık kirliliğinden uzak yarımada gökyüzü, kulübün en büyük dersliğidir.</p>
+          <ul class="mini-liste">
+            <li>Takımyıldız ve gezegen atölyeleri</li>
+            <li>Teleskopla rehberli gözlem</li>
+            <li>Meteor yağmuru takvimi etkinlikleri</li>
+          </ul>
+        </div>
+      </article>
+      <article class="kulup-kart gorun">
+        <div class="medya">
+          <span class="kulup-no">03</span>
+          <img src="assets/img/ai/robotik-atolye.jpg" alt="Robotik atölyesinde robot seti kuran çocuklar" loading="lazy">
+          <span class="kulup-etiket">8+ Yaş</span>
+        </div>
+        <div class="bilgi">
+          <h3>Robotik Eğitim Kulübü</h3>
+          <p>Sensörler, motorlar ve blok tabanlı kodlamayla çocuklar kendi robotlarını kurar, dener ve yarıştırır. Takım hâlinde üretilen her proje; problem çözmeyi, denemekten korkmamayı ve birlikte başarmayı destekler.</p>
+          <ul class="mini-liste">
+            <li>Blok tabanlı kodlama başlangıcı</li>
+            <li>Sensörlü robot kurulum setleri</li>
+            <li>Takım projeleri ve mini yarışlar</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <p class="temsili gorun">"Oyun Terapileri" pedagojik içerikli etkinlik programıdır; tıbbi bir tedavi hizmeti değildir. Çocuğunuzun gelişimine ilişkin sorularınız için uzmanına danışınız.</p>
+  </div>
+</section>
+
+<!-- ============ VİDEO ŞERİT: ATÖLYEDE BİR AN ============ -->
+<section>
+  <div class="ic iki-kolon">
+    <div class="video-cerceve gorun">
+      <video autoplay muted loop playsinline poster="assets/img/ai/robotik-atolye.jpg" aria-label="Robotik atölyesinden kısa bir an">
+        <source src="assets/video/robotik.mp4" type="video/mp4">
+      </video>
+      <span class="video-not">Robotik Atölyesi</span>
+    </div>
+    <div>
+      <div class="gozkasi gorun">Atölyede Bir An</div>
+      <h2 class="gorun">İlk Robot Yürüdüğünde Atölyeden Yükselen Ses</h2>
+      <p class="bolum-giris gorun">Saat 15.40. Üç haftadır aynı masada buluşan ekip, çizgi izleyen robotlarını ilk kez piste bırakıyor. Sensör çizgiyi yakalıyor, tekerlekler dönüyor ve atölye alkışa boğuluyor. Bu an için kimse not tutmuyor, kimse puan vermiyor — ama o masadaki hiç kimse bu öğleden sonrayı unutmuyor.</p>
+      <p class="gorun" style="color:var(--soluk); font-size:15px;">Atölyeler küçük gruplar hâlinde, eğitmen gözetiminde ilerler; her çocuk kendi temposunda üretir. Setler yaş grubuna göre seçilir, tüm malzemeler kulüpte hazırdır.</p>
+      <div class="bosluk-kucuk"></div>
+      <a class="btn btn-koyu gorun" href="deneyim-gunu.html">Deneyim Günü'nde Atölyeyi Gezin</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GÖKYÜZÜ GÖZLEMİ (GENÇLERE) ============ -->
+<section class="koyu">
+  <div class="ic iki-kolon">
+    <div>
+      <div class="gozkasi gorun">Gençlere Özel</div>
+      <h2 class="gorun">Işık Kirliliğinden Uzakta, Gökyüzüyle Baş Başa</h2>
+      <p class="bolum-giris gorun">Şehirde yıldız saymak zordur; Armutlu yarımadasında ise gökyüzü, gecenin en cömert sahnesidir. Uzay İnceleme Kulübü'nün gençlere özel gözlem geceleri, seyir teraslarında rehber eşliğinde yapılır: teleskop kurulumundan takımyıldız okumaya, gezegen turlarından meteor yağmuru nöbetlerine uzanan bir gece programı.</p>
+      <div class="rozet-band gorun">
+        <span class="rozet">Rehberli teleskop geceleri</span>
+        <span class="rozet">Takımyıldız haritası atölyesi</span>
+        <span class="rozet">Meteor yağmuru takvimi</span>
+      </div>
+      <div class="bosluk-kucuk"></div>
+      <a class="btn btn-birincil gorun" href="deneyim-gunu.html">Gözlem Gecesini Sorun</a>
+    </div>
+    <div class="medya-yigin gorun">
+      <div class="video-cerceve">
+        <video autoplay muted loop playsinline poster="assets/img/ai/gokyuzu-gozlem.jpg" aria-label="Gökyüzü gözlem terasından gece görüntüsü">
+          <source src="assets/video/gokyuzu.mp4" type="video/mp4">
+        </video>
+        <span class="video-not">Seyir Terası · Gece</span>
+      </div>
+      <div class="alt-gorsel">
+        <img src="assets/img/ai/gokyuzu-gozlem.jpg" alt="Seyir terasında teleskopla gökyüzü gözlemi yapan gençler" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MACERA & OYUN ============ -->
+<section>
+  <div class="ic">
+    <div class="gozkasi gorun">Açık Havada</div>
+    <h2 class="gorun">Macera &amp; Oyun: Enerjinin Adresi Dışarısı</h2>
+    <p class="bolum-giris gorun">Kulüp binasının kapısı, yarımadanın açık hava oyun haritasına açılır. Macera parkurunun halat köprülerinden aqua parkın kaydıraklarına; her rota denetimli alanlarda, yaş gruplarına uygun şekilde kurgulanmıştır.</p>
+    <div class="kart-grid gorun">
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/macera-parkuru.jpg" alt="Ağaçlar arasında halat köprülü macera parkuru" loading="lazy"></div>
+        <div class="kart-icerik">
+          <h3>Macera Parkuru</h3>
+          <p>Halat köprüler, denge istasyonları ve tırmanma noktalarıyla orman içinde kurulu parkur; emniyet ekipmanı ve görevli eşliğinde, yaş gruplarına göre ayrılmış etaplarla ilerler.</p>
+          <a class="kart-link" href="kesfet.html">Vaziyet Planında Gör</a>
+        </div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/aquapark-gece.jpg" alt="Akşam ışıklarıyla aydınlatılmış aqua park kaydırakları" loading="lazy"></div>
+        <div class="kart-icerik">
+          <h3>Aqua Park</h3>
+          <p>Kaydıraklar ve kumsallı yüzme havuzuyla yaz aylarının kalbi; çocuk havuzu bölümü ayrıdır, cankurtaran gözetimindedir ve akşamları ışık gösterisiyle renklenir.</p>
+          <a class="kart-link" href="kesfet.html">Vaziyet Planında Gör</a>
+        </div>
+      </article>
+    </div>
+    <div class="oyun-rozet-band gorun">
+      <span class="oyun-rozet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM8 4v6h8V4M8 20v-6h8v6"/></svg>Saman Labirent</span>
+      <span class="oyun-rozet"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="18" r="2.4"/><path d="M12 15.6V4m0 0 5 2.4L12 9"/></svg>Mini Golf</span>
+      <span class="oyun-rozet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20h6M10 20v-3h4v3M9 8h6l-1.4 6h-3.2zM10 8V5.6h4V8M9.4 4h5.2"/></svg>Dev Satranç</span>
+    </div>
+    <p class="temsili gorun">Saman labirent, mini golf ve dev satranç alanları vaziyet planındaki açık hava oyun öğeleridir; mevsime göre dönüşümlü açılır.</p>
+  </div>
+</section>
+
+<!-- ============ GÜVENLİK İLKELERİ ============ -->
+<section class="buz-zemin" style="padding-top:0;">
+  <div class="ic">
+    <div class="guvenlik-kap gorun">
+      <div class="gozkasi">Önce Güven</div>
+      <h2 style="margin-bottom:6px;">Güvenlik İlkelerimiz</h2>
+      <p class="bolum-giris" style="font-size:15.5px;">Özgür keşfin ön koşulu, sınırları belli bir güvenlik çerçevesidir. Çocuk kulübünün tüm alanları ve programları üç ilke üzerine kuruludur.</p>
+      <div class="guvenlik-grid">
+        <div class="guvenlik-madde">
+          <span class="simge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.6-3.2 7.8-8 9-4.8-1.2-8-4.4-8-9V6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg></span>
+          <div>
+            <h3>Denetimli Alanlar</h3>
+            <p>Kulüp alanları giriş-çıkışı kayıtlı, sınırları belirli ve görevli gözetimindedir; açık hava etaplarında emniyet ekipmanı kullanılır.</p>
+          </div>
+        </div>
+        <div class="guvenlik-madde">
+          <span class="simge"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6S13.9 16 14.5 19"/><circle cx="17" cy="9.4" r="2.4"/><path d="M15.2 19c.4-2.2 1.6-3.6 3.4-3.9 1 .1 1.9.5 2.6 1.2"/></svg></span>
+          <div>
+            <h3>Eğitimli Ekip</h3>
+            <p>Programlar çocuk gelişimi ve etkinlik yönetimi konusunda eğitimli ekip tarafından yürütülür; grup büyüklükleri sınırlı tutulur.</p>
+          </div>
+        </div>
+        <div class="guvenlik-madde">
+          <span class="simge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></span>
+          <div>
+            <h3>Yaş Gruplarına Göre Program</h3>
+            <p>Her etkinlik yaş grubuna göre ayrı planlanır; küçük yaş gruplarında ebeveyn bilgilendirmesi program akışının parçasıdır.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SON CTA ============ -->
+<section style="padding-top:0;">
+  <div class="ic">
+    <div class="cta-serit gorun">
+      <div>
+        <div class="gozkasi" style="color:var(--bakir-acik);">Ailece Bir Gün</div>
+        <h2>Deneyim Günü'ne Ailece Gelin</h2>
+        <p>Siz termal havuzu ve yerleşkeyi gezerken, çocuklarınız kulüpleri yerinde denesin. Kararınızı, ailenizin tamamı deneyimledikten sonra verin.</p>
+      </div>
+      <a class="btn btn-birincil" href="deneyim-gunu.html">Randevu Ayırtın</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<a class="wa-balon" href="https://wa.me/902126716968?text=Merhaba%2C%20Tor%20Thermal%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9.9-4.7-.3-.6c-.9-1.6-1.4-3.4-1.4-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.7 10.8-10.2 10.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+</body>
+</html>

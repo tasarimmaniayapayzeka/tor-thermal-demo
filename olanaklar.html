@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olanaklar — Bir Yarımada Dolusu Yaşam | TOR Thermal Yalova Armutlu</title>
+<meta name="description" content="Kapalı termal havuzdan aqua parka, robotik atölyeden gökyüzü gözlem terasına: Tor Thermal'in 19+ olanağı fotoğraflarla tam envanter. Su & termal, spor, aile, kültür, lezzet ve VIP ayrıcalıkları tek sayfada.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Olanaklar — Bir Yarımada Dolusu Yaşam | TOR Thermal">
+<meta property="og:description" content="Kapalı termal havuzdan aqua parka, robotik atölyeden gökyüzü gözlem terasına: 19+ olanak, 18.450 m² sosyal alan.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/ai/aquapark-gece.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Tor Thermal Olanakları",
+  "description": "Yalova Armutlu'daki Tor Thermal resortunun olanak kategorileri.",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Su & Termal" },
+    { "@type": "ListItem", "position": 2, "name": "Spor & Macera" },
+    { "@type": "ListItem", "position": 3, "name": "Aile & Çocuk" },
+    { "@type": "ListItem", "position": 4, "name": "Kültür & Etkinlik" },
+    { "@type": "ListItem", "position": 5, "name": "Lezzet & Çarşı" },
+    { "@type": "ListItem", "position": 6, "name": "VIP & Ayrıcalık" }
+  ]
+}
+</script>
+<style>
+/* Olanaklar sayfasına özel küçük eklemeler */
+
+/* Kategori bölümleri: sabit çipe göre kaydırma payı */
+.olanak-bolum{ scroll-margin-top:150px; }
+
+/* Yapışkan kategori gezinme çubuğu */
+.olanak-nav-kap{
+  position:sticky; top:88px; z-index:90;
+  display:flex; justify-content:center; padding:16px;
+}
+.olanak-nav{
+  display:flex; gap:6px; flex-wrap:wrap; justify-content:center;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(12px);
+  border:1px solid var(--cizgi); border-radius:22px;
+  padding:8px 10px; box-shadow:var(--golge-kucuk);
+}
+.olanak-nav a{
+  text-decoration:none; color:var(--murekkep); font-size:13px; font-weight:700;
+  letter-spacing:.04em; padding:8px 16px; border-radius:999px; white-space:nowrap;
+  transition:background .2s ease, color .2s ease;
+}
+.olanak-nav a:hover{ background:var(--turkuaz-buz); color:var(--lacivert); }
+.olanak-nav a.aktif{ background:var(--lacivert); color:#fff; }
+
+/* Foto kartlarda hover'da beliren kısa açıklama overlay'i */
+.olanak-kart .kart-medya img{ transition:transform .6s ease, filter .6s ease; }
+.olanak-kart:hover .kart-medya img{ filter:saturate(1.08); }
+.olanak-ort{
+  position:absolute; inset:0; z-index:2;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:18px 20px;
+  background:linear-gradient(to top, rgba(12,20,40,.88) 0%, rgba(12,20,40,.28) 55%, transparent 100%);
+  opacity:0; transition:opacity .35s ease;
+}
+.olanak-kart:hover .olanak-ort{ opacity:1; }
+.olanak-ort p{
+  margin:0; font-size:13.5px; line-height:1.55; color:#E8EEF5;
+  transform:translateY(10px); transition:transform .35s ease;
+}
+.olanak-kart:hover .olanak-ort p{ transform:none; }
+.olanak-etiket{
+  position:absolute; top:12px; left:12px; z-index:3;
+  background:rgba(12,20,40,.55); backdrop-filter:blur(6px); color:#fff;
+  font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
+  padding:5px 13px; border-radius:999px;
+}
+/* Dokunmatik cihazlarda overlay hep hafifçe görünür kalsın */
+@media (hover:none){
+  .olanak-ort{ opacity:1; background:linear-gradient(to top, rgba(12,20,40,.78) 0%, transparent 62%); }
+  .olanak-ort p{ transform:none; }
+}
+@media (prefers-reduced-motion: reduce){
+  .olanak-ort, .olanak-ort p, .olanak-kart .kart-medya img{ transition:none; }
+}
+
+/* Fotoğrafsız metin kartları (at biniciliği, golf, spor kulübü, organik pazar) */
+.metin-kart{
+  background:linear-gradient(150deg, var(--lacivert), #26355E);
+  padding:26px 26px 24px;
+}
+.metin-kart h3{ color:#fff; }
+.metin-kart p{ color:#B9C6DA; font-size:14.3px; margin:0 0 16px; }
+.metin-kart .kart-link{ color:var(--turkuaz-acik); }
+.metin-ust{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+.metin-ust img{
+  width:54px; height:54px; border-radius:12px; object-fit:cover; flex:0 0 auto;
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+}
+.metin-ust h3{ margin:0; font-size:19px; }
+
+/* Kategori başlığındaki adet rozeti */
+.adet-rozet{
+  display:inline-block; vertical-align:6px; margin-left:14px;
+  background:var(--turkuaz-buz); color:var(--lacivert); border-radius:999px;
+  font-size:12.5px; font-weight:700; letter-spacing:.06em;
+  padding:4px 14px; font-family:var(--sans);
+}
+.koyu .adet-rozet{ background:rgba(255,255,255,.14); color:#fff; }
+
+/* Sağlık bilgilendirme notu */
+.saglik-notu{
+  background:var(--beyaz); border-left:4px solid var(--bakir); border-radius:12px;
+  padding:18px 22px; font-size:13.5px; color:var(--soluk);
+  box-shadow:var(--golge-kucuk); max-width:72ch; margin-top:34px;
+}
+</style>
+</head>
+<body>
+
+<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ SAYFA BAŞLIĞI ============ -->
+<section class="sayfa-baslik">
+  <div class="arka"><img src="assets/img/ai/aquapark-gece.jpg" alt="Gece aydınlatmalı aqua park ve termal yerleşke" loading="eager"></div>
+  <div class="ic">
+    <div class="kirinti"><a href="index.html">Ana Sayfa</a> · Olanaklar</div>
+    <h1>Olanaklar</h1>
+    <p class="alt">Sabah termal havuzda, öğlen padel kortunda, akşam amfi tiyatroda. Bir yarımadaya sığdırılmış koca bir yaşam — fotoğraf fotoğraf, tam envanter.</p>
+  </div>
+</section>
+
+<!-- ============ RAKAM BANDI ============ -->
+<section class="koyu" style="padding:48px 0;">
+  <div class="ic">
+    <div class="sayac-band">
+      <div class="sayac"><div class="deger" data-hedef="19">0<span class="birim">+</span></div><div class="etiket">Olanak · Tek Yarımada</div></div>
+      <div class="sayac"><div class="deger" data-hedef="4">0</div><div class="etiket">İmar Bölgesi</div></div>
+      <div class="sayac"><div class="deger" data-hedef="18450">0<span class="birim"> m²</span></div><div class="etiket">Sosyal Alan</div></div>
+    </div>
+  </div>
+</section>
+
+<div>
+<!-- Yapışkan kategori gezinme çubuğu -->
+<div class="olanak-nav-kap">
+  <nav class="olanak-nav" aria-label="Olanak kategorileri">
+    <a href="#su-termal">Su &amp; Termal</a>
+    <a href="#spor">Spor &amp; Macera</a>
+    <a href="#aile-cocuk">Aile &amp; Çocuk</a>
+    <a href="#kultur">Kültür &amp; Etkinlik</a>
+    <a href="#lezzet">Lezzet &amp; Çarşı</a>
+    <a href="#vip">VIP &amp; Ayrıcalık</a>
+  </nav>
+</div>
+
+<!-- ============ 01 · SU & TERMAL ============ -->
+<section id="su-termal" class="olanak-bolum buz-zemin" style="padding-top:56px;">
+  <div class="ic">
+    <div class="gozkasi gorun">01 · Su &amp; Termal</div>
+    <h2 class="gorun">Yarımadanın Kalbi Sudur<span class="adet-rozet">6 alan</span></h2>
+    <p class="bolum-giris gorun">Mineral zengini termal kaynak, Marmara'nın serinliği ve dört mevsim buharı tüten havuzlar. Tor Thermal'de her gün suyla başlar, suyla tamamlanır.</p>
+    <div class="kart-grid gorun">
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/kapali-havuz.jpg" alt="Kapalı termal havuzda buhar ve loş sıcak aydınlatma" loading="lazy">
+          <span class="olanak-etiket">Su &amp; Termal</span>
+          <div class="olanak-ort"><p>Hava kaç derece olursa olsun: dört mevsim yaklaşık 33–38° mineral zengini su, camların ardında orman manzarası.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Kapalı Termal Havuz</h3>
+          <p>Kış sabahlarında camlarda buhar yükselirken yüzme ayrıcalığı. Termal suyun ısı ve mineral dengesi, gevşemeyi ve yenilenme hissini destekler.</p>
+          <a class="kart-link" href="wellness.html">Wellness Programları</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/morf-aquapark.jpg" alt="Kaydıraklı aqua park ve termal havuz bölgesi" loading="lazy">
+          <span class="olanak-etiket">Su &amp; Termal</span>
+          <div class="olanak-ort"><p>Kaydıraklar, dalga havuzu ve kumsallı yüzme havuzu — yazın kalbi burada atar.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Aqua Park</h3>
+          <p>Çocuklar kaydıraklarda, siz şezlongda: aile boyu bir yaz sahnesi. Gece aydınlatmasıyla akşam seansları ayrı bir keyif.</p>
+          <a class="kart-link" href="kesfet.html">Vaziyet Planında Gör</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/kadin-havuzu.jpg" alt="Kadınlara özel termal havuz ve dinlenme alanı" loading="lazy">
+          <span class="olanak-etiket">Su &amp; Termal</span>
+          <div class="olanak-ort"><p>Yalnızca kadınlara ayrılmış havuz, sauna ve dinlenme alanı; mahremiyet burada standarttır.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Kadınlara Özel Havuz &amp; Spa</h3>
+          <p>Kendi ritminizde, kendi alanınızda. Kadınlara özel bölümde termal havuz, sauna ve spa hizmetleri ayrı bir mimariyle planlandı.</p>
+          <a class="kart-link" href="wellness.html">Detayları İncele</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/ritual-1-termal.jpg" alt="Açık termal havuzda buharlı akşam atmosferi" loading="lazy">
+          <span class="olanak-etiket">Su &amp; Termal</span>
+          <div class="olanak-ort"><p>Yıldızların altında yaklaşık 38° su: Yedi Su Tor Ritüeli'nin ilk adımı burada atılır.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Açık Termal Havuzlar</h3>
+          <p>Soğuk havada sıcak suda olmanın o eşsiz karşıtlığı. Açık termal havuzlar, yerleşkenin farklı noktalarında manzaraya göre konumlandı.</p>
+          <a class="kart-link" href="wellness.html">Tor Ritüeli'ni Keşfet</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/ritual-5-hamam.jpg" alt="Mermer göbek taşlı geleneksel hamam" loading="lazy">
+          <span class="olanak-etiket">Su &amp; Termal</span>
+          <div class="olanak-ort"><p>Mermer, buhar ve sedir ahşabı: Anadolu geleneği çağdaş bir yorumla.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Hamam &amp; Sauna</h3>
+          <p>Göbek taşında geleneksel kese-köpük, sedir ahşaplı ozon saunada derin ısınma. Kadın ve erkek bölümleri ayrı planlanmıştır.</p>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/morf-plaj.jpg" alt="Dalgakıranla korunan özel plaj ve iskele" loading="lazy">
+          <span class="olanak-etiket">Su &amp; Termal</span>
+          <div class="olanak-ort"><p>Marmara'ya inen özel kumsal, iskele ve dalgakıranla korunaklı koy.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Özel Plaj &amp; Dalgakıran</h3>
+          <p>Termal havuzdan çıkıp birkaç adımda denize girmek: yarımada yaşamının imza deneyimi. İskele, sabah yüzücülerinin buluşma noktası.</p>
+          <a class="kart-link" href="kesfet.html">Plaj Bölgesini Gör</a>
+        </div>
+      </article>
+    </div>
+    <p class="saglik-notu gorun">Termal su içeriğine ve wellness uygulamalarına ilişkin ifadeler tedavi vaadi değildir; genel iyilik hâlini destekleyici niteliktedir. Sağlık durumunuz için hekiminize danışınız.</p>
+  </div>
+</section>
+
+<!-- ============ 02 · SPOR & MACERA ============ -->
+<section id="spor" class="olanak-bolum">
+  <div class="ic">
+    <div class="gozkasi gorun">02 · Spor &amp; Macera</div>
+    <h2 class="gorun">Hareket, Programın Süsü Değil Omurgası<span class="adet-rozet">7 alan</span></h2>
+    <p class="bolum-giris gorun">Padel kortundan paintball arenasına, çim sahadan at biniciliğine — her tempoya ve her yaşa uygun bir spor sahnesi.</p>
+    <div class="kart-grid gorun">
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/tenis-padel.jpg" alt="Deniz manzaralı aydınlatmalı tenis ve padel kortları" loading="lazy">
+          <span class="olanak-etiket">Spor</span>
+          <div class="olanak-ort"><p>Gün batımına karşı akşam maçları için aydınlatmalı kortlar.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Tenis &amp; Padel Kortları</h3>
+          <p>Marmara fonunda servis atmak başka. Aydınlatmalı kortlar akşam saatlerinde de açık; ekipman resepsiyondan temin edilebilir.</p>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/cim-futbol.jpg" alt="Orman kenarında çim futbol sahası" loading="lazy">
+          <span class="olanak-etiket">Spor</span>
+          <div class="olanak-ort"><p>Orman kenarında gerçek çim saha; komşu turnuvalarının adresi.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Çim Futbol Sahası</h3>
+          <p>Hafta sonu aile maçları, yaz dönemi komşu turnuvaları. Çim saha, orman hattının hemen kenarında serin bir noktada.</p>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/paintball.jpg" alt="Doğal parkurlu paintball arenası" loading="lazy">
+          <span class="olanak-etiket">Macera</span>
+          <div class="olanak-ort"><p>Doğal engelli parkurda takım stratejisi; tüm koruyucu ekipman sahada hazır.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Paintball Arenası</h3>
+          <p>Adrenalini seven konuklar için doğal engellerle kurgulanmış arena. Oyunlar koruyucu ekipman eşliğinde ve gözetmen refakatinde oynanır.</p>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/macera-parkuru.jpg" alt="Ağaçlar arasında ip köprülü macera parkuru" loading="lazy">
+          <span class="olanak-etiket">Macera</span>
+          <div class="olanak-ort"><p>İp köprüler, denge platformları ve zipline hattıyla ağaçların arasında bir rota.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Macera Parkuru</h3>
+          <p>Çocuklar ve gençler için yaş gruplarına göre ayrılmış etaplar; tüm etaplar emniyet kemeri ve eğitmen eşliğinde tamamlanır.</p>
+          <a class="kart-link" href="cocuk-kulubu.html">Çocuk Kulübü</a>
+        </div>
+      </article>
+      <article class="kart metin-kart">
+        <div class="metin-ust">
+          <img src="assets/img/icon/ikon-dambil.jpg" alt="" loading="lazy">
+          <h3>Spor Kulübü</h3>
+        </div>
+        <p>Kardiyo ve kuvvet alanları, stüdyo dersleri ve su içi egzersiz seansları. Hareket planınız, longevity programınızın uzman ekibiyle birlikte kurgulanır.</p>
+        <a class="kart-link" href="wellness.html">Longevity Metodu</a>
+      </article>
+      <article class="kart metin-kart">
+        <div class="metin-ust">
+          <img src="assets/img/icon/ikon-at.jpg" alt="" loading="lazy">
+          <h3>At Biniciliği</h3>
+        </div>
+        <p>Orman içi binicilik rotaları ve ilk kez binecekler için tanışma turları. Tüm binişler deneyimli eğitmen eşliğinde, koruyucu ekipmanla yapılır.</p>
+        <a class="kart-link" href="kesif-rotalari.html">Keşif Rotaları</a>
+      </article>
+      <article class="kart metin-kart">
+        <div class="metin-ust">
+          <img src="assets/img/icon/ikon-golf.jpg" alt="" loading="lazy">
+          <h3>Golf &amp; Konser Alanı</h3>
+        </div>
+        <p>Vuruş pratiği için düzenlenmiş golf alanı, yaz akşamlarında açık hava konserlerine dönüşen geniş yeşil sahne. Tek alan, iki hayat.</p>
+        <a class="kart-link" href="kesfet.html">Vaziyet Planında Gör</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · AİLE & ÇOCUK ============ -->
+<section id="aile-cocuk" class="olanak-bolum kum-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">03 · Aile &amp; Çocuk</div>
+    <h2 class="gorun">Çocuklar İçin Bir Yarımada, Aileler İçin Huzur<span class="adet-rozet">4 alan</span></h2>
+    <p class="bolum-giris gorun">Uzay kulübünden robotik atölyeye: Tor Thermal'de çocuk kulübü bir "oyalama alanı" değil, merakın büyüdüğü bir kampüstür.</p>
+    <div class="kart-grid gorun">
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/oyun-terapisi.jpg" alt="Renkli oyun terapisi atölyesinde çocuk etkinlik alanı" loading="lazy">
+          <span class="olanak-etiket">Aile &amp; Çocuk</span>
+          <div class="olanak-ort"><p>Uzman eşliğinde, oyun temelli gelişim etkinlikleri; her yaş grubuna ayrı program.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Oyun Terapisi Atölyesi</h3>
+          <p>Oyun temelli etkinliklerle çocukların sosyal ve duygusal gelişimini destekleyen, uzman eşliğinde yürütülen atölye programları.</p>
+          <a class="kart-link" href="cocuk-kulubu.html">Çocuk Kulübünü Keşfet</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/uzay-kulubu.jpg" alt="Gezegen modelleri ve teleskoplu çocuk uzay kulübü" loading="lazy">
+          <span class="olanak-etiket">Aile &amp; Çocuk</span>
+          <div class="olanak-ort"><p>Gezegen maketleri, teleskop geceleri ve "küçük astronot" görev kartları.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Uzay Kulübü</h3>
+          <p>Işık kirliliğinden uzak yarımada gökyüzü, çocuklar için bir laboratuvara dönüşüyor. Teleskop geceleri gözlem terasıyla ortak programlanır.</p>
+          <a class="kart-link" href="cocuk-kulubu.html">Programları Gör</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/robotik-atolye.jpg" alt="Robotik kodlama atölyesinde çalışma masaları ve robot kitleri" loading="lazy">
+          <span class="olanak-etiket">Aile &amp; Çocuk</span>
+          <div class="olanak-ort"><p>Kodlama kitleri ve robot yarışmaları: tatilde bile üreten çocuklar.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Robotik Kodlama Atölyesi</h3>
+          <p>Yaş gruplarına göre kurgulanmış kodlama ve robotik setleriyle atölye çalışmaları; dönem sonunda mini robot yarışları.</p>
+          <a class="kart-link" href="cocuk-kulubu.html">Atölye Takvimi</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/aquapark-gece.jpg" alt="Gece aydınlatmalı aqua parkta aile akşamı" loading="lazy">
+          <span class="olanak-etiket">Aile &amp; Çocuk</span>
+          <div class="olanak-ort"><p>Yaz akşamlarında ışıklandırılmış kaydıraklar ve aile film geceleri.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Gece Aqua Park &amp; Aile Akşamları</h3>
+          <p>Güneş battıktan sonra park ışıklarla yeniden açılır: gece yüzme seansları, ardından açık hava sinemasında aile filmi.</p>
+          <a class="kart-link" href="kesfet.html">Yerleşkede Konumu</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · KÜLTÜR & ETKİNLİK ============ -->
+<section id="kultur" class="olanak-bolum koyu">
+  <div class="ic">
+    <div class="gozkasi gorun">04 · Kültür &amp; Etkinlik</div>
+    <h2 class="gorun">Akşamları da Dolu Bir Takvim<span class="adet-rozet">5 alan</span></h2>
+    <p class="bolum-giris gorun">Sergi açılışından amfi tiyatro konserine, sinema odasından gökyüzü gözlemine — yarımadanın kültür sahnesi dört mevsim açık.</p>
+    <div class="kart-grid gorun">
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/sergi-alani.jpg" alt="Doğal ışıklı modern sergi alanı" loading="lazy">
+          <span class="olanak-etiket">Kültür</span>
+          <div class="olanak-ort"><p>Dönemsel resim ve fotoğraf sergileri; yerel sanatçılara açık duvarlar.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Sergi Alanı</h3>
+          <p>Doğal ışık alan galeri koridoru, dönemsel sergilerle yenilenir. Açılış akşamları resort takviminin sosyal buluşmalarındandır.</p>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/amfi-tiyatro.jpg" alt="Deniz manzaralı açık hava amfi tiyatro" loading="lazy">
+          <span class="olanak-etiket">Etkinlik</span>
+          <div class="olanak-ort"><p>Yaz konserleri, açık hava gösterimleri ve gün batımı dinletileri.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Amfi Tiyatro</h3>
+          <p>Denize bakan basamaklarıyla amfi tiyatro; yaz konserlerinin, söyleşilerin ve açık hava gösterimlerinin ana sahnesi.</p>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/sinema-odasi.jpg" alt="Loş ışıklı özel sinema odası koltukları" loading="lazy">
+          <span class="olanak-etiket">Etkinlik</span>
+          <div class="olanak-ort"><p>Kış akşamlarının sığınağı: rezervasyonlu özel gösterim odaları.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Sinema Odaları</h3>
+          <p>Geniş koltuklu, loş ışıklı özel gösterim odaları. Aile rezervasyonuna ve komşu gruplarının film gecelerine göre planlanır.</p>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/gokyuzu-gozlem.jpg" alt="Teleskoplu gökyüzü gözlem terasında yıldızlı gece" loading="lazy">
+          <span class="olanak-etiket">Kültür</span>
+          <div class="olanak-ort"><p>Işık kirliliğinden uzak terasta teleskoplu gözlem geceleri.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Gökyüzü Gözlem Terası</h3>
+          <p>Yarımadanın karanlık gökyüzü, meteor yağmurlarını ve gezegen geçişlerini çıplak gözle izlenebilir kılar. Teleskoplar teras dolabında hazır.</p>
+          <a class="kart-link" href="kesif-rotalari.html">Gece Rotaları</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/kongre-salonu.jpg" alt="Modern kongre ve toplantı salonu" loading="lazy">
+          <span class="olanak-etiket">Etkinlik</span>
+          <div class="olanak-ort"><p>Kurumsal buluşmalar ve seminerler için tam donanımlı salon.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Kongre &amp; Toplantı Salonu</h3>
+          <p>Şirket buluşmaları, sağlıklı yaşam seminerleri ve atölyeler için ses ve görüntü sistemli, bölünebilir salon düzeni.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · LEZZET & ÇARŞI ============ -->
+<section id="lezzet" class="olanak-bolum">
+  <div class="ic">
+    <div class="gozkasi gorun">05 · Lezzet &amp; Çarşı</div>
+    <h2 class="gorun">Bölge Üreticisinden Sofranıza<span class="adet-rozet">4 alan</span></h2>
+    <p class="bolum-giris gorun">Restorandan detoks kafeye, alışveriş sokağından organik pazara: yarımadanın lezzet hattı, beslenme felsefesiyle aynı çizgide.</p>
+    <div class="kart-grid gorun">
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/restoran.jpg" alt="Deniz manzaralı restoranın akşam servisi" loading="lazy">
+          <span class="olanak-etiket">Lezzet</span>
+          <div class="olanak-ort"><p>Mevsim menüsü, yerel üretici ürünleri ve deniz manzaralı teras servisi.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Restoran</h3>
+          <p>Mutfağın pusulası mevsim ve yakın coğrafya: Yalova ve çevre üreticilerden gelen malzemeyle günlük değişen menüler.</p>
+          <a class="kart-link" href="resort-yasami.html">Resort Yaşamı</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/detoks-kafe.jpg" alt="Taze sıkım içecekler ve hafif tabaklar sunan detoks kafe" loading="lazy">
+          <span class="olanak-etiket">Lezzet</span>
+          <div class="olanak-ort"><p>Soğuk sıkım içecekler ve hafif tabaklar; wellness programlarıyla uyumlu menü.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Detoks Kafe</h3>
+          <p>Diyet Merkezi'yle aynı felsefeyi paylaşan menü: beslenme planınızı destekleyen hafif tabaklar ve taze sıkım içecekler.</p>
+          <a class="kart-link" href="wellness.html">Beslenme Yaklaşımı</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/alisveris-sokagi.jpg" alt="Ağaçlıklı yürüyüş aksında butik alışveriş sokağı" loading="lazy">
+          <span class="olanak-etiket">Çarşı</span>
+          <div class="olanak-ort"><p>Butikler, market ve hediyelik dükkânlarıyla yerleşke içinde bir çarşı aksı.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Alışveriş Sokağı</h3>
+          <p>Günlük ihtiyaçtan hediyelik ürüne, yerleşkeden çıkmadan her şey elinizin altında. Akşam yürüyüşlerinin de rotası.</p>
+        </div>
+      </article>
+      <article class="kart metin-kart">
+        <div class="metin-ust">
+          <img src="assets/img/icon/ikon-sepet.jpg" alt="" loading="lazy">
+          <h3>Organik Pazar</h3>
+        </div>
+        <p>Hafta sonları kurulan tezgâhlarda bölge üreticisinin sebzesi, meyvesi, balı ve zeytinyağı. Üreticiyle tanışarak alışveriş etme ayrıcalığı.</p>
+        <a class="kart-link" href="resort-yasami.html">Haftalık Ritim</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · VIP & AYRICALIK ============ -->
+<section id="vip" class="olanak-bolum buz-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">06 · VIP &amp; Ayrıcalık</div>
+    <h2 class="gorun">Görünmeyen Emek, Hissedilen Konfor<span class="adet-rozet">3 alan</span></h2>
+    <p class="bolum-giris gorun">Siz gelmeden hazırlanan ev, kapınızda karşılayan ekip, telefonunuzdan yönetilen daire — ayrıcalık, ayrıntıda gizlidir.</p>
+    <div class="kart-grid gorun">
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/vip-lounge.jpg" alt="Deniz manzaralı VIP lounge oturma alanı" loading="lazy">
+          <span class="olanak-etiket">VIP</span>
+          <div class="olanak-ort"><p>Sessiz, manzaralı ve rezervasyonlu: özel ağırlama salonu.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>VIP Lounge</h3>
+          <p>Misafirlerinizi ağırlamak, özel bir kutlama yapmak ya da yalnızca sessizlik istemek için ayrılmış manzaralı salon.</p>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/housekeeping.jpg" alt="Housekeeping ekibi daireyi konaklama öncesi hazırlıyor" loading="lazy">
+          <span class="olanak-etiket">Ayrıcalık</span>
+          <div class="olanak-ort"><p>Siz yoldayken eviniz hazırlanır: havalandırılmış odalar, taze nevresim, dolu buzdolabı seçeneği.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Housekeeping</h3>
+          <p>Her dönem girişinizde eviniz otel standardında hazırlanır; ayrılırken tek işiniz kapıyı çekmek. Ev sahipliğinin yükü bizde, keyfi sizde.</p>
+          <a class="kart-link" href="resort-yasami.html">Resort Yaşamını İncele</a>
+        </div>
+      </article>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/akilli-ev.jpg" alt="Akıllı ev panelinden aydınlatma ve iklim kontrolü" loading="lazy">
+          <span class="olanak-etiket">Ayrıcalık</span>
+          <div class="olanak-ort"><p>Aydınlatma, iklimlendirme ve güvenlik tek ekrandan; siz gelmeden daireniz ısınmış olur.</p></div>
+        </div>
+        <div class="kart-icerik">
+          <h3>Akıllı Ev Sistemleri</h3>
+          <p>Tüm daire ve villalar akıllı ev altyapısıyla teslim edilir. Yola çıkmadan iklimlendirmeyi açın; kapıda sizi hazır bir ev karşılasın.</p>
+          <a class="kart-link" href="resort-yasami.html">Teknoloji Detayları</a>
+        </div>
+      </article>
+    </div>
+    <p class="temsili gorun" style="text-align:center;">Görseller yapay zekâ destekli konsept çalışmasıdır; mimari temsil niteliğindedir, bağlayıcı taahhüt içermez.</p>
+  </div>
+</section>
+</div>
+
+<!-- ============ SON CTA ============ -->
+<section>
+  <div class="ic">
+    <div class="cta-serit gorun">
+      <div>
+        <div class="gozkasi" style="color:var(--bakir-acik);">Fotoğraf Yetmez</div>
+        <h2>Buharı Bir de Yerinde Hissedin</h2>
+        <p>Deneyim Günü'nde termal havuzu deneyin, çocuk kulübünü gezin, akşam amfi tiyatroda gün batımını izleyin. İstanbul'a yaklaşık 60 dakika.</p>
+      </div>
+      <a class="btn btn-birincil" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<a class="wa-balon" href="https://wa.me/902126716968?text=Merhaba%2C%20Tor%20Thermal%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9.9-4.7-.3-.6c-.9-1.6-1.4-3.4-1.4-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.7 10.8-10.2 10.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+<script>
+/* Olanaklar: kategori çubuğu scrollspy */
+(function () {
+  "use strict";
+  var linkler = document.querySelectorAll(".olanak-nav a");
+  if (!linkler.length || !("IntersectionObserver" in window)) return;
+  var esle = {};
+  linkler.forEach(function (a) { esle[a.getAttribute("href").slice(1)] = a; });
+  var io = new IntersectionObserver(function (girisler) {
+    girisler.forEach(function (g) {
+      if (g.isIntersecting) {
+        linkler.forEach(function (a) { a.classList.remove("aktif"); });
+        var a = esle[g.target.id];
+        if (a) a.classList.add("aktif");
+      }
+    });
+  }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
+  document.querySelectorAll(".olanak-bolum").forEach(function (b) { io.observe(b); });
+})();
+</script>
+</body>
+</html>

@@ -50,6 +50,12 @@
 .esya-kutu .no{ font-family:var(--serif); font-size:30px; color:var(--bakir-acik); line-height:1; display:block; margin-bottom:10px; }
 .esya-kutu h3{ color:#fff; font-size:17px; margin-bottom:8px; }
 .esya-kutu p{ font-size:13.8px; color:#9FB0C4; margin:0; line-height:1.65; }
+/* Kartlarda çift bağlantı: eşleşme + detay sayfası */
+.kart-linkler{ margin-top:auto; display:flex; flex-wrap:wrap; gap:6px 20px; }
+.kart-linkler .kart-link{ margin-top:0; }
+/* Plandan Hayata teaser görseli — hover'da hafif yakınlaşma */
+.plan-teaser-cerceve img{ width:100%; display:block; transition:transform .6s ease; }
+.plan-teaser-cerceve:hover img{ transform:scale(1.03); }
 </style>
 </head>
 <body>
@@ -106,6 +112,28 @@
   </div>
 </section>
 
+<!-- ============ PLANDAN HAYATA (DETAY TEASER) ============ -->
+<section class="buz-zemin">
+  <div class="ic iki-kolon">
+    <a class="cerceve plan-teaser-cerceve gorun" href="daire-detay.html?tip=3p1-deluks" aria-label="3+1 Delüks tipin oda oda planı ve 3D görünümü — detay sayfasını açın">
+      <img src="assets/img/ai/plan3d-3p1.jpg" alt="3+1 Delüks dairenin kuş bakışı 3D dollhouse görünümü — mobilyalı oda yerleşimi" loading="lazy">
+    </a>
+    <div>
+      <div class="gozkasi gorun">Plandan Hayata</div>
+      <h2 class="gorun">Her Tipin Oda Oda Planı ve 3D Görünümü Detay Sayfalarında</h2>
+      <p class="bolum-giris gorun">Resmî kat planının çizgileri, gözünüzün önünde mobilyalı bir eve dönüşüyor. Her tipin detay sayfasında oda oda m² dökümünü inceleyin; 2D plan ile 3D görünüm arasında tek dokunuşla geçin.</p>
+      <div class="rozet-band gorun">
+        <span class="rozet">Oda oda m² dökümü</span>
+        <span class="rozet">2D Plan ↔ 3D Görünüm</span>
+        <span class="rozet">Resmî kat planları</span>
+      </div>
+      <div class="bosluk-kucuk"></div>
+      <a class="btn btn-birincil gorun" href="daire-detay.html">Detay Sayfalarını Açın</a>
+      <p class="temsili gorun">3D görünümler yapay zekâ destekli konsept çalışmasıdır; bağlayıcı taahhüt içermez. Oda ölçüleri resmî kat planlarından derlenmiştir, sözleşme ekindeki bağımsız bölüm bilgileri esastır.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ANAHTAR TESLİM EŞYALI ============ -->
 <section class="koyu">
   <div class="ic">
@@ -133,6 +161,7 @@
             <th scope="col">Kişi</th>
             <th scope="col">Manzara</th>
             <th scope="col">Kategori</th>
+            <th scope="col">Detay</th>
           </tr>
         </thead>
         <tbody id="kiyasGovde"></tbody>
@@ -170,8 +199,10 @@
       <h4>Keşfet</h4>
       <a href="kesfet.html">Vaziyet Planı</a>
       <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
       <a href="wellness.html">Longevity &amp; Wellness</a>
       <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
       <a href="lokasyon.html">Lokasyon</a>
     </div>
     <div>
@@ -180,6 +211,8 @@
       <a href="nasil-calisir.html">Nasıl Çalışır?</a>
       <a href="guvence.html">Tor Holding Güvencesi</a>
       <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
       <a href="deneyim-gunu.html">Deneyim Günü</a>
     </div>
     <div>
@@ -248,7 +281,10 @@
             '<span>Manzara: <b>' + t.manzara + '</b></span>' +
           '</div>' +
           '<p>' + t.ozet + '</p>' +
-          '<a class="kart-link" href="daire-donem-bulucu.html?tip=' + encodeURIComponent(t.id) + '" aria-label="' + t.ad + ' tipiyle Dönem Bulucu üzerinde eşleşin">Bu tiple eşleşin</a>' +
+          '<div class="kart-linkler">' +
+            '<a class="kart-link" href="daire-donem-bulucu.html?tip=' + encodeURIComponent(t.id) + '" aria-label="' + t.ad + ' tipiyle Dönem Bulucu üzerinde eşleşin">Bu tiple eşleşin</a>' +
+            '<a class="kart-link" href="daire-detay.html?tip=' + encodeURIComponent(t.id) + '" aria-label="' + t.ad + ' tipinin oda oda planı ve 3D görünümü">Detay &amp; Kat Planı</a>' +
+          '</div>' +
         '</div>';
       grid.appendChild(kart);
     });
@@ -293,7 +329,8 @@
         '<td class="num">' + m2Metin(t.netMin, t.netMaks) + '</td>' +
         '<td class="num">' + t.kisi + '</td>' +
         '<td>' + t.manzara + '</td>' +
-        '<td>' + kategori(t) + '</td>';
+        '<td>' + kategori(t) + '</td>' +
+        '<td><a class="kart-link" href="daire-detay.html?tip=' + encodeURIComponent(t.id) + '" aria-label="' + t.ad + ' detay sayfası ve kat planı">Plan &amp; Detay</a></td>';
       govde.appendChild(tr);
     });
   }

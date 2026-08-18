@@ -33,12 +33,12 @@
 }
 .terapi-kart:hover{ transform:translateY(-6px); box-shadow:var(--golge); }
 .terapi-kart .medya{ aspect-ratio:16/10; overflow:hidden; }
-.terapi-kart .medya img{ width:100%; height:100%; object-fit:cover; }
-.terapi-kart.ikonlu .medya{ display:flex; align-items:center; justify-content:center; background:var(--turkuaz-buz); }
-.terapi-kart.ikonlu .medya img{ width:96px; height:96px; border-radius:16px; object-fit:cover; }
-.terapi-kart .bilgi{ padding:16px 18px 18px; }
+.terapi-kart .medya img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.terapi-kart:hover .medya img{ transform:scale(1.06); }
+.terapi-kart .bilgi{ padding:16px 18px 18px; display:flex; flex-direction:column; flex:1; }
 .terapi-kart h3{ font-size:16.5px; margin-bottom:5px; }
-.terapi-kart p{ font-size:13.4px; color:var(--soluk); margin:0; }
+.terapi-kart p{ font-size:13.4px; color:var(--soluk); margin:0 0 14px; }
+.terapi-kart .kart-link{ font-size:13.5px; }
 
 .ritual-mini .ritual-adim{ flex:0 0 min(230px,70vw); }
 .ritual-mini .ritual-adim img{ aspect-ratio:4/3; }
@@ -130,57 +130,57 @@
     <h2 class="gorun">13 Terapi, Tek Çatı Altında</h2>
     <p class="bolum-giris gorun">Kişisel programınız bu 13 uygulamadan harmanlanır. Hiçbiri tek başına bir vaat değildir; her biri, uzman ekibin planladığı bütüncül programı destekler.</p>
     <div class="terapi-grid gorun">
-      <article class="terapi-kart ikonlu">
-        <div class="medya"><img src="assets/img/icon/ikon-havuz.jpg" alt="" loading="lazy"></div>
-        <div class="bilgi"><h3>Aqua Therapy</h3><p>Su içi egzersizlerle eklemleri yormadan hareket kazanımını destekler.</p></div>
+      <article class="terapi-kart">
+        <div class="medya"><img src="assets/img/ai/aqua-terapi.jpg" alt="Termal havuzda eğitmen eşliğinde aqua terapi egzersizi" loading="lazy"></div>
+        <div class="bilgi"><h3>Aqua Therapy</h3><p>Su içi egzersizlerle eklemleri yormadan hareket kazanımını destekler.</p><a class="kart-link" href="terapi.html?id=aqua-therapy">Detayı İncele</a></div>
       </article>
       <article class="terapi-kart">
         <div class="medya"><img src="assets/img/ai/ritual-5-hamam.jpg" alt="Mermer hamamda buhar" loading="lazy"></div>
-        <div class="bilgi"><h3>Spa &amp; Wellness</h3><p>Masaj, hamam ve bakım ritüelleri; derin gevşemeye katkıda bulunur.</p></div>
-      </article>
-      <article class="terapi-kart ikonlu">
-        <div class="medya"><img src="assets/img/icon/ikon-damla.jpg" alt="" loading="lazy"></div>
-        <div class="bilgi"><h3>Termal Havuzlar <small style="font-weight:400;">(Kadın &amp; Erkek Ayrı)</small></h3><p>Mineral zengini kaynak suyu, mahremiyet odaklı iki ayrı bölümde.</p></div>
-      </article>
-      <article class="terapi-kart ikonlu">
-        <div class="medya"><img src="assets/img/icon/ikon-yaprak.jpg" alt="" loading="lazy"></div>
-        <div class="bilgi"><h3>Detoks Merkezi</h3><p>Uzman eşliğinde planlanan arınma odaklı programları destekler.</p></div>
-      </article>
-      <article class="terapi-kart ikonlu">
-        <div class="medya"><img src="assets/img/icon/ikon-sepet.jpg" alt="" loading="lazy"></div>
-        <div class="bilgi"><h3>Diyet Merkezi</h3><p>Kişiye özel beslenme planlaması; dengeli yaşam rutinine katkı sağlar.</p></div>
+        <div class="bilgi"><h3>Spa &amp; Wellness</h3><p>Masaj, hamam ve bakım ritüelleri; derin gevşemeye katkıda bulunur.</p><a class="kart-link" href="terapi.html?id=spa-wellness">Detayı İncele</a></div>
       </article>
       <article class="terapi-kart">
-        <div class="medya"><img src="assets/img/ai/ritual-2-deniz.jpg" alt="Deniz platformunda soğuk su deneyimi" loading="lazy"></div>
-        <div class="bilgi"><h3>Destekleyici Uygulamalar</h3><p>Lipoliz, lenfatik drenaj ve soğuk su terapisi seçenekleri.</p></div>
+        <div class="medya"><img src="assets/img/ai/kadin-havuzu.jpg" alt="Kadınlara özel termal havuz bölümü" loading="lazy"></div>
+        <div class="bilgi"><h3>Termal Havuzlar <small style="font-weight:400;">(Kadın &amp; Erkek Ayrı)</small></h3><p>Mineral zengini kaynak suyu, mahremiyet odaklı iki ayrı bölümde.</p><a class="kart-link" href="terapi.html?id=termal-havuzlar">Detayı İncele</a></div>
       </article>
-      <article class="terapi-kart ikonlu">
-        <div class="medya"><img src="assets/img/icon/ikon-dambil.jpg" alt="" loading="lazy"></div>
-        <div class="bilgi"><h3>Diyabetik Yaşam Desteği</h3><p>Beslenme ve aktivite planlamasıyla günlük yaşam düzenini destekler.</p></div>
+      <article class="terapi-kart">
+        <div class="medya"><img src="assets/img/ai/detoks-merkezi.jpg" alt="Detoks merkezinde taze sıkım içecek hazırlığı" loading="lazy"></div>
+        <div class="bilgi"><h3>Detoks Merkezi</h3><p>Uzman eşliğinde planlanan arınma odaklı programları destekler.</p><a class="kart-link" href="terapi.html?id=detoks">Detayı İncele</a></div>
       </article>
-      <article class="terapi-kart ikonlu">
-        <div class="medya"><img src="assets/img/icon/ikon-lotus.jpg" alt="" loading="lazy"></div>
-        <div class="bilgi"><h3>Well-Aging</h3><p>Yaş almayı iyi yaşamak için bütüncül, uzun vadeli program yaklaşımı.</p></div>
+      <article class="terapi-kart">
+        <div class="medya"><img src="assets/img/ai/diyet-merkezi.jpg" alt="Diyet merkezinde kişiye özel beslenme danışmanlığı görüşmesi" loading="lazy"></div>
+        <div class="bilgi"><h3>Diyet Merkezi</h3><p>Kişiye özel beslenme planlaması; dengeli yaşam rutinine katkı sağlar.</p><a class="kart-link" href="terapi.html?id=diyet">Detayı İncele</a></div>
+      </article>
+      <article class="terapi-kart">
+        <div class="medya"><img src="assets/img/ai/destekleyici.jpg" alt="Spa odasında uzman eşliğinde masaj uygulaması" loading="lazy"></div>
+        <div class="bilgi"><h3>Destekleyici Uygulamalar</h3><p>Lipoliz, lenfatik drenaj ve soğuk su terapisi seçenekleri.</p><a class="kart-link" href="terapi.html?id=destekleyici-uygulamalar">Detayı İncele</a></div>
+      </article>
+      <article class="terapi-kart">
+        <div class="medya"><img src="assets/img/ai/diyabetik-yasam.jpg" alt="Diyabetik yaşam desteği için dengeli öğün planlaması" loading="lazy"></div>
+        <div class="bilgi"><h3>Diyabetik Yaşam Desteği</h3><p>Beslenme ve aktivite planlamasıyla günlük yaşam düzenini destekler.</p><a class="kart-link" href="terapi.html?id=diyabetik-yasam">Detayı İncele</a></div>
+      </article>
+      <article class="terapi-kart">
+        <div class="medya"><img src="assets/img/ai/well-aging.jpg" alt="Well-aging programında deniz manzaralı sabah hareket seansı" loading="lazy"></div>
+        <div class="bilgi"><h3>Well-Aging</h3><p>Yaş almayı iyi yaşamak için bütüncül, uzun vadeli program yaklaşımı.</p><a class="kart-link" href="terapi.html?id=well-aging">Detayı İncele</a></div>
       </article>
       <article class="terapi-kart">
         <div class="medya"><img src="assets/img/ai/ritual-3-ozon.jpg" alt="Sedir ahşabı ozon sauna" loading="lazy"></div>
-        <div class="bilgi"><h3>Ozon Sauna</h3><p>Sedir ahşabında derin ısınma; arınma hissine katkıda bulunur.</p></div>
+        <div class="bilgi"><h3>Ozon Sauna</h3><p>Sedir ahşabında derin ısınma; arınma hissine katkıda bulunur.</p><a class="kart-link" href="terapi.html?id=ozon-sauna">Detayı İncele</a></div>
       </article>
       <article class="terapi-kart">
         <div class="medya"><img src="assets/img/ai/ritual-6-oksijen.jpg" alt="Deniz manzaralı oksijen terapisi salonu" loading="lazy"></div>
-        <div class="bilgi"><h3>Oksijen Terapisi</h3><p>Deniz manzarasına karşı nefes odaklı tazelenme seansları.</p></div>
+        <div class="bilgi"><h3>Oksijen Terapisi</h3><p>Deniz manzarasına karşı nefes odaklı tazelenme seansları.</p><a class="kart-link" href="terapi.html?id=oksijen-terapisi">Detayı İncele</a></div>
       </article>
-      <article class="terapi-kart ikonlu">
-        <div class="medya"><img src="assets/img/icon/ikon-fener.jpg" alt="" loading="lazy"></div>
-        <div class="bilgi"><h3>Luminette Işık Terapisi</h3><p>Işık uygulamalarıyla gün ritmini dengelemeyi destekler.</p></div>
+      <article class="terapi-kart">
+        <div class="medya"><img src="assets/img/ai/luminette.jpg" alt="Luminette ışık terapisi seansında dinlenen konuk" loading="lazy"></div>
+        <div class="bilgi"><h3>Luminette Işık Terapisi</h3><p>Işık uygulamalarıyla gün ritmini dengelemeyi destekler.</p><a class="kart-link" href="terapi.html?id=luminette">Detayı İncele</a></div>
       </article>
-      <article class="terapi-kart ikonlu">
-        <div class="medya"><img src="assets/img/icon/ikon-sauna.jpg" alt="" loading="lazy"></div>
-        <div class="bilgi"><h3>Infrared Sauna</h3><p>Kızılötesi ısıyla derinlemesine, nazik bir ter deneyimi sunar.</p></div>
+      <article class="terapi-kart">
+        <div class="medya"><img src="assets/img/ai/infrared-sauna.jpg" alt="Sıcak ışıklı infrared sauna kabini" loading="lazy"></div>
+        <div class="bilgi"><h3>Infrared Sauna</h3><p>Kızılötesi ısıyla derinlemesine, nazik bir ter deneyimi sunar.</p><a class="kart-link" href="terapi.html?id=infrared-sauna">Detayı İncele</a></div>
       </article>
       <article class="terapi-kart">
         <div class="medya"><img src="assets/img/ai/ritual-4-camur.jpg" alt="Termal çamur banyosu" loading="lazy"></div>
-        <div class="bilgi"><h3>Çamur Banyosu</h3><p>Kaynağın mineral çamuru, cilt bakım rutinine katkıda bulunur.</p></div>
+        <div class="bilgi"><h3>Çamur Banyosu</h3><p>Kaynağın mineral çamuru, cilt bakım rutinine katkıda bulunur.</p><a class="kart-link" href="terapi.html?id=camur-banyosu">Detayı İncele</a></div>
       </article>
     </div>
     <p class="temsili gorun">Uygulama içerikleri bilgilendirme amaçlıdır; tıbbi tedavi vaadi içermez. Kişiye özel programlar uzman ekiple planlanır. Görseller temsilîdir; yapay zekâ destekli konsept çalışmalarından oluşur.</p>
@@ -314,8 +314,10 @@
       <h4>Keşfet</h4>
       <a href="kesfet.html">Vaziyet Planı</a>
       <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
       <a href="wellness.html">Longevity &amp; Wellness</a>
       <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
       <a href="lokasyon.html">Lokasyon</a>
     </div>
     <div>
@@ -324,6 +326,8 @@
       <a href="nasil-calisir.html">Nasıl Çalışır?</a>
       <a href="guvence.html">Tor Holding Güvencesi</a>
       <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
       <a href="deneyim-gunu.html">Deneyim Günü</a>
     </div>
     <div>
