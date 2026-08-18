@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resort'u Keşfedin — İnteraktif Vaziyet Planı | TOR Thermal Yalova Armutlu</title>
+<meta name="description" content="TOR Thermal'in 72.000 m² yarımadasını interaktif vaziyet planında keşfedin: otel, konut blokları, villalar, aqua park, sağlık merkezi, kadınlar havuzu, füniküler ve tarihi deniz feneri.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Resort'u Keşfedin — İnteraktif Vaziyet Planı | TOR Thermal">
+<meta property="og:description" content="72.000 m² yarımadayı bölge bölge keşfedin: plajdan fünikülere, villalardan termal havuzlara.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/ai/morf-genel.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Resort",
+  "name": "Tor Thermal — Longevity & Wellness Resort",
+  "description": "Yalova Armutlu'da termal su, deniz ve ormanın buluştuğu longevity odaklı devre mülk resortu.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Armutlu", "addressRegion": "Yalova", "addressCountry": "TR" },
+  "telephone": "+90-212-671-69-68",
+  "url": "https://torthermal.com",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Termal Havuzlar (Kadın & Erkek Ayrı)" },
+    { "@type": "LocationFeatureSpecification", "name": "Aqua Park" },
+    { "@type": "LocationFeatureSpecification", "name": "Sağlık ve Wellness Merkezi" },
+    { "@type": "LocationFeatureSpecification", "name": "Füniküler ve Seyir Terasları" },
+    { "@type": "LocationFeatureSpecification", "name": "Özel Plaj" }
+  ]
+}
+</script>
+<style>
+/* ---- Keşfet: interaktif vaziyet planı ---- */
+.plan-kaydir{
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+  border-radius:var(--radius); box-shadow:var(--golge); background:var(--lacivert-derin);
+}
+.plan-kap{ position:relative; min-width:760px; }
+.plan-kap > img{ width:100%; display:block; }
+.plan-ipucu{ font-size:13px; color:var(--soluk); margin:14px 0 0; }
+.nokta{ position:absolute; transform:translate(-50%,-50%); z-index:5; }
+.nokta.acik{ z-index:30; }
+.nokta-dugme{
+  width:26px; height:26px; border-radius:50%; padding:0; cursor:pointer;
+  background:var(--turkuaz); border:2.5px solid #fff; position:relative;
+  box-shadow:0 4px 14px rgba(0,0,0,.4); display:block;
+}
+.nokta-dugme::after{
+  content:""; position:absolute; inset:-7px; border-radius:50%;
+  border:2px solid rgba(127,184,206,.95);
+  animation:nokta-nabiz 2.4s ease-out infinite;
+}
+.nokta-dugme:hover{ background:var(--bakir); }
+.nokta-dugme:focus-visible{ outline:3px solid var(--bakir-acik); outline-offset:3px; }
+.nokta.acik .nokta-dugme{ background:var(--bakir); }
+@keyframes nokta-nabiz{
+  0%{ transform:scale(.65); opacity:.95; }
+  70%{ transform:scale(1.7); opacity:0; }
+  100%{ transform:scale(1.7); opacity:0; }
+}
+@media (prefers-reduced-motion: reduce){ .nokta-dugme::after{ animation:none; opacity:.5; } }
+.nokta-karti{
+  position:absolute; bottom:calc(100% + 15px); left:50%; transform:translateX(-50%);
+  width:252px; background:var(--beyaz); border-radius:12px; overflow:hidden;
+  box-shadow:0 18px 46px rgba(12,20,40,.42); text-align:left;
+  opacity:0; visibility:hidden; pointer-events:none; transition:opacity .25s ease;
+}
+.nokta-karti::after{
+  content:""; position:absolute; left:50%; bottom:-7px; transform:translateX(-50%) rotate(45deg);
+  width:14px; height:14px; background:var(--beyaz);
+}
+.nokta-karti img{ width:100%; height:112px; object-fit:cover; }
+.nokta-karti .kbilgi{ padding:12px 15px 15px; }
+.nokta-karti h3{ font-size:15.5px; margin:0 0 4px; }
+.nokta-karti p{ font-size:12.8px; color:var(--soluk); line-height:1.55; margin:0; }
+.nokta.acik .nokta-karti{ opacity:1; visibility:visible; pointer-events:auto; }
+@media (hover:hover){
+  .nokta:hover{ z-index:30; }
+  .nokta:hover .nokta-karti{ opacity:1; visibility:visible; pointer-events:auto; }
+}
+/* Kenar varyantları */
+.n-alt .nokta-karti{ bottom:auto; top:calc(100% + 15px); }
+.n-alt .nokta-karti::after{ bottom:auto; top:-7px; }
+.n-sol .nokta-karti{ left:-8px; transform:none; }
+.n-sol .nokta-karti::after{ left:22px; transform:rotate(45deg); }
+.n-sag .nokta-karti{ left:auto; right:-8px; transform:none; }
+.n-sag .nokta-karti::after{ left:auto; right:15px; transform:rotate(45deg); }
+/* Bölge anlatımındaki mini ikon gridi */
+.mini-ikonlar{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.mini-ikonlar .ikon-kutu img{ width:72px; height:72px; }
+</style>
+</head>
+<body>
+
+<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ SAYFA BAŞLIĞI ============ -->
+<section class="sayfa-baslik">
+  <div class="arka"><img src="assets/img/ai/morf-genel.jpg" alt=""></div>
+  <div class="ic">
+    <div class="kirinti"><a href="index.html">Ana Sayfa</a> · Keşfet</div>
+    <h1>Resort'u Keşfedin</h1>
+    <p class="alt">Üç tarafı Marmara ile çevrili 72.000 m²'lik yarımada; plajdan fünikülere, villalardan termal havuzlara bölge bölge önünüzde.</p>
+  </div>
+</section>
+
+<!-- ============ İNTERAKTİF VAZİYET PLANI ============ -->
+<section>
+  <div class="ic">
+    <div class="gozkasi gorun">İnteraktif Vaziyet Planı</div>
+    <h2 class="gorun">Yarımadayı Nokta Nokta Gezin</h2>
+    <p class="bolum-giris gorun">Plan üzerindeki noktalara dokunun; her bölgenin ne sunduğunu görselleriyle birlikte görün. Kuzeyde orman, plaj ve fener; merkezde konutlar ve otel; güneybatıda park ile spor vadisi.</p>
+    <div class="bosluk-kucuk"></div>
+    <div class="gorun">
+      <div class="plan-kaydir">
+        <div class="plan-kap">
+          <img src="assets/img/render/masterplan-etiketli.jpg" alt="TOR Thermal etiketli vaziyet planı: yarımada üzerinde plajlar, seyir terasları, konut blokları, villalar, otel, aqua park ve spor alanları">
+
+          <div class="nokta n-alt" style="left:28.3%; top:4.6%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Tarihi Deniz Feneri bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/ai/ritual-7-funikuler.jpg" alt="Gün batımında tarihi deniz feneri ve seyir terası" loading="lazy">
+              <div class="kbilgi"><h3>Tarihi Deniz Feneri</h3><p>Yarımadanın ucunda tarihî fener ve gün batımı seyir terasları. Tor Ritüeli burada tamamlanır.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta n-alt" style="left:50.5%; top:12%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Plaj ve Dalgakıran bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/ai/morf-plaj.jpg" alt="Dalgakıranla korunan plaj ve koy, havadan görünüm" loading="lazy">
+              <div class="kbilgi"><h3>Plaj &amp; Dalgakıran</h3><p>Kadın ve erkek plajları, dalgakıranla korunan sakin koy ve deniz iskelesi.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta" style="left:21.3%; top:20.7%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Kadınlar Havuzu bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/ai/kadin-havuzu.jpg" alt="Kadınlara özel termal havuz ve güneşlenme terasları" loading="lazy">
+              <div class="kbilgi"><h3>Kadınlar Havuzu</h3><p>Yarımadanın kuzeyinde yalnızca kadınlara ayrılmış termal havuz ve güneşlenme terasları.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta n-sag" style="left:62.3%; top:28.4%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Füniküler bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/ai/morf-funikuler.jpg" alt="Yamaçta ilerleyen füniküler hattı, havadan görünüm" loading="lazy">
+              <div class="kbilgi"><h3>Füniküler</h3><p>Sahili seyir teraslarına bağlayan füniküler hat; fenere ve orman rotalarına konforlu ulaşım.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta" style="left:32.7%; top:52.2%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Aqua Park bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/ai/aquapark-gece.jpg" alt="Akşam ışıklarıyla aqua park ve kaydıraklar" loading="lazy">
+              <div class="kbilgi"><h3>Aqua Park</h3><p>Kaydıraklar, kumsallı yüzme havuzu ve çocuk oyun alanları. Yaz aylarının buluşma noktası.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta" style="left:41.9%; top:63.8%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Konut blokları bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/render/r03.png" alt="Akşam saatinde konut bloklarının peyzajlı iç sokağı" loading="lazy">
+              <div class="kbilgi"><h3>Konut Blokları</h3><p>8 blokta 332 konut. 1+1'den 3+1'e tam eşyalı, akıllı ev sistemli daireler.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta" style="left:49.3%; top:67.8%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Villalar bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/ai/morf-villa.jpg" alt="Deniz manzaralı villa bölgesi, havadan görünüm" loading="lazy">
+              <div class="kbilgi"><h3>Villalar</h3><p>82 villa, 42'si ikiz. 254–310 m² çift katlı, özel bahçeli 3+1 ve 4+1 seçenekler.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta" style="left:32.8%; top:70.8%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Otel bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/render/r05.png" alt="Deniz ve gün batımı manzaralı otel süit terası" loading="lazy">
+              <div class="kbilgi"><h3>Otel</h3><p>Yerleşkenin kalbinde butik otel konforu: resepsiyon, restoranlar ve deniz manzaralı süitler.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta" style="left:27.4%; top:80.2%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Sağlık Merkezi bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/ai/ritual-6-oksijen.jpg" alt="Deniz manzaralı oksijen terapi salonu" loading="lazy">
+              <div class="kbilgi"><h3>Sağlık Merkezi</h3><p>Termal terapiler ve wellness uygulamalarıyla sağlıklı yaşam rutininizi destekleyen merkez.</p></div>
+            </div>
+          </div>
+
+          <div class="nokta n-sol" style="left:12.9%; top:87.8%;">
+            <button class="nokta-dugme" aria-expanded="false" aria-label="Golf ve Spor Vadisi bilgi kartını aç"></button>
+            <div class="nokta-karti">
+              <img src="assets/img/icon/ikon-golf.jpg" alt="Golf temalı üç boyutlu ikon" loading="lazy">
+              <div class="kbilgi"><h3>Golf &amp; Spor Vadisi</h3><p>Mini golf, tenis, basketbol, at biniciliği ve organik ürün pazarı; park meydanının çevresinde.</p></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <p class="plan-ipucu">İpucu: Noktalara dokunarak bölge kartlarını açın; dar ekranda planı sağa-sola kaydırabilirsiniz.</p>
+      <p class="temsili">Vaziyet planı temsilîdir; mimari tasarım ve peyzaj, proje geliştiricisi tarafından değiştirilebilir.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÇİZİMDEN HAYATA GALERİSİ ============ -->
+<section class="kum-zemin">
+  <div class="ic">
+    <div class="gozkasi gorun">Çizimden Hayata</div>
+    <h2 class="gorun">Planın Karşılığı: Fotoreal Hava Kareleri</h2>
+    <p class="bolum-giris gorun">Yukarıdaki planda gördüğünüz her bölgenin, yapay zekâ destekli fotoreal hava çekimi karşılığı. Dönüşümü video olarak izlemek için ana sayfadaki "Çizimden Hayata" bölümüne göz atın.</p>
+    <div class="kart-grid gorun">
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/morf-genel.jpg" alt="Tüm yarımadanın fotoreal hava görünümü" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Tüm Yarımada</h3><p>Orman, deniz ve yerleşkenin tek karede buluştuğu genel görünüm.</p><a class="kart-link" href="index.html">Videosunu Ana Sayfada İzleyin</a></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/morf-plaj.jpg" alt="Plaj ve dalgakıranın fotoreal hava görünümü" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Plaj &amp; Dalgakıran</h3><p>Korunaklı koy, iskele ve kuzey sahilinin kuş bakışı hali.</p><a class="kart-link" href="index.html">Videosunu Ana Sayfada İzleyin</a></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/morf-aquapark.jpg" alt="Aqua park ve termal bölgenin fotoreal hava görünümü" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Aqua Park &amp; Termal</h3><p>Kaydıraklar, havuzlar ve sosyal tesislerin merkez aksı.</p><a class="kart-link" href="index.html">Videosunu Ana Sayfada İzleyin</a></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/morf-villa.jpg" alt="Villa bölgesinin fotoreal hava görünümü" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Villalar</h3><p>Denize bakan yamaçta bahçeli villaların dizilişi.</p><a class="kart-link" href="index.html">Videosunu Ana Sayfada İzleyin</a></div>
+      </article>
+      <article class="kart">
+        <div class="kart-medya"><img src="assets/img/ai/morf-funikuler.jpg" alt="Füniküler ve fener hattının fotoreal hava görünümü" loading="lazy"></div>
+        <div class="kart-icerik"><h3>Füniküler &amp; Fener</h3><p>Sahilden seyir teraslarına uzanan hat ve tarihi fener.</p><a class="kart-link" href="index.html">Videosunu Ana Sayfada İzleyin</a></div>
+      </article>
+    </div>
+    <p class="temsili gorun">Görseller yapay zekâ destekli konsept çalışmasıdır; mimari temsil niteliğindedir, bağlayıcı taahhüt içermez.</p>
+  </div>
+</section>
+
+<!-- ============ BÖLGE BÖLGE ANLATIM ============ -->
+<section>
+  <div class="ic">
+    <div class="gozkasi gorun">Dört Bölge, Tek Yaşam</div>
+    <h2 class="gorun">Yarımadanın Dört Karakteri</h2>
+    <p class="bolum-giris gorun">Her bölge farklı bir ritme göre tasarlandı: konutların sakinliği, sosyal tesislerin hareketi, parkın oyunu ve wellness yarımadasının dinginliği.</p>
+    <div class="bosluk"></div>
+
+    <div class="iki-kolon gorun">
+      <div class="cerceve"><img src="assets/img/render/r02.png" alt="Akşam saatinde konut sokağı; ışıklı cepheler ve peyzaj" loading="lazy"></div>
+      <div>
+        <div class="gozkasi">01 · Konut Bölgesi</div>
+        <h3>Denize Bakan Yamaçta 332 Konut, 82 Villa</h3>
+        <p>Bloklar ve villalar, güney yamacında manzarayı paylaşacak şekilde kademelenir. Tüm daireler tam eşyalı ve akıllı ev sistemli teslim edilir; her ziyaretinizde eviniz sizi hazır karşılar.</p>
+        <a class="kart-link" href="daireler.html">Daire ve Villa Tiplerini İnceleyin</a>
+      </div>
+    </div>
+    <div class="bosluk"></div>
+
+    <div class="iki-kolon gorun">
+      <div>
+        <div class="gozkasi">02 · Sosyal Tesisler</div>
+        <h3>Otel, Restoranlar ve Aqua Park</h3>
+        <p>Helipad'li karşılama binasıyla başlayan merkez aks; resepsiyon, restoranlar, açık hava sineması ve aqua park ile günün her saatine bir seçenek sunar. Akşamları ışıklandırılmış havuz çevresi yerleşkenin buluşma noktasıdır.</p>
+        <a class="kart-link" href="deneyim-gunu.html">Deneyim Günü'nde Yerinde Görün</a>
+      </div>
+      <div class="cerceve"><img src="assets/img/render/r01.png" alt="Helipad'li karşılama binası ve çevresinin geniş açı görünümü" loading="lazy"></div>
+    </div>
+    <div class="bosluk"></div>
+
+    <div class="iki-kolon gorun">
+      <div class="mini-ikonlar">
+        <div class="ikon-kutu"><img src="assets/img/icon/ikon-golf.jpg" alt="" loading="lazy"><span>Mini Golf</span></div>
+        <div class="ikon-kutu"><img src="assets/img/icon/ikon-at.jpg" alt="" loading="lazy"><span>At Biniciliği</span></div>
+        <div class="ikon-kutu"><img src="assets/img/icon/ikon-dambil.jpg" alt="" loading="lazy"><span>Spor Sahaları</span></div>
+        <div class="ikon-kutu"><img src="assets/img/icon/ikon-sepet.jpg" alt="" loading="lazy"><span>Organik Pazar</span></div>
+        <div class="ikon-kutu"><img src="assets/img/icon/ikon-robot.jpg" alt="" loading="lazy"><span>Robotik Kulüp</span></div>
+        <div class="ikon-kutu"><img src="assets/img/icon/ikon-sinema.jpg" alt="" loading="lazy"><span>Açık Hava Sineması</span></div>
+      </div>
+      <div>
+        <div class="gozkasi">03 · Park &amp; Spor Vadisi</div>
+        <h3>Park Meydanı Çevresinde Aktif Yaşam</h3>
+        <p>Güneybatı ucundaki vadi; tenis, basketbol ve futbol sahaları, mini golf, at binicilik alanı, macera parkuru ve saman labirentiyle her yaşa oyun sunar. Organik ürün pazarı, bölge üreticisini sofranıza taşır.</p>
+        <a class="kart-link" href="deneyim-gunu.html">Aileniz İçin Bir Gün Planlayın</a>
+      </div>
+    </div>
+    <div class="bosluk"></div>
+
+    <div class="iki-kolon gorun">
+      <div class="cerceve"><img src="assets/img/ai/ritual-1-termal.jpg" alt="Buharı yükselen termal havuz" loading="lazy"></div>
+      <div>
+        <div class="gozkasi">04 · Wellness Yarımadası</div>
+        <h3>Kuzey Burnunda Termal ve Orman</h3>
+        <p>Kadınlar havuzu, hamam ve sağlık merkezi; hiking parkuru, amfi tiyatro ve seyir teraslarıyla çevrilidir. Termal su ve terapiler, sağlıklı yaşam rutininizi destekler; fünikülerle çıkılan fener terası günü taçlandırır.</p>
+        <p class="temsili">Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+        <a class="kart-link" href="wellness.html">Longevity &amp; Wellness Programları</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SON CTA ============ -->
+<section style="padding-top:0;">
+  <div class="ic">
+    <div class="cta-serit gorun">
+      <div>
+        <div class="gozkasi" style="color:var(--bakir-acik);">Plan Güzel, Yerinde Daha Güzel</div>
+        <h2>Haritada Gezdiniz; Şimdi Yerinde Yaşayın</h2>
+        <p>Deneyim Günü'nde yarımadayı adım adım gezin, termal suyu deneyin. Size uygun daire ve dönemi bulmak için Dönem Bulucu'yu kullanın.</p>
+      </div>
+      <a class="btn btn-birincil" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>
+      <a class="btn btn-hayalet" href="daire-donem-bulucu.html" style="margin-left:0;">Dönem Bulucu'yu Deneyin</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<a class="wa-balon" href="https://wa.me/902126716968?text=Merhaba%2C%20Tor%20Thermal%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9.9-4.7-.3-.6c-.9-1.6-1.4-3.4-1.4-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.7 10.8-10.2 10.8zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+<script>
+/* İnteraktif vaziyet planı: nokta kartlarını aç/kapat (mobilde dokunma, masaüstünde hover CSS ile) */
+(function(){
+  var noktalar = Array.prototype.slice.call(document.querySelectorAll('.nokta'));
+  function hepsiniKapat(haric){
+    noktalar.forEach(function(n){
+      if(n === haric) return;
+      n.classList.remove('acik');
+      var d = n.querySelector('.nokta-dugme');
+      if(d) d.setAttribute('aria-expanded','false');
+    });
+  }
+  noktalar.forEach(function(n){
+    var d = n.querySelector('.nokta-dugme');
+    if(!d) return;
+    d.addEventListener('click', function(e){
+      e.stopPropagation();
+      var acildi = n.classList.toggle('acik');
+      d.setAttribute('aria-expanded', acildi ? 'true' : 'false');
+      hepsiniKapat(acildi ? n : null);
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.nokta')) hepsiniKapat(null);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') hepsiniKapat(null);
+  });
+})();
+</script>
+</body>
+</html>
