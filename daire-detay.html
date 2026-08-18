@@ -298,36 +298,27 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
     </div>
   </section>
 
-  <!-- (2B) İÇ MEKÂN TURU — yalnız 1+1 Delüks -->
+  <!-- (2B) İÇ MEKÂN TURU — tip konfigürasyonuna göre dolar -->
   <section class="koyu" id="icMekanSection" hidden>
     <div class="ic">
       <div class="gozkasi gorun">İç Mekân Turu</div>
-      <h2 class="gorun">1+1 Delüks'ün İçinde Gezinin</h2>
+      <h2 class="gorun" id="icMekanBaslik">Dairenin İçinde Gezinin</h2>
       <p class="bolum-giris gorun">Dairenin içini oda oda keşfedin; ardından 360° sanal turla sanki içindeymiş gibi etrafınıza bakın.</p>
 
-      <div class="galeri-grid gorun" id="icMekanGrid">
-        <button type="button" class="galeri-kutu" data-buyuk="assets/img/ai/ic/1p1-salon-4k.jpg" aria-label="Salon — büyüt"><img src="assets/img/ai/daire-salon.jpg" alt="1+1 Delüks salon" loading="lazy"></button>
-        <button type="button" class="galeri-kutu" data-buyuk="assets/img/ai/ic/1p1-salon-genis-4k.jpg" aria-label="Salon geniş açı — büyüt"><img src="assets/img/ai/ic/1p1-salon-genis.jpg" alt="1+1 Delüks salon geniş açı" loading="lazy"></button>
-        <button type="button" class="galeri-kutu" data-buyuk="assets/img/ai/ic/1p1-yemek-4k.jpg" aria-label="Yemek köşesi — büyüt"><img src="assets/img/ai/ic/1p1-yemek.jpg" alt="1+1 Delüks yemek köşesi" loading="lazy"></button>
-        <button type="button" class="galeri-kutu" data-buyuk="assets/img/ai/ic/1p1-mutfak-4k.jpg" aria-label="Mutfak — büyüt"><img src="assets/img/ai/ic/1p1-mutfak.jpg" alt="1+1 Delüks açık mutfak" loading="lazy"></button>
-        <button type="button" class="galeri-kutu" data-buyuk="assets/img/ai/ic/1p1-yatak-4k.jpg" aria-label="Yatak odası — büyüt"><img src="assets/img/ai/ic/1p1-yatak.jpg" alt="1+1 Delüks yatak odası" loading="lazy"></button>
-        <button type="button" class="galeri-kutu" data-buyuk="assets/img/ai/ic/1p1-banyo-4k.jpg" aria-label="Banyo — büyüt"><img src="assets/img/ai/ic/1p1-banyo.jpg" alt="1+1 Delüks banyo" loading="lazy"></button>
-        <button type="button" class="galeri-kutu" data-buyuk="assets/img/ai/ic/1p1-balkon-4k.jpg" aria-label="Balkon — büyüt"><img src="assets/img/ai/ic/1p1-balkon.jpg" alt="1+1 Delüks deniz manzaralı balkon" loading="lazy"></button>
-        <button type="button" class="galeri-kutu" data-buyuk="assets/img/ai/ic/1p1-antre-4k.jpg" aria-label="Giriş holü — büyüt"><img src="assets/img/ai/ic/1p1-antre.jpg" alt="1+1 Delüks giriş holü" loading="lazy"></button>
-      </div>
+      <div class="galeri-grid gorun" id="icMekanGrid"></div>
 
       <div class="bosluk"></div>
       <div class="gorun">
         <span class="pano360-rozet">Sanal Tur — Sürükleyin, Etrafınıza Bakın</span>
-        <div class="pano360" data-odalar='[{"ad":"Salon","src":"assets/img/ai/ic/1p1-salon-360.jpg"},{"ad":"Yatak Odası","src":"assets/img/ai/ic/1p1-yatak-360.jpg"},{"ad":"Balkon","src":"assets/img/ai/ic/1p1-balkon-360.jpg"}]'></div>
+        <div class="pano360" id="icMekanPano"></div>
       </div>
 
       <div class="bosluk"></div>
       <div class="gorun">
-        <span class="pano360-rozet" style="--rozet:1;">Gezinti Videosu</span>
+        <span class="pano360-rozet" id="icMekanVideoRozet">Gezinti Videosu</span>
         <div class="morf-kap">
-          <video controls muted loop playsinline preload="metadata" poster="assets/img/ai/daire-salon.jpg">
-            <source src="assets/video/tur-1p1.mp4" type="video/mp4">
+          <video id="icMekanVideo" controls loop playsinline preload="metadata">
+            <source src="" type="video/mp4">
           </video>
         </div>
       </div>
@@ -875,19 +866,87 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
 <script src="assets/js/mevsim.js"></script>
 <script src="assets/js/ana.js"></script>
 <script>
-/* İç Mekân Turu: yalnız 1+1 Delüks'te görünür + kendi mini lightbox'ı */
+/* İç Mekân Turu: tip konfigürasyonuna göre kurulur + kendi mini lightbox'ı */
 (function () {
   "use strict";
+  var IC_TUR = {
+    "1p1-deluks": {
+      baslik: "1+1 Delüks'ün İçinde Gezinin",
+      kareler: [
+        { ad: "Salon", thumb: "assets/img/ai/daire-salon.jpg", buyuk: "assets/img/ai/ic/1p1-salon-4k.jpg" },
+        { ad: "Salon geniş açı", thumb: "assets/img/ai/ic/1p1-salon-genis.jpg", buyuk: "assets/img/ai/ic/1p1-salon-genis-4k.jpg" },
+        { ad: "Yemek köşesi", thumb: "assets/img/ai/ic/1p1-yemek.jpg", buyuk: "assets/img/ai/ic/1p1-yemek-4k.jpg" },
+        { ad: "Mutfak", thumb: "assets/img/ai/ic/1p1-mutfak.jpg", buyuk: "assets/img/ai/ic/1p1-mutfak-4k.jpg" },
+        { ad: "Yatak odası", thumb: "assets/img/ai/ic/1p1-yatak.jpg", buyuk: "assets/img/ai/ic/1p1-yatak-4k.jpg" },
+        { ad: "Banyo", thumb: "assets/img/ai/ic/1p1-banyo.jpg", buyuk: "assets/img/ai/ic/1p1-banyo-4k.jpg" },
+        { ad: "Balkon", thumb: "assets/img/ai/ic/1p1-balkon.jpg", buyuk: "assets/img/ai/ic/1p1-balkon-4k.jpg" },
+        { ad: "Giriş holü", thumb: "assets/img/ai/ic/1p1-antre.jpg", buyuk: "assets/img/ai/ic/1p1-antre-4k.jpg" }
+      ],
+      panolar: [
+        { ad: "Salon", src: "assets/img/ai/ic/1p1-salon-360.jpg" },
+        { ad: "Yatak Odası", src: "assets/img/ai/ic/1p1-yatak-360.jpg" },
+        { ad: "Balkon", src: "assets/img/ai/ic/1p1-balkon-360.jpg" }
+      ],
+      video: "assets/video/tur-1p1.mp4",
+      poster: "assets/img/ai/daire-salon.jpg",
+      sesli: false
+    },
+    "1p1-deniz": {
+      baslik: "1+1 Delüks Deniz Manzaralı'nın İçinde Gezinin",
+      kareler: [
+        { ad: "Panoramik salon", thumb: "assets/img/ai/ic/1p1d-salon.jpg", buyuk: "assets/img/ai/ic/1p1d-salon-4k.jpg" },
+        { ad: "Salon geniş açı", thumb: "assets/img/ai/ic/1p1d-salon-genis.jpg", buyuk: "assets/img/ai/ic/1p1d-salon-genis-4k.jpg" },
+        { ad: "Deniz manzaralı yemek köşesi", thumb: "assets/img/ai/ic/1p1d-yemek.jpg", buyuk: "assets/img/ai/ic/1p1d-yemek-4k.jpg" },
+        { ad: "Mutfak", thumb: "assets/img/ai/ic/1p1d-mutfak.jpg", buyuk: "assets/img/ai/ic/1p1d-mutfak-4k.jpg" },
+        { ad: "Denize uyanan yatak odası", thumb: "assets/img/ai/ic/1p1d-yatak.jpg", buyuk: "assets/img/ai/ic/1p1d-yatak-4k.jpg" },
+        { ad: "Banyo", thumb: "assets/img/ai/ic/1p1d-banyo.jpg", buyuk: "assets/img/ai/ic/1p1d-banyo-4k.jpg" },
+        { ad: "Marmara'ya bakan balkon", thumb: "assets/img/ai/ic/1p1d-balkon.jpg", buyuk: "assets/img/ai/ic/1p1d-balkon-4k.jpg" },
+        { ad: "Giriş holü", thumb: "assets/img/ai/ic/1p1d-antre.jpg", buyuk: "assets/img/ai/ic/1p1d-antre-4k.jpg" }
+      ],
+      panolar: [
+        { ad: "Salon", src: "assets/img/ai/ic/1p1d-salon-360.jpg" },
+        { ad: "Yatak Odası", src: "assets/img/ai/ic/1p1d-yatak-360.jpg" },
+        { ad: "Balkon", src: "assets/img/ai/ic/1p1d-balkon-360.jpg" }
+      ],
+      video: "assets/video/tur-1p1-deniz.mp4",
+      poster: "assets/img/ai/ic/1p1d-salon.jpg",
+      sesli: true
+    }
+  };
+
   var arama = new URLSearchParams(location.search);
-  if (arama.get("tip") !== "1p1-deluks") return;
+  var cfg = IC_TUR[arama.get("tip")];
+  if (!cfg) return;
   var bolum = document.getElementById("icMekanSection");
   if (!bolum) return;
   bolum.hidden = false;
+  document.getElementById("icMekanBaslik").textContent = cfg.baslik;
 
-  /* 360 görüntüleyiciyi yalnız bu tipte yükle */
+  /* Galeri kartları */
+  var grid = document.getElementById("icMekanGrid");
+  cfg.kareler.forEach(function (k) {
+    var d = document.createElement("button");
+    d.type = "button";
+    d.className = "galeri-kutu";
+    d.setAttribute("data-buyuk", k.buyuk);
+    d.setAttribute("aria-label", k.ad + " — büyüt");
+    d.innerHTML = '<img src="' + k.thumb + '" alt="' + k.ad + '" loading="lazy">';
+    grid.appendChild(d);
+  });
+
+  /* 360 panoramalar + görüntüleyici */
+  document.getElementById("icMekanPano").setAttribute("data-odalar", JSON.stringify(cfg.panolar));
   var ps = document.createElement("script");
   ps.src = "assets/js/panorama360.js";
   document.body.appendChild(ps);
+
+  /* Video */
+  var video = document.getElementById("icMekanVideo");
+  video.poster = cfg.poster;
+  video.querySelector("source").src = cfg.video;
+  video.muted = !cfg.sesli;
+  if (cfg.sesli) document.getElementById("icMekanVideoRozet").textContent = "Sesli Gezinti Videosu — 🔊 sesi açın";
+  video.load();
 
   var ortu = document.createElement("div");
   ortu.style.cssText = "position:fixed;inset:0;z-index:400;background:rgba(8,13,26,.92);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out;";
