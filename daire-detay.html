@@ -503,6 +503,8 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
   function aralik(min, maks) {
     return (min === maks) ? fm(min) : fm(min) + "–" + fm(maks);
   }
+  /* Resmî 2D kat planı anahtarı — Delüks ve Deniz varyantları AYNI planı paylaşır
+     (proje dosyasında tek plan verilmiştir). */
   function planKeyBul(id) {
     if (id === "3p1-villa") return "villa3";
     if (id === "4p1-villa") return "villa4";
@@ -510,6 +512,17 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
     if (id.indexOf("2p1") === 0) return "2p1";
     if (id.indexOf("3p1") === 0) return "3p1";
     return null;
+  }
+  /* 3D görünüm / tanıtım videosu anahtarı — her tipin KENDİ modeli vardır,
+     çünkü deniz varyantlarında cephe, teras ve yerleşim farklıdır. */
+  function medyaKeyBul(id) {
+    var harita = {
+      "1p1-deluks": "1p1",  "1p1-deniz": "1p1d",
+      "2p1-deluks": "2p1",  "2p1-deniz": "2p1d",
+      "3p1-deluks": "3p1",  "3p1-deniz": "3p1d",
+      "3p1-villa": "villa3", "4p1-villa": "villa4"
+    };
+    return harita[id] || planKeyBul(id);
   }
   function el(id) { return document.getElementById(id); }
 
@@ -698,9 +711,10 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
     var etiket = el("planEtiket");
     if (!od) return;
 
+    var medyaKey  = medyaKeyBul(t.id);
     var plan2dYol = od.plan || od.planZemin;
-    var plan3dYol = "assets/img/ai/plan3d-" + (villaMi ? "villa" : planKey) + ".jpg";
-    var videoYol  = "assets/video/plan3d-" + (villaMi ? "villa" : planKey) + ".mp4";
+    var plan3dYol = "assets/img/ai/plan3d-" + medyaKey + ".jpg";
+    var videoYol  = "assets/video/plan3d-" + medyaKey + ".mp4";
 
     img2d.src = plan2dYol;
     img2d.alt = t.ad + " resmî kat planı (2D)";
