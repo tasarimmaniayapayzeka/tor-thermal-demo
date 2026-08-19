@@ -199,6 +199,12 @@
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", t.ad + ": " + t.kisa + " Rota seçenekleri, süre ve zorluk bilgileri, hazırlık listesi ve güvenlik notları.");
 
+    /* Bölüm başlıkları aktiviteye özeldir; kayıtta yoksa nötr karşılığa düşer. */
+    function b(anahtar, varsayilan) {
+      var v = t.bolum && t.bolum[anahtar];
+      return kacis(v || varsayilan);
+    }
+
     var kunye = (t.kunye || []).map(function (k) {
       return '<div class="kunye-hucre"><div class="d">' + kacis(k.deger) + '</div><div class="e">' + kacis(k.etiket) + "</div></div>";
     }).join("");
@@ -221,7 +227,16 @@
     var hazirlik = (t.hazirlik || []).map(function (h) { return "<li>" + CHECK + "<span>" + kacis(h) + "</span></li>"; }).join("");
     var saglayan = (t.saglayanlar || []).map(function (h) { return "<li>" + CHECK + "<span>" + kacis(h) + "</span></li>"; }).join("");
 
-    var digerleri = LISTE.filter(function (d) { return d.id !== t.id; }).slice(0, 4).map(function (d) {
+    /* Önce kayıtta belirtilen ilgili aktiviteler, sonra kalanlar — en fazla dört kart. */
+    var sirali = (t.ilgili || []).map(function (id) {
+      for (var j = 0; j < LISTE.length; j++) if (LISTE[j].id === id) return LISTE[j];
+      return null;
+    }).filter(Boolean);
+    LISTE.forEach(function (d) {
+      if (d.id !== t.id && sirali.indexOf(d) === -1) sirali.push(d);
+    });
+
+    var digerleri = sirali.slice(0, 4).map(function (d) {
       return '<a class="dizin-kart gorun" href="aktivite.html?id=' + encodeURIComponent(d.id) + '">' +
         '<div class="medya"><img src="' + d.hero + '" alt="' + kacis(d.ad) + '" loading="lazy">' +
         (d.yakinda ? '<span class="yakinda-rozet">Yakında</span>' : "") + "</div>" +
@@ -231,9 +246,9 @@
     var videoBlok = t.video ? (
       '<section class="koyu">' +
         '<div class="ic">' +
-          '<div class="gozkasi gorun">Parkurdan</div>' +
-          '<h2 class="gorun">Yürüyüş Gözünden</h2>' +
-          '<p class="bolum-giris gorun">Orman patikasında ilerlerken çekilmiş sesli görüntü — kulaklığınızı takın, ormanın sesini dinleyin.</p>' +
+          '<div class="gozkasi gorun">' + b("videoGozkasi", "Sahadan") + "</div>" +
+          '<h2 class="gorun">' + b("videoBaslik", t.ad + " Gözünden") + "</h2>" +
+          '<p class="bolum-giris gorun">' + b("videoGiris", "Aktivite sırasında çekilmiş sesli görüntü — kulaklığınızı takın.") + "</p>" +
           '<div class="bosluk-kucuk"></div>' +
           '<div class="morf-kap gorun"><video controls loop playsinline preload="none" poster="' + t.videoPoster + '"><source src="' + t.video + '" type="video/mp4"></video></div>' +
           '<p class="temsili gorun" style="color:#8FA2BC;">Görüntüler yapay zekâ destekli konsept çalışmasıdır; temsilîdir.</p>' +
@@ -258,18 +273,17 @@
           '<div class="bosluk"></div>' +
           '<div class="akt-yerlesim">' +
             '<div class="akt-govde">' +
-              '<div class="gozkasi gorun">Deneyim</div>' +
-              '<h2 class="gorun">Yürüyüş Nasıl İlerliyor?</h2>' +
+              '<div class="gozkasi gorun">' + b("deneyimGozkasi", "Deneyim") + "</div>" +
+              '<h2 class="gorun">' + b("deneyimBaslik", t.ad + " Nasıl İlerliyor?") + "</h2>" +
               paragraflar +
             "</div>" +
             '<aside class="akt-ozet gorun" aria-label="Aktivite özeti">' +
               '<div class="medya"><img src="' + ((t.galeri && t.galeri[0] && t.galeri[0].src) || t.hero) + '" alt="' + kacis(t.ad) + '" loading="lazy"></div>' +
               '<div class="govde">' +
                 "<h3>Bir Bakışta</h3>" +
-                '<div class="ozet-satir">' + CHECK + "<span><b>Buluşma:</b> Resepsiyon önü, sabah 08:30</span></div>" +
-                '<div class="ozet-satir">' + CHECK + "<span><b>Rehber:</b> Sertifikalı doğa rehberi</span></div>" +
-                '<div class="ozet-satir">' + CHECK + "<span><b>Kayıt:</b> Bir gün önceden aktivite merkezinden</span></div>" +
-                '<div class="ozet-satir">' + CHECK + "<span><b>Program:</b> Bilgiler temsilîdir</span></div>" +
+                (t.bakista || []).map(function (s) {
+                  return '<div class="ozet-satir">' + CHECK + "<span><b>" + kacis(s.etiket) + ":</b> " + kacis(s.deger) + "</span></div>";
+                }).join("") +
                 '<a class="btn btn-birincil btn-kucuk" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>' +
                 '<a class="btn btn-wa btn-kucuk" href="' + wa(t.ad) + '" target="_blank" rel="noopener">WhatsApp\'tan Sorun</a>' +
               "</div>" +
@@ -278,17 +292,17 @@
         "</div>" +
       "</section>" +
 
-      (rotalar ? '<section class="buz-zemin"><div class="ic">' +
-        '<div class="gozkasi gorun">Rota Seçenekleri</div>' +
-        '<h2 class="gorun">Temponuza Göre Üç Parkur</h2>' +
-        '<p class="bolum-giris gorun">Rehberiniz gruba göre tempoyu ayarlar; süreler yürüyüş molaları dâhil yaklaşık değerlerdir.</p>' +
+      (rotalar ? '<section class="buz-zemin" id="rotalar"><div class="ic">' +
+        '<div class="gozkasi gorun">' + b("rotaGozkasi", "Seçenekler") + "</div>" +
+        '<h2 class="gorun">' + b("rotaBaslik", "Seviyenize Göre Üç Seçenek") + "</h2>" +
+        '<p class="bolum-giris gorun">' + b("rotaGiris", "Eğitmeniniz gruba göre tempoyu ayarlar; süreler yaklaşık değerlerdir.") + "</p>" +
         '<div class="rota-grid">' + rotalar + "</div>" +
-        '<p class="temsili gorun">Rota süreleri, mesafeleri ve zorluk dereceleri temsilîdir; hava ve grup durumuna göre değişebilir.</p>' +
+        '<p class="temsili gorun">' + b("rotaNot", "Süreler, ölçüler ve zorluk dereceleri temsilîdir; hava ve grup durumuna göre değişebilir.") + "</p>" +
       "</div></section>" : "") +
 
       (galeri ? "<section><div class=\"ic\">" +
-        '<div class="gozkasi gorun">Parkurdan Kareler</div>' +
-        '<h2 class="gorun">Yolda Sizi Neler Bekliyor?</h2>' +
+        '<div class="gozkasi gorun">' + b("galeriGozkasi", "Kareler") + "</div>" +
+        '<h2 class="gorun">' + b("galeriBaslik", "Sizi Neler Bekliyor?") + "</h2>" +
         '<div class="akt-galeri gorun">' + galeri + "</div>" +
       "</div></section>" : "") +
 
@@ -309,9 +323,9 @@
 
       '<section><div class="ic"><div class="cta-serit gorun">' +
         "<div>" +
-          '<div class="gozkasi" style="color:var(--bakir-acik);">Yerinde Deneyin</div>' +
-          "<h2>Parkuru Kendi Adımlarınızla Tanıyın</h2>" +
-          "<p>Deneyim Günü'nde kısa bir tanıtım yürüyüşüne katılın, rehberimizle tanışın, parkurları yerinde görün.</p>" +
+          '<div class="gozkasi" style="color:var(--bakir-acik);">' + b("ctaGozkasi", "Yerinde Deneyin") + "</div>" +
+          "<h2>" + b("ctaBaslik", t.ad + "'nı Yerinde Tanıyın") + "</h2>" +
+          "<p>" + b("ctaMetin", "Deneyim Günü'nde kısa bir tanıtım seansına katılın, ekibimizle tanışın, alanı yerinde görün.") + "</p>" +
         "</div>" +
         '<div style="display:flex; gap:12px; flex-wrap:wrap; margin-left:auto;">' +
           '<a class="btn btn-birincil" href="deneyim-gunu.html">Deneyim Günü Ayırtın</a>' +
