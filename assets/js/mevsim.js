@@ -20,8 +20,37 @@
       if (!k) return;
       if (el.tagName === "IMG") { el.src = k; }
       else if (el.tagName === "VIDEO") {
-        el.querySelector("source").src = k; el.load();
-        el.play && el.play().catch(function(){});
+        /* Mobil/tasarruf: videoyu indirtme — mevsimi poster karesiyle göster.
+           (medya-lazy.js zaten autoplay'i durdurmuş olabilir.) */
+        var dar = false;
+        try {
+          dar = (window.matchMedia && window.matchMedia("(max-width:767px)").matches) ||
+                (navigator.connection && navigator.connection.saveData);
+        } catch (e) {}
+        var afis = k.replace("assets/video/", "assets/img/ai/").replace(/\.mp4$/, ".jpg");
+        if (afis !== k) el.poster = afis;
+        if (dar) return;
+        var kaynak = el.querySelector("source");
+        if (!kaynak) {
+          kaynak = document.createElement("source");
+          kaynak.type = "video/mp4";
+          el.appendChild(kaynak);
+        }
+        kaynak.src = k;
+        el.preload = "auto";
+        el.autoplay = true;
+        el.muted = true;           /* sessiz olmadan otomatik oynatma engellenir */
+        el.load();
+        function oynat() {
+          var s = el.play && el.play();
+          if (s && typeof s.catch === "function") s.catch(function () {});
+        }
+        el.addEventListener("loadeddata", oynat, { once: true });
+        /* Sekme arka plandayken tarayıcı oynatmayı reddeder; görünür olunca dene. */
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden && el.paused) oynat();
+        });
+        oynat();
       }
     } catch (e) {}
   });

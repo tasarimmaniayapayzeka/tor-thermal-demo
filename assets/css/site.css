@@ -70,7 +70,7 @@ p{ max-width:70ch; }
 
 /* ---------------- Üst çubuk ---------------- */
 .ust-bar{
-  position:absolute; top:34px; left:0; right:0; z-index:150;
+  position:absolute; top:8px; left:0; right:0; z-index:150;
   transition:background .35s ease, box-shadow .35s ease, top .35s ease;
 }
 .ust-bar.sabit{
@@ -468,3 +468,197 @@ details .icerik{ padding:0 24px 22px; color:var(--soluk); font-size:14.8px; }
   padding:7px 16px; margin-bottom:14px;
 }
 .pano360-rozet::before{ content:"360°"; color:var(--turkuaz-acik); }
+
+/* ============================================================
+   MOBİL CİLA — sadece küçük ekran (masaüstü görünümü değişmez)
+   Tümü @media (max-width:700px) altında. Gerçek 375x812 ölçümüne
+   göre: 360° pano çok basık, oda barı 3 satıra sarıyordu,
+   tablonun kaydırılabildiği anlaşılmıyordu.
+   ============================================================ */
+@media (max-width:700px){
+
+  /* ---- 1) 360° pano: bakınacak alan (16/9 → 4/5) ---- */
+  .pano360{
+    aspect-ratio:4/5;
+    max-height:70vh;
+  }
+  /* Tam ekranda oran serbest kalsın (masaüstündeki kural korunur) */
+  .pano360:fullscreen{ aspect-ratio:auto; max-height:none; }
+
+  /* ---- 2) Oda düğmeleri: tek satır + yatay kaydırma ---- */
+  .pano360-bar{
+    bottom:12px;
+    width:max-content;          /* sığıyorsa daralır ve ortalı kalır */
+    max-width:92%;              /* sığmıyorsa kaydırılır            */
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    touch-action:pan-x;         /* .pano360'ın touch-action:none'ını aşar */
+    gap:5px;
+    padding:6px 8px;
+    scrollbar-width:none;       /* Firefox */
+    -ms-overflow-style:none;    /* eski Edge */
+  }
+  .pano360-bar::-webkit-scrollbar{ display:none; }
+  .pano360-oda{
+    flex:0 0 auto;
+    white-space:nowrap;
+    font-size:12px;
+    padding:7px 13px;
+    touch-action:pan-x;
+  }
+
+  /* ---- 3) İpucu balonu: tek satır, daha küçük ---- */
+  .pano360-ipucu{
+    top:12px;
+    font-size:11.5px;
+    letter-spacing:.05em;
+    white-space:nowrap;
+    padding:6px 14px;
+    max-width:92%;
+  }
+
+  /* ---- 4) Tam ekran düğmesi ---- */
+  .pano360-tam{
+    top:10px; right:10px;
+    width:38px; height:38px;
+    font-size:17px; border-radius:9px;
+  }
+
+  /* ---- 5) Tablo: "devamı var" ipucu + sıkı hücreler ----
+     NOT: .tablo-kap'ın kendisi kaydırma kabı olduğu için içine
+     konan ::after içerikle birlikte kayar, sağ kenarda durmaz.
+     Bu yüzden klasik "background-attachment:local" gölge tekniği
+     kullanıldı: gölge kabın kenarına sabit, içerik bittiğinde
+     kendiliğinden kaybolur. Ayrıca kaydırma çubuğu görünür yapıldı. */
+  .tablo-kap{
+    position:relative;
+    background-color:var(--beyaz);
+    background-image:
+      linear-gradient(to right, var(--beyaz) 40%, rgba(255,255,255,0)),
+      linear-gradient(to left,  var(--beyaz) 40%, rgba(255,255,255,0)),
+      radial-gradient(farthest-side at 0 50%,   rgba(17,27,54,.20), rgba(17,27,54,0)),
+      radial-gradient(farthest-side at 100% 50%, rgba(17,27,54,.20), rgba(17,27,54,0));
+    background-repeat:no-repeat;
+    background-position:left center, right center, left center, right center;
+    background-size:36px 100%, 36px 100%, 15px 100%, 15px 100%;
+    background-attachment:local, local, scroll, scroll;
+    overscroll-behavior-x:contain;
+  }
+  .tablo-kap::-webkit-scrollbar{ height:6px; }
+  .tablo-kap::-webkit-scrollbar-track{ background:var(--fildisi-koyu); border-radius:99px; }
+  .tablo-kap::-webkit-scrollbar-thumb{ background:var(--turkuaz); border-radius:99px; }
+  .tablo-kap table{ font-size:13.5px; }
+  .tablo-kap th{ padding:10px 12px; font-size:11px; letter-spacing:.07em; }
+  .tablo-kap td{ padding:10px 12px; }
+
+  /* ---- 6) Galeri: tek sütun, daha sıkı boşluk ----
+     (daire-detay.html içindeki <style> site.css'ten SONRA geldiği
+      için ağırlık artırıldı: body ön eki) */
+  body .galeri-grid{ gap:12px; margin-top:28px; }
+
+  /* ---- 7) Çip grupları: daha küçük boşluk ve yazı ---- */
+  body .kunye-band{ gap:8px; margin-top:18px; }
+  body .kunye{ font-size:12.5px; padding:7px 14px; }
+  .morf-sekmeler{ gap:8px; }
+  .morf-sekme{ font-size:12.5px; padding:9px 16px; }
+  .mevsim-sekmeler{ gap:8px; margin-bottom:26px; }
+  .mevsim-sekme{ font-size:12.5px; padding:9px 18px; }
+  .rozet-band{ gap:8px; margin-top:22px; }
+  .rozet{ font-size:12.5px; padding:8px 16px; }
+  /* .sayac-band'ın gap:2px'i çizgi görevi görüyor — bilerek dokunulmadı;
+     onun yerine kutu içi sıkılaştırıldı. */
+  .sayac{ padding:22px 14px 18px; }
+  .sayac .etiket{ font-size:11.5px; letter-spacing:.07em; margin-top:7px; }
+
+  /* ---- 8) Genel mobil cila ---- */
+  h1{ font-size:clamp(32px,8vw,44px); }
+  section{ padding:60px 0; }
+  .ic, .ic-dar{ padding:0 18px; }
+  .bolum-giris{ font-size:16px; }
+}
+
+/* ---- 9) Hareket azaltma tercihi mobilde de geçerli ---- */
+@media (max-width:700px) and (prefers-reduced-motion: reduce){
+  .pano360-bar{ scroll-behavior:auto; }
+  .tablo-kap{ scroll-behavior:auto; }
+}
+
+/* ============================================================
+   FOTOĞRAF GEZGİNİ — tam ekran, ✕ kapat, ‹ › ile geçiş
+   ============================================================ */
+.foto-gezgin{
+  position:fixed; inset:0; z-index:400; display:none;
+  align-items:center; justify-content:center;
+  background:rgba(8,13,26,.95); backdrop-filter:blur(6px);
+  padding:64px 20px 84px;
+}
+.foto-gezgin.acik{ display:flex; }
+.fg-sahne{ margin:0; display:flex; flex-direction:column; align-items:center; gap:14px; max-width:100%; }
+.foto-gezgin img{
+  max-width:min(1400px, 92vw); max-height:78vh;
+  border-radius:12px; box-shadow:0 30px 90px rgba(0,0,0,.6);
+  opacity:0; transition:opacity .35s ease;
+}
+.foto-gezgin img.yuklendi{ opacity:1; }
+.foto-gezgin figcaption{
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;
+  color:#C3D0DE; font-size:14px; font-weight:600; letter-spacing:.03em;
+}
+.fg-sayac{
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+  border-radius:999px; padding:4px 14px; font-size:12.5px;
+  color:#EAF1F5; font-variant-numeric:tabular-nums;
+}
+.fg-kapat, .fg-ok{
+  position:absolute; z-index:2; cursor:pointer; color:#fff;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(8px); border-radius:50%; line-height:1;
+  transition:background .2s ease, transform .2s ease;
+}
+.fg-kapat{ top:20px; right:22px; width:48px; height:48px; font-size:20px; }
+.fg-ok{ top:50%; transform:translateY(-50%); width:54px; height:54px; font-size:30px; padding-bottom:4px; }
+.fg-onceki{ left:22px; }
+.fg-sonraki{ right:22px; }
+.fg-kapat:hover, .fg-ok:hover{ background:var(--turkuaz); border-color:var(--turkuaz); }
+.fg-ok:hover{ transform:translateY(-50%) scale(1.08); }
+.fg-kapat:focus-visible, .fg-ok:focus-visible{ outline:2px solid var(--turkuaz-acik); outline-offset:3px; }
+
+@media (max-width:700px){
+  .foto-gezgin{ padding:56px 10px 92px; }
+  .foto-gezgin img{ max-width:96vw; max-height:66vh; }
+  .fg-kapat{ top:12px; right:12px; width:42px; height:42px; font-size:18px; }
+  .fg-ok{ top:auto; bottom:22px; transform:none; width:52px; height:52px; }
+  .fg-ok:hover{ transform:none; }
+  .fg-onceki{ left:calc(50% - 76px); }
+  .fg-sonraki{ right:calc(50% - 76px); }
+  .foto-gezgin figcaption{ font-size:13px; gap:10px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .foto-gezgin img{ transition:none; }
+}
+/* Yalnız masaüstünde: hover'daki scale iptal, dikey ortalama korunur.
+   Genişlik sınırı olmadan yazılınca mobildeki .fg-ok{transform:none}
+   kuralını (aynı özgüllük + daha sonra geldiği için) eziyor ve okları
+   yukarı kaydırıyordu. */
+@media (min-width:701px) and (prefers-reduced-motion: reduce){
+  .fg-ok:hover{ transform:translateY(-50%); }
+}
+
+/* HTML hidden özelliği her zaman kazansın (display:flex/grid kuralları ezmesin) */
+[hidden]{ display:none !important; }
+
+/* Mobilde durdurulan videonun oynat rozeti (medya-lazy.js ekler) */
+.ml-oynat{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  z-index:6; display:flex; align-items:center; gap:10px;
+  background:rgba(12,20,40,.72); backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.3); color:#fff;
+  border-radius:999px; padding:12px 22px; cursor:pointer;
+  font-family:var(--sans); font-size:13.5px; font-weight:700; letter-spacing:.04em;
+}
+.ml-oynat .ml-ok{ font-size:15px; line-height:1; }
+.ml-oynat:active{ background:var(--turkuaz); border-color:var(--turkuaz); }

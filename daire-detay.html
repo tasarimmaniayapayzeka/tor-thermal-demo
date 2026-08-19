@@ -210,7 +210,6 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
 </head>
 <body>
 
-<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
 
 <header class="ust-bar">
   <div class="ust-ic">
@@ -234,7 +233,7 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
 
 <!-- ============ SAYFA BAŞLIĞI ============ -->
 <section class="sayfa-baslik">
-  <div class="arka"><img id="baslikArka" src="assets/img/render/r02.png" alt="Tor Thermal konut bloklarının resmî proje görseli"></div>
+  <div class="arka"><img id="baslikArka" src="assets/img/render/r02.jpg" alt="Tor Thermal konut bloklarının resmî proje görseli"></div>
   <div class="ic">
     <div class="kirinti"><a href="index.html">Ana Sayfa</a> · <a href="daireler.html">Daireler</a> · <span id="kirintiTip">Tip Detayı</span></div>
     <h1 id="sayfaH1">Daire &amp; Villa Detayı</h1>
@@ -277,7 +276,7 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
           <span class="plan-etiket" id="planEtiket">2D Plan ↔ 3D Görünüm · Otomatik Geçiş</span>
           <img class="plan-katman-2d" id="plan2d" alt="">
           <img class="plan-katman-3d" id="plan3d" alt="" aria-hidden="true">
-          <video class="plan-video" id="planVideo" muted loop playsinline preload="auto" aria-label="Kat planından üç boyutlu görünüme geçiş videosu"></video>
+          <video class="plan-video" id="planVideo" muted loop playsinline preload="none" data-ml-atla aria-label="Kat planından üç boyutlu görünüme geçiş videosu"></video>
         </div>
         <div class="plan-kontrol">
           <div class="grup" id="katSekmeleri" hidden>
@@ -317,7 +316,7 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
       <div class="gorun">
         <span class="pano360-rozet" id="icMekanVideoRozet">Gezinti Videosu</span>
         <div class="morf-kap">
-          <video id="icMekanVideo" controls loop playsinline preload="metadata">
+          <video id="icMekanVideo" controls loop playsinline preload="none">
             <source src="" type="video/mp4">
           </video>
         </div>
@@ -476,7 +475,7 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
   </div>
   <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
   <div class="footer-alt">
-    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Tasarım: TasarımMania.</span>
     <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
   </div>
 </footer>
@@ -518,35 +517,35 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
   function tipGorseli(t) {
     var harita = {
       "1p1-deluks": "assets/img/ai/daire-salon.jpg",
-      "1p1-deniz":  "assets/img/render/r05.png",
-      "2p1-deluks": "assets/img/render/r02.png",
+      "1p1-deniz":  "assets/img/render/r05.jpg",
+      "2p1-deluks": "assets/img/render/r02.jpg",
       "2p1-deniz":  "assets/img/render/r16.jpg",
       "3p1-deluks": "assets/img/render/r13.jpg",
-      "3p1-deniz":  "assets/img/render/r01.png",
+      "3p1-deniz":  "assets/img/render/r01.jpg",
       "3p1-villa":  "assets/img/ai/morf-villa.jpg",
       "4p1-villa":  "assets/img/render/r20.jpg"
     };
-    return harita[t.id] || "assets/img/render/r02.png";
+    return harita[t.id] || "assets/img/render/r02.jpg";
   }
   function baslikArkasi(t) {
     if (t.tip === "villa") return "assets/img/ai/morf-villa.jpg";
     if (t.manzara === "Deniz") return "assets/img/render/r16.jpg";
-    return "assets/img/render/r02.png";
+    return "assets/img/render/r02.jpg";
   }
   function galeriListesi(t) {
     var liste = [{ src: "assets/img/ai/daire-salon.jpg", alt: "Örnek daire salonu — tam eşyalı, anahtar teslim iç mekân standardı" }];
     if (t.tip === "villa") {
       liste.push({ src: "assets/img/ai/morf-villa.jpg", alt: "Villa bölgesinin yapay zekâ destekli konsept görseli" });
       liste.push({ src: "assets/img/render/r16.jpg", alt: "Deniz cepheli yerleşimin resmî proje görseli" });
-      liste.push({ src: "assets/img/render/r05.png", alt: "Yerleşke genel görünümünün resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r05.jpg", alt: "Yerleşke genel görünümünün resmî proje görseli" });
     } else if (t.manzara === "Deniz") {
-      liste.push({ src: "assets/img/render/r05.png", alt: "Deniz manzaralı blokların resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r05.jpg", alt: "Deniz manzaralı blokların resmî proje görseli" });
       liste.push({ src: "assets/img/render/r16.jpg", alt: "Sahil hattı ve blokların resmî proje görseli" });
-      liste.push({ src: "assets/img/render/r02.png", alt: "Konut sokağının akşam saatlerindeki resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r02.jpg", alt: "Konut sokağının akşam saatlerindeki resmî proje görseli" });
     } else {
-      liste.push({ src: "assets/img/render/r02.png", alt: "Konut sokağının akşam saatlerindeki resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r02.jpg", alt: "Konut sokağının akşam saatlerindeki resmî proje görseli" });
       liste.push({ src: "assets/img/render/r13.jpg", alt: "Yerleşke iç avlusunun resmî proje görseli" });
-      liste.push({ src: "assets/img/render/r01.png", alt: "Tor Thermal yerleşkesinin genel resmî proje görseli" });
+      liste.push({ src: "assets/img/render/r01.jpg", alt: "Tor Thermal yerleşkesinin genel resmî proje görseli" });
     }
     return liste;
   }
@@ -757,8 +756,32 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
       modDugmeler.video.hidden = true;
       if (sahne.classList.contains("mod-video")) modAyarla("otomatik");
     });
-    video.src = videoYol;
-    video.load();
+    /* Video ancak sahne ekrana yaklaşınca insin — mobilde açılışta 4 MB'lık
+       indirme yapmasın. Gözlemci yoksa eski davranış (hemen yükle). */
+    function videoYukle() {
+      if (video.src) return;
+      /* preload="none" iken load() veri çekmez: "loadeddata" hiç doğmaz,
+         dolayısıyla "3D Tanıtım Videosu" düğmesi açılmaz ve mod-video
+         hiç devreye girmez. Buraya ancak sahne ekrana yaklaştığında ya da
+         kullanıcı düğmeye bastığında gelindiği için ipucu serbest bırakılır. */
+      video.preload = "auto";
+      video.src = videoYol;
+      video.load();
+    }
+    var darEkran = window.matchMedia("(max-width:700px)").matches ||
+                   (navigator.connection && navigator.connection.saveData);
+    if (darEkran) {
+      /* Mobil: video hiç inmesin — kullanıcı düğmeye basarsa yüklensin. */
+      modDugmeler.video.hidden = false;
+      modDugmeler.video.addEventListener("click", videoYukle, { once: true });
+    } else if (typeof window.IntersectionObserver === "function") {
+      try {
+        var io = new IntersectionObserver(function (girisler, gozlemci) {
+          if (girisler[0] && girisler[0].isIntersecting) { videoYukle(); gozlemci.disconnect(); }
+        }, { rootMargin: "250px 0px" });
+        io.observe(sahne);
+      } catch (e) { videoYukle(); }
+    } else { videoYukle(); }
   }
 
   /* ---------- Oda tablosu ---------- */
@@ -865,6 +888,7 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
 </script>
 <script src="assets/js/mevsim.js"></script>
 <script src="assets/js/ana.js"></script>
+<script src="assets/js/medya-lazy.js"></script>
 <script>
 /* İç Mekân Turu: tip konfigürasyonuna göre kurulur + kendi mini lightbox'ı */
 (function () {
@@ -948,20 +972,81 @@ tr.genel-toplam:hover td{ background:var(--lacivert); }
   if (cfg.sesli) document.getElementById("icMekanVideoRozet").textContent = "Sesli Gezinti Videosu — 🔊 sesi açın";
   video.load();
 
-  var ortu = document.createElement("div");
-  ortu.style.cssText = "position:fixed;inset:0;z-index:400;background:rgba(8,13,26,.92);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out;";
-  ortu.innerHTML = '<img style="max-width:94vw;max-height:88vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);" alt="">';
-  document.body.appendChild(ortu);
-  var ortuImg = ortu.querySelector("img");
-  function kapat() { ortu.style.display = "none"; }
-  ortu.addEventListener("click", kapat);
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") kapat(); });
-  bolum.querySelectorAll("[data-buyuk]").forEach(function (d) {
-    d.addEventListener("click", function () {
-      ortuImg.src = d.getAttribute("data-buyuk");
-      ortuImg.alt = d.getAttribute("aria-label") || "";
-      ortu.style.display = "flex";
+  /* ---- Tam ekran görsel gezgini: ✕ kapat, ‹ › ile fotoğraflar arası geçiş ---- */
+  var gezgin = document.createElement("div");
+  gezgin.className = "foto-gezgin";
+  gezgin.setAttribute("role", "dialog");
+  gezgin.setAttribute("aria-modal", "true");
+  gezgin.setAttribute("aria-label", "Daire fotoğrafları");
+  gezgin.innerHTML =
+    '<button type="button" class="fg-kapat" aria-label="Kapat (Esc)">✕</button>' +
+    '<button type="button" class="fg-ok fg-onceki" aria-label="Önceki fotoğraf">‹</button>' +
+    '<button type="button" class="fg-ok fg-sonraki" aria-label="Sonraki fotoğraf">›</button>' +
+    '<figure class="fg-sahne"><img alt=""><figcaption><span class="fg-ad"></span><span class="fg-sayac"></span></figcaption></figure>';
+  document.body.appendChild(gezgin);
+
+  var fgImg = gezgin.querySelector("img");
+  var fgAd = gezgin.querySelector(".fg-ad");
+  var fgSayac = gezgin.querySelector(".fg-sayac");
+  var sira = 0;
+
+  function goster(i) {
+    sira = (i + cfg.kareler.length) % cfg.kareler.length;
+    var k = cfg.kareler[sira];
+    fgImg.classList.remove("yuklendi");
+    fgImg.src = k.buyuk;
+    fgImg.alt = k.ad;
+    fgAd.textContent = k.ad;
+    fgSayac.textContent = (sira + 1) + " / " + cfg.kareler.length;
+    /* Komşuları sessizce ön-belleğe al (geçiş anında beklenmesin) */
+    [sira + 1, sira - 1].forEach(function (n) {
+      var komsu = cfg.kareler[(n + cfg.kareler.length) % cfg.kareler.length];
+      if (komsu) { var on = new Image(); on.src = komsu.buyuk; }
     });
+  }
+  fgImg.addEventListener("load", function () { fgImg.classList.add("yuklendi"); });
+
+  function ac(i) {
+    goster(i);
+    gezgin.classList.add("acik");
+    document.body.style.overflow = "hidden";
+    gezgin.querySelector(".fg-kapat").focus();
+  }
+  function kapat() {
+    gezgin.classList.remove("acik");
+    document.body.style.overflow = "";
+  }
+
+  gezgin.querySelector(".fg-kapat").addEventListener("click", kapat);
+  gezgin.querySelector(".fg-onceki").addEventListener("click", function () { goster(sira - 1); });
+  gezgin.querySelector(".fg-sonraki").addEventListener("click", function () { goster(sira + 1); });
+  /* Boşluğa tıklayınca kapansın; görsele/düğmeye tıklayınca kapanmasın */
+  gezgin.addEventListener("click", function (e) { if (e.target === gezgin || e.target.className === "fg-sahne") kapat(); });
+
+  document.addEventListener("keydown", function (e) {
+    if (!gezgin.classList.contains("acik")) return;
+    if (e.key === "Escape") kapat();
+    else if (e.key === "ArrowLeft") goster(sira - 1);
+    else if (e.key === "ArrowRight") goster(sira + 1);
+  });
+
+  /* Mobilde parmakla kaydırarak geçiş */
+  var dokunX = null, dokunY = null;
+  gezgin.addEventListener("touchstart", function (e) {
+    dokunX = e.changedTouches[0].clientX; dokunY = e.changedTouches[0].clientY;
+  }, { passive: true });
+  gezgin.addEventListener("touchend", function (e) {
+    if (dokunX === null) return;
+    var dx = e.changedTouches[0].clientX - dokunX;
+    var dy = e.changedTouches[0].clientY - dokunY;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) goster(sira + (dx < 0 ? 1 : -1));
+    dokunX = null; dokunY = null;
+  }, { passive: true });
+
+  /* Galeri kartları gezgini açsın */
+  var kutular = bolum.querySelectorAll("[data-buyuk]");
+  Array.prototype.forEach.call(kutular, function (d, i) {
+    d.addEventListener("click", function () { ac(i); });
   });
 })();
 </script>

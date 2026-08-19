@@ -29,6 +29,28 @@
     "}"
   ].join("\n");
 
+  /* Kap ekrana 300px kala "geldi", çıkınca "gitti" çağrılır.
+     IntersectionObserver yoksa hemen başlar (davranış eskisi gibi). */
+  function gorunurlukBagla(kap, geldi, gitti) {
+    if (typeof window.IntersectionObserver !== "function") { geldi(); return; }
+    /* Gözlemci ancak yerleşim oturduktan sonra kurulur; yükleme sırasında
+       görseller yerleşmediği için her şey ekrandaymış gibi görünür. */
+    function gozlemciKur() {
+      try {
+        var io = new IntersectionObserver(function (girisler) {
+          for (var i = 0; i < girisler.length; i++) {
+            if (girisler[i].isIntersecting) geldi(); else gitti();
+          }
+        }, { rootMargin: "300px 0px", threshold: 0 });
+        io.observe(kap);
+      } catch (e) { geldi(); }
+    }
+    if (document.readyState === "complete") gozlemciKur();
+    else window.addEventListener("load", function () {
+      if (window.requestAnimationFrame) window.requestAnimationFrame(gozlemciKur); else gozlemciKur();
+    });
+  }
+
   function kur(kap) {
     var odalar;
     try { odalar = JSON.parse(kap.getAttribute("data-odalar")); } catch (e) { return; }
@@ -46,12 +68,22 @@
       tuval.remove();
       var yedek = document.createElement("div");
       yedek.className = "pano360-yedek";
-      yedek.style.backgroundImage = "url('" + odalar[0].src + "')";
       kap.appendChild(yedek);
-      var x = 50, aktifYedek = true;
-      setInterval(function () { if (aktifYedek) { x = (x + 0.03) % 100; yedek.style.backgroundPosition = x + "% 50%"; } }, 40);
+      var x = 50, aktifYedek = true, yedekEkranda = false, yedekYuklendi = false;
+      /* Görünür değilken ne görsel iner ne de kaydırma döner (pil/veri). */
+      setInterval(function () {
+        if (!aktifYedek || !yedekEkranda || document.hidden) return;
+        x = (x + 0.03) % 100; yedek.style.backgroundPosition = x + "% 50%";
+      }, 40);
       yedek.addEventListener("pointerdown", function () { aktifYedek = false; });
-      arayuzKur(kap, odalar, function (oda) { yedek.style.backgroundImage = "url('" + oda.src + "')"; });
+      arayuzKur(kap, odalar, function (oda) {
+        yedekYuklendi = true;
+        yedek.style.backgroundImage = "url('" + oda.src + "')";
+      });
+      gorunurlukBagla(kap, function () {
+        yedekEkranda = true;
+        if (!yedekYuklendi) { yedekYuklendi = true; yedek.style.backgroundImage = "url('" + odalar[0].src + "')"; }
+      }, function () { yedekEkranda = false; });
       return;
     }
 
@@ -112,7 +144,11 @@
       }
     }
 
+    /* Çizim döngüsü yalnızca kap ekrandayken döner. */
+    var ekranda = false, dongudeMi = false;
+
     function ciz(t) {
+      if (!ekranda) { dongudeMi = false; return; }
       boyutla();
       if (!surukleme && bosta && !azHareket && (t - sonEtkilesim > 2600)) hedefYaw += 0.00072; // otomatik yavaş dönüş
       yaw += (hedefYaw - yaw) * 0.12;
@@ -122,6 +158,12 @@
       gl.uniform1f(uPitch, pitch);
       gl.uniform1f(uFov, fov);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      requestAnimationFrame(ciz);
+    }
+
+    function donguBaslat() {
+      if (dongudeMi || !ekranda) return;
+      dongudeMi = true;
       requestAnimationFrame(ciz);
     }
 
@@ -143,9 +185,23 @@
       fov = Math.max(40 * Math.PI / 180, Math.min(95 * Math.PI / 180, fov + e.deltaY * 0.0008));
     }, { passive: false });
 
-    arayuzKur(kap, odalar, function (oda) { yukle(oda.src, function () { hedefYaw = 0; hedefPitch = 0; }); });
-    yukle(odalar[0].src);
-    requestAnimationFrame(ciz);
+    var ilkDokuIstendi = false;
+    arayuzKur(kap, odalar, function (oda) {
+      ilkDokuIstendi = true; /* kullanıcı oda seçtiyse ilk doku gereksiz */
+      yukle(oda.src, function () { hedefYaw = 0; hedefPitch = 0; });
+    });
+
+    /* İlk doku ve çizim, kap ekrana yaklaşana kadar ertelenir. */
+    gorunurlukBagla(kap, function () {
+      ekranda = true;
+      if (!ilkDokuIstendi) { ilkDokuIstendi = true; yukle(odalar[0].src); }
+      donguBaslat();
+    }, function () { ekranda = false; });
+
+    /* Sekme geri geldiğinde döngüyü sürdür (rAF duraklamış olabilir). */
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) donguBaslat();
+    });
   }
 
   /* Oda düğmeleri + tam ekran + ipucu katmanı */

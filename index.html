@@ -35,7 +35,6 @@
 </head>
 <body>
 
-<div class="demo-band">Demo Tasarım Önerisi — TasarımMania · Resmî site değildir · Fiyat ve müsaitlik bilgileri temsilîdir</div>
 
 <header class="ust-bar">
   <div class="ust-ic">
@@ -60,10 +59,10 @@
 <!-- ============ HERO ============ -->
 <section class="hero" style="padding:0;">
   <div class="hero-medya">
-    <video autoplay muted loop playsinline poster="assets/img/ai/hero-yaz.jpg"
-      data-mevsim-kaynak='{"bahar":"assets/video/hero-bahar.mp4","yaz":"assets/video/hero-yaz.mp4","sonbahar":"assets/video/hero-sonbahar.mp4","kis":"assets/video/hero-kis.mp4"}'>
-      <source src="assets/video/hero-yaz.mp4" type="video/mp4">
-    </video>
+    <!-- Kaynak mevsim.js tarafindan atanir: mobil/tasarruf modunda video hic
+         inmez, mevsimin poster karesi gosterilir (mobilde ~15 MB tasarruf). -->
+    <video autoplay muted loop playsinline preload="none" data-ml-atla poster="assets/img/ai/hero-yaz.jpg"
+      data-mevsim-kaynak='{"bahar":"assets/video/hero-bahar.mp4","yaz":"assets/video/hero-yaz.mp4","sonbahar":"assets/video/hero-sonbahar.mp4","kis":"assets/video/hero-kis.mp4"}'></video>
   </div>
   <canvas class="buhar-tuval" aria-hidden="true"></canvas>
   <div class="hero-mevsim-rozet">Şu an: <span data-mevsim-etiket>Yaz</span> · Armutlu</div>
@@ -247,7 +246,7 @@
     <p class="bolum-giris gorun">Tam eşyalı, ankastreli, akıllı ev sistemli teslim — bavulunuzu alıp gelin. Housekeeping her ziyarette eviniz gibi karşılar.</p>
     <div class="kart-grid gorun">
       <article class="kart">
-        <div class="kart-medya"><img src="assets/img/render/r02.png" alt="Daire dış görünüm" loading="lazy"></div>
+        <div class="kart-medya"><img src="assets/img/render/r02.jpg" alt="Daire dış görünüm" loading="lazy"></div>
         <div class="kart-icerik"><h3>1+1 &amp; 2+1 Delüks Daireler</h3><p>48–140 m² arası, orman veya deniz manzaralı, 4-6 kişilik tam donanımlı suitler.</p><a class="kart-link" href="daireler.html">Daireleri İncele</a></div>
       </article>
       <article class="kart">
@@ -282,7 +281,7 @@
       <div class="bosluk-kucuk"></div>
       <a class="btn btn-birincil gorun" href="acik-defter.html">Açık Defteri İnceleyin</a>
     </div>
-    <div class="cerceve gorun"><img src="assets/img/render/r01.png" alt="Tor Thermal yerleşke render" loading="lazy"></div>
+    <div class="cerceve gorun"><img src="assets/img/render/r01.jpg" alt="Tor Thermal yerleşke render" loading="lazy"></div>
   </div>
 </section>
 
@@ -357,7 +356,7 @@
   </div>
   <p class="yasal-not">Bu sayfadaki render görüntüleri yalnızca görsel temsildir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Mimari tasarım, peyzaj düzenlemesi ve iç dekorasyon proje geliştiricileri tarafından gerekli görüldüğü takdirde değiştirilebilir. Fiyat, dönem ve müsaitlik bilgileri bu demo çalışmasında temsilîdir. Termal su içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
   <div class="footer-alt">
-    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Demo tasarım: TasarımMania.</span>
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Tasarım: TasarımMania.</span>
     <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
   </div>
 </footer>
@@ -368,5 +367,6 @@
 
 <script src="assets/js/mevsim.js"></script>
 <script src="assets/js/ana.js"></script>
+<script src="assets/js/medya-lazy.js"></script>
 </body>
 </html>
