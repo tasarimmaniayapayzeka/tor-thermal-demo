@@ -186,6 +186,11 @@ section{ padding:88px 0; }
 .koyu h2,.koyu h3{ color:#fff; }
 .koyu .gozkasi{ color:var(--bakir-acik); }
 .koyu .bolum-giris{ color:#9FB0C4; }
+/* Koyu bölümün içine açık zeminli bir kart konduğunda başlık beyaz kalırsa okunmaz olur. */
+.koyu .dizin-kart h3,
+.koyu .kart h3,
+.koyu .akt-ozet h3,
+.koyu .liste-kutu h3{ color:var(--lacivert); }
 .kum-zemin{ background:var(--kum); }
 .buz-zemin{ background:var(--mevsim-yumusak); transition:background .8s ease; }
 
