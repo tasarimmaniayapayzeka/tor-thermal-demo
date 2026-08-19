@@ -195,9 +195,13 @@
   for (var i = 0; i < LISTE.length; i++) { if (LISTE[i].id === id) { a = LISTE[i]; break; } }
 
   function detay(t) {
-    document.title = t.ad + " — Rotalar, Program ve Hazırlık | TOR Thermal";
+    /* Doğa aktivitelerinde "rota", tesis içi sporlarda "kademe" doğru karşılık. */
+    var sporMu = t.grup === "spor";
+    document.title = t.ad + (sporMu ? " — Kademeler, Program ve Hazırlık" : " — Rotalar, Program ve Hazırlık") + " | TOR Thermal";
     var meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", t.ad + ": " + t.kisa + " Rota seçenekleri, süre ve zorluk bilgileri, hazırlık listesi ve güvenlik notları.");
+    if (meta) meta.setAttribute("content", t.ad + ": " + t.kisa + " " +
+      (sporMu ? "Kademe seçenekleri, seans süresi ve seviye bilgileri, hazırlık listesi ve güvenlik notları."
+              : "Rota seçenekleri, süre ve zorluk bilgileri, hazırlık listesi ve güvenlik notları."));
 
     /* Bölüm başlıkları aktiviteye özeldir; kayıtta yoksa nötr karşılığa düşer. */
     function b(anahtar, varsayilan) {
@@ -227,14 +231,19 @@
     var hazirlik = (t.hazirlik || []).map(function (h) { return "<li>" + CHECK + "<span>" + kacis(h) + "</span></li>"; }).join("");
     var saglayan = (t.saglayanlar || []).map(function (h) { return "<li>" + CHECK + "<span>" + kacis(h) + "</span></li>"; }).join("");
 
-    /* Önce kayıtta belirtilen ilgili aktiviteler, sonra kalanlar — en fazla dört kart. */
+    /* Önce kayıttaki ilgili aktiviteler, sonra aynı gruptakiler, en son diğerleri — dört kart.
+       Grup ayrımı olmasa doğa sayfasının altında pilates çıkabiliyordu. */
     var sirali = (t.ilgili || []).map(function (id) {
       for (var j = 0; j < LISTE.length; j++) if (LISTE[j].id === id) return LISTE[j];
       return null;
     }).filter(Boolean);
-    LISTE.forEach(function (d) {
-      if (d.id !== t.id && sirali.indexOf(d) === -1) sirali.push(d);
-    });
+    function ekle(sart) {
+      LISTE.forEach(function (d) {
+        if (d.id !== t.id && sirali.indexOf(d) === -1 && sart(d)) sirali.push(d);
+      });
+    }
+    ekle(function (d) { return d.grup === t.grup; });
+    ekle(function () { return true; });
 
     var digerleri = sirali.slice(0, 4).map(function (d) {
       return '<a class="dizin-kart gorun" href="aktivite.html?id=' + encodeURIComponent(d.id) + '">' +

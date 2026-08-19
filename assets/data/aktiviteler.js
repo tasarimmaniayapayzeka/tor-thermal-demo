@@ -4,6 +4,7 @@
 window.TOR_AKTIVITELER = [
   {
     id: "trekking",
+grup: "doga",
     ad: "Trekking",
     ustyazi: "Doğa ile İç İçe",
     kisa: "Özel parkurlarda doğa yürüyüşleriyle huzurlu bir kaçış.",
@@ -73,6 +74,7 @@ window.TOR_AKTIVITELER = [
   },
   {
     "id": "dag-yuruyusu",
+grup: "doga",
     "ad": "Dağ Yürüyüşü",
     "ustyazi": "Zirveye Doğru",
     "kisa": "Orman sınırının üzerine çıkıp Marmara'ya hâkim kayalık zirvelere ulaşan, yükseklik kazancı belirgin rotalar.",
@@ -200,6 +202,7 @@ window.TOR_AKTIVITELER = [
   },
   {
     "id": "kaya-tirmanisi",
+grup: "doga",
     "ad": "Kaya Tırmanışı",
     "ustyazi": "Eğitmenli Tırmanış",
     "kisa": "Sertifikalı eğitmen gözetiminde, emniyet hattına bağlı olarak kendi derecenizde kaya tırmanışı.",
@@ -327,6 +330,7 @@ window.TOR_AKTIVITELER = [
   },
   {
     "id": "macera-parkuru",
+grup: "doga",
     "ad": "Macera Parkuru",
     "ustyazi": "Ağaçların Arasında",
     "kisa": "Ağaç gövdeleri arasına kurulu köprü, kütük ve zipline istasyonlarında emniyet hattına bağlı ilerleyin.",
@@ -454,6 +458,7 @@ window.TOR_AKTIVITELER = [
   },
   {
     "id": "atv",
+grup: "doga",
     "ad": "ATV",
     "ustyazi": "Motorlu Arazi Keşfi",
     "kisa": "Kask ve tam donanımla, rehber önde olmak üzere konvoy düzeninde ilerleyen bir arazi turu.",
@@ -581,6 +586,7 @@ window.TOR_AKTIVITELER = [
   },
   {
     "id": "binicilik",
+grup: "doga",
     "ad": "Binicilik Kulübü",
     "ustyazi": "Atlarla Uyum İçinde",
     "kisa": "Sakin atlarla tanışın; manejde temel dersten orman turuna uzanan kademeli bir binicilik programı.",
@@ -704,6 +710,774 @@ window.TOR_AKTIVITELER = [
       "atv",
       "trekking",
       "macera-parkuru"
+    ]
+  },
+  {
+    "id": "spor-kulubu",
+    "ad": "Spor Kulübü",
+    "grup": "spor",
+    "ustyazi": "Tesis İçi Spor Kulübü",
+    "kisa": "Ağırlık alanı, dayanıklılık bölümü, stüdyolar ve ölçüm odasını tek çatı altında toplayan kulüp.",
+    "hero": "assets/img/ai/aktivite/sporkulubu-hero.jpg",
+    "ozet": "Ağırlık alanı, dayanıklılık bölümü, grup stüdyoları, ölçüm odası ve esneme alanını tek çatı altında toplayan kulüp; hangi birimi ne sıklıkla kullanacağınıza kendi temponuza göre karar verirsiniz.",
+    "paragraflar": [
+      "Spor Kulübü, tesisteki hareket birimlerinin bağlı olduğu çatı yapıdır. Ağırlık ve kuvvet alanı, dayanıklılık bölümü, iki grup dersi stüdyosu, ölçüm ve planlama odası ile esneme ve hareketlilik alanı aynı kulübe bağlıdır. Üyeler tek bir kayıtla bu beş birimin hepsine erişir; hangi birimi ne sıklıkla kullanacağınıza kendiniz karar verirsiniz. Kayıt tek seferliktir ve konaklamanız boyunca geçerlidir.",
+      "Kulüp, wellness binasının iki katına yayılır: kuvvet ve ağırlık alanı alt katta, dayanıklılık bölümü ile grup stüdyoları üst kattadır. Salonların büyük bölümünde çalışırken cam cepheden çam örtüsünü ve puslu Marmara'yı görürsünüz. İç mekân sıcak ahşap, açık taş ve krem tonlarla düzenlenmiştir; alanlar birbirinden ayrılmış, geçişler geniş bırakılmıştır. Böylece yoğun saatlerde bile birimler arasında rahatça dolaşabilirsiniz.",
+      "Kulüp ekibi bir kulüp sorumlusu, dört egzersiz eğitmeni ve bir ölçüm sorumlusundan oluşur. İlk gelişinizde kısa bir tanışma görüşmesi yapılır: önceki hareket alışkanlığınızı, konaklama sürenizi ve hangi çalışmalardan hoşlandığınızı konuşursunuz. Ekip buna göre bir kullanım programı önerir. Program bağlayıcı değildir; dilediğiniz zaman kademe değiştirebilir ya da yalnızca serbest kullanıma dönebilirsiniz."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "İşleyiş",
+      "deneyimBaslik": "Kulüpte Bir Gün Nasıl İşler?",
+      "rotaGozkasi": "Programlar",
+      "rotaBaslik": "Üç Kulüp Kullanım Programı",
+      "rotaGiris": "Kulüp, üyelerin farklı alışkanlıklarına göre üç kullanım programı sunar. Aralarındaki fark çalışmanın kendisi değil, ekibin sürece ne kadar dahil olduğu ve buluşmaların ne kadar yapılandırıldığıdır. Programlar arasında geçiş yapabilir, konaklamanız süresince kademeyi değiştirebilirsiniz.",
+      "rotaNot": "Program içerikleri, süreler ve kademe tanımları temsilîdir; kulüp takvimi, kontenjan ve ekip uygunluğuna göre dönemsel olarak düzenlenir.",
+      "galeriGozkasi": "Görseller",
+      "galeriBaslik": "Kulüpten Kareler",
+      "videoGozkasi": "Kayıttan",
+      "videoBaslik": "Kulüpten On Saniye",
+      "videoGiris": "Sabah ışığında kuvvet alanının olağan temposunu gösteren kısa, kesintisiz bir çekim.",
+      "ctaGozkasi": "Davet",
+      "ctaBaslik": "Kulübü Yerinde Görün",
+      "ctaMetin": "Konaklamanız süresince kulübü gezmek, birimleri görmek ve kullanım programınızı belirlemek için kulüp bankosuna uğramanız yeterlidir. Ekip, alanları sizinle birlikte dolaşır; hangi birimden başlamak istediğinizi konuşur ve ilk buluşmanızı takviminize göre planlar."
+    },
+    "bakista": [
+      {
+        "etiket": "Konum",
+        "deger": "Wellness binası, alt ve üst kat — funikuler alt istasyonuna yürüme mesafesinde"
+      },
+      {
+        "etiket": "Sorumlu ekip",
+        "deger": "Kulüp sorumlusu, dört egzersiz eğitmeni ve bir ölçüm sorumlusu"
+      },
+      {
+        "etiket": "Üyelik kaydı",
+        "deger": "Resepsiyondan veya kulüp bankosundan; ilk gelişte kısa tanışma görüşmesi"
+      },
+      {
+        "etiket": "Katılım koşulu",
+        "deger": "16 yaş ve üzeri; bazı stüdyo dersleri 14 yaş ve üzerine eğitmen eşliğinde açıktır"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Seans süresi",
+        "deger": "45-75 dakika"
+      },
+      {
+        "etiket": "Kontenjan",
+        "deger": "Birime göre 1-18 kişi"
+      },
+      {
+        "etiket": "Seviye",
+        "deger": "Tüm seviyeler; kademe ekiple birlikte belirlenir"
+      },
+      {
+        "etiket": "Program sıklığı",
+        "deger": "Haftada 2-4 gün; kulüp her gün açıktır"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Serbest Kullanım",
+        "sure": "45-60 dakika, açık kullanım",
+        "mesafe": "Beş birim erişimi",
+        "zorluk": "Tüm seviyeler",
+        "aciklama": "Birimleri kendi başınıza kullanırsınız. Girişte kısa bir alan tanıtımı yapılır, ekipmanın nasıl ayarlandığı gösterilir. Sonrasında hangi bölümde ne kadar kaldığınıza siz karar verir, gün içinde dilediğiniz saatte gelirsiniz."
+      },
+      {
+        "ad": "Rehberli Başlangıç",
+        "sure": "60 dakika",
+        "mesafe": "Haftada 2 buluşma, en çok 10 kişi",
+        "zorluk": "Başlangıç – Orta",
+        "aciklama": "Haftada iki gün, küçük gruplarla ekip eşliğinde çalışırsınız. Kuvvet, denge ve dayanıklılık birimleri sırayla tanıtılır; ekipman ayarları ve hareket düzeni üzerinde birlikte durulur, tempo grubun geneline göre belirlenir."
+      },
+      {
+        "ad": "Kişiye Özel Takip",
+        "sure": "75 dakika",
+        "mesafe": "Haftada 3 buluşma, birebir",
+        "zorluk": "Orta – İleri",
+        "aciklama": "Ölçüm odasındaki tanışma ve hareket alışkanlığı değerlendirmesiyle başlar. Eğitmen size özel bir çalışma düzeni hazırlar, her buluşmada birlikte çalışır; yükü ve tekrar sayısını gözlemine göre kademe kademe düzenler."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/sporkulubu-agirlik-alani.jpg",
+        "ad": "Ağırlık alanı ve ekipman düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/sporkulubu-egitmen-esliginde.jpg",
+        "ad": "Birebir çalışma"
+      },
+      {
+        "src": "assets/img/ai/aktivite/sporkulubu-olcum-odasi.jpg",
+        "ad": "Ölçüm ve planlama odası"
+      },
+      {
+        "src": "assets/img/ai/aktivite/sporkulubu-esneme-alani.jpg",
+        "ad": "Esneme ve hareketlilik alanı"
+      }
+    ],
+    "video": "assets/video/aktivite-spor-kulubu.mp4",
+    "videoPoster": "assets/img/ai/aktivite/sporkulubu-agirlik-alani.jpg",
+    "hazirlik": [
+      "Rahat hareket etmenizi sağlayan sade spor kıyafeti ve yalnızca salon içinde kullanacağınız temiz spor ayakkabısı",
+      "Kişisel havlu ve kapaklı su matarası; kulüp içinde doldurma noktaları bulunur",
+      "Stüdyo dersleri için ince çorap veya kaymaz tabanlı çorap",
+      "Düzenli kullandığınız ilaç, destek ürünü ya da diz-bilek bandajınız varsa yanınızda getirmeniz",
+      "Kayıt görüşmesi için kimlik ve konaklama bilginiz; 18 yaşından küçükler için veli onay formu"
+    ],
+    "saglayanlar": [
+      "Tor Thermal Spor Kulübü — kulüp sorumluluğu ve üye kaydı",
+      "Kulüp egzersiz eğitmenleri ekibi — birim ve stüdyo buluşmaları",
+      "Ölçüm ve planlama birimi — kayıt görüşmeleri ve dönemsel ölçümler",
+      "Wellness merkezi resepsiyonu — yer ayırtma, stüdyo tahsisi ve takvim düzenlemesi"
+    ],
+    "guvenlik": "Kulüpteki program içerikleri, süreler ve kademe tanımları temsilîdir; dönemsel takvime, kontenjana ve ekip uygunluğuna göre düzenlenir. Bilinen bir sağlık durumunuz, hamilelik hâliniz, geçirilmiş bir ameliyatınız veya düzenli kullandığınız bir ilaç varsa kayıt sırasında eğitmene bildirmenizi, gerekiyorsa katılım öncesinde kendi hekiminize danışmanızı rica ederiz. Kulüp ekibi yalnızca egzersiz uygulaması yürütür; tıbbi değerlendirme, teşhis veya tedavi hizmeti vermez.",
+    "ilgili": [
+      "fitness",
+      "kardiyo",
+      "pilates"
+    ]
+  },
+  {
+    "id": "fitness",
+    "ad": "Fitness",
+    "grup": "spor",
+    "ustyazi": "Kuvvet ve Teknik",
+    "kisa": "Cam cepheli salonda, antrenör eşliğinde doğru teknikle ilerleyen kademeli ağırlık ve direnç çalışması.",
+    "hero": "assets/img/ai/aktivite/fitness-hero.jpg",
+    "ozet": "Marmara'ya bakan cam cepheli salonda, serbest ağırlık ve direnç istasyonları arasında antrenör eşliğinde doğru form üzerine çalışırsınız; program kademesi ilk değerlendirmede birlikte belirlenir.",
+    "paragraflar": [
+      "Fitness salonu, wellness merkezinin alt katında, resortun güney cephesinde yer alır; tavana kadar uzanan camlardan çam ormanı ve Marmara görünür. Serbest ağırlık alanı, direnç makineleri ve mat serili açık zemin bölümü birbirinden ayrı düzenlenmiştir; böylece aynı anda çalışan misafirler birbirinin sırasını beklemez. Sıcak ahşap zemin, açık taş duvar ve sade aydınlatma, salonu gürültülü bir spor merkezinden çok sakin bir çalışma alanına yaklaştırır.",
+      "Çalışma, antrenörle yapılan kısa bir tanışma görüşmesiyle başlar. Daha önceki spor geçmişiniz, çalışmak istediğiniz alanlar ve varsa hekiminizin belirttiği kısıtlar konuşulur; program buna göre düzenlenir. İlk seanslarda ağırlık miktarı değil, hareketin doğru yapılması esastır: duruş, nefes ritmi ve hareket açıklığı üzerinde durulur. Antrenör her tekrarı izler, gerektiğinde ağırlığı düşürerek tekniği önceler.",
+      "Kademeler arasında geçiş takvime değil, hareketin oturmasına bağlıdır; aynı kademede birkaç hafta kalmak olağandır. Tor Thermal'de longevity, düzenli hareket alışkanlığını yaşam biçiminin bir parçası olarak ele alan bir yaklaşımdır; bu nedenle salonda acele ettirilmezsiniz. Salon gün boyu açıktır, yoğun saatlerde istasyon sırası antrenör tarafından düzenlenir. Her seans, mat alanındaki kısa bir esneme bölümüyle kapanır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Salonda",
+      "deneyimBaslik": "Salonda Bir Seans Böyle İlerler",
+      "rotaGozkasi": "Program Kademeleri",
+      "rotaBaslik": "Seviyenize Göre Üç Program",
+      "rotaGiris": "Antrenörünüz kademeyi ilk değerlendirmeye göre önerir; süreler ısınma ve esneme bölümleri dâhil yaklaşık değerlerdir.",
+      "rotaNot": "Seans süreleri, istasyon sayıları ve kademe içerikleri temsilîdir; antrenör değerlendirmesine ve salon yoğunluğuna göre değişebilir.",
+      "galeriGozkasi": "Salondan",
+      "galeriBaslik": "Ağırlık Alanı ve İstasyonlar",
+      "videoGozkasi": "Ağırlık Alanından",
+      "videoBaslik": "Seans Sırasında",
+      "videoGiris": "Sabah seansından kesintisiz bir görüntü — ağırlıkların tok sesi, sakin nefes ve camdan gelen ışık dışında bir şey yok.",
+      "ctaGozkasi": "Tanışma",
+      "ctaBaslik": "Antrenörle Kısa Bir Tanışma",
+      "ctaMetin": "İlk gelişinizde antrenörümüzle on beş dakikalık bir tanışma görüşmesi yapabilir, istasyonları ve ekipmanı yerinde görebilir, hangi kademeden başlayacağınızı birlikte belirleyebilirsiniz. Görüşme için kulüp bankosundan gün içinde bir saat ayırtmanız yeterlidir."
+    },
+    "bakista": [
+      {
+        "etiket": "Salon",
+        "deger": "Wellness merkezi, alt kat güney cephesi"
+      },
+      {
+        "etiket": "Antrenör",
+        "deger": "Sertifikalı antrenör eşliği; salonda sürekli görevli"
+      },
+      {
+        "etiket": "Seans planlama",
+        "deger": "Aktivite merkezinden, bir gün önceden"
+      },
+      {
+        "etiket": "Katılım",
+        "deger": "16 yaş üzeri; ilk seansta seviye değerlendirmesi"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Seans süresi",
+        "deger": "45–75 dakika"
+      },
+      {
+        "etiket": "Kontenjan",
+        "deger": "1–6 kişi"
+      },
+      {
+        "etiket": "Seviye",
+        "deger": "Başlangıçtan ileriye üç kademe"
+      },
+      {
+        "etiket": "Program sıklığı",
+        "deger": "Haftada 2–4 seans"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Temel Teknik",
+        "sure": "45 dakika",
+        "mesafe": "5 istasyon",
+        "zorluk": "Başlangıç",
+        "aciklama": "Ağırlıkla ilk kez çalışanlar için, haftada iki seans. Vücut ağırlığı hareketleri ve hafif dirençle duruş, nefes ve hareket açıklığı üzerinde durulur; antrenör her istasyonu tek tek gösterir, ağırlık artışı bu kademede gündeme gelmez."
+      },
+      {
+        "ad": "Kuvvet Gelişimi",
+        "sure": "60 dakika",
+        "mesafe": "7 istasyon",
+        "zorluk": "Orta",
+        "aciklama": "Temel hareketleri oturmuş misafirler için, haftada üç seans. Serbest ağırlık ve direnç makineleri dönüşümlü kullanılır; set ile tekrar düzeni antrenörle birlikte kademeli olarak ayarlanır, her seans kısa bir esneme bölümüyle kapanır."
+      },
+      {
+        "ad": "İleri Kuvvet Programı",
+        "sure": "75 dakika",
+        "mesafe": "9 istasyon",
+        "zorluk": "İleri",
+        "aciklama": "Düzenli çalışma alışkanlığı olan misafirler için, haftada dört seans. Uzun ısınma, gün ayrımına göre bölünmüş kas grupları ve birleşik hareketler yer alır; antrenör tekniği yakından izler, yorgunluk belirtisinde ağırlık düşürülerek form korunur."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/fitness-egitmen-destegi.jpg",
+        "ad": "Formun kontrolü"
+      },
+      {
+        "src": "assets/img/ai/aktivite/fitness-teknik-detay.jpg",
+        "ad": "Tutuş detayı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/fitness-istasyon-duzeni.jpg",
+        "ad": "İstasyon düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/fitness-toparlanma.jpg",
+        "ad": "Esneme ve toparlanma"
+      }
+    ],
+    "video": "assets/video/aktivite-fitness.mp4",
+    "videoPoster": "assets/img/ai/aktivite/fitness-egitmen-destegi.jpg",
+    "hazirlik": [
+      "Kaymayan tabanlı, ayak bileğini saran spor ayakkabısı",
+      "Hareketi kısıtlamayan, nefes alan sade spor kıyafeti",
+      "Kişisel havlu ve en az 1 litre su",
+      "Seanstan yaklaşık iki saat önce alınmış hafif bir öğün",
+      "Varsa hekiminizin verdiği kısıt notu ve kullandığınız destek bandajı"
+    ],
+    "saglayanlar": [
+      "Serbest ağırlık, direnç makinesi ve mat serili açık zemin istasyonları",
+      "Sertifikalı antrenör eşliği ve ilk seansta seviye değerlendirmesi",
+      "Mat, foam roller ve esneme bandı kullanımı",
+      "Soyunma odası, duş ve kilitli dolap"
+    ],
+    "guvenlik": "Program içerikleri, seans süreleri ve kademe tanımları temsilîdir; antrenör değerlendirmesine ve salon yoğunluğuna göre değişebilir. Kalp-damar rahatsızlığı, tansiyon, eklem veya omurga şikâyeti, hamilelik ya da yakın zamanda geçirilmiş bir ameliyat gibi durumlarda katılım öncesinde hekiminize danışınız. Kullandığınız ilaçları ve hekiminizin belirttiği kısıtları ilk seanstan önce antrenörünüze bildiriniz; rahatsızlık hissettiğinizde çalışmayı durdurup antrenörü bilgilendiriniz. Salon ekibi yalnızca egzersiz uygulaması yürütür; tıbbi değerlendirme, teşhis veya tedavi hizmeti vermez.",
+    "ilgili": [
+      "kardiyo",
+      "spor-kulubu",
+      "pilates"
+    ]
+  },
+  {
+    "id": "kardiyo",
+    "ad": "Kardiyo",
+    "grup": "spor",
+    "ustyazi": "Dayanıklılık Alanı",
+    "kisa": "Marmara'ya bakan cam cepheli alanda, kendi temponuzda ilerleyen, üç kademeli dayanıklılık seansları.",
+    "hero": "assets/img/ai/aktivite/kardiyo-hero.jpg",
+    "ozet": "Koşu bandı, dik bisiklet, kürek ergometresi ve eliptik cihazların Marmara'ya dönük yerleştirildiği cam cepheli alanda, kendi temponuzda ilerleyen, üç kademede düzenlenmiş dayanıklılık odaklı seanslar.",
+    "paragraflar": [
+      "Kardiyo alanı, wellness merkezinin üst katında, Marmara'ya bakan cam cepheli bölümde yer alır. Koşu bandı, dik bisiklet, kürek ergometresi ve eliptik cihazlar manzaraya dönük biçimde sıralanmıştır; aralarındaki mesafe, yoğun saatlerde bile kendinizi sıkışık hissetmeyeceğiniz genişliktedir. Zemin ahşap, duvarlar açık taş ve krem sıvadır; dışarıda çam örtüsü ile puslu deniz görünür. Alanın sesi düşük tutulur, ortam müziği çalınmaz.",
+      "Alanda görevli eğitmen, ilk gelişinizde cihazları tek tek tanıtır; oturuş yüksekliği, tutuş mesafesi ve direnç kademesi sizin ölçünüze göre ayarlanır, ayarlar kartınıza not edilir. Sonraki gelişlerinizde serbest kullanım saatlerinde dilediğiniz cihazda kendi temponuzda çalışabilir, isterseniz eğitmenin yönlendirdiği aralıklı seanslara katılabilirsiniz. Tempoyu baştan sona siz belirlersiniz; zorlandığınızda ara vermek her zaman mümkündür.",
+      "Programlar düşük tempo dayanıklılık, aralıklı çalışma ve uzun süre seansı olmak üzere üç kademede tanımlıdır. Aralarındaki fark süre ve yoğunluktur; hangisinin size uyduğuna, alan görevlisiyle yapacağınız kısa bir görüşmenin ardından karar verirsiniz. Kademeler arasında sabit bir sıra yoktur; aynı hafta içinde farklı kademelerden seanslar da seçebilirsiniz. Amaç, konaklamanız boyunca sürdürebileceğiniz sakin ve zorlamasız bir çerçeve sunmaktır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Alanda",
+      "deneyimBaslik": "Cihaz Başında Neler Olur?",
+      "rotaGozkasi": "Kademeler",
+      "rotaBaslik": "Üç Dayanıklılık Kademesi",
+      "rotaGiris": "Kardiyo alanında üç kademe tanımlıdır; aralarındaki fark süre, yoğunluk ve grup büyüklüğüdür. Aşağıdaki değerler seans planlamasında esas alınan çerçevedir; alan görevlisi, katılımcının seviyesine göre bu çerçeveyi daraltabilir ya da genişletebilir.",
+      "rotaNot": "Program içerikleri temsilîdir; alan görevlisi, katılımcı sayısına ve seviyeye göre süre ile yoğunluğu düzenler.",
+      "galeriGozkasi": "Galeri",
+      "galeriBaslik": "Cam Cephe Boyunca",
+      "videoGozkasi": "Alandan",
+      "videoBaslik": "Sabah Kuşağından Bir Kesit",
+      "videoGiris": "Sabah ışığında cam cepheye bakan kardiyo alanından kısa bir görüntü. Cihazların yerleşimini, aradaki mesafeyi ve alanın olağan bir seans saatindeki sakin temposunu bu kısa kayıtta görebilirsiniz.",
+      "ctaGozkasi": "İletişim",
+      "ctaBaslik": "Kardiyo Alanını Görmek İster misiniz?",
+      "ctaMetin": "Alanı yerinde gezmek, cihazları denemek veya eğitmenli seans saatlerini öğrenmek için resepsiyonla görüşebilirsiniz. Seviyenizi ve alışkanlıklarınızı dinleyip size uygun kademeyi birlikte belirleriz. Ziyaret öncesinde kısa bir randevu almanız, alanın sakin olduğu saatlerde daha rahat bir tanıtım yapmamızı sağlar."
+    },
+    "bakista": [
+      {
+        "etiket": "Alan",
+        "deger": "Wellness merkezi üst kat kardiyo alanı; cam cephe Marmara'ya bakar"
+      },
+      {
+        "etiket": "Alan görevlisi",
+        "deger": "Alanda görevli bir eğitmen bulunur; cihaz tanıtımı, ayar ve tempo desteği verir"
+      },
+      {
+        "etiket": "Kullanım",
+        "deger": "Serbest kullanım saatlerinde kayıt gerekmez; eğitmenli aralıklı seanslar için resepsiyondan yer ayrılır"
+      },
+      {
+        "etiket": "Yaş aralığı",
+        "deger": "16 yaş ve üzeri serbest kullanım; 14–16 yaş yalnızca eğitmen eşliğinde"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Seans süresi",
+        "deger": "20 – 60 dakika"
+      },
+      {
+        "etiket": "Kontenjan",
+        "deger": "Eğitmenli seanslarda en çok 8 kişi"
+      },
+      {
+        "etiket": "Seviye",
+        "deger": "Başlangıçtan ileriye üç kademe"
+      },
+      {
+        "etiket": "Program sıklığı",
+        "deger": "Haftada 2 – 3 seans"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Düşük Tempo Dayanıklılık",
+        "sure": "20 – 30 dakika",
+        "mesafe": "Serbest kullanım, haftada 2 seans",
+        "zorluk": "Başlangıç",
+        "aciklama": "Sabit ve düşük yoğunlukta ilerleyen giriş kademesi. Konuşabildiğiniz bir tempoda yürüyüş, bisiklet ya da eliptik seçersiniz; görevli ısınma ile soğuma bölümlerini sizinle birlikte planlar ve ilk seansta cihaz ayarlarınızı çıkarır."
+      },
+      {
+        "ad": "Aralıklı Çalışma",
+        "sure": "30 – 45 dakika",
+        "mesafe": "En çok 8 kişi, haftada 2 – 3 seans",
+        "zorluk": "Orta",
+        "aciklama": "Kısa yüklenme ve toparlanma bölümlerinin dönüşümlü ilerlediği orta kademe. Süreler seviyenize göre düzenlenir; her yüklenmenin ardından tempoyu kendiniz düşürürsünüz. Kürek ergometresi ile dik bisiklet öne çıkar, grup küçük tutulur."
+      },
+      {
+        "ad": "Uzun Süre Seansı",
+        "sure": "45 – 60 dakika",
+        "mesafe": "En çok 6 kişi, haftada 3 seans",
+        "zorluk": "İleri",
+        "aciklama": "Dengeli ve kesintisiz bir tempoda ilerleyen en uzun kademe. Düzenli çalışma alışkanlığı olan misafirler içindir; iki ya da üç cihaz arasında dönerek çalışırsınız, ara su ve tempo kontrolü noktaları seans öncesinde belirlenir."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/kardiyo-egitmen-tempo-ayari.jpg",
+        "ad": "Tempo ayarı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/kardiyo-kurek-ergometresi-detay.jpg",
+        "ad": "Kürek ergometresinde çekiş detayı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/kardiyo-cihaz-duzeni.jpg",
+        "ad": "Cihazların yerleşim düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/kardiyo-seans-sonu-dinlenme.jpg",
+        "ad": "Cephede soluklanma"
+      }
+    ],
+    "video": "assets/video/aktivite-kardiyo.mp4",
+    "videoPoster": "assets/img/ai/aktivite/kardiyo-hero.jpg",
+    "hazirlik": [
+      "Rahat, nefes alan bir spor kıyafeti ve tabanı kavrayan spor ayakkabısı getirin; kaymayan taban özellikle koşu bandı ve eliptik için gereklidir.",
+      "Yanınızda kendi suyunuzu bulundurun; alandaki su istasyonundan da doldurabilirsiniz.",
+      "Küçük bir havlu alın; cihazı bıraktığınızda oturma ve tutma yüzeylerini silmeniz alan düzeninin bir parçasıdır.",
+      "Seansa tok başlamayın; ağır bir öğünün üzerinden en az bir buçuk saat geçmiş olması önerilir.",
+      "Cihazı ilk kez kullanacaksanız başlamadan önce görevliden kısa bir tanıtım isteyin; oturuş yüksekliği, tutuş mesafesi ve direnç kademesi baştan ayarlanır."
+    ],
+    "saglayanlar": [
+      "Tesis wellness ve fitness ekibi",
+      "Alan görevlisi eğitmenler",
+      "Resort resepsiyon ve yer ayırtma birimi",
+      "Teknik bakım ve ekipman servisi"
+    ],
+    "guvenlik": "Bu sayfadaki program içerikleri, süreler ve kontenjanlar temsilîdir; dönem, katılımcı sayısı ve cihaz durumuna göre değişebilir. Bilinen bir sağlık durumunuz, süregelen bir şikâyetiniz veya düzenli kullandığınız ilaçlar varsa seans öncesinde alan görevlisine bilgi vermenizi rica ederiz. Yeni bir hareket programına başlamadan önce hekiminize danışmanız uygun olur; seans sırasında kendinizi rahat hissetmediğinizde ara vermeniz beklenir. Alan ekibi yalnızca egzersiz uygulaması yürütür; tıbbi değerlendirme, teşhis veya tedavi hizmeti vermez.",
+    "ilgili": [
+      "fitness",
+      "studyo-dersleri",
+      "spor-kulubu"
+    ]
+  },
+  {
+    "id": "pilates",
+    "ad": "Pilates",
+    "grup": "spor",
+    "ustyazi": "Reformer ve Mat Stüdyosu",
+    "kisa": "Reformer ve mat stüdyosunda, eğitmen eşliğinde kontrollü hareket ve denge çalışmaları.",
+    "hero": "assets/img/ai/aktivite/pilates-hero.jpg",
+    "ozet": "Marmara'ya bakan cam cepheli stüdyoda reformer ve mat seansları; küçük gruplarda, eğitmen gözetiminde, kendi temponuzda ilerlediğiniz kontrollü hareket ve duruş farkındalığı çalışmaları.",
+    "paragraflar": [
+      "Pilates stüdyosu, wellness merkezinin üst katında, yamaca bakan uzun pencerelerin önünde yer alır. Sabah ışığı meşe zemine düştüğünde salon sessizdir; dışarıda çam tepeleri ve puslu Marmara görünür. Altı reformer istasyonu pencere hattı boyunca dizilmiştir, mat alanı ise iç tarafta ayrılmıştır. Her seans küçük bir grupla yürütülür; böylece eğitmen katılımcıların her biriyle tek tek ilgilenebilir.",
+      "Çalışmanın merkezinde kontrollü hareket, nefes ritmi ve gövde merkezinin dengeli kullanımı vardır. Reformer üzerinde yay direnci kademeli olarak ayarlanır; mat derslerinde vücut ağırlığıyla ilerlenir. Eğitmen hareketin hızını değil niteliğini izler, gerektiğinde açıyı, tekrar sayısını ya da direnci sizin için yeniden düzenler. Kimseyle yarışmazsınız; kendi temponuzda kalır, zorlandığınız bir harekette dinlenmeyi seçebilirsiniz.",
+      "Duruş farkındalığı, programın tekrar eden başlığıdır: omuz hattının, leğen kemiği konumunun ve ayak basışının hareket sırasında nasıl değiştiğini fark etmek üzerine çalışılır. Haftalık bir düzen kurmak isteyen misafirler için kademeler arası geçiş birlikte planlanır. Seans, pencere önünde kısa bir toparlanma bölümüyle biter; ardından ekipman temizlenir ve salon bir sonraki gruba hazırlanır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Seans Düzeni",
+      "deneyimBaslik": "Bir Pilates Seansı Nasıl Geçer?",
+      "rotaGozkasi": "Üç Kademe",
+      "rotaBaslik": "Mattan Reformere Üç Kademe",
+      "rotaGiris": "Pilates programı üç kademeye ayrılır. Kademeler birbirinin devamıdır; hangisiyle başlayacağınıza ilk seans öncesindeki kısa görüşmede eğitmenle birlikte karar verirsiniz.",
+      "rotaNot": "Kademeler arası geçiş için belirli bir süre şartı yoktur; eğitmen, hareketleri rahatça sürdürdüğünüzü gözlemlediğinde bir üst kademeyi önerir. Dilediğiniz zaman bir alt kademede çalışmayı sürdürebilirsiniz. Süreler ve kontenjanlar temsilîdir.",
+      "galeriGozkasi": "Reformer Salonundan",
+      "galeriBaslik": "Salon, Ekipman ve Seans Anları",
+      "videoGozkasi": "Hareket Hâlinde",
+      "videoBaslik": "Reformer Hattı Boyunca",
+      "videoGiris": "Aşağıdaki kısa çekim, sabah seansının ilk yarısında reformer hattı boyunca ilerleyen tek planlık bir görüntüdür.",
+      "ctaGozkasi": "Katılım",
+      "ctaBaslik": "Takvimden Bir Seans Seçin",
+      "ctaMetin": "Haftalık takvimi ve boş kontenjanları resepsiyondan öğrenebilir, seansınızı iç hat üzerinden ayırtabilirsiniz. İlk kez katılacaksanız, eğitmenle kısa bir görüşme için seans saatinden on beş dakika önce stüdyoda olmanız yeterlidir."
+    },
+    "bakista": [
+      {
+        "etiket": "Stüdyo konumu",
+        "deger": "Wellness merkezi üst kat; Marmara'ya bakan cam cepheli salon"
+      },
+      {
+        "etiket": "Ders eğitmeni",
+        "deger": "Sertifikalı pilates eğitmeni; seans boyunca salonda bulunur"
+      },
+      {
+        "etiket": "Seans talebi",
+        "deger": "Resepsiyon ya da iç hat üzerinden, seanstan en geç iki saat önce"
+      },
+      {
+        "etiket": "Seviye şartı",
+        "deger": "16 yaş ve üzeri; başlangıç kademesi için önceden deneyim gerekmez"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Seans süresi",
+        "deger": "50–60 dakika"
+      },
+      {
+        "etiket": "Kontenjan",
+        "deger": "Kademeye göre 4–8 kişi"
+      },
+      {
+        "etiket": "Seviye",
+        "deger": "Başlangıçtan ileriye üç kademe"
+      },
+      {
+        "etiket": "Program sıklığı",
+        "deger": "Haftada 2–3 seans; haftalık takvimde planlanır"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Mat Başlangıç",
+        "sure": "50 dakika",
+        "mesafe": "8 mat, en çok 8 kişi",
+        "zorluk": "Başlangıç",
+        "aciklama": "Yer minderinde, vücut ağırlığıyla yapılan temel hareket dizisi. Nefes ritmi, gövde merkezi ve omurga hareketliliği üzerine çalışılır. Ekipman kullanılmaz; daha önce pilates deneyimi olmayan misafirler için uygun bir başlangıç kademesidir."
+      },
+      {
+        "ad": "Reformer Temel",
+        "sure": "50 dakika",
+        "mesafe": "6 reformer istasyonu, en çok 6 kişi",
+        "zorluk": "Orta",
+        "aciklama": "Yaylı reformer istasyonunda, düşük ve orta dirençle ilerleyen kontrollü hareket çalışması. Eğitmen her istasyonda direnci ve hareket açısını ayrı ayrı ayarlar. Mat kademesini tamamlamış ya da temel hareketlere aşina misafirler için düzenlenir."
+      },
+      {
+        "ad": "Reformer İleri",
+        "sure": "60 dakika",
+        "mesafe": "4 reformer istasyonu, en çok 4 kişi",
+        "zorluk": "İleri",
+        "aciklama": "Daha uzun hareket dizileri, yüksek direnç kademeleri ve denge gerektiren geçişler içerir. Küçük grup sayesinde eğitmen her katılımcıyı yakından izler. Reformer temel kademesinde düzenli çalışmış misafirlere, eğitmen değerlendirmesinin ardından açılır."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/pilates-egitmen-yonlendirme.jpg",
+        "ad": "Reformerde yönlendirme"
+      },
+      {
+        "src": "assets/img/ai/aktivite/pilates-yay-detay.jpg",
+        "ad": "Ayak barı ve kayış detayı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/pilates-mat-duzeni.jpg",
+        "ad": "Ders öncesi hazırlanmış mat alanı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/pilates-seans-sonu.jpg",
+        "ad": "Pencere önünde kapanış"
+      }
+    ],
+    "video": "assets/video/aktivite-pilates.mp4",
+    "videoPoster": "assets/img/ai/aktivite/pilates-hero.jpg",
+    "hazirlik": [
+      "Seansa kaymaz tabanlı pilates çorabıyla katılmanız gerekir; stüdyoda yedek çorap bulundurulur.",
+      "Hareketi kısıtlamayan, dar paçalı spor kıyafeti tercih edin; bol ve geniş kesimler hareketi zorlaştırır.",
+      "Seanstan yaklaşık iki saat öncesine kadar ağır öğün almamaya özen gösterin.",
+      "Saat, yüzük ve kolye gibi takılarınızı soyunma dolabında bırakın; kayış ve yaylara temas edebilir.",
+      "Kendi matınızı getirebilirsiniz; stüdyoda temizlenmiş mat, halka, küçük top ve direnç bandı hazır bulunur."
+    ],
+    "saglayanlar": [
+      "Reformer istasyonları, mat, pilates halkası, küçük top ve direnç bandı",
+      "Sertifikalı pilates eğitmeni ve ilk katılım öncesi kısa seviye görüşmesi",
+      "Soyunma dolabı, duş, havlu ve seans sonrası bitki çayı",
+      "Kaymaz pilates çorabı temini; her seans sonrası ekipman temizliği ve salon havalandırması"
+    ],
+    "guvenlik": "Bu sayfadaki seans süreleri, kademeler ve kontenjanlar temsilîdir; güncel takvim ve program içeriği dönemsel olarak değişebilir. Hamilelik, yakın zamanda geçirilmiş bir ameliyat, kas-iskelet sistemine ilişkin bir şikâyet ya da süregelen bir sağlık durumunuz varsa seans öncesinde eğitmene bilgi vermeniz gerekir. Tereddüt ettiğiniz durumlarda katılımdan önce hekiminize danışmanız uygun olur; pilates seansları tıbbi bir uygulama değildir, teşhis veya tedavi amacı taşımaz.",
+    "ilgili": [
+      "yoga",
+      "spor-kulubu",
+      "fitness"
+    ]
+  },
+  {
+    "id": "yoga",
+    "ad": "Yoga",
+    "grup": "spor",
+    "ustyazi": "Nefes ve Denge",
+    "kisa": "Cam cepheli stüdyoda ve seyir terasında, üç kademeli, eğitmen eşliğinde yoga dersleri.",
+    "hero": "assets/img/ai/aktivite/yoga-hero.jpg",
+    "ozet": "Denize bakan cam cepheli stüdyoda, mevsiminde seyir terasında; nefes ve temel duruşlardan uzun akış derslerine uzanan üç kademede, kendi temponuzda çalışırsınız.",
+    "paragraflar": [
+      "Yoga stüdyosu, wellness merkezinin üst katında, denize bakan kanatta yer alır; tavan yüksekliği boyunca uzanan camlardan çam ormanı ve Marmara görünür. Dersler sabah ışığında ve akşamüstü olmak üzere günde iki kez açılır. Mevsim uygun olduğunda kapılar açılarak bitişikteki seyir terasında çalışılır. Mat, blok, kayış ve battaniye salonda hazır bulunur; ayakkabılık ve duş bölümü ders alanına doğrudan bağlanır.",
+      "Her ders kısa bir oturuş ve nefes çalışmasıyla açılır; eğitmen, katılımcıların o günkü durumunu sorar ve dizilimi buna göre düzenler. Ardından ısınma hareketleri, ayakta duruşlar ve dengeye ayrılan bölüm gelir. Eğitmen salonda dolaşarak sözlü yönlendirme yapar, isteyen misafirlere blok veya kayışla kolaylaştırılmış seçenekler gösterir. Bir duruşta zorlandığınızda dinlenme pozisyonuna dönmek her zaman serbesttir.",
+      "Dersler on beş dakikalık sakin bir kapanışla biter; ışık kısılır, battaniyeler dağıtılır, salonda yalnızca nefes sesi kalır. Akşam dersleri daha yavaş ilerler; az sayıda duruş desteklerle uzun süre tutulur. Konaklamanız boyunca aynı saatte tekrar eden bir ders seçmenizi öneririz; düzenli hareket alışkanlığı, resortun uzun soluklu yaşam biçimi yaklaşımının en sade parçasıdır. Ders sonrası termal havuzlarda serbest bir aralık, program akışına uygundur."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Ders Düzeni",
+      "deneyimBaslik": "Nefesten Kapanışa",
+      "rotaGozkasi": "Ders Kademeleri",
+      "rotaBaslik": "Nefesten Uzun Akışa Üç Kademe",
+      "rotaGiris": "Kademeler birbirinin devamıdır; eğitmen ilk derste kısa bir görüşmeyle sizi uygun gruba yönlendirir.",
+      "rotaNot": "Ders süreleri, kontenjanlar ve seviye tanımları temsilîdir; ders programı mevsime ve doluluğa göre değişebilir.",
+      "galeriGozkasi": "Mat Hattından",
+      "galeriBaslik": "Ders Alanında Neler Var?",
+      "videoGozkasi": "Mat Üzerinden",
+      "videoBaslik": "Sabah Akışı",
+      "videoGiris": "Sabah dersinde çekilmiş sesli görüntü; salonun sessizliğini duymak için kulaklığınızı takın.",
+      "ctaGozkasi": "İlk Ders",
+      "ctaBaslik": "İlk Dersinizi Bizimle Yapın",
+      "ctaMetin": "Kırk dakikalık tanışma dersine katılarak salonu, terası ve ders düzenini yerinde görebilirsiniz. Ders öncesinde eğitmenimizle kısa bir görüşme yapılır; hangi kademeyle başlamanın size uygun olacağını birlikte konuşursunuz."
+    },
+    "bakista": [
+      {
+        "etiket": "Ders alanı",
+        "deger": "Wellness merkezi üst kat, deniz cephesi; mevsiminde seyir terası"
+      },
+      {
+        "etiket": "Ders sorumlusu",
+        "deger": "Sertifikalı yoga eğitmeni"
+      },
+      {
+        "etiket": "Ders kaydı",
+        "deger": "Aynı gün, aktivite merkezinden veya oda telefonundan"
+      },
+      {
+        "etiket": "Yaş sınırı",
+        "deger": "14 yaş ve üzeri; deneyim şartı yok"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Seans süresi",
+        "deger": "45–75 dakika"
+      },
+      {
+        "etiket": "Kontenjan",
+        "deger": "12–16 kişi"
+      },
+      {
+        "etiket": "Seviye",
+        "deger": "Başlangıçtan ileriye üç kademe"
+      },
+      {
+        "etiket": "Program sıklığı",
+        "deger": "Haftada 6 gün, günde iki ders"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Nefes ve Temel Duruşlar",
+        "sure": "45 dakika",
+        "mesafe": "En çok 16 kişi",
+        "zorluk": "Başlangıç",
+        "aciklama": "Oturarak nefes çalışması, basit ayakta duruşlar ve dinlenme pozisyonlarıyla ilerleyen giriş dersi. Tempo yavaştır; her hareketin kolaylaştırılmış seçeneği gösterilir. Daha önce hiç yoga yapmamış misafirler için uygundur."
+      },
+      {
+        "ad": "Akış (Vinyasa)",
+        "sure": "60 dakika",
+        "mesafe": "En çok 14 kişi",
+        "zorluk": "Orta",
+        "aciklama": "Duruşların nefesle birbirine bağlandığı, kesintisiz ilerleyen ders. Kuvvet ve denge çalışmaları öne çıkar, tempo giriş kademesine göre belirgin biçimde yüksektir. Temel duruşları tanıyan misafirler için düzenlenir."
+      },
+      {
+        "ad": "Uzun Akış ve Denge",
+        "sure": "75 dakika",
+        "mesafe": "En çok 12 kişi",
+        "zorluk": "İleri",
+        "aciklama": "Akış kademesinin duruşlarını daha uzun dizilerde birleştiren, kol ve gövde kuvvetiyle denge bölümlerine geniş yer ayıran ders. Tempo yüksektir ve ara verilmeden ilerler; akış derslerini düzenli sürdüren misafirler için düzenlenir."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/yoga-akis-dersi.jpg",
+        "ad": "Akış dersi"
+      },
+      {
+        "src": "assets/img/ai/aktivite/yoga-nefes-detay.jpg",
+        "ad": "Nefes çalışması"
+      },
+      {
+        "src": "assets/img/ai/aktivite/yoga-mat-duzeni.jpg",
+        "ad": "Mat ve destek düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/yoga-kapanis-dinlenme.jpg",
+        "ad": "Kapanış dinlenmesi"
+      }
+    ],
+    "video": "assets/video/aktivite-yoga.mp4",
+    "videoPoster": "assets/img/ai/aktivite/yoga-akis-dersi.jpg",
+    "hazirlik": [
+      "Esnek, ter tutmayan rahat spor kıyafeti",
+      "Çorap veya yalın ayak; ayakkabı salona alınmaz",
+      "Küçük bir havlu ve kapaklı su matarası",
+      "Uzun saçlar için toka; saat, yüzük ve kolye ders öncesinde çıkarılır",
+      "Dersten yaklaşık iki saat öncesine kadar ağır öğün almamanızı öneririz"
+    ],
+    "saglayanlar": [
+      "Sertifikalı yoga eğitmeni eşliği",
+      "Mat, blok, kayış ve battaniye",
+      "Mevsiminde terasa açılan alternatif ders alanı",
+      "Ders sonrası bitki çayı ikramı"
+    ],
+    "guvenlik": "Program bilgileri temsilîdir; ders saatleri, kademeler ve kontenjanlar mevsime ve doluluğa göre değişebilir. Hamilelik, yakın zamanda geçirilmiş ameliyat, denge sorunu ya da eklem ve omurga şikâyeti gibi durumlarda katılım öncesinde hekiminize danışınız ve sağlık durumunuz hakkında eğitmeninizi bilgilendiriniz. Ders sırasında kendinizi zorlamayınız; rahatsızlık hissettiğinizde eğitmene haber vererek dinlenme pozisyonuna dönebilir veya dersten ayrılabilirsiniz. Dersler tıbbi bir uygulama değildir, teşhis veya tedavi amacı taşımaz.",
+    "ilgili": [
+      "pilates",
+      "studyo-dersleri",
+      "spor-kulubu"
+    ]
+  },
+  {
+    "id": "studyo-dersleri",
+    "ad": "Stüdyo Dersleri",
+    "grup": "spor",
+    "ustyazi": "Müzikli Grup Dersleri",
+    "kisa": "Cam cepheli stüdyoda, müzik eşliğinde yapılan dans, step ve aerobik temelli grup dersleri.",
+    "hero": "assets/img/ai/aktivite/studyo-hero.jpg",
+    "ozet": "Marmara'ya bakan cam cepheli stüdyoda, eğitmen eşliğinde koreografili grup dersleri. Üç ayrı ders tipi farklı tempolarda ilerler; herkes kendi temposunda hareket eder, dersler sabah ve akşam kuşağında açılır.",
+    "paragraflar": [
+      "Stüdyo dersleri, wellness merkezinin üst katındaki cam cepheli grup salonunda yapılır. Salonun bir yüzü çam ormanına ve Marmara'ya bakar; sabah kuşağındaki dersler doğal ışıkla başlar. Ahşap zemin, esnek taban yapısı, uzun ayna duvarı ve ses sistemiyle düzenlenen alan yirmi kişilik kapasiteye sahiptir; ders kontenjanı bundan daha dar tutulur, böylece herkesin hareket alanı korunur. Eğitmen dersi kulaklıklı mikrofonla yönetir.",
+      "Program tek bir kalıp yerine üç ders tipinden oluşur. Dans temelli derslerde koreografi kısa bölümler hâlinde öğretilir; step ve aerobik derslerinde tempo daha belirgindir; düşük etkili derslerde ise sıçrama yoktur, hareketler akıcı diziler hâlinde ilerler. Hangi dersle başlayacağınıza ilk katılımdan önce eğitmenle yapacağınız kısa görüşmede birlikte karar verirsiniz; eğitmen her hareketin sade bir alternatifini de gösterir.",
+      "Stüdyo derslerinin sosyal yanı, tek başına yapılan çalışmalardan ayrılır: aynı saatte gelen misafirler zamanla birbirini tanır, ders sonrası sohbet salonun bir parçası hâline gelir. Müzik ortak tempoyu belirler, ancak herkes kendi hızında hareket eder; sıra beklemek ya da geride kalmak diye bir durum yoktur. Ders sonunda salon havalandırılır ve ekipman bir sonraki grup için toplanır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Ders Kurgusu",
+      "deneyimBaslik": "Ders Nasıl Kurgulanır?",
+      "rotaGozkasi": "Ders Tipleri",
+      "rotaBaslik": "Üç Farklı Ders Tipi",
+      "rotaGiris": "Stüdyo programı tek bir kalıptan değil, üç ayrı ders tipinden oluşur. Aşağıdaki sıralama artan tempoya göre düzenlenmiştir; istediğiniz kademeden başlayabilir, aynı hafta içinde üçüne de katılabilirsiniz.",
+      "rotaNot": "Ders adları, süreler ve haftalık ders sayıları temsilîdir; sezon çizelgesi doluluk ve eğitmen planlamasına göre değişebilir. Kademeler arasında geçiş için ön şart aranmaz, yönlendirmeyi eğitmen yapar.",
+      "galeriGozkasi": "Kareler",
+      "galeriBaslik": "Ders Saatinden Kareler",
+      "videoGozkasi": "Video",
+      "videoBaslik": "Ders Ortasından",
+      "videoGiris": "Sabah dersinin ortasından alınmış on saniyelik tek çekim: salonun temposunu, ışığını ve grup düzenini olduğu gibi gösterir.",
+      "ctaGozkasi": "Çizelge",
+      "ctaBaslik": "Ders Çizelgesini İsteyin",
+      "ctaMetin": "Haftalık ders çizelgesini, kademeleri ve stüdyonun tesis içindeki konumunu görmek ya da ilk dersiniz öncesinde eğitmenle kısa bir görüşme ayarlamak isterseniz bizimle iletişime geçebilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Stüdyo",
+        "deger": "Wellness merkezi, üst kat grup dersleri salonu"
+      },
+      {
+        "etiket": "Ders ekibi",
+        "deger": "Her derste bir grup dersi eğitmeni; yoğun saatlerde ikinci eğitmen destek verir"
+      },
+      {
+        "etiket": "Katılım kaydı",
+        "deger": "Resepsiyondan veya misafir uygulamasından, ders saatinden iki saat öncesine kadar"
+      },
+      {
+        "etiket": "Seviye ve yaş",
+        "deger": "16 yaş ve üzeri; başlangıç dâhil tüm seviyeler"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Seans süresi",
+        "deger": "45 – 60 dakika"
+      },
+      {
+        "etiket": "Kontenjan",
+        "deger": "Ders başına en fazla 18 kişi"
+      },
+      {
+        "etiket": "Seviye",
+        "deger": "Başlangıçtan ileriye üç kademe"
+      },
+      {
+        "etiket": "Program sıklığı",
+        "deger": "Haftada 9 ders; sabah ve akşam kuşağı"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Sakin Tempo — Düşük Etkili Ders",
+        "sure": "45 dakika",
+        "mesafe": "Haftada 3 ders • 16 kişilik kontenjan",
+        "zorluk": "Başlangıç",
+        "aciklama": "Sıçrama içermeyen, akıcı hareket dizilerinden oluşur. Tempo düşük tutulur ve her hareketin sade bir alternatifi gösterilir. Salonla, müzikle ve grup düzeniyle ilk kez tanışanlar için uygun bir başlangıç dersidir."
+      },
+      {
+        "ad": "Ritim — Dans Temelli Ders",
+        "sure": "50 dakika",
+        "mesafe": "Haftada 4 ders • 18 kişilik kontenjan",
+        "zorluk": "Başlangıç – Orta",
+        "aciklama": "Koreografi kısa bölümler hâlinde öğretilir, ardından müzikle birleştirilir. Adımları ezberlemek gerekmez; eğitmen her bölümü tekrar eder. Latin ve pop temelli parçalar arasında geçiş yapılır, ders boyunca tempo dalgalanır."
+      },
+      {
+        "ad": "Tempo — Step ve Aerobik",
+        "sure": "60 dakika",
+        "mesafe": "Haftada 2 ders • 14 kişilik kontenjan",
+        "zorluk": "Orta – İleri",
+        "aciklama": "Step platformu ve aerobik dizileri bir arada kullanılır; tempo derse hâkimdir ve hareketler daha uzun tekrarlarla sürer. Ön şart aranmaz, ancak salon düzenine ve tempoya alışmış misafirler için daha uygundur."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/studyo-egitmen-yonlendirme.jpg",
+        "ad": "Adımın gösterilmesi"
+      },
+      {
+        "src": "assets/img/ai/aktivite/studyo-ritim-detay.jpg",
+        "ad": "Ritim detayı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/studyo-step-duzeni.jpg",
+        "ad": "Step platformları hazır"
+      },
+      {
+        "src": "assets/img/ai/aktivite/studyo-ders-sonu.jpg",
+        "ad": "Ders sonrası sohbet"
+      }
+    ],
+    "video": "assets/video/aktivite-studyo-dersleri.mp4",
+    "videoPoster": "assets/img/ai/aktivite/studyo-hero.jpg",
+    "hazirlik": [
+      "Zemine tam oturan, kaymayan spor ayakkabı getirin; dans temelli derslerde esnek tabanlı bir model daha rahat olur.",
+      "Hareketi kısıtlamayan, ince katmanlı spor kıyafeti tercih edin.",
+      "Yanınızda su matarası bulundurun; stüdyo girişinde su ünitesi vardır.",
+      "Derse en az on dakika önce gelin ki eğitmen sizi salon düzeninde uygun bir yere yerleştirebilsin.",
+      "Sağlık durumunuzla ilgili eğitmenin bilmesi gereken bir şey varsa ders başlamadan önce iletin."
+    ],
+    "saglayanlar": [
+      "Step platformu, hafif el ağırlığı ve mat: derse göre stüdyoda hazır bulunur",
+      "Ses sistemi ve eğitmen kulaklığı",
+      "Temiz havlu ve stüdyo girişinde su ünitesi",
+      "Kilitli dolap, giyinme ve duş alanı: wellness merkezi girişinde"
+    ],
+    "guvenlik": "Bu sayfadaki ders adları, süreler, kontenjanlar ve haftalık program bilgileri temsilîdir; kesin çizelge tesis açılışında duyurulacaktır. Derslere katılmadan önce bilinen bir sağlık durumunuz varsa hekiminize danışmanızı, ders öncesinde de eğitmeni bilgilendirmenizi rica ederiz. Eğitmen tempoyu ve hareket seçeneklerini katılımcıya göre düzenler; kendinizi zorlanmış hissettiğinizde ara vermeniz beklenir. Stüdyo ekibi yalnızca egzersiz uygulaması yürütür; tıbbi değerlendirme, teşhis veya tedavi hizmeti vermez.",
+    "ilgili": [
+      "yoga",
+      "kardiyo",
+      "pilates"
     ]
   }
 ];
