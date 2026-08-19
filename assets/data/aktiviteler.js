@@ -1479,5 +1479,1112 @@ grup: "doga",
       "kardiyo",
       "pilates"
     ]
+  },
+  {
+    "id": "seyir-teraslari",
+    "ad": "Seyir Terasları",
+    "grup": "sosyal",
+    "ustyazi": "Yamaçtan Marmara'ya",
+    "kisa": "Yamacın farklı kotlarına dağılmış ahşap platformlarda Marmara'yı ve karşı kıyıyı seyredebileceğiniz açık alanlar.",
+    "hero": "assets/img/ai/aktivite/seyir-hero.jpg",
+    "ozet": "Çam ormanının içinden geçen hat üzerinde, üç ayrı kotta konumlanmış ahşap seyir platformları; fünikülerle ulaşılan, gün boyu açık, oturarak vakit geçirilen manzara alanları.",
+    "paragraflar": [
+      "Seyir terasları, resortun çam ormanıyla kaplı yamacına üç ayrı kottan yerleştirilmiş ahşap platformlardır. Her biri araziye gömülü, ağaç hattını bozmayan bir seviyede durur; zemin ısıl işlem görmüş meşe, korkuluklar ince profilli bronz, oturma birimleri açık kireçtaşı ve krem keten minderdir. Yükseldikçe manzara katmanlanır: önce ormanın tepesi, sonra kıyı çizgisi, en üstte puslu mavi Marmara ve karşıdaki tarihî Bozburun deniz feneri.",
+      "Teraslara ulaşım fünikülerle sağlanır; alt istasyondan binip ara duraklarda inebilir, dilerseniz orman patikasından yürüyerek de çıkabilirsiniz. Alanlar gün boyu açıktır ve yer ayırtmak gerekmez; oturma birimleri serbest kullanımdadır. Görevliler gün içinde terasları dolaşarak minder ve battaniye ikmalini yapar, rüzgâra göre şemsiyeleri açar ya da toplar. Sıcak içecek servisi belirli saatlerde alt terastan verilir.",
+      "Terasların en kalabalık saati akşamüstüdür. Güneş batıya alçaldıkça ışık çam gövdeleri arasından yatay girer, deniz mat bir gümüşe döner, karşı kıyıdaki fener siluete dönüşür. Bu saatte üst terasta sohbet, orta terasta sessizlik, batı terasında günün son yarım saatini bekleyen uzun bir sıra oluşur. Karanlık bastığında aydınlatma kısılır; ahşap, gündüzden kalan ısısını gece boyunca taşımayı sürdürür."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Mekân",
+      "deneyimBaslik": "Yamaçta Üç Kot, Üç Ayrı Manzara",
+      "rotaGozkasi": "Kotlar",
+      "rotaBaslik": "Yukarıdan Aşağıya Üç Teras",
+      "rotaGiris": "Üç teras aynı yamacın farklı kotlarında yer alır; fünikülerin ara durakları ve orman patikası bunları birbirine bağlar. Aynı adı taşıyan yürüyüş güzergâhıyla karıştırılmamalıdır: orası bir hattır, burası hattın uğradığı platformların kendisidir.",
+      "rotaNot": "Konum, kapasite ve açık kalma saatleri temsilîdir; mevsime ve hava koşullarına göre değişebilir.",
+      "galeriGozkasi": "Teraslardan",
+      "galeriBaslik": "Ahşap, Bronz ve Deniz",
+      "ctaGozkasi": "Teras Turu",
+      "ctaBaslik": "Üç Terası da Görmeden Karar Vermeyin",
+      "ctaMetin": "Ziyaretinizde fünikülerle üç kotu birlikte dolaşalım; sabah ışığında da akşamüstünde de nasıl bir manzara olduğunu anlatalım, hangi terasın size uyduğuna orada karar verin."
+    },
+    "bakista": [
+      {
+        "etiket": "Yamaçtaki yeri",
+        "deger": "Çam hattı içinde üç ayrı kot"
+      },
+      {
+        "etiket": "Açık saatler",
+        "deger": "Her gün 07.00 – 23.00"
+      },
+      {
+        "etiket": "Ulaşım",
+        "deger": "Fünikülerin ara durakları ya da orman patikası"
+      },
+      {
+        "etiket": "Giriş koşulu",
+        "deger": "Serbest kullanım; çocuklar refakatle"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Yamaç hattı, 3 farklı kot"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Toplam yaklaşık 90 kişi"
+      },
+      {
+        "etiket": "Açılış",
+        "deger": "Her gün 07.00 – 23.00"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Dört mevsim açık"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Fener Terası",
+        "sure": "07.00 – 23.00",
+        "mesafe": "Üst kot · 35 kişi",
+        "zorluk": "Tüm misafirler",
+        "aciklama": "Yamacın en üst kotunda, doğrudan karşı kıyıya bakan geniş platform. Havanın açık olduğu sabahlarda tarihî Bozburun deniz feneri buradan net seçilir; kahvaltısını uzatan misafirlerin ilk tercihidir."
+      },
+      {
+        "ad": "Orman Sekisi",
+        "sure": "Gün boyu",
+        "mesafe": "Orta kot · 20 kişi",
+        "zorluk": "Sessiz alan",
+        "aciklama": "Çam gövdelerinin arasına gömülü, denizi ağaç aralıklarından gören küçük seki. Yüksek sesle konuşulmaz, telefon görüşmesi yapılmaz; kitap okumak, çalışmak ya da yalnız kalmak isteyenlere ayrılmıştır."
+      },
+      {
+        "ad": "Gün Batımı Terası",
+        "sure": "Akşamüstü – 23.00",
+        "mesafe": "Batı kot · 35 kişi",
+        "zorluk": "6 yaş ve üzeri",
+        "aciklama": "Batıya dönük, basamaklı oturma düzeni olan en hareketli teras. Güneşin denize inişini izlemek için akşamüstü doluluk artar; hava karardıktan sonra aydınlatma kısılır, gökyüzü gözlem hattına buradan geçilir."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/seyir-fener-terasi.jpg",
+        "ad": "Fener Terası"
+      },
+      {
+        "src": "assets/img/ai/aktivite/seyir-ahsap-doku.jpg",
+        "ad": "Ahşap ve korkuluk detayı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/seyir-orman-sekisi.jpg",
+        "ad": "Orman Sekisi"
+      },
+      {
+        "src": "assets/img/ai/aktivite/seyir-gun-batimi.jpg",
+        "ad": "Gün Batımı Terası"
+      }
+    ],
+    "hazirlik": [
+      "Akşamüstü rüzgârı serinletir; yanınıza ince bir hırka veya şal alın.",
+      "Ahşap zemin çiy ve yağmurdan sonra kayganlaşır; kaymaz tabanlı ayakkabı tercih edin.",
+      "Fünikülerin ara duraklarını kullanacaksanız oda kartınızı yanınızda bulundurun.",
+      "Fener manzarası için küçük bir dürbün ya da telefonunuzun yakınlaştırma özelliği işinize yarar.",
+      "Orman Sekisi sessiz alandır; telefonunuzu sessize almanız beklenir."
+    ],
+    "saglayanlar": [
+      "Minder, keten yastık ve akşam saatleri için yün battaniye",
+      "Hava durumuna göre açılan gölge şemsiyeleri ve rüzgâr paravanları",
+      "Alt terasta belirli saatlerde sıcak içecek ve su servisi",
+      "Fünikülerle üç kot arasında gün boyu ulaşım"
+    ],
+    "guvenlik": "Teraslar yamaç kotunda, korkuluklu açık platformlardır; çocukların refakatsiz bırakılmaması, korkuluklara oturulmaması ve tırmanılmaması gerekir. Yükseklik hissinden rahatsız olan ya da denge konusunda tereddüdü bulunan misafirlerimizin üst kotları refakatle kullanmasını öneririz. Belirtilen saatler, kapasiteler ve servis bilgileri temsilîdir; hava koşullarına göre teraslar geçici olarak kapatılabilir.",
+    "ilgili": [
+      "gokyuzu-gozlem",
+      "amfi-tiyatro",
+      "ozel-plaj"
+    ]
+  },
+  {
+    "id": "ozel-plaj",
+    "ad": "Özel Kumsal Plaj",
+    "grup": "sosyal",
+    "ustyazi": "Denize Sıfır",
+    "kisa": "Resortun deniz kotundaki özel kumsalı; şezlong alanı, gölgeli sessiz köşe ve ahşap iskele.",
+    "hero": "assets/img/ai/aktivite/plaj-hero.jpg",
+    "ozet": "Marmara kıyısındaki özel kumsalımız; şezlong alanı, çamların gölgesindeki sessiz köşe ve ahşap iskeleden denize giriş. Cankurtaran gözetiminde, sakin bir kıyı günü.",
+    "paragraflar": [
+      "Kumsal, yamacın en alt kotunda, çam ormanının denize indiği yerde açılır. İnce kum ile yer yer düz çakıl birbirini izler, kıyı çizgisi uzun ve girintisizdir. Arkada açık kireçtaşı basamaklar ve gölgelikli bir teras, önde puslu mavi Marmara vardır. Karşı kıyıdaki tarihî Bozburun deniz feneri, havanın açık olduğu günlerde ufuk hattında seçilir.",
+      "Gün, sabah erken saatte şezlonglar düzenlenirken başlar. Havlular servis noktasından alınır, şemsiyeler istediğiniz yerde açılır; duşlar ve giyinme kabinleri kumsalın arka hattındadır. Cankurtaran, açılıştan kapanışa kadar kule ve iskele hattında görev yapar. Servis ekibi alanı belirli aralıklarla dolaşır, isteğe bağlı içecek ve ek havlu getirir.",
+      "Kumsalın en sevilen aralığı öğleden sonranın ortasıdır: rüzgâr henüz dönmemiştir, deniz düz durur, kum ısısını korur. Sabahın erken saatleri boyuna yüzmek isteyenlere, öğle sıcağı gölgeli köşeye ve teras altına aittir. Akşamüstü şemsiyeler kapanır, kıyı boyunca yürüyenlerin sayısı artar; günün son işi, havluların servis noktasına geri bırakılmasıdır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Kıyıda Bir Gün",
+      "deneyimBaslik": "Marmara'nın Kıyısında Kendi Kumsalınız",
+      "rotaGozkasi": "Kumsalın Şeritleri",
+      "rotaBaslik": "Kıyının Üç Alanı",
+      "rotaGiris": "Plaj tek bir düzlük değil; kum şeridi boyunca birbirinden farklı üç alana ayrılır. Günün ritmini, gölgeyi ve denize giriş biçimini bu ayrım belirler.",
+      "rotaNot": "Alanlar arasında geçiş serbesttir. Sessiz köşede müzik çalınmaz ve telefon görüşmesi yapılmaz; iskele yalnızca cankurtaranın görev saatlerinde denize giriş için açıktır.",
+      "galeriGozkasi": "Plajdan",
+      "galeriBaslik": "Kum, Gölge ve İskele",
+      "ctaGozkasi": "Kıyıyı Tanıyın",
+      "ctaBaslik": "Kumsalı Sezon Başlamadan Gezin",
+      "ctaMetin": "Deniz kotundaki kumsalı, iskeleyi ve gölgeli sessiz köşeyi ziyaretinizde birlikte gezelim. Sezon takvimini ve günün hangi saatinde nereye oturmanın daha keyifli olduğunu yerinde anlatalım."
+    },
+    "bakista": [
+      {
+        "etiket": "Kıyı konumu",
+        "deger": "Deniz kotu; füniküler alt istasyonundan 3 dakika"
+      },
+      {
+        "etiket": "Sezon ve saatler",
+        "deger": "Haziran – Eylül, 08.00 – 19.30"
+      },
+      {
+        "etiket": "Denize giriş",
+        "deger": "Cankurtaran görevdeyken, işaretli alan içinde"
+      },
+      {
+        "etiket": "Havlu ve şezlong",
+        "deger": "Ayırtmak gerekmez; yoğun günlerde sabah bildirilebilir"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Kıyı",
+        "deger": "Deniz kotu, resortun özel kıyı şeridi"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "120 şezlong, 40 şemsiye"
+      },
+      {
+        "etiket": "Açılış",
+        "deger": "08.00 – 19.30"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Haziran – Eylül; ara dönemde yürüyüş ve oturma alanı"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Şezlong Alanı",
+        "sure": "09.00 – 19.30",
+        "mesafe": "Orta bölüm · 120 şezlong, 40 şemsiye",
+        "zorluk": "Tüm misafirler",
+        "aciklama": "Kumsalın orta bölümü. Sıralı şezlong ve şemsiyeler, servis noktası, duşlar ve giyinme kabinleri buradadır. Ailelerin ve gün boyu kalanların tercih ettiği en canlı alan."
+      },
+      {
+        "ad": "Sessiz Köşe",
+        "sure": "08.00 – 19.30",
+        "mesafe": "Güney uç · 18 gölgelikli yatak",
+        "zorluk": "12 yaş ve üzeri, sessiz alan",
+        "aciklama": "Çamların denize indiği uçta, aralıklı yerleştirilmiş gölgelikli yataklar. Müzik çalınmaz, telefon görüşmesi yapılmaz. Kitap okumak ve öğle sıcağını gölgede geçirmek için ayrılmıştır."
+      },
+      {
+        "ad": "İskele ve Deniz Girişi",
+        "sure": "09.00 – 18.30",
+        "mesafe": "Kuzey uç · 22 metre ahşap iskele",
+        "zorluk": "Yüzme bilen misafirler; 12 yaş altı refakatli",
+        "aciklama": "Kumsalın kuzeyindeki ahşap iskele. Merdivenden doğrudan derin suya inilir; kıyıdan sığ giriş ayrıca işaretlidir. Yalnızca cankurtaran görevdeyken açıktır, atlama yapılmaz."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/plaj-sessiz-kose.jpg",
+        "ad": "Çamların gölgesindeki sessiz köşe"
+      },
+      {
+        "src": "assets/img/ai/aktivite/plaj-iskele-deniz-girisi.jpg",
+        "ad": "Ahşap iskele ve deniz girişi"
+      },
+      {
+        "src": "assets/img/ai/aktivite/plaj-havlu-hazirligi.jpg",
+        "ad": "Servis noktasında havlu düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/plaj-gun-batimi.jpg",
+        "ad": "Kumsalda günün son saati"
+      }
+    ],
+    "hazirlik": [
+      "Mayo ve yedek bir üst; kabinler mevcut ama kuru kıyafet günü uzatır.",
+      "Şapka ve güneş gözlüğü; öğle saatlerinde gölge dışında ısı yükselir.",
+      "Yüksek faktörlü güneş koruyucu; denizden sonra yenilemeyi unutmayın.",
+      "Kıyının bazı yerleri çakıllı olduğu için deniz ayakkabısı ya da sandalet.",
+      "Oda kartınız; havlu ve şezlong talebi bu kartla açılır."
+    ],
+    "saglayanlar": [
+      "Görev saatleri boyunca kule ve iskele hattında cankurtaran",
+      "Şezlong, şemsiye ve günlük temiz plaj havlusu",
+      "Tatlı su duşları, giyinme kabinleri ve gölgelikli dinlenme terası",
+      "Kumsala eşya taşıma yardımı ve tekerlekli sandalye erişimi"
+    ],
+    "guvenlik": "Denize giriş yalnızca cankurtaranın görevde olduğu saatlerde ve işaretli alan içinde yapılır; şamandıra hattının dışına çıkılmaz, iskeleden atlanmaz ve rüzgâr ya da dalga nedeniyle kırmızı bayrak çekildiğinde plaj denize kapatılır. Kalp, dolaşım, denge veya solunum ile ilgili bir rahatsızlığı olan, hamile olan ya da düzenli ilaç kullanan misafirlerimizin denize girmeden önce kendi hekimine danışmasını, çocukların su kenarında daima bir yetişkinle bulunmasını rica ederiz. Sayfadaki saat, kapasite ve düzen bilgileri temsilîdir; sezon takvimine ve hava koşullarına göre değişebilir.",
+    "ilgili": [
+      "acik-havuz",
+      "seyir-teraslari",
+      "kapali-havuz"
+    ]
+  },
+  {
+    "id": "gokyuzu-gozlem",
+    "ad": "Gökyüzü Gözlem Alanları",
+    "grup": "sosyal",
+    "ustyazi": "Karanlığa Açılan Teras",
+    "kisa": "Yamacın üst kotunda, ışıktan uzak; çıplak gözle ve teleskopla gökyüzüne ayrılmış gece alanı.",
+    "hero": "assets/img/ai/aktivite/gokyuzu-hero.jpg",
+    "ozet": "Resortun en üst kotunda, aydınlatması kısılmış bir düzlük. Battaniyeniz ve sıcak içeceğinizle uzanır, mevsimin takımyıldızlarını izler, isterseniz teleskop başında sıranızı beklersiniz.",
+    "paragraflar": [
+      "Gözlem alanı, resortun en üst kotunda; çam kuşağının üzerinde, konaklama bölgelerinin ışığından ayrılmış bir düzlüktedir. Zemin koyu renkli ahşap kaplama, çevresi rüzgârı kesen alçak taş duvardır. Aydınlatma yere gömülü kısık kırmızı armatürlerle sınırlıdır; gözünüz karanlığa alıştıkça aşağıda Marmara'nın kıyı ışıkları, karşıda Bozburun'un fener çakışı belirir. Rüzgârlı gecelerde kalın yün battaniyeler girişteki sandıklarda hazır bekler.",
+      "Alana geldiğinizde girişte battaniye ve sıcak içecek servisi bulunur; gözlem görevlisi o gece gökyüzünün hangi bölgesinin açık olduğunu kısaca anlatır. Kimse sizi bir programa bağlamaz: kimi misafir şezlonga uzanıp yalnızca izler, kimi teleskop sırasına girer, kimi tripodunu kurup uzun poz denemesi yapar. Konuşmalar alçak sesle sürer; beyaz ekran ışığı kullanılmaz, telefonlar kırmızı moda alınır.",
+      "En açık geceler, ay ışığının zayıf olduğu yeni ay haftalarıdır; gökyüzü asıl derinliğini ise gece yarısından sonra kazanır. O saatte konuşma seyrelir, şezlongların çoğu boşalır ve alanda yalnızca uzun poz köşesi çalışır. Yaz aylarında Samanyolu güney ufkunda uzanır, kışın Orion ve Ülker öne çıkar. Bulutlu gecelerde platform açık kalır ama teleskop kurulmaz."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Gece Alanı",
+      "deneyimBaslik": "Işıklar Kısıldıktan Sonra",
+      "rotaGozkasi": "Üç Bölüm",
+      "rotaBaslik": "Gökyüzünü İzlemenin Üç Biçimi",
+      "rotaGiris": "Alan, yamacın üst sırtına yayılmış birbirine bağlı üç bölümden oluşur; gece ilerledikçe ağırlık bir bölümden diğerine kayar, dilediğiniz an geçebilirsiniz.",
+      "rotaNot": "Saatler, kapasiteler ve gökyüzünde görülebilecekler temsilîdir; mevsime, ay evresine ve hava durumuna göre değişir.",
+      "galeriGozkasi": "Geceden",
+      "galeriBaslik": "Karanlığa Alışan Gözle",
+      "ctaGozkasi": "Gece Daveti",
+      "ctaBaslik": "Bir Gece de Siz Yukarı Çıkın",
+      "ctaMetin": "Ziyaretinizin akşam bölümünde gözlem alanına çıkın; şezlonga uzanın, teleskop başında sıranızı bekleyin, gerçek karanlığın nasıl bir şey olduğunu yerinde görün."
+    },
+    "bakista": [
+      {
+        "etiket": "Yükselti",
+        "deger": "Yamacın en üst kotu, orman sınırının üzeri"
+      },
+      {
+        "etiket": "Karanlık saatleri",
+        "deger": "Gün batımından 03.00'e kadar"
+      },
+      {
+        "etiket": "Kimler katılabilir",
+        "deger": "Tüm misafirler; küçük çocuklar refakatle"
+      },
+      {
+        "etiket": "Teleskop kaydı",
+        "deger": "Çıplak göz alanı serbest; teleskop için akşam kaydı"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Yamacın en üst kotu, füniküler son durağının üstü"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Aynı anda 40 misafir"
+      },
+      {
+        "etiket": "Açılış",
+        "deger": "Hava açık olan tüm geceler"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Yıl boyu; en berrak geceler kış aylarında"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Çıplak Göz Düzlüğü",
+        "sure": "21.00 – 23.00",
+        "mesafe": "Deniz tarafı düzlük · 24 şezlong",
+        "zorluk": "Tüm misafirler",
+        "aciklama": "Alanın denize bakan geniş düzlüğü. Arkalıkları yatırılabilen şezlonglara uzanır, battaniyenize sarılır ve gökyüzünü hiçbir alet olmadan izlersiniz. Görevli, o gece görünen takımyıldızları kısaca gösterir."
+      },
+      {
+        "ad": "Teleskop Platformu",
+        "sure": "22.00 – 00.30",
+        "mesafe": "Kuzey kenar · 1 sabit, 3 taşınabilir teleskop",
+        "zorluk": "8 yaş ve üzeri",
+        "aciklama": "Platformun kuzey kenarında sabit teleskop ve yanında taşınabilir üç teleskop bulunur. Görevli eşliğinde sıranız geldiğinde merceğe bakarsınız; mevsime göre Ay yüzeyi, Satürn'ün halkası ya da Andromeda Gökadası gösterilir."
+      },
+      {
+        "ad": "Uzun Poz Köşesi",
+        "sure": "00.00 – 03.00",
+        "mesafe": "Üst sırt · 12 işaretli tripod noktası",
+        "zorluk": "Fotoğrafla ilgilenen misafirler",
+        "aciklama": "Gece yarısından sonra açık kalan köşe. İşaretli tripod noktalarına kendi makinenizi kurar, uzun pozla yıldız izlerini kaydedersiniz. Bu saatte konuşma en aza iner, kırmızı ışık dışında aydınlatma kullanılmaz."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/gokyuzu-teleskop.jpg",
+        "ad": "Teleskop başında"
+      },
+      {
+        "src": "assets/img/ai/aktivite/gokyuzu-battaniye-ikram.jpg",
+        "ad": "Battaniye ve sıcak içecek"
+      },
+      {
+        "src": "assets/img/ai/aktivite/gokyuzu-sezlong-duzeni.jpg",
+        "ad": "Şezlong düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/gokyuzu-uzun-poz.jpg",
+        "ad": "Uzun poz gecesi"
+      }
+    ],
+    "hazirlik": [
+      "Katmanlı ve kalın giyim; yaz gecelerinde bile yamaçta rüzgâr eser.",
+      "Kapalı ve tabanı kaymayan ayakkabı.",
+      "Telefonunuzu kırmızı ekran moduna alın, flaşı kapatın.",
+      "Uzun poz denemesi için kendi fotoğraf makineniz ve tripodunuz.",
+      "Gözünüzün karanlığa alışması için ilk yirmi dakikayı ekransız geçirin."
+    ],
+    "saglayanlar": [
+      "Yün battaniye, minder ve rüzgâr paravanı",
+      "Sıcak içecek servisi: bitki çayı, sahlep, sade kahve",
+      "Sabit ve taşınabilir teleskoplar, gözlem görevlisi eşliği",
+      "Alana fünikülerle gece ulaşımı ve kırmızı el feneri"
+    ],
+    "guvenlik": "Alanda beyaz ışık ve flaş kullanılmaz; karanlıkta yürürken işaretli patikanın dışına çıkmayınız, çocuklarınızı yanınızdan ayırmayınız. Gece havası serindir ve platform açık kottadır; soğuğa duyarlılığı, denge sorunu ya da solunum yolu hassasiyeti olan misafirlerimizin katılım öncesinde kendi hekimine danışmasını öneririz. Bulut, sis ve rüzgâr durumuna göre alan kapatılabilir; buradaki saatler, kapasiteler ve program bilgileri temsilîdir.",
+    "ilgili": [
+      "seyir-teraslari",
+      "acik-hava-sinemasi",
+      "amfi-tiyatro"
+    ]
+  },
+  {
+    "id": "hamam",
+    "ad": "Hamam",
+    "grup": "sosyal",
+    "ustyazi": "Geleneksel Türk Hamamı",
+    "kisa": "Kubbe fil gözlerinden süzülen ışık altında, sıcak mermer ve buharla geçen sakin saatler.",
+    "hero": "assets/img/ai/aktivite/hamam-hero.jpg",
+    "ozet": "Geleneksel düzende kurulmuş bir Türk hamamı: ortada göbek taşı, çevresinde mermer kurnalar, üstte gün ışığını fil gözleriyle içeri alan yüksek bir kubbe.",
+    "paragraflar": [
+      "Hamam, wellness kanadının alt katında, kapalı havuz salonunun bir kot altındadır. Ortada geleneksel ölçülerde bir göbek taşı, çevresinde tek tek oyulmuş mermer kurnalar, üstte fil gözleriyle delinmiş bir kubbe bulunur. Gün ışığı bu küçük camlardan ince huzmeler hâlinde iner ve buharın içinde görünür hâle gelir. Mermer ayak altında ılıktır; duyulan tek ses, kurnaya akan sudur.",
+      "Mekân kadın ve erkek saatleri ayrı olacak şekilde işletilir. Girişte peştemal, havlu ve takunya verilir; soyunmalıktan sonra ılıklıkta bir süre oturur, ardından sıcaklığa geçersiniz. Sıcak mermer üzerinde uzanır, kurnadan tas ile su alırsınız. Dilerseniz görevli eşliğinde kese ve köpük uygulaması yapılır. Çıkışta soğuklukta oturur, su ya da bitki çayı içersiniz.",
+      "Kubbeden düşen ışık öğleye doğru dikleşir; huzmeler o saatte göbek taşının üzerine dik iner ve buharın içinde tek tek seçilir. Mekânın en sessiz aralığı da budur: iki program arasındaki devir saatinin hemen sonrası. Öğleden sonra doluluk artar, kese ve köpük saatleri sıklaşır; akşam programı kapanmadan sıcaklık bir kez daha boşalır ve mermer yalnız kalır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Hamamda",
+      "deneyimBaslik": "Kubbenin Altında Bir Öğle Vakti",
+      "rotaGozkasi": "Üç Kullanım",
+      "rotaBaslik": "Hamamı Kullanmanın Üç Yolu",
+      "rotaGiris": "Hamamı üç ayrı biçimde kullanabilirsiniz: kendi ritminizde geçen klasik bir sıcaklık ziyareti, görevli eşliğinde kese ve köpük uygulaması ya da soğukluk ve dinlenme odasını da içine alan uzun bir ritüel. Üçü de aynı mekânda geçer; fark, ayırdığınız zamanda ve eşlik biçimindedir.",
+      "rotaNot": "Saatler ve süreler temsilîdir; mevsime, doluluğa ve kadın-erkek program düzenine göre değişebilir.",
+      "galeriGozkasi": "Hamamdan",
+      "galeriBaslik": "Mermer, Buhar ve Işık",
+      "ctaGozkasi": "Hamam Saatleri",
+      "ctaBaslik": "Hamamı Programınıza Ekleyin",
+      "ctaMetin": "Kadın ve erkek saatlerini, kese ve köpük uygulaması için uygun zaman aralıklarını ve kubbe altının en sakin olduğu saatleri resepsiyonla birlikte planlayabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Kanat ve kat",
+        "deger": "Wellness kanadı alt katı, kapalı havuz salonunun bir kot altı"
+      },
+      {
+        "etiket": "Açılış saatleri",
+        "deger": "Kadınlar 09.00-14.00, erkekler 15.00-21.00 (temsilî)"
+      },
+      {
+        "etiket": "Kimler kullanabilir",
+        "deger": "12 yaş ve üzeri; 6-12 yaş ebeveyn refakatiyle"
+      },
+      {
+        "etiket": "Uygulama kaydı",
+        "deger": "Sıcaklık için gerekmez; kese ve köpük için önceden bildirim"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Wellness kanadı, alt kat"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Aynı anda 18 misafir"
+      },
+      {
+        "etiket": "Açılış",
+        "deger": "09.00-21.00, kadın ve erkek saatleri ayrı"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Yıl boyu açık"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Klasik Sıcaklık Ziyareti",
+        "sure": "40-50 dakika",
+        "mesafe": "Sıcaklık bölümü, aynı anda 12 misafir",
+        "zorluk": "6 yaş ve üzeri, refakatle",
+        "aciklama": "Kendi ritminizde kullanırsınız: ılıklıkta ısınır, göbek taşında uzanır, kurnadan tas ile su alırsınız. Görevli yalnızca mekân düzeni ve peştemal desteği için bulunur. Ayrılmadan önce soğuklukta bir süre oturmanız önerilir."
+      },
+      {
+        "ad": "Kese ve Köpük Uygulaması",
+        "sure": "30-35 dakika",
+        "mesafe": "Göbek taşı, aynı anda 4 misafir",
+        "zorluk": "16 yaş ve üzeri",
+        "aciklama": "Görevli eşliğinde ilerler: ısınmanın ardından kese uygulanır, bol köpükle yıkanır ve ılık suyla durulanır. Ön bildirim sırasında kadın ya da erkek görevli tercih edebilirsiniz. Uygulama sonunda kurulama havlusu verilir."
+      },
+      {
+        "ad": "Uzun Ritüel",
+        "sure": "2-2,5 saat",
+        "mesafe": "Sıcaklık ve soğukluk, aynı anda 6 misafir",
+        "zorluk": "Yetişkin misafirler",
+        "aciklama": "Hamamı soğukluk ve dinlenme odasıyla birlikte kullanırsınız. Sıcaklık, kese ve köpük, ardından uzun bir dinlenme: sedirlerde oturur, su ve bitki çayı içersiniz. Konuşmalar bu bölümde kısık tutulur."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/hamam-kese-kopuk.jpg",
+        "ad": "Kese ve köpük uygulaması"
+      },
+      {
+        "src": "assets/img/ai/aktivite/hamam-kurna-detay.jpg",
+        "ad": "Mermer kurna ve su detayı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/hamam-sogukluk-hazirlik.jpg",
+        "ad": "Soğukluk ve peştemal düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/hamam-gobek-tasi.jpg",
+        "ad": "Göbek taşında son sessizlik"
+      }
+    ],
+    "hazirlik": [
+      "Mayo veya deniz şortu; peştemal, havlu ve takunya girişte verilir",
+      "Kişisel bakım ürünleriniz için küçük bir çanta",
+      "Saçınızı toplamak için toka ya da bone",
+      "Hamam sonrası giyeceğiniz rahat, hafif bir kıyafet",
+      "Yanınıza su alınız; çıkışta soğuklukta bir süre oturmayı planlayınız"
+    ],
+    "saglayanlar": [
+      "Peştemal, havlu, takunya ve soyunmalık dolabı",
+      "Kadın ve erkek saatleri ayrı program düzeni; kadın veya erkek görevli tercihi",
+      "Kese, lif ve sabun malzemeleri ile uygulamayı yapan görevli",
+      "Soğuklukta su, bitki çayı ve sedirli oturma alanı"
+    ],
+    "guvenlik": "Hamam zemini ıslak ve kaygandır; lütfen verilen takunyalarla yürüyünüz ve sıcak mermer üzerinde yalnızca peştemalle uzanınız. Hamileyseniz, tansiyon veya kalp rahatsızlığınız varsa ya da hekiminizin sıcak ortam konusunda bir uyarısı varsa hamamı kullanmadan önce hekiminize danışınız ve girişte görevliye durumunuzu bildiriniz. Bu sayfadaki saatler, süreler ve program bilgileri temsilîdir; mevsime, doluluğa ve resort işleyişine göre değişebilir.",
+    "ilgili": [
+      "kapali-havuz",
+      "acik-havuz",
+      "seyir-teraslari"
+    ]
+  },
+  {
+    "id": "acik-havuz",
+    "ad": "Açık Havuz",
+    "grup": "sosyal",
+    "ustyazi": "Deniz Manzaralı Havuzlar",
+    "kisa": "Marmara'ya bakan üç havuz alanı; yüzmek, çocuklarla oyalanmak ve gölgede uzanmak için.",
+    "hero": "assets/img/ai/aktivite/acikhavuz-hero.jpg",
+    "ozet": "Çam ormanının açıldığı üst kotta, Marmara'ya bakan üç havuz alanı: geniş ana havuz, sığ çocuk havuzu ve yalnızca dinlenmeye ayrılmış sessiz üst teras.",
+    "paragraflar": [
+      "Açık havuz alanı, çam ormanının seyreldiği üst kotta, yamacın denize döndüğü yerdedir. Ana havuzun taşma kenarı manzaranın önünde kesilir; suyun bittiği yerde Marmara başlar. Zemin açık kireçtaşı, gölgelikler ahşap ve krem kanvastır. Çam kokusu sabah serinliğinde belirgindir, öğleden sonra yerini ısınan taşın kokusuna bırakır. Üç alan alçak duvarlar ve bitki kuşaklarıyla ayrılır.",
+      "Sabah görevliler şezlongları açar, minderleri yerleştirir ve havlu dolabını doldurur. Misafirler geldikleri gibi yerleşir; şezlong ayırtılmaz, üzerine bırakılan havlu yeterlidir. Cankurtaran, ana havuz ile çocuk havuzunu birlikte gören yüksek koltukta gün boyu görev yapar. Su sıcaklığı 26-28 derece aralığında tutulur ve düzenli olarak ölçülür. Öğle saatlerinde şemsiyeler açılır; alanda sesli müzik çalınmaz.",
+      "Alanın en iyi aralığı kuşluk vaktidir: güneş henüz dikleşmemiş, çam kokusu serinlikte belirgin, su yüzeyi düzdür; boyuna yüzenler havuzu bu saatte neredeyse kendilerine ait bulur. Öğleye doğru şemsiyeler açılır, gölgeliklerin altı dolar ve tempo yükselir. Akşamüstü hareket azalır, üst terasta yalnızca uzananlar kalır; kapanışta şezlonglar tek tek toplanır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Havuz Başında",
+      "deneyimBaslik": "Denize Bakan Üç Alan",
+      "rotaGozkasi": "Havuz Alanları",
+      "rotaBaslik": "Havuzun Üç Bölümü",
+      "rotaGiris": "Alan, farklı beklentilere göre üç bölüme ayrılmıştır; bölümler arasında geçiş serbesttir, üçü de aynı terasa açılır.",
+      "rotaNot": "Ölçüler, kapasiteler ve saatler temsilîdir; sezon, hava koşulları ve doluluk durumuna göre değişebilir.",
+      "galeriGozkasi": "Havuz Kenarından",
+      "galeriBaslik": "Suyun Kenarında Bir Gün",
+      "ctaGozkasi": "Alan Gezisi",
+      "ctaBaslik": "Suyun Kenarına Kadar Gelin",
+      "ctaMetin": "Havuz alanını gezelim, üst terasa çıkalım; gölgeliklerin altında bir süre oturun, çocuk havuzunun düzenini ve kuşluk saatinin sessizliğini yerinde görün."
+    },
+    "bakista": [
+      {
+        "etiket": "Teras kotu",
+        "deger": "Wellness kanadının bir kot üstü, deniz cephesi"
+      },
+      {
+        "etiket": "Havuz saatleri",
+        "deger": "Havuzlar 09:00-19:00; üst teras 08:00'den gün batımına"
+      },
+      {
+        "etiket": "Kimler girebilir",
+        "deger": "Tüm resort misafirleri; çocuk havuzu refakatli"
+      },
+      {
+        "etiket": "Şezlong düzeni",
+        "deger": "Ayırtılmaz; şezlong üzerine bırakılan havluyla işaretlenir"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Resort üst kotu, denize bakan teras"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Üç alan, yaklaşık 180 misafir"
+      },
+      {
+        "etiket": "Açılış",
+        "deger": "Teras 08:00, havuzlar 09:00 – 19:00"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Mayıs sonu – Eylül ortası"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Ana Havuz",
+        "sure": "09:00 – 19:00",
+        "mesafe": "25 × 12 m, derinlik 1,20–1,60 m",
+        "zorluk": "Tüm misafirler",
+        "aciklama": "Alanın merkezindeki taşma kenarlı büyük havuz. Boyuna yüzmek isteyenler için iki şerit ayrılır, geri kalan bölüm serbest kullanımdır; kenarında sığ oturma basamağı ve gölgelikli iki oturma adası bulunur."
+      },
+      {
+        "ad": "Çocuk Havuzu",
+        "sure": "10:00 – 18:00",
+        "mesafe": "Derinlik 0,35 m, gölge yelkeni altında",
+        "zorluk": "0–10 yaş, refakatli",
+        "aciklama": "Ana havuzun batısında, gölge yelkeninin altındaki sığ havuz. Zemin kaymaz kaplamalıdır, kenarları yuvarlatılmıştır; hemen yanında alçak duş, bebek bakım masası ve ailelerin oturabileceği gölgelikli bir sıra yer alır."
+      },
+      {
+        "ad": "Sessiz Üst Teras",
+        "sure": "08:00 – gün batımı",
+        "mesafe": "24 şezlong, üst kot deniz cephesi",
+        "zorluk": "16 yaş ve üzeri, sessiz alan",
+        "aciklama": "Havuzların bir kot üstünde, denize bakan uzun teras. Suya girmek yerine uzanmak, okumak ve manzara izlemek için ayrılmıştır; müzik çalınmaz, telefon görüşmeleri terasın dışında yapılır."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/acikhavuz-cocuk-havuzu.jpg",
+        "ad": "Çocuk havuzu"
+      },
+      {
+        "src": "assets/img/ai/aktivite/acikhavuz-su-dokusu.jpg",
+        "ad": "Taşma kenarı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/acikhavuz-sezlong-duzeni.jpg",
+        "ad": "Şezlong terası"
+      },
+      {
+        "src": "assets/img/ai/aktivite/acikhavuz-golge-saati.jpg",
+        "ad": "Öğle gölgeleri"
+      }
+    ],
+    "hazirlik": [
+      "Mayo veya bikini — havuz alanına ayrı bir kıyafetle girilir",
+      "Kaymaz tabanlı havuz terliği",
+      "Yüksek faktörlü güneş koruyucu, şapka ve güneş gözlüğü",
+      "Yüzme gözlüğü ve uzun saçlar için bone",
+      "Çocuklar için kolluk ya da can yeleği; havuz görevlisinden de istenebilir"
+    ],
+    "saglayanlar": [
+      "Havuz başında görev yapan cankurtaran",
+      "Havlu servisi, açık alan duşları ve kilitli dolap",
+      "Şezlong, minder ve gölge şemsiyesi",
+      "Çocuk havuzu çevresinde gölge yelkeni ve alçak duş"
+    ],
+    "guvenlik": "Havuz çevresinde koşulmaz; suya yalnızca işaretli bölümden girilir ve alana duş alındıktan sonra geçilir. Cankurtaran görev başında olsa da çocuklar hiçbir saatte refakatsiz bırakılmaz; sıcak saatlerde uzun süre güneşte kalmaktan kaçınınız ve sağlık durumunuza dair bir tereddüdünüz varsa havuzu kullanmadan önce hekiminize danışıp havuz görevlisini bilgilendiriniz. Saatler, ölçüler ve kapasiteler temsilîdir; sezon ve hava koşullarına göre değişebilir.",
+    "ilgili": [
+      "kapali-havuz",
+      "ozel-plaj",
+      "hamam"
+    ]
+  },
+  {
+    "id": "kapali-havuz",
+    "ad": "Kapalı Havuz",
+    "grup": "sosyal",
+    "ustyazi": "Yıl Boyu Açık",
+    "kisa": "Cam çatısı altında yıl boyu ısıtılan, gün içinde üç farklı düzende kullanılan iç havuz.",
+    "hero": "assets/img/ai/aktivite/kapalihavuz-hero.jpg",
+    "ozet": "Cam çatıdan süzülen gün ışığının altında, su sıcaklığı yıl boyu sabit tutulan kapalı havuz; günün saatine göre serbest yüzmeye, kulvarlara ve çocuklara açılır.",
+    "paragraflar": [
+      "Kapalı havuz, wellness kanadının giriş katında; üç tarafı ve çatısı camla çevrili tek bir hacimde yer alır. Gün ışığı yukarıdan süzülür, suyun yüzeyinde kırılır ve açık kireçtaşı zeminde dolaşır. Su sıcaklığı yıl boyunca 29-31 derece aralığında tutulur; salon sıcaklığı sudan bir iki derece yüksek ayarlanır. Dışarıda kar yağarken bile içerisi aynı ılıklıktadır.",
+      "Havuz beş kulvara bölünebilir; günün büyük bölümünde şeritler toplanır ve alan tek parça kullanılır. Girişte havlu ve dolap anahtarı verilir, soyunma odaları havuza doğrudan bağlanır. Kenar boyunca uzanan şezlonglarda çoğu misafir yüzdükten sonra bir süre oturur; cam duvarın önündeki köşede sıcak içecek servisi yapılır. Görevli salonda sürekli bulunur ve su değerlerini gün içinde düzenli olarak ölçer.",
+      "Salonun en sevilen saati, ilk ışıkların cam çatıdan içeri düştüğü erken sabahtır; ortalık sessizdir, su yüzeyi düzdür ve kulvarlar kurulu bekler. Gün ilerledikçe ses artar; öğle aralığında çocuklarla birlikte tempo yükselir, ikindiden sonra yeniden durulur. Akşam kulvarları kurulduğunda cam duvarların ardındaki yamaç turuncuya döner ve salon gün ışığını en son bırakan yer olur."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Cam Çatının Altında",
+      "deneyimBaslik": "Sabahtan Geceye Salonun Hâli",
+      "rotaGozkasi": "Günün Ritmi",
+      "rotaBaslik": "Günün Üç Kuşağı",
+      "rotaGiris": "Aynı havuz gün içinde üç farklı düzende kullanılır; kulvar şeritleri saate göre kurulur veya toplanır.",
+      "rotaNot": "Saat aralıkları, kapasite ve düzen bilgileri temsilîdir; yoğunluk ile bakım ve temizlik programına göre değişebilir.",
+      "galeriGozkasi": "Salon İçinden",
+      "galeriBaslik": "Su, Işık ve Cam",
+      "ctaGozkasi": "Salonu Gezin",
+      "ctaBaslik": "Suya Girmeden Önce Salonu Görün",
+      "ctaMetin": "Ziyaretinizde kapalı havuz salonunu gezebilir; soyunma odalarını, kulvar düzenini ve cam duvarın önündeki dinlenme köşesini yerinde görüp havuz görevlimizle tanışabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Salonun yeri",
+        "deger": "Wellness kanadı, giriş kat"
+      },
+      {
+        "etiket": "Kullanım saatleri",
+        "deger": "Her gün 07:00 – 22:00"
+      },
+      {
+        "etiket": "Yaş ve refakat",
+        "deger": "Tüm misafirler; 12 yaş altı refakatle"
+      },
+      {
+        "etiket": "Salona giriş",
+        "deger": "Oda kartıyla; önceden bildirim gerekmez"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Wellness kanadı giriş katı, cam çatılı salon"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Aynı anda 40 misafir"
+      },
+      {
+        "etiket": "Açılış",
+        "deger": "07:00 – 22:00"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Yıl boyu açık"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Serbest Yüzme",
+        "sure": "09:00 – 12:00 ve 14:00 – 20:00",
+        "mesafe": "25 m havuz, 40 kişi",
+        "zorluk": "Tüm misafirler",
+        "aciklama": "Kulvar şeritlerinin toplandığı, havuzun tek parça kullanıldığı ana kuşak. Kendi temponuzda yüzer, dilediğiniz yerde durur, kenardaki şezlonglarda ara verirsiniz. Günün en uzun ve en esnek bölümüdür; salonda müzik çalmaz."
+      },
+      {
+        "ad": "Kulvar Saati",
+        "sure": "07:00 – 09:00 ve 20:00 – 22:00",
+        "mesafe": "5 kulvar, kulvar başına 4 kişi",
+        "zorluk": "Yüzme bilen misafirler",
+        "aciklama": "Sabah erken ve akşam geç saatlerde şeritler kurulur, havuz beş kulvara ayrılır. Mesafe yüzmek isteyen misafirler tek yönlü akışta ilerler; yavaş, orta ve hızlı kulvarlar görevli tarafından ayrılır ve gerektiğinde yeniden düzenlenir."
+      },
+      {
+        "ad": "Çocuk Saati",
+        "sure": "12:00 – 14:00",
+        "mesafe": "Sığ bölüm, 0,6 – 1,0 m derinlik",
+        "zorluk": "Çocuklar; ebeveyn refakatiyle",
+        "aciklama": "Öğle aralığında havuzun sığ bölümü çocuklara ayrılır; su üstü oyuncakları çıkarılır, kenarlara kaymaz halı serilir. Bu saatlerde salonda ses seviyesi doğal olarak yükselir; sessizlik arayan misafirler için sabah kuşağı daha uygundur."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/kapalihavuz-kulvarda-yuzme.jpg",
+        "ad": "Kulvarda yüzme"
+      },
+      {
+        "src": "assets/img/ai/aktivite/kapalihavuz-su-yuzeyi.jpg",
+        "ad": "Su yüzeyi ve ışık"
+      },
+      {
+        "src": "assets/img/ai/aktivite/kapalihavuz-havlu-ve-sezlong.jpg",
+        "ad": "Havlu ve şezlong düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/kapalihavuz-sessiz-an.jpg",
+        "ad": "Sessizleşen salon"
+      }
+    ],
+    "hazirlik": [
+      "Mayo veya yüzme şortu; havuz alanına iç çamaşırıyla girilmez",
+      "Bone; suya girerken takılması gerekir",
+      "Islak zeminler için kaymaz tabanlı terlik",
+      "Oda kartı; giriş ve dolap kullanımı için",
+      "Kulvar saatinde yüzecekseniz yüzücü gözlüğü"
+    ],
+    "saglayanlar": [
+      "Girişte temiz havlu ve kilitli dolap",
+      "Soyunma odaları, duşlar ve saç kurutma bölümü",
+      "Salonda sürekli görev yapan havuz görevlisi",
+      "Su değerlerinin gün içinde düzenli ölçümü ve kaydı"
+    ],
+    "guvenlik": "Havuz alanına girmeden önce duş almanız ve bone takmanız gerekir; ıslak zeminde koşulmaz, havuza atlanmaz ve çocuklar hiçbir saatte refakatsiz bırakılmaz. Yüzme bilmeyen misafirlerin sığ bölümde kalması, sağlık durumuna dair bir tereddüdü olan misafirlerin ise havuzu kullanmadan önce hekimine danışıp görevliyi bilgilendirmesi beklenir. Belirtilen saat aralıkları, kapasite ve düzen bilgileri temsilîdir; yoğunluk ile bakım ve temizlik programına göre değişebilir.",
+    "ilgili": [
+      "hamam",
+      "acik-havuz",
+      "ozel-plaj"
+    ]
+  },
+  {
+    "id": "golf-konser",
+    "ad": "Golf & Konser Alanları",
+    "grup": "sosyal",
+    "ustyazi": "Yeşilin İki Hâli",
+    "kisa": "Gündüz putting green ve kısa vuruş, akşam açık hava konseri için tek geniş çim alan.",
+    "hero": "assets/img/ai/aktivite/golf-hero.jpg",
+    "ozet": "Resortun güney sekisinde uzanan bakımlı çim; gündüz kısa vuruşlara, akşam sahne fenerleri yandığında açık hava konserlerine ev sahipliği eder. Marmara, her iki saatte de alanın arkasındadır.",
+    "paragraflar": [
+      "Alan, resortun güneye bakan en düz sekisinde yer alır; arkasında çam kuşağı, önünde yamacın Marmara'ya inen açıklığı vardır. Çim kısa vuruşa uygun sıklıkta biçilir ve biçim izleri gün boyunca görünür kalır; kenarlar kireçtaşı bordür ve alçak zeytin ağaçlarıyla çerçevelenir. Rüzgâr öğleden sonra denizden eser, bu nedenle batı ucunda alçak bir çit ile ahşap gölge kanopisi bulunur.",
+      "Gün sakin bir ritimle geçer. Sabahtan ikindiye kadar putting green ve kısa vuruş açıklığı kullanıma açıktır; sopa ile toplar girişteki ahşap dolaptan alınır, dileyen misafir kendi takımını getirir. Akşamüstü bayraklar toplanır, güney yarısına katlanır sandalyeler ve keten minderler dizilir; alan birkaç saat içinde sessizce bir konser çimine dönüşür.",
+      "Çimin en güzel saati, gölgelerin uzadığı geç ikindidir: ışık yumuşar, yüzeydeki en küçük eğim bile görünür hâle gelir ve vuruş hattı kendiliğinden okunur. Konser akşamlarında misafirler gün batımından önce yerleşir, ilk notalar hava kararırken duyulur. Ses düzeni gece yarısından önce kapanır; ertesi sabah çim yeniden biçilir ve alan gündüz hâline döner."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Mekân ve Düzen",
+      "deneyimBaslik": "Aynı Çimin İki Yüzü",
+      "rotaGozkasi": "Düzenler",
+      "rotaBaslik": "Tek Çimde Üç Düzen",
+      "rotaGiris": "Alan gün içinde tek parça kalır; yalnızca üzerindeki düzen değişir. Aşağıdaki üç bölüm, aynı çim yüzeyinin sabahtan geceye aldığı hâllerdir.",
+      "rotaNot": "Bölüm ölçüleri, kapasite bilgileri ve saat aralıkları temsilîdir; konser akşamlarında yerleşim ve giriş düzeni değişebilir.",
+      "galeriGozkasi": "Çimden",
+      "galeriBaslik": "Gündüzden Akşama",
+      "ctaGozkasi": "Çimde Bir Tur",
+      "ctaBaslik": "Sahne Kurulmadan Önce Bir Tur Atın",
+      "ctaMetin": "Alanı gündüz ışığında gezelim; putting green'de birkaç vuruş yapın, akşamüstü sahne düzeninin kuruluşunu kenardan izleyin, konser gecelerinin akışını size anlatalım."
+    },
+    "bakista": [
+      {
+        "etiket": "Sekideki yeri",
+        "deger": "Güney sekisi; wellness merkezinin doğusunda"
+      },
+      {
+        "etiket": "Gündüz ve akşam",
+        "deger": "Golf 09:00–18:00 · Konser akşamları 20:00"
+      },
+      {
+        "etiket": "Kimler için",
+        "deger": "Tüm misafirler; çocuklar refakatle"
+      },
+      {
+        "etiket": "Erişim",
+        "deger": "Konser akşamları için gün içinde yer bildirimi"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Alan",
+        "deger": "Yaklaşık 9.000 m² çim"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Konser düzeninde 600 kişi"
+      },
+      {
+        "etiket": "İki kullanım",
+        "deger": "Gündüz golf · Akşam sahne"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Nisan – Ekim"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Golf Çimi",
+        "sure": "09:00 – 18:00",
+        "mesafe": "9 delikli putting green ve 70 m kısa vuruş açıklığı",
+        "zorluk": "8 yaş ve üzeri; küçükler refakatle",
+        "aciklama": "Alanın kuzey yarısı; dalgalı, kısa biçilmiş putting yüzeyi ve yanındaki açıklık. Sopa ile top girişteki ahşap dolaptan alınır, ilk kez deneyen misafirlere alan görevlisi kısa bir tanıtım yapar."
+      },
+      {
+        "ad": "Konser Çimi",
+        "sure": "20:00 – 23:00",
+        "mesafe": "600 kişilik oturma düzeni",
+        "zorluk": "Tüm misafirler",
+        "aciklama": "Güney yarısındaki eğimli çim; alçak sahne sırtını denize verir, izleyici yamacın doğal meylinde yerleşir. Ön tarafa keten minder, arkaya katlanır sandalye dizilir; ses düzeni 23:00'te kapatılır."
+      },
+      {
+        "ad": "Karşılama Terası",
+        "sure": "Program boyunca açık",
+        "mesafe": "Doğu girişi; gölgelikli ahşap teras",
+        "zorluk": "Ailelere uygun; sohbet alanı",
+        "aciklama": "Doğu girişindeki gölgelikli teras. Gündüz su ve soğuk içecek, konser akşamlarında hafif atıştırmalık buradan verilir. Oturma grupları sahnenin sesinden uzak, konuşmaya elverişli bir köşe oluşturur."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/golf-putting-green.jpg",
+        "ad": "Putting green'de ikindi vuruşu"
+      },
+      {
+        "src": "assets/img/ai/aktivite/golf-cim-dokusu.jpg",
+        "ad": "Biçim izleri ve kireçtaşı bordür"
+      },
+      {
+        "src": "assets/img/ai/aktivite/golf-sahne-kurulumu.jpg",
+        "ad": "Konser öncesi oturma düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/golf-konser-aksami.jpg",
+        "ad": "Işıklar yandığında konser çimi"
+      }
+    ],
+    "hazirlik": [
+      "Çim üzerinde rahat eden düz tabanlı ayakkabı; dikenli golf ayakkabısı gerekmez",
+      "İkindi güneşi için şapka ve güneş gözlüğü",
+      "Akşamüstü denizden esen rüzgâr için ince bir hırka",
+      "Kendi golf takımınızı getirecekseniz alan girişindeki görevliye haber verin",
+      "Konser akşamlarında yer bildiriminizi gün içinde tamamlayın"
+    ],
+    "saglayanlar": [
+      "Putter, kısa vuruş sopası ve top (girişteki ahşap dolaptan)",
+      "Keten minder, katlanır sandalye ve akşam için örtü",
+      "Gölge kanopisi ve soğuk içme suyu",
+      "Konser akşamlarında ses düzeni ve sahne aydınlatması"
+    ],
+    "guvenlik": "Kısa vuruş alanında sopa sallayan misafirin önüne geçilmez; toplar yalnızca işaretli hatta doğru vurulur ve çocuklar bu bölümde refakatsiz bulunmaz. Uzun süre güneş altında kalmak ya da yüksek ses düzeyi sizin için uygun değilse katılım öncesinde hekiminize danışmanızı, alan görevlisini de bilgilendirmenizi rica ederiz. Bölüm ölçüleri, kapasite ve konser saatleri temsilîdir; hava koşullarına ve program akışına göre değişebilir.",
+    "ilgili": [
+      "amfi-tiyatro",
+      "acik-hava-sinemasi",
+      "seyir-teraslari"
+    ]
+  },
+  {
+    "id": "acik-hava-sinemasi",
+    "ad": "Açık Hava Sineması",
+    "grup": "sosyal",
+    "ustyazi": "Çamların Arasında Perde",
+    "kisa": "Çamların arasına gerilmiş perde, minderli sekiler ve yün battaniyeyle akşamüstü açık hava gösterimi.",
+    "hero": "assets/img/ai/aktivite/sinema-hero.jpg",
+    "ozet": "Yamacın düzlüğünde, çam gövdelerinin arasına gerilmiş bir perde. Alacakaranlıkta minderli sekilere yerleşir, battaniyenizi alır, denizin üstünde kararan gökyüzüyle birlikte gösterimi izlersiniz.",
+    "paragraflar": [
+      "Sinema alanı, resortun orta kotunda çam ormanının açıldığı doğal bir düzlükte yer alır. Perde iki yaşlı çam gövdesinin arasına gerilmiştir; arkasında ağaçlar, onların ötesinde Marmara'nın puslu çizgisi görünür. Oturma düzeni kademeli sekiler hâlinde inşa edilmiş, keten kaplı minderler ve alçak şezlonglarla döşenmiştir. Yandaki küçük ikram köşesinde sıcak içecekler ve katlanmış yün battaniyeler hazır bekler.",
+      "Akşam yaklaştığında alan sessizce dolar. Yer numarası verilmez; misafirler istedikleri sekiye yerleşir, minderleri kendilerine göre düzenler. Görevliler battaniye ve sıcak içeceği oturduğunuz yere getirir. Işıklar kısıldıktan sonra yalnızca yürüyüş yolunu belirleyen alçak zemin lambaları yanar. Gösterim bittiğinde aynı yoldan, aydınlatma eşliğinde konaklama birimlerine dönülür.",
+      "Alanın kendine has saati, hava tamamen karardıktan sonra başlayan geç gösterimdir; perdenin ışığı çam gövdelerine vurur, reçine kokusu serinlikle birlikte belirginleşir, konuşma neredeyse tümüyle kesilir. Alacakaranlıkta yerleşenler bu sessizliği en baştan yakalar. Gösterim bitince ışıklar bir anda değil, kademe kademe açılır; alan boşalana kadar sekilerde oturmaya devam edebilirsiniz."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Alanın Havası",
+      "deneyimBaslik": "Perde Gerildiğinde",
+      "rotaGozkasi": "Akşamın Bölümleri",
+      "rotaBaslik": "Akşamın Üç Gösterimi",
+      "rotaGiris": "Sinema alanı akşam boyunca tek bir düzende çalışmaz. Hava kararmadan gece yarısına uzanan üç ayrı kullanım vardır; her biri farklı bir kitleye ve farklı bir tempoya göre kurulur.",
+      "rotaNot": "Saat aralıkları ve oturma düzenleri temsilîdir; gösterim programı mevsime, hava durumuna ve resort takvimine göre değişir.",
+      "galeriGozkasi": "Perdenin Önünden",
+      "galeriBaslik": "Alacakaranlıktan Gece Yarısına",
+      "ctaGozkasi": "Program ve Yer",
+      "ctaBaslik": "Bu Haftanın Gösterimlerini Sorun",
+      "ctaMetin": "Haftalık gösterim programını, özel gösterim taleplerini ve alanın kullanım koşullarını misafir ilişkileri ekibimizden öğrenebilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Orman içindeki yeri",
+        "deger": "Orta kot çam düzlüğü; füniküler ara durağından dört dakika"
+      },
+      {
+        "etiket": "Gösterim saatleri",
+        "deger": "Gün batımından itibaren; son gösterim gece yarısına kadar"
+      },
+      {
+        "etiket": "Kimler için uygun",
+        "deger": "Tüm misafirler; erken gösterim çocuklu ailelere göre düzenlenir"
+      },
+      {
+        "etiket": "Yer bildirimi",
+        "deger": "Aile ve geç gösterimde gerekmez; özel gösterim önceden talep edilir"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Orta kot çam düzlüğü, deniz cephesi"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Kademeli sekilerde yaklaşık 90 kişi"
+      },
+      {
+        "etiket": "Açılış",
+        "deger": "Akşamüstü hazırlık, gün batımıyla ilk gösterim"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Mayıs – Ekim; yağışta kapalı salon"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Aile Gösterimi",
+        "sure": "20:00 – 21:30",
+        "mesafe": "Ön sekiler; yaklaşık 40 kişilik minder alanı",
+        "zorluk": "Tüm misafirler; çocuklu aileler dâhil",
+        "aciklama": "Hava tam kararmadan başlar. Ön sekilere yer minderleri serilir, çocuklar oturarak ya da uzanarak izler. Ses düzeyi düşük tutulur, ortada kısa bir ara verilir; ara boyunca ikram köşesi açık kalır."
+      },
+      {
+        "ad": "Geç Gösterim",
+        "sure": "22:00 – 00:00",
+        "mesafe": "Tüm seki düzeni; şezlonglu üst kademe",
+        "zorluk": "Yetişkin misafirler; sessiz alan",
+        "aciklama": "Alan tamamen karanlıkta çalışır. Üst kademedeki şezlonglara battaniye ve sıcak içecek getirilir. Konuşma asgaride tutulur, telefon ekranları kapalı kalır; geç gelenler kenardaki yoldan sessizce yerleşir."
+      },
+      {
+        "ad": "Özel Gösterim",
+        "sure": "Talebe göre, iki saate kadar",
+        "mesafe": "Alanın tamamı ya da 12 kişilik yan seki",
+        "zorluk": "Özel gruplara ayrılır",
+        "aciklama": "Küçük gruplara kapalı düzen kurulur. Oturma yerleşimi, ikram servisi ve başlama saati grubun isteğine göre ayrıca belirlenir; alan bu süre boyunca diğer misafirlere kapalıdır."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/sinema-battaniyeli-misafirler.jpg",
+        "ad": "Alacakaranlıkta sekilere yerleşen misafirler"
+      },
+      {
+        "src": "assets/img/ai/aktivite/sinema-keten-minder-dokusu.jpg",
+        "ad": "Keten minder ve katlanmış yün battaniye"
+      },
+      {
+        "src": "assets/img/ai/aktivite/sinema-aksam-hazirligi.jpg",
+        "ad": "Gösterim öncesi seki ve ikram düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/sinema-gosterim-sonu.jpg",
+        "ad": "Zemin lambalarıyla aydınlanan dönüş yolu"
+      }
+    ],
+    "hazirlik": [
+      "Alana orman patikasından yürünür; kaymayan tabanlı rahat ayakkabı tercih edin",
+      "Battaniye, minder ve sıcak içecek alanda hazırdır; yanınıza ayrıca bir şey almanız gerekmez",
+      "Karanlıkta parlayan telefon ekranı diğer misafirleri rahatsız eder; cihazınızı sessize alın",
+      "Akşam yemeğini erken bitirmek, alacakaranlığı kaçırmadan yerleşmenizi sağlar",
+      "Özel gösterim düşünüyorsanız talebinizi en az bir gün önce iletin"
+    ],
+    "saglayanlar": [
+      "Keten kaplı minderler, alçak şezlonglar ve yün battaniyeler",
+      "Oturduğunuz yere getirilen sıcak içecek servisi",
+      "Yürüyüş yolunu belirleyen alçak zemin aydınlatması",
+      "Yağışlı havalarda kapalı salona alınan alternatif düzen"
+    ],
+    "guvenlik": "Sekiler arasındaki basamaklar karanlıkta belirginliğini yitirir; lütfen yalnızca aydınlatılmış yolları kullanınız ve çocukların yanınızda kalmasına özen gösteriniz. Gece serinliği, uzun süre hareketsiz oturmak ya da alana yürüyerek gelmek sizin için uygun değilse ekibimize bildiriniz; görme veya işitmeyle ilgili bir durumunuz varsa oturma yerinizi buna göre düzenleyelim. Bu sayfadaki saatler, kapasite ve program bilgileri temsilîdir; güncel düzen resort takvimine ve hava koşullarına göre değişir.",
+    "ilgili": [
+      "amfi-tiyatro",
+      "golf-konser",
+      "gokyuzu-gozlem"
+    ]
+  },
+  {
+    "id": "amfi-tiyatro",
+    "ad": "Amfi Tiyatro",
+    "grup": "sosyal",
+    "ustyazi": "Yamaçta Açık Sahne",
+    "kisa": "Yamaca oyulmuş taş basamaklar; sahnenin arkasında perde değil, Marmara'nın açık ufku uzanır.",
+    "hero": "assets/img/ai/aktivite/amfi-hero.jpg",
+    "ozet": "Resortun eğimini izleyen kireçtaşı basamaklar, ahşap sahne ve arkasında açık ufuk. Gün batımına dönük bu alan akşam konserlerine, çocuk gösterilerine ve söyleşilere ev sahipliği yapar.",
+    "paragraflar": [
+      "Amfi tiyatro, yamacın doğal eğimine oyulmuş yarım daire basamaklardan oluşur. Kireçtaşı sıraların üzerine keten minderler serilir; en üst sıradan bakıldığında sahne, arkasındaki çam tepeleri ve Marmara aynı karede birleşir. Sahne zemini sıcak dokulu ahşaptır, kanatlarında akşam serinliğinde yakılan alçak fenerler dizilidir. Yapıda perde, tavan ya da duvar yoktur; alanın çerçevesi manzaranın kendisidir.",
+      "Alan gün içinde farklı biçimlerde kullanılır ve program haftalık olarak duyurulur. Cumartesi sabahları alt sıralar çocuklara ayrılır; hafta boyunca öğleden sonraları basamaklar boş bırakılır, misafirler kitaplarıyla oturur. Akşamüstü teknik ekip sahneyi hazırlar, ses düzeni gölgede denenir, minderler sıralara yerleştirilir. Kapı saatinden yarım saat önce basamaklar açılır; oturma serbesttir, numara verilmez.",
+      "Alanın en güzel saati gün batımıdır. Güneş karşı kıyıya, Bozburun fenerinin bulunduğu hatta doğru alçalırken sahnenin arkasındaki gökyüzü turuncudan laciverte döner; ışık kendiliğinden değişir, ayrıca aydınlatmaya gerek kalmaz. Program bittiğinde çoğu misafir hemen kalkmaz, basamaklarda oturup karanlığa alışan denizi izler. Sahne fenerleri her akşam en son söndürülür."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Akşamın Ritmi",
+      "deneyimBaslik": "Basamaklarda Bir Akşam",
+      "rotaGozkasi": "Haftalık Düzen",
+      "rotaBaslik": "Aynı Basamaklar, Üç Program",
+      "rotaGiris": "Aynı yarım daire, haftanın farklı saatlerinde farklı bir düzene açılır; aşağıdaki üç program, alanın takviminde en sık tekrarlananlardır.",
+      "rotaNot": "Gün, saat ve kapasite bilgileri temsilîdir; haftalık program hava koşullarına ve resort takvimine göre değişebilir.",
+      "galeriGozkasi": "Amfiden",
+      "galeriBaslik": "Basamaklardan ve Sahneden",
+      "ctaGozkasi": "Ziyaret Planı",
+      "ctaBaslik": "Gün Batımına Denk Gelen Bir Saat Seçin",
+      "ctaMetin": "Amfinin haftalık akışını size iletelim; ziyaretinizi konser, çocuk gösterisi ya da söyleşi saatlerinden birine denk getirin, akustiği üst sıradan kendiniz dinleyin."
+    },
+    "bakista": [
+      {
+        "etiket": "Amfinin yeri",
+        "deger": "Üst teras kotu; fünikülerin bir üst durağı"
+      },
+      {
+        "etiket": "Program saatleri",
+        "deger": "Cumartesi 11:00 · Akşam programları 18:30'dan itibaren"
+      },
+      {
+        "etiket": "Kimler gelebilir",
+        "deger": "Tüm misafirler ve daire sahipleri; konserlerde yer bildirimi önerilir"
+      },
+      {
+        "etiket": "Yürüyüş bağlantısı",
+        "deger": "Fünikülerle üst istasyona, oradan teras yolu"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yapı",
+        "deger": "Yarım daire kireçtaşı basamaklar"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Yaklaşık 320 kişi"
+      },
+      {
+        "etiket": "Takvim",
+        "deger": "Haftalık; konser, çocuk gösterisi, söyleşi"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Mayıs – Ekim, açık hava"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Akşam Konseri",
+        "sure": "20:00 – 21:45",
+        "mesafe": "320 kişilik basamak oturumu",
+        "zorluk": "Tüm misafirler",
+        "aciklama": "Akustik bir üçlü ya da solo piyano; program gün batımına denk gelecek biçimde başlar. Ses yükseltimi düşük tutulur, sahne ışığı hava karardıkça açılır. Minder ve ince örtü basamaklarda hazır bulundurulur."
+      },
+      {
+        "ad": "Çocuk Gösterisi",
+        "sure": "Cumartesi 11:00 – 12:00",
+        "mesafe": "Alt üç sıra; yaklaşık 60 çocuk",
+        "zorluk": "3 yaş ve üzeri",
+        "aciklama": "Kukla, gölge oyunu ve kısa masal anlatımı dönüşümlü sahnelenir. Alt üç sıra çocuklara ayrılır, aileler hemen arkalarında oturur. Gösteri kısa tutulur; sonunda sahne önü çocukların serbest kullanımına açılır."
+      },
+      {
+        "ad": "Söyleşi Saati",
+        "sure": "18:30 – 19:45",
+        "mesafe": "Orta sıralar; yaklaşık 80 kişi",
+        "zorluk": "Sessiz alan",
+        "aciklama": "Davetli bir konukla sohbet düzeninde, mikrofonlu ama sakin bir buluşma. Katılım orta sıralarla sınırlı tutulur, soru bölümü açık bırakılır; giriş çıkış yalnızca aralarda yapılır."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/amfi-aksam-konseri.jpg",
+        "ad": "Gün batımında akşam konseri"
+      },
+      {
+        "src": "assets/img/ai/aktivite/amfi-tas-doku.jpg",
+        "ad": "Kireçtaşı basamak ve keten minder"
+      },
+      {
+        "src": "assets/img/ai/aktivite/amfi-sahne-hazirlik.jpg",
+        "ad": "Program öncesi sahne hazırlığı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/amfi-son-isik.jpg",
+        "ad": "Günün son ışığında basamaklar"
+      }
+    ],
+    "hazirlik": [
+      "Taş basamaklarda oturmak için ince bir örtü ya da şal",
+      "Basamaklar diktir; kaygan olmayan, iyi tutan tabanlı ayakkabı seçin",
+      "Dönüş yolu loş aydınlatmalıdır; küçük bir el feneri işinize yarar",
+      "Program başlamadan telefon sesini kapatmanızı rica ederiz",
+      "Çocuklu misafirler cumartesi sabahı alt sıralara erken yerleşebilir"
+    ],
+    "saglayanlar": [
+      "Keten minder ve ince örtü desteği",
+      "Basamak kenarlarında gizli zemin aydınlatması",
+      "Akustik ses düzeni ve sahne aydınlatması",
+      "Ara verildiğinde sıcak içecek servisi"
+    ],
+    "guvenlik": "Basamaklar taştır ve akşam nemiyle kayganlaşabilir; iniş çıkışlarda korkuluklu orta koridoru kullanınız, çocukları basamaklarda yalnız bırakmayınız. Denge, görme ya da hareket güçlüğü yaşayan misafirlerimiz için alt kotta düz zeminli oturma alanı ayrılır; talebinizi önceden iletmeniz yeterlidir. Program, saat ve kapasite bilgileri temsilîdir; hava koşullarına göre kapalı salona alınabilir veya ertelenebilir.",
+    "ilgili": [
+      "acik-hava-sinemasi",
+      "golf-konser",
+      "seyir-teraslari"
+    ]
   }
 ];

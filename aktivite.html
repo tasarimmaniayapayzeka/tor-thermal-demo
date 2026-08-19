@@ -195,13 +195,16 @@
   for (var i = 0; i < LISTE.length; i++) { if (LISTE[i].id === id) { a = LISTE[i]; break; } }
 
   function detay(t) {
-    /* Doğa aktivitelerinde "rota", tesis içi sporlarda "kademe" doğru karşılık. */
-    var sporMu = t.grup === "spor";
-    document.title = t.ad + (sporMu ? " — Kademeler, Program ve Hazırlık" : " — Rotalar, Program ve Hazırlık") + " | TOR Thermal";
+    /* Doğada "rota", tesis içi sporda "kademe", sosyal alanda "bölüm" doğru karşılık. */
+    var SOZLUK = {
+      doga:   { ek: "Rotalar, Program ve Hazırlık",  aciklama: "Rota seçenekleri, süre ve zorluk bilgileri, hazırlık listesi ve güvenlik notları." },
+      spor:   { ek: "Kademeler, Program ve Hazırlık", aciklama: "Kademe seçenekleri, seans süresi ve seviye bilgileri, hazırlık listesi ve güvenlik notları." },
+      sosyal: { ek: "Bölümler, Saatler ve Bilgiler",  aciklama: "Alanın bölümleri, açılış saatleri ve kapasite bilgileri, yanınıza almanız gerekenler ve güvenlik notları." }
+    };
+    var sz = SOZLUK[t.grup] || SOZLUK.doga;
+    document.title = t.ad + " — " + sz.ek + " | TOR Thermal";
     var meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", t.ad + ": " + t.kisa + " " +
-      (sporMu ? "Kademe seçenekleri, seans süresi ve seviye bilgileri, hazırlık listesi ve güvenlik notları."
-              : "Rota seçenekleri, süre ve zorluk bilgileri, hazırlık listesi ve güvenlik notları."));
+    if (meta) meta.setAttribute("content", t.ad + ": " + t.kisa + " " + sz.aciklama);
 
     /* Bölüm başlıkları aktiviteye özeldir; kayıtta yoksa nötr karşılığa düşer. */
     function b(anahtar, varsayilan) {
@@ -389,12 +392,31 @@
   }
 
   function dizin() {
-    var kartlar = LISTE.map(function (d, k) {
+    /* Dizin uzadıkça düz liste okunmaz oluyor; gruplara ayırıp başlıklandırıyoruz. */
+    var GRUPLAR = [
+      { anahtar: "doga",   gozkasi: "Açık Havada",   baslik: "Doğa ve Macera Aktiviteleri" },
+      { anahtar: "spor",   gozkasi: "Aktif Yaşam",   baslik: "Spor ve Fitness" },
+      { anahtar: "sosyal", gozkasi: "Bir Arada Olmak", baslik: "Sosyal Alanlar" }
+    ];
+    function kart(d, k) {
       return '<a class="dizin-kart gorun" style="transition-delay:' + (k % 4) * 60 + 'ms" href="aktivite.html?id=' + encodeURIComponent(d.id) + '">' +
         '<div class="medya"><img src="' + d.hero + '" alt="' + kacis(d.ad) + '" loading="lazy">' +
         (d.yakinda ? '<span class="yakinda-rozet">Yakında</span>' : "") + "</div>" +
         '<div class="bilgi"><h3>' + kacis(d.ad) + "</h3><p>" + kacis(d.kisa) + '</p><span class="kart-link">İncele</span></div></a>';
+    }
+    var kartlar = GRUPLAR.map(function (g, i) {
+      var uyeler = LISTE.filter(function (d) { return (d.grup || "doga") === g.anahtar; });
+      if (!uyeler.length) return "";
+      return (i ? '<div class="bosluk"></div>' : "") +
+        '<div class="gozkasi gorun">' + g.gozkasi + "</div>" +
+        '<h2 class="gorun">' + g.baslik + "</h2>" +
+        '<div class="dizin-grid">' + uyeler.map(kart).join("") + "</div>";
     }).join("");
+    /* Gruba girmeyen kalırsa yine de görünsün. */
+    var artan = LISTE.filter(function (d) {
+      return !GRUPLAR.some(function (g) { return (d.grup || "doga") === g.anahtar; });
+    });
+    if (artan.length) kartlar += '<div class="bosluk"></div><div class="dizin-grid">' + artan.map(kart).join("") + "</div>";
 
     kap.innerHTML =
       '<section class="sayfa-baslik">' +
@@ -402,10 +424,10 @@
         '<div class="ic">' +
           '<div class="kirinti"><a href="index.html">Ana Sayfa</a> · <a href="aktiviteler.html">Aktiviteler</a> · Detaylar</div>' +
           "<h1>Aktivite Rehberi</h1>" +
-          '<p class="alt">Her aktivitenin rotası, süresi, hazırlık listesi ve güvenlik notlarıyla ayrıntılı rehberi.</p>' +
+          '<p class="alt">Doğa aktiviteleri, spor programları ve sosyal alanların tamamı; bölümleri, saatleri, hazırlık listesi ve güvenlik notlarıyla.</p>' +
         "</div>" +
       "</section>" +
-      '<section><div class="ic"><div class="dizin-grid">' + kartlar + "</div></div></section>";
+      '<section><div class="ic">' + kartlar + "</div></section>";
   }
 
   if (a) detay(a); else dizin();
