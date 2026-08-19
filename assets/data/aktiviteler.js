@@ -602,7 +602,7 @@ window.TOR_AKTIVITELER = [
       "galeriBaslik": "Manejden ve Orman Yolundan",
       "videoGozkasi": "Kulüpten 10 Saniye",
       "videoBaslik": "Sabah Serinliğinde Adım Temposu",
-      "videoGiris": "Çit boyunca sakin bir adım; atın temposu, eyerin hafif gıcırtısı ve çam dallarının hareketi dışında bir şey yok.",
+      "videoGiris": "Orman yolunda adım temposunda ilerleyen bir tur sırasında çekilmiş sesli görüntü — nal seslerini ve eyerin gıcırtısını duymak için kulaklığınızı takın.",
       "ctaGozkasi": "Seans Kaydı",
       "ctaBaslik": "Binicilik Kulübünde Yerinizi Ayırtın",
       "ctaMetin": "Kontenjan, günün at mevcuduna göre sınırlıdır. Kademe seçiminiz ve uygun saatler için resort aktivite merkezine bir gün önceden ulaşabilirsiniz; kayıt sırasında boy ve deneyim bilgisini paylaşmanız at eşleştirmesini kolaylaştırır."
@@ -685,7 +685,7 @@ window.TOR_AKTIVITELER = [
       }
     ],
     "video": "assets/video/aktivite-binicilik.mp4",
-    "videoPoster": "assets/img/ai/aktivite/binicilik-hero.jpg",
+    "videoPoster": "assets/img/ai/aktivite/binicilik-surus.jpg",
     "hazirlik": [
       "Bacağı saran uzun pantolon; kalın dikişli kot yerine tayt veya binici pantolonu",
       "Alçak topuklu, kapalı burunlu bot ya da tabanı düz ve sağlam bir ayakkabı",
