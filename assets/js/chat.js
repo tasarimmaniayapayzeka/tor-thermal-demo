@@ -85,20 +85,24 @@
   function linkle(t) {
     t = kacisEt(t);
     var linkler = [];
+    /* Yer tutucu olarak NUL ile sarılmış indeks kullanılır — metindeki sıradan
+       rakamlarla (telefon, m², vb.) ASLA karışmaz. Düz "\d+" ile değiştirmek
+       "0212 671 69 68" gibi gerçek rakamları da yakalayıp linkler[212] gibi
+       tanımsız dizine düşürüyordu ("undefined" metne sızıyordu) — canlıda
+       görülüp düzeltildi. */
+    function tut(html) { linkler.push(html); return '\u0000' + (linkler.length - 1) + '\u0000'; }
     t = t.replace(/\[([^\]]+)\]\(([^()\s]+)\)/g, function (m, metin, hedef) {
       var dis = /^https?:\/\//.test(hedef);
-      linkler.push('<a href="' + hedef + '"' + (dis ? ' target="_blank" rel="noopener"' : '') + '>' + metin + '</a>');
-      return '' + (linkler.length - 1) + '';
+      return tut('<a href="' + hedef + '"' + (dis ? ' target="_blank" rel="noopener"' : '') + '>' + metin + '</a>');
     });
     t = t
       .replace(/(https?:\/\/[^\s<]+)/g, function (m, url) {
-        linkler.push('<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>');
-        return '' + (linkler.length - 1) + '';
+        return tut('<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>');
       })
-      .replace(IC_SAYFA, '<a href="$1">$1</a>')
+      .replace(IC_SAYFA, function (m, sayfa) { return tut('<a href="' + sayfa + '">' + sayfa + '</a>'); })
       .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
       .replace(/\n/g, '<br>');
-    return t.replace(/(\d+)/g, function (m, i) { return linkler[+i]; });
+    return t.replace(/\u0000(\d+)\u0000/g, function (m, i) { return linkler[+i]; });
   }
 
   var SES_IKON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>';
