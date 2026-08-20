@@ -134,7 +134,12 @@ curl_close($ch);
 if ($res === false || $http >= 500) yanit(['ok' => false, 'offline' => true]);
 $j = json_decode((string)$res, true);
 if ($http !== 200 || !isset($j['choices'][0]['message']['content'])) {
-    yanit(['ok' => false, 'hata' => 'Şu an cevap veremiyorum; WhatsApp\'tan yazabilirsin 🙂']);
+    yanit(['ok' => false, 'hata' => 'Şu an cevap veremiyorum; WhatsApp\'tan yazabilirsin 🙂', 'debug_http' => $http, 'debug_err' => $j['error'] ?? null]);
+}
+$ic = trim((string)$j['choices'][0]['message']['content']);
+if ($ic === '') {
+    /* GECİCİ TEŞHİS — sorun çözülünce bu blok kaldırılacak. */
+    yanit(['ok' => false, 'hata' => 'bos_yanit', 'debug' => ['finish_reason' => $j['choices'][0]['finish_reason'] ?? null, 'usage' => $j['usage'] ?? null]]);
 }
 
-yanit(['ok' => true, 'reply' => trim((string)$j['choices'][0]['message']['content'])]);
+yanit(['ok' => true, 'reply' => $ic]);
