@@ -1,7 +1,10 @@
 /* TOR|THERMAL — Tor Asistan ön yüzü
    Kendi DOM'unu kurar; chatbot.php'ye konuşur. PHP yoksa/anahtar yoksa
    dürüst "çevrimdışı" moduna düşer ve WhatsApp'a yönlendirir.
-   .wa-balon sağ altta durduğu için launcher SOL altta açılır. */
+   .wa-balon sağ altta durduğu için launcher SOL altta açılır.
+   Sesli giriş (mikrofon) ve sesli yanıt (hoparlör) İSTEĞE BAĞLI eklenir:
+   tarayıcı desteklemiyorsa düğme hiç görünmez; ağ/izin sorununda sessizce
+   normal yazılı sohbete düşer — hiçbir durumda arayüz kilitlenmez. */
 (function () {
   'use strict';
 
@@ -45,6 +48,9 @@
       '<div class="tchat__chips" id="tcChips"></div>' +
       '<div class="tchat__menu" id="tcMenu"><small>Hızlı bağlantılar</small><nav></nav></div>' +
       '<form class="tchat__bar" id="tcForm">' +
+        '<button type="button" class="tchat__mik" id="tcMik" aria-label="Sesli yaz" hidden>' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M19 11a7 7 0 0 1-14 0M12 19v3"/></svg>' +
+        '</button>' +
         '<input type="text" id="tcInput" placeholder="Mesajını yaz…" maxlength="500" autocomplete="off" aria-label="Mesaj">' +
         '<button type="submit" aria-label="Gönder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>' +
       '</form>' +
@@ -59,6 +65,7 @@
   var form  = document.getElementById('tcForm');
   var input = document.getElementById('tcInput');
   var durum = document.getElementById('tcDurum');
+  var mikBtn = document.getElementById('tcMik');
 
   MENU.forEach(function (o) {
     var a = document.createElement('a');
@@ -74,32 +81,64 @@
 
   /* ---------- yardımcılar ---------- */
   var IC_SAYFA = /\b([a-z0-9-]+\.html)\b/g;
+  function kacisEt(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function linkle(t) {
-    t = t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    t = kacisEt(t);
     var linkler = [];
     t = t.replace(/\[([^\]]+)\]\(([^()\s]+)\)/g, function (m, metin, hedef) {
       var dis = /^https?:\/\//.test(hedef);
       linkler.push('<a href="' + hedef + '"' + (dis ? ' target="_blank" rel="noopener"' : '') + '>' + metin + '</a>');
-      return '' + (linkler.length - 1) + '';
+      return '' + (linkler.length - 1) + '';
     });
     t = t
       .replace(/(https?:\/\/[^\s<]+)/g, function (m, url) {
         linkler.push('<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>');
-        return '' + (linkler.length - 1) + '';
+        return '' + (linkler.length - 1) + '';
       })
       .replace(IC_SAYFA, '<a href="$1">$1</a>')
       .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
       .replace(/\n/g, '<br>');
-    return t.replace(/(\d+)/g, function (m, i) { return linkler[+i]; });
+    return t.replace(/(\d+)/g, function (m, i) { return linkler[+i]; });
   }
-  function balon(rol, html) {
+
+  var SES_IKON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>';
+
+  /* rol==='bot' ve duzMetin verilmişse (gerçek AI yanıtı; daktilo/çevrimdışı
+     balonlarında değil) mesaja hoparlör düğmesi eklenir. */
+  function balon(rol, html, duzMetin) {
     var d = document.createElement('div');
     d.className = 'tchat__msg tchat__msg--' + rol;
-    d.innerHTML = html;
+    var ic = html;
+    if (rol === 'bot' && duzMetin) {
+      ic += '<button type="button" class="tchat__sesli" aria-label="Sesli dinle">' + SES_IKON + '</button>';
+    }
+    d.innerHTML = ic;
     msgs.appendChild(d);
     msgs.scrollTop = msgs.scrollHeight;
+    if (rol === 'bot' && duzMetin) {
+      var sesBtn = d.querySelector('.tchat__sesli');
+      sesBtn.addEventListener('click', function () { sesliOku(duzMetin, sesBtn); });
+    }
     return d;
   }
+
+  function daireKartlari(liste) {
+    if (!liste || !liste.length) return;
+    var d = document.createElement('div');
+    d.className = 'tchat__kartlar';
+    liste.forEach(function (t) {
+      var a = document.createElement('a');
+      a.className = 'tchat__kart';
+      a.href = t.link || '#';
+      a.innerHTML =
+        '<img src="' + t.img + '" alt="' + kacisEt(t.ad) + '" loading="lazy">' +
+        '<div class="tchat__kart-ic"><b>' + kacisEt(t.ad) + '</b><span>' + kacisEt(t.metraj) + ' · ' + kacisEt(t.kisi) + '</span></div>';
+      d.appendChild(a);
+    });
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
   function yaziyor(ac) {
     var v = document.getElementById('tcTyping');
     if (v) v.remove();
@@ -116,7 +155,7 @@
   function ciz() {
     msgs.innerHTML = '';
     balon('bot', linkle(ILK));
-    tarih.forEach(function (m) { balon(m.role === 'assistant' ? 'bot' : 'me', linkle(m.content)); });
+    tarih.forEach(function (m) { balon(m.role === 'assistant' ? 'bot' : 'me', linkle(m.content), m.role === 'assistant' ? m.content : null); });
     chips.style.display = tarih.length ? 'none' : '';
     menu.style.display = tarih.length ? 'none' : '';
   }
@@ -146,7 +185,8 @@
         if (j && j.ok && j.reply) {
           tarih.push({ role: 'assistant', content: j.reply });
           kaydet();
-          balon('bot', linkle(j.reply));
+          balon('bot', linkle(j.reply), j.reply);
+          if (j.daireler && j.daireler.length) daireKartlari(j.daireler);
         } else if (j && j.offline) {
           cevrimdisi();
         } else {
@@ -155,6 +195,100 @@
       })
       .catch(function () { yaziyor(false); cevrimdisi(); })
       .finally(function () { mesgul = false; odakla(); });
+  }
+
+  /* ---------- sesli yanıt (TTS) — yalnız tıklanınca, hiçbir zaman otomatik ---------- */
+  var aktifSes = null;
+  function sesliOku(metin, btn) {
+    if (btn.classList.contains('tchat__sesli--mesgul')) return; // çift tıklama koruması
+    if (aktifSes) { try { aktifSes.pause(); } catch (e) {} aktifSes = null; }
+    btn.classList.add('tchat__sesli--mesgul');
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var zamanAsimi = ctrl ? setTimeout(function () { ctrl.abort(); }, 20000) : null; // asla sonsuz beklemesin
+    fetch('chat-tts.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ metin: metin.slice(0, 600) }),
+      signal: ctrl ? ctrl.signal : undefined
+    })
+      .then(function (r) { if (zamanAsimi) clearTimeout(zamanAsimi); if (!r.ok) throw 0; return r.blob(); })
+      .then(function (b) {
+        var ses = new Audio(URL.createObjectURL(b));
+        aktifSes = ses;
+        btn.classList.add('tchat__sesli--calan');
+        function bitti() { btn.classList.remove('tchat__sesli--calan'); if (aktifSes === ses) aktifSes = null; }
+        ses.addEventListener('ended', bitti);
+        ses.addEventListener('error', bitti);
+        ses.play().catch(bitti);
+      })
+      .catch(function () {})
+      .finally(function () { btn.classList.remove('tchat__sesli--mesgul'); });
+  }
+
+  /* ---------- sesli giriş (STT) — tarayıcı desteklemiyorsa düğme hiç görünmez ---------- */
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder) {
+    mikBtn.hidden = false;
+    (function () {
+      var ADAY_MIME = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/ogg;codecs=opus', 'audio/ogg'];
+      function secMime() {
+        for (var i = 0; i < ADAY_MIME.length; i++) {
+          if (window.MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(ADAY_MIME[i])) return ADAY_MIME[i];
+        }
+        return '';
+      }
+      function uzantiVer(mime) {
+        if (mime.indexOf('mp4') > -1) return 'mp4';
+        if (mime.indexOf('ogg') > -1) return 'ogg';
+        return 'webm';
+      }
+
+      var kayitci = null;
+      var kayitZamanlayici = null;
+
+      mikBtn.addEventListener('click', function () {
+        if (kayitci && kayitci.state === 'recording') { kayitci.stop(); return; } // ikinci tık: kaydı bitir
+        if (mikBtn.disabled) return;
+        mikBtn.disabled = true;
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(function (akis) {
+          mikBtn.disabled = false;
+          var mime = secMime();
+          try {
+            kayitci = mime ? new MediaRecorder(akis, { mimeType: mime }) : new MediaRecorder(akis);
+          } catch (e) {
+            akis.getTracks().forEach(function (t) { t.stop(); }); // izin verilse bile kurulum başarısızsa mikrofonu bırak
+            return;
+          }
+          var kullanilanMime = kayitci.mimeType || mime || 'audio/webm';
+          var parcalar = [];
+          kayitci.ondataavailable = function (e) { if (e.data && e.data.size) parcalar.push(e.data); };
+          kayitci.onstop = function () {
+            akis.getTracks().forEach(function (t) { t.stop(); }); // her durumda mikrofonu serbest bırak
+            clearTimeout(kayitZamanlayici);
+            mikBtn.classList.remove('tchat__mik--acik');
+            if (!parcalar.length) return;
+            mikBtn.classList.add('tchat__mik--mesgul');
+            var fd = new FormData();
+            fd.append('ses', new Blob(parcalar, { type: kullanilanMime }), 'ses.' + uzantiVer(kullanilanMime));
+            fd.append('mime', kullanilanMime);
+            var ctrl = window.AbortController ? new AbortController() : null;
+            var zamanAsimi = ctrl ? setTimeout(function () { ctrl.abort(); }, 20000) : null;
+            fetch('chat-stt.php', { method: 'POST', body: fd, signal: ctrl ? ctrl.signal : undefined })
+              .then(function (r) { if (zamanAsimi) clearTimeout(zamanAsimi); if (!r.ok) throw 0; return r.json(); })
+              .then(function (j) { if (j && j.ok && j.metin) { input.value = j.metin; input.focus(); } })
+              .catch(function () {})
+              .finally(function () { mikBtn.classList.remove('tchat__mik--mesgul'); });
+          };
+          kayitci.start();
+          mikBtn.classList.add('tchat__mik--acik');
+          kayitZamanlayici = setTimeout(function () { if (kayitci && kayitci.state === 'recording') kayitci.stop(); }, 15000); // güvenlik: asla açık kalmasın
+        }).catch(function () { mikBtn.disabled = false; /* izin reddedildi / mikrofon yok — sessizce yazılı sohbete devam */ });
+      });
+
+      /* panel kapanırken hâlâ kayıttaysa hemen durdur */
+      document.getElementById('tcClose').addEventListener('click', function () {
+        if (kayitci && kayitci.state === 'recording') kayitci.stop();
+      });
+    })();
   }
 
   /* ---------- olaylar ---------- */

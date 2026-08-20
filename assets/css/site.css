@@ -98,6 +98,26 @@ p{ max-width:70ch; }
 .ust-cta:hover{ background:var(--turkuaz-acik); }
 .menu-dugme{ display:none; }
 
+/* ---------------- Alt bar (mobil hızlı işlemler) ---------------- */
+.alt-bar{ display:none; }
+@media (max-width:700px){
+  body{ padding-bottom:calc(60px + env(safe-area-inset-bottom)); }
+  .alt-bar{
+    display:grid; grid-template-columns:repeat(3, 1fr);
+    position:fixed; left:0; right:0; bottom:0; z-index:170;
+    background:#fff; border-top:1px solid var(--cizgi);
+    box-shadow:0 -8px 22px rgba(17,27,54,.1);
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .alt-bar a{
+    display:flex; flex-direction:column; align-items:center; gap:3px;
+    padding:9px 4px 8px; color:var(--lacivert); text-decoration:none;
+    font-size:10.5px; font-weight:700; letter-spacing:.01em;
+  }
+  .alt-bar a:active{ color:var(--turkuaz); }
+  .alt-bar svg{ width:20px; height:20px; }
+}
+
 /* 9 maddeli menü masaüstünde tek satırda kalsın (taşma önlemi) */
 @media (min-width:1021px){
   .ust-menu a{ font-size:13px; padding:9px 10px; }
@@ -348,18 +368,8 @@ input:focus,select:focus,textarea:focus{ outline:2px solid var(--turkuaz); borde
 .kvkk{ display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--soluk); margin-bottom:16px; }
 .kvkk input{ width:auto; margin:3px 0 0; }
 
-/* ---------------- WhatsApp balonu ---------------- */
-.wa-balon{
-  position:fixed; right:22px; bottom:22px; z-index:180;
-  background:#25D366; color:#fff; width:58px; height:58px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 12px 30px rgba(0,0,0,.3); text-decoration:none;
-  transition:transform .2s ease;
-}
-.wa-balon:hover{ transform:scale(1.08); }
-.wa-balon svg{ width:30px; height:30px; fill:#fff; }
-
 /* ---------------- Footer ---------------- */
+#iletisim{ scroll-margin-top:90px; } /* alt-bar'dan #iletisim'e atlarken sabit üst menünün altında kalmasın */
 footer{ background:var(--lacivert-derin); color:#9FB0C4; padding:64px 0 34px; font-size:14px; }
 .footer-grid{ display:grid; grid-template-columns:2fr 1fr 1fr 1.4fr; gap:40px; max-width:var(--icerik); margin:0 auto; padding:0 26px; }
 @media (max-width:900px){ .footer-grid{ grid-template-columns:1fr 1fr; } }

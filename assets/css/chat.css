@@ -104,6 +104,39 @@
   background:var(--turkuaz); color:#fff; display:flex; align-items:center; justify-content:center;
 }
 .tchat__bar button svg{ width:18px; height:18px; }
+.tchat__bar button[hidden]{ display:none; }
+
+.tchat__mik{ background:var(--fildisi); border:1px solid var(--cizgi); color:var(--soluk); }
+.tchat__mik:hover{ border-color:var(--turkuaz); color:var(--turkuaz); }
+.tchat__mik svg{ width:17px; height:17px; }
+.tchat__mik--acik{ background:#E5484D; color:#fff; border-color:#E5484D; animation:tmikPulse 1.3s infinite; }
+.tchat__mik--mesgul{ opacity:.55; pointer-events:none; }
+@keyframes tmikPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(229,72,77,.4); } 50%{ box-shadow:0 0 0 8px rgba(229,72,77,0); } }
+
+.tchat__sesli{
+  display:inline-flex; align-items:center; justify-content:center; vertical-align:middle;
+  width:22px; height:22px; margin-left:6px; padding:0; border-radius:50%;
+  border:none; background:transparent; color:var(--soluk); cursor:pointer; transition:all .18s ease;
+}
+.tchat__sesli svg{ width:14px; height:14px; }
+.tchat__sesli:hover{ color:var(--turkuaz); background:var(--fildisi-koyu); }
+.tchat__sesli--mesgul{ opacity:.5; pointer-events:none; }
+.tchat__sesli--calan{ color:var(--turkuaz); background:var(--fildisi-koyu); animation:tsesPulse 1s infinite; }
+@keyframes tsesPulse{ 0%,100%{ opacity:1; } 50%{ opacity:.55; } }
+
+.tchat__kartlar{
+  display:grid; grid-template-columns:1fr 1fr; gap:8px;
+  align-self:flex-start; width:100%; max-width:92%;
+}
+.tchat__kart{
+  display:flex; flex-direction:column; background:#fff; border:1px solid var(--cizgi); border-radius:12px;
+  overflow:hidden; text-decoration:none; color:var(--murekkep); transition:all .18s ease;
+}
+.tchat__kart:hover{ border-color:var(--turkuaz); box-shadow:0 8px 20px rgba(17,27,54,.14); transform:translateY(-2px); }
+.tchat__kart img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--fildisi-koyu); }
+.tchat__kart-ic{ padding:8px 10px; }
+.tchat__kart-ic b{ display:block; font-size:12.3px; line-height:1.3; color:var(--lacivert); }
+.tchat__kart-ic span{ display:block; font-size:11px; color:var(--soluk); margin-top:2px; }
 
 .tchat__foot{
   display:flex; align-items:center; gap:6px; justify-content:center;
@@ -111,12 +144,13 @@
 }
 
 @media (max-width:700px){
+  /* alt-bar (mobil hızlı işlem çubuğu) sabit; sohbet balonu ve paneli ONUN üstünde durur */
   body.tchat-open{ overflow:hidden; }
-  .tchat__launch{ left:16px; bottom:16px; width:52px; height:52px; }
+  .tchat__launch{ left:16px; bottom:calc(72px + env(safe-area-inset-bottom)); width:52px; height:52px; }
   .tchat__panel{
-    left:10px; right:10px; width:auto; bottom:78px;
-    max-height:calc(100vh - 100px);
-    max-height:calc(100dvh - 100px);
+    left:10px; right:10px; width:auto; bottom:calc(136px + env(safe-area-inset-bottom));
+    max-height:calc(100vh - 158px - env(safe-area-inset-bottom));
+    max-height:calc(100dvh - 158px - env(safe-area-inset-bottom));
   }
   .tchat__menu nav{ grid-template-columns:1fr; }
 }
