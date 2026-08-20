@@ -80,7 +80,10 @@ p{ max-width:70ch; }
   box-shadow:0 6px 26px rgba(12,20,40,.35);
 }
 .ust-ic{
-  max-width:var(--icerik); margin:0 auto; padding:14px 26px;
+  /* İçerik bölümleri --icerik (1200px) kullanır; başlık çubuğu 11 öğelik
+     menüyü (10 bağlantı + Deneyim Günü) tek satırda barındırmak için
+     kasıtlı olarak biraz daha geniş bir üst sınır kullanır. */
+  max-width:1360px; margin:0 auto; padding:14px 26px;
   display:flex; align-items:center; gap:28px;
 }
 .ust-logo img{ height:40px; width:auto; }
@@ -123,15 +126,20 @@ p{ max-width:70ch; }
   .alt-bar svg{ width:20px; height:20px; }
 }
 
-/* 10 maddeli menü masaüstünde tek satırda kalsın (taşma önlemi) */
-@media (min-width:1021px){
+/* 11 maddeli menü (10 bağlantı + Deneyim Günü) tek satırda kalsın.
+   .ust-ic 1360px'e kadar genişleyebildiği için eşik de 1360px'e çekildi —
+   1021-1359 arası pencerelerde önceden satır taşıyordu (Deneyim Günü
+   logonun altına düşüyordu); artık o aralık da hamburger menüyü kullanır,
+   kırık bir tek-satır denemesi yerine her zaman doğru görünen katlanmış
+   menüyü tercih eder. */
+@media (min-width:1360px){
   .ust-menu a{ font-size:12.5px; padding:8px 9px; }
   .ust-giris{ padding:7px 14px !important; }
   .ust-cta{ padding:8px 18px !important; }
 }
 
 /* Mobil menü */
-@media (max-width:1020px){
+@media (max-width:1359px){
   .ust-menu{
     display:none; position:absolute; top:100%; left:0; right:0;
     background:var(--lacivert-koyu); flex-direction:column; align-items:stretch;
