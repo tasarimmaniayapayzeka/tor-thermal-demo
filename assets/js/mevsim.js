@@ -20,16 +20,17 @@
       if (!k) return;
       if (el.tagName === "IMG") { el.src = k; }
       else if (el.tagName === "VIDEO") {
-        /* Mobil/tasarruf: videoyu indirtme — mevsimi poster karesiyle göster.
-           (medya-lazy.js zaten autoplay'i durdurmuş olabilir.) */
-        var dar = false;
-        try {
-          dar = (window.matchMedia && window.matchMedia("(max-width:767px)").matches) ||
-                (navigator.connection && navigator.connection.saveData);
-        } catch (e) {}
+        /* Video artık sıkıştırılmış (~2 MB) olduğu için mobilde de oynatılır;
+           yalnız kullanıcı cihazında açıkça "Veri Tasarrufu" seçiliyse
+           (navigator.connection.saveData) indirmeyi atlayıp poster karesinde
+           bırakılır. Önceki sürüm yalnızca dar ekranı da (max-width:767px)
+           engel sayıyordu — video 33 MB'ken alınmış bir karardı; dosya artık
+           küçük olduğu için bu kısıtlama kaldırıldı (mobilde oynamıyordu). */
+        var tasarrufAcik = false;
+        try { tasarrufAcik = !!(navigator.connection && navigator.connection.saveData); } catch (e) {}
         var afis = k.replace("assets/video/", "assets/img/ai/").replace(/\.mp4$/, ".jpg");
         if (afis !== k) el.poster = afis;
-        if (dar) return;
+        if (tasarrufAcik) return;
         var kaynak = el.querySelector("source");
         if (!kaynak) {
           kaynak = document.createElement("source");
