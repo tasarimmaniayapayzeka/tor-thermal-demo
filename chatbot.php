@@ -107,39 +107,44 @@ TXT;
    MODEL: gpt-5 — GPT-5/o-serisi modeller "temperature" parametresini KABUL ETMEZ
    (400 hatası döner) ve "max_tokens" yerine "max_completion_tokens" bekler.
    reasoning_effort düşük tutulur: kısa bir SSS botu için iç "düşünme" token
-   bütçesinin tamamını yiyip görünür yanıtı boş bırakmasın diye (canlıda
-   700 tokenla boş yanıt görüldü — hem effort düşürüldü hem tavan yükseltildi). */
-$payload = json_encode([
-    'model'                 => 'gpt-5',
-    'messages'              => array_merge([['role' => 'system', 'content' => $SISTEM]], $mesajlar),
-    'max_completion_tokens' => 1200,
-    'reasoning_effort'      => 'low',
-], JSON_UNESCAPED_UNICODE);
+   bütçesi görünür yanıtı boşaltmasın diye. Yine de canlı teşhiste aynı soru
+   aynı ayarlarla bir boş bir dolu dönebildiği görüldü (modelin değişken
+   akıl yürütme payı) — bu yüzden boş gelirse SESSİZCE bir kez daha denenir;
+   ziyaretçiye teknik detay/debug bilgisi hiçbir zaman gösterilmez. */
+function openai_sor(string $key, string $sistem, array $mesajlar): array {
+    $payload = json_encode([
+        'model'                 => 'gpt-5',
+        'messages'              => array_merge([['role' => 'system', 'content' => $sistem]], $mesajlar),
+        'max_completion_tokens' => 1200,
+        'reasoning_effort'      => 'low',
+    ], JSON_UNESCAPED_UNICODE);
 
-$ch = curl_init('https://api.openai.com/v1/chat/completions');
-curl_setopt_array($ch, [
-    CURLOPT_POST           => true,
-    CURLOPT_POSTFIELDS     => $payload,
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_TIMEOUT        => 25,
-    CURLOPT_HTTPHEADER     => [
-        'Content-Type: application/json',
-        'Authorization: Bearer ' . $KEY,
-    ],
-]);
-$res  = curl_exec($ch);
-$http = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
-curl_close($ch);
+    $ch = curl_init('https://api.openai.com/v1/chat/completions');
+    curl_setopt_array($ch, [
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => $payload,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT        => 25,
+        CURLOPT_HTTPHEADER     => [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $key,
+        ],
+    ]);
+    $res  = curl_exec($ch);
+    $http = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+    curl_close($ch);
 
-if ($res === false || $http >= 500) yanit(['ok' => false, 'offline' => true]);
-$j = json_decode((string)$res, true);
-if ($http !== 200 || !isset($j['choices'][0]['message']['content'])) {
-    yanit(['ok' => false, 'hata' => 'Şu an cevap veremiyorum; WhatsApp\'tan yazabilirsin 🙂', 'debug_http' => $http, 'debug_err' => $j['error'] ?? null]);
+    if ($res === false || $http >= 500) return ['durum' => 'offline'];
+    $j = json_decode((string)$res, true);
+    if ($http !== 200 || !isset($j['choices'][0]['message']['content'])) return ['durum' => 'hata'];
+    $ic = trim((string)$j['choices'][0]['message']['content']);
+    if ($ic === '') return ['durum' => 'bos'];
+    return ['durum' => 'tamam', 'metin' => $ic];
 }
-$ic = trim((string)$j['choices'][0]['message']['content']);
-if ($ic === '') {
-    /* GECİCİ TEŞHİS — sorun çözülünce bu blok kaldırılacak. */
-    yanit(['ok' => false, 'hata' => 'bos_yanit', 'debug' => ['finish_reason' => $j['choices'][0]['finish_reason'] ?? null, 'usage' => $j['usage'] ?? null]]);
-}
 
-yanit(['ok' => true, 'reply' => $ic]);
+$sonuc = openai_sor($KEY, $SISTEM, $mesajlar);
+if ($sonuc['durum'] === 'bos') $sonuc = openai_sor($KEY, $SISTEM, $mesajlar); // sessiz tek yeniden deneme
+
+if ($sonuc['durum'] === 'tamam') yanit(['ok' => true, 'reply' => $sonuc['metin']]);
+if ($sonuc['durum'] === 'offline') yanit(['ok' => false, 'offline' => true]);
+yanit(['ok' => false, 'hata' => 'Şu an cevap veremiyorum; WhatsApp\'tan yazabilirsin 🙂']);
