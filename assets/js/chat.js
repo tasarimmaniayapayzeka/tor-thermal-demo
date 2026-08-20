@@ -108,21 +108,25 @@
   var SES_IKON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>';
 
   /* rol==='bot' ve duzMetin verilmişse (gerçek AI yanıtı; daktilo/çevrimdışı
-     balonlarında değil) mesaja hoparlör düğmesi eklenir. */
+     balonlarında değil) balonun ALTINA, kendi satırında, etiketli bir "Dinle"
+     düğmesi eklenir. Önceki sürümde ikon metnin İÇİNE, cümlenin sonuna
+     gömülüydü — çok küçük/soluk kaldığı ve fark edilmediği için (kullanıcı
+     geri bildirimi) ayrı, etiketli bir düğmeye çıkarıldı. */
   function balon(rol, html, duzMetin) {
     var d = document.createElement('div');
     d.className = 'tchat__msg tchat__msg--' + rol;
-    var ic = html;
-    if (rol === 'bot' && duzMetin) {
-      ic += '<button type="button" class="tchat__sesli" aria-label="Sesli dinle">' + SES_IKON + '</button>';
-    }
-    d.innerHTML = ic;
+    d.innerHTML = html;
     msgs.appendChild(d);
-    msgs.scrollTop = msgs.scrollHeight;
     if (rol === 'bot' && duzMetin) {
-      var sesBtn = d.querySelector('.tchat__sesli');
-      sesBtn.addEventListener('click', function () { sesliOku(duzMetin, sesBtn); });
+      var satir = document.createElement('button');
+      satir.type = 'button';
+      satir.className = 'tchat__sesli';
+      satir.setAttribute('aria-label', 'Sesli dinle');
+      satir.innerHTML = SES_IKON + '<span>Dinle</span>';
+      msgs.appendChild(satir);
+      satir.addEventListener('click', function () { sesliOku(duzMetin, satir); });
     }
+    msgs.scrollTop = msgs.scrollHeight;
     return d;
   }
 

@@ -26,9 +26,27 @@ $adet = (int)@file_get_contents($kova);
 if ($adet >= 40) hata_json(['ok' => false, 'hata' => 'limit'], 429);
 @file_put_contents($kova, $adet + 1);
 
+/**
+ * TTS motoru uzun rakam dizilerini (telefon numarası gibi) tek bir büyük
+ * sayı sanıp "iki yüz on iki..." diye okuyor, doğal telefon okunuşu
+ * vermiyordu (canlıda fark edildi). Telefon-biçimli dizileri (yalnızca
+ * rakam+boşluktan oluşan, 7+ haneli) her hanenin arasına tire koyarak
+ * yeniden yazıyoruz — bu, hemen hemen tüm TTS motorlarında haneleri tek
+ * tek okutmanın güvenilir yoludur. Yalnızca sesli okuma girdisini
+ * etkiler; ekrandaki yazı hep normal biçiminde kalır (bu dönüşüm
+ * chat.js'e değil, yalnız bu dosyaya uygulanır).
+ */
+function sesForm(string $metin): string {
+    return preg_replace_callback('/\+?\d[\d ]{7,20}\d/', function (array $e): string {
+        $rakamlar = preg_replace('/\D/', '', $e[0]);
+        return strlen($rakamlar) >= 7 ? implode('-', str_split($rakamlar)) : $e[0];
+    }, $metin);
+}
+
 $govde = json_decode((string)file_get_contents('php://input'), true);
 $metin = mb_substr(trim((string)($govde['metin'] ?? '')), 0, 600);
 if ($metin === '') hata_json(['ok' => false, 'hata' => 'bos'], 400);
+$metin = sesForm($metin);
 
 $ch = curl_init('https://api.openai.com/v1/audio/speech');
 curl_setopt_array($ch, [
