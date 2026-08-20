@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — TOR Thermal | Devre Mülk, Wellness ve Yaşam Rehberi</title>
+<meta name="description" content="Tapulu devre mülk, longevity yaşam tarzı, Armutlu'ya ulaşım ve resort yaşamı üzerine yazılar. TOR Thermal blogunu keşfedin.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Blog — TOR Thermal">
+<meta property="og:description" content="Devre mülk, wellness ve resort yaşamı üzerine rehber yazılar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/blog/devre-mulk-devre-tatil.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/chat.css?v=20260820e">
+<style>
+  .blog-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:32px; margin-top:44px; }
+  .blog-kart{ display:flex; flex-direction:column; background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--golge-kucuk); transition:transform .3s ease, box-shadow .3s ease; }
+  .blog-kart:hover{ transform:translateY(-4px); box-shadow:var(--golge); }
+  .blog-kart-medya{ aspect-ratio:16/10; overflow:hidden; }
+  .blog-kart-medya img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .blog-kart:hover .blog-kart-medya img{ transform:scale(1.06); }
+  .blog-kart-ic{ padding:24px; display:flex; flex-direction:column; flex:1; }
+  .blog-etiket{ display:inline-block; background:var(--turkuaz-buz); color:var(--turkuaz); font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:5px 12px; border-radius:999px; margin-bottom:14px; width:fit-content; }
+  .blog-kart h3{ font-size:19px; margin-bottom:10px; line-height:1.35; }
+  .blog-kart p{ color:var(--soluk); font-size:14.3px; line-height:1.6; margin-bottom:16px; flex:1; }
+  .blog-meta{ display:flex; gap:12px; align-items:center; font-size:12.5px; color:var(--soluk); border-top:1px solid var(--cizgi); padding-top:14px; }
+  .blog-meta .devami{ margin-left:auto; color:var(--turkuaz); font-weight:700; }
+  .blog-kart:hover .devami{ text-decoration:underline; }
+</style>
+</head>
+<body>
+
+
+<header class="ust-bar">
+  <div class="ust-ic">
+    <a class="ust-logo" href="index.html" aria-label="Tor Thermal ana sayfa">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal — Longevity & Wellness Resort" style="height:52px;width:auto;border-radius:8px;">
+    </a>
+    <button class="menu-dugme" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="kesfet.html">Keşfet</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="aktiviteler.html">Aktiviteler</a>
+      <a href="galeri.html">Galeri</a>
+      <a class="aktif" href="blog.html">Blog</a>
+      <a href="lokasyon.html">Lokasyon</a>
+      <a class="ust-giris" href="giris.html">Giriş Yap</a>
+      <a class="ust-cta" href="deneyim-gunu.html">Deneyim Günü</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ (1) SAYFA BAŞLIĞI ============ -->
+<section class="sayfa-baslik">
+  <div class="arka"><img src="assets/img/blog/termal-suyun-sirri.jpg" alt="Yalova Armutlu termal kaynak ve deniz manzarası" loading="eager"></div>
+  <div class="ic">
+    <div class="kirinti gorun"><a href="index.html">Ana Sayfa</a> / Blog</div>
+    <h1 class="gorun">Blog</h1>
+    <p class="alt gorun">Devre Mülk, Wellness ve Resort Yaşamı Üzerine</p>
+  </div>
+</section>
+
+<!-- ============ (2) GİRİŞ ============ -->
+<section>
+  <div class="ic">
+    <div class="gozkasi gorun">Yazılar</div>
+    <h2 class="gorun">Karar Vermeden Önce Okuyun</h2>
+    <p class="bolum-giris gorun">Tapulu devre mülk sürecinden longevity yaşam tarzına, Armutlu'ya ulaşımdan resort'ta tipik bir güne kadar — merak ettiğiniz konuları derledik.</p>
+    <div id="blogListe" class="blog-grid gorun"></div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="assets/logo/logo-beyaz-kare-zemin.png" alt="TOR Thermal" style="border-radius:10px;">
+      <p style="font-size:13.5px; color:#8FA2BC; max-width:34ch;">Tor Holding güvencesiyle Yalova Armutlu'da longevity odaklı termal devre mülk resortu.</p>
+    </div>
+    <div>
+      <h4>Keşfet</h4>
+      <a href="kesfet.html">Vaziyet Planı</a>
+      <a href="daireler.html">Daireler &amp; Villalar</a>
+      <a href="olanaklar.html">Olanaklar</a>
+      <a href="wellness.html">Longevity &amp; Wellness</a>
+      <a href="suyun-pasaportu.html">Suyun Pasaportu</a>
+      <a href="kesif-rotalari.html">Keşif Rotaları</a>
+      <a href="aktiviteler.html">Aktiviteler</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="blog.html">Blog</a>
+      <a href="lokasyon.html">Lokasyon</a>
+    </div>
+    <div>
+      <h4>Güven</h4>
+      <a href="acik-defter.html">Açık Defter</a>
+      <a href="nasil-calisir.html">Nasıl Çalışır?</a>
+      <a href="guvence.html">Tor Holding Güvencesi</a>
+      <a href="daire-donem-bulucu.html">Dönem Bulucu</a>
+      <a href="resort-yasami.html">Resort Yaşamı</a>
+      <a href="cocuk-kulubu.html">Çocuk Kulübü</a>
+      <a href="deneyim-gunu.html">Deneyim Günü</a>
+    </div>
+    <div id="iletisim">
+      <h4>İletişim</h4>
+      <a href="tel:+902126716968">+90 212 671 69 68</a>
+      <a href="mailto:info@torholding.com">info@torholding.com</a>
+      <p style="font-size:13px; color:#8FA2BC;">Genel Merkez: Aris Grand Tower No:312 Esenyurt, İstanbul<br>Grand Sirkeci Ofisi: Büyük Postane Cad. No:24 Sirkeci, İstanbul</p>
+    </div>
+  </div>
+  <p class="yasal-not">Bu sayfadaki render ve blog görselleri yapay zekâ destekli görsel temsillerdir ve nihai projeye ilişkin bağlayıcı taahhüt teşkil etmez. Termal su ve wellness içeriğine ilişkin ifadeler tedavi vaadi değildir; sağlık durumunuz için hekiminize danışınız.</p>
+  <div class="footer-alt">
+    <span>© 2026 Tor Thermal — Tor Holding kuruluşudur. Tasarım: TasarımMania.</span>
+    <span>KVKK Aydınlatma Metni · Çerez Politikası (demo)</span>
+  </div>
+</footer>
+
+<script src="assets/data/blog.js"></script>
+<script>
+(function(){
+  var liste = document.getElementById('blogListe');
+  var yazilar = window.TOR_BLOG || [];
+  function tarihYaz(iso){
+    var aylar = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+    var d = new Date(iso + 'T00:00:00');
+    return d.getDate() + ' ' + aylar[d.getMonth()] + ' ' + d.getFullYear();
+  }
+  yazilar.forEach(function(y){
+    var a = document.createElement('a');
+    a.className = 'blog-kart';
+    a.href = 'blog-yazi.html?id=' + encodeURIComponent(y.id);
+    a.innerHTML =
+      '<div class="blog-kart-medya"><img src="' + y.hero + '" alt="' + y.baslik + '" loading="lazy"></div>' +
+      '<div class="blog-kart-ic">' +
+        '<span class="blog-etiket">' + y.kategori + '</span>' +
+        '<h3>' + y.baslik + '</h3>' +
+        '<p>' + y.ozet + '</p>' +
+        '<div class="blog-meta"><span>' + tarihYaz(y.tarih) + '</span><span>·</span><span>' + y.okumaSuresi + '</span><span class="devami">Devamını Oku →</span></div>' +
+      '</div>';
+    liste.appendChild(a);
+  });
+})();
+</script>
+<script src="assets/js/mevsim.js"></script>
+<script src="assets/js/ana.js"></script>
+<script src="assets/js/medya-lazy.js"></script>
+<script src="assets/js/chat.js?v=20260820e"></script>
+<script src="assets/js/alt-bar.js?v=20260820e"></script>
+</body>
+</html>
