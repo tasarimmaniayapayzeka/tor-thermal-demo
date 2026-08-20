@@ -147,8 +147,11 @@ p{ max-width:70ch; }
   border:1px solid rgba(255,255,255,.25); color:#fff;
   padding:8px 18px; border-radius:999px; font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
 }
+/* Butonlardan hemen sonra normal akışta yer alır (önceden hero'nun altına
+   sabit bottom:26px ile tutturuluyordu; içerik iki satıra sarınca — kısa
+   masaüstü pencerelerinde de olur — CTA butonlarının üzerine biniyordu). */
 .hero-kaydir{
-  position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:3;
+  margin-top:34px;
   color:#B8C6D4; font-size:11.5px; letter-spacing:.28em; text-transform:uppercase; text-align:center;
 }
 .hero-kaydir::after{
@@ -157,6 +160,9 @@ p{ max-width:70ch; }
 }
 
 /* ---------------- Butonlar ---------------- */
+/* İki butonu yan yana ortalar; dar ekranda sarınca aralarında gerçek boşluk bırakır
+   (önceden &nbsp; ile ayrılıyordu — satır kırılınca dikey boşluk sıfırlanıyordu). */
+.btn-cift{ display:flex; flex-wrap:wrap; justify-content:center; gap:14px; }
 .btn{
   display:inline-block; text-decoration:none; font-weight:700; font-size:15px;
   padding:15px 32px; border-radius:999px; letter-spacing:.03em;
