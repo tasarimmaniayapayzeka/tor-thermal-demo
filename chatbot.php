@@ -105,11 +105,15 @@ TXT;
 
 /* ---------- OpenAI ----------
    MODEL: gpt-5 — GPT-5/o-serisi modeller "temperature" parametresini KABUL ETMEZ
-   (400 hatası döner) ve "max_tokens" yerine "max_completion_tokens" bekler. */
+   (400 hatası döner) ve "max_tokens" yerine "max_completion_tokens" bekler.
+   reasoning_effort düşük tutulur: kısa bir SSS botu için iç "düşünme" token
+   bütçesinin tamamını yiyip görünür yanıtı boş bırakmasın diye (canlıda
+   700 tokenla boş yanıt görüldü — hem effort düşürüldü hem tavan yükseltildi). */
 $payload = json_encode([
-    'model'                => 'gpt-5',
-    'messages'             => array_merge([['role' => 'system', 'content' => $SISTEM]], $mesajlar),
-    'max_completion_tokens' => 700,
+    'model'                 => 'gpt-5',
+    'messages'              => array_merge([['role' => 'system', 'content' => $SISTEM]], $mesajlar),
+    'max_completion_tokens' => 1200,
+    'reasoning_effort'      => 'low',
 ], JSON_UNESCAPED_UNICODE);
 
 $ch = curl_init('https://api.openai.com/v1/chat/completions');
