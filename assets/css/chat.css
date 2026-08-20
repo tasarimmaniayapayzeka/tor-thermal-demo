@@ -1,0 +1,127 @@
+/* TOR|THERMAL — Tor Asistan (chatbot) stilleri
+   Sitenin kendi :root token'larını kullanır (site.css DAHA ÖNCE yüklenmiş olmalı).
+   .wa-balon sağ altta durduğu için bu widget SOL altta açılır, çakışma yok. */
+
+#tchat{ font-family:var(--sans); }
+
+.tchat__launch{
+  position:fixed; left:22px; bottom:22px; z-index:190;
+  width:58px; height:58px; border-radius:50%; border:none; cursor:pointer;
+  background:linear-gradient(135deg, var(--turkuaz), var(--lacivert)); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 12px 30px rgba(17,27,54,.32); transition:transform .2s ease;
+}
+.tchat__launch:hover{ transform:scale(1.07); }
+.tchat__launch svg{ width:26px; height:26px; }
+.tchat__pulse{
+  position:absolute; top:6px; right:6px; width:11px; height:11px; border-radius:50%;
+  background:var(--bakir-acik); border:2px solid var(--fildisi);
+}
+
+.tchat__panel{
+  position:fixed; left:22px; bottom:92px; z-index:191;
+  width:min(374px, calc(100vw - 28px));
+  max-height:min(640px, calc(100vh - 116px));
+  max-height:min(640px, calc(100dvh - 116px));
+  display:flex; flex-direction:column;
+  background:var(--fildisi); border:1px solid var(--cizgi); border-radius:18px;
+  box-shadow:0 30px 70px rgba(17,27,54,.28); overflow:hidden;
+  animation:tchatIn .25s ease;
+}
+.tchat__panel[hidden]{ display:none; }
+@keyframes tchatIn{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
+
+.tchat__head{
+  display:flex; align-items:center; gap:11px; padding:14px 16px;
+  background:var(--lacivert); border-bottom:1px solid var(--lacivert-koyu);
+}
+.tchat__badge{
+  width:34px; height:34px; border-radius:50%; flex:none;
+  background:var(--turkuaz); color:#fff; font-family:var(--serif); font-size:16px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+}
+.tchat__head b{ color:#fff; font-family:var(--serif); font-size:16px; display:block; line-height:1.15; }
+.tchat__head small{ color:var(--turkuaz-acik); font-size:11.5px; }
+.tchat__close{ margin-left:auto; background:none; border:none; color:#C9D6E2; font-size:16px; cursor:pointer; padding:6px; }
+.tchat__close:hover{ color:#fff; }
+
+.tchat__actions{
+  display:grid; grid-template-columns:1fr 1fr; gap:8px;
+  padding:10px 14px; background:var(--fildisi-koyu); border-bottom:1px solid var(--cizgi);
+}
+.tchat__act{
+  display:flex; align-items:center; justify-content:center; gap:7px;
+  padding:9px 10px; border-radius:100px; font-size:12.8px; font-weight:700;
+  border:1px solid var(--cizgi); color:var(--lacivert); transition:all .18s ease; text-decoration:none;
+}
+.tchat__act svg{ width:15px; height:15px; flex:none; }
+.tchat__act--tel:hover{ border-color:var(--turkuaz); color:var(--turkuaz); background:#fff; }
+.tchat__act--wa{ border-color:rgba(37,211,102,.35); color:#1FA851; }
+.tchat__act--wa:hover{ background:rgba(37,211,102,.1); }
+
+.tchat__menu{ padding:0 14px 12px; }
+.tchat__menu small{
+  display:block; color:var(--soluk); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+  position:sticky; top:0; z-index:1; background:var(--fildisi); padding:10px 0 7px; margin:0;
+}
+.tchat__menu nav{ display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+.tchat__menu a{
+  display:flex; align-items:center; gap:7px; padding:8px 10px;
+  background:#fff; border:1px solid var(--cizgi); border-radius:10px;
+  font-size:12.5px; font-weight:700; color:var(--murekkep); text-decoration:none; transition:all .18s ease;
+}
+.tchat__menu a span{ font-size:14px; }
+.tchat__menu a:hover{ border-color:var(--turkuaz); color:var(--turkuaz); }
+
+.tchat__head,.tchat__actions,.tchat__chips,.tchat__bar,.tchat__foot{ flex:none; }
+.tchat__menu{ flex:0 1 auto; min-height:0; overflow-y:auto; }
+.tchat__msgs{ flex:1; overflow-y:auto; padding:16px 14px; display:flex; flex-direction:column; gap:10px; min-height:120px; background:var(--fildisi); }
+.tchat__msg{ max-width:85%; padding:10px 14px; border-radius:14px; font-size:13.8px; line-height:1.55; }
+.tchat__msg--bot{ align-self:flex-start; background:#fff; border:1px solid var(--cizgi); color:var(--murekkep); border-bottom-left-radius:4px; }
+.tchat__msg--me{ align-self:flex-end; background:var(--turkuaz); color:#fff; border-bottom-right-radius:4px; }
+.tchat__msg a{ color:inherit; text-decoration:underline; text-underline-offset:2px; word-break:break-all; }
+.tchat__msg--bot a{ color:var(--turkuaz); font-weight:700; }
+.tchat__dots{ display:inline-flex; gap:5px; padding:2px 0; }
+.tchat__dots i{ width:7px; height:7px; border-radius:50%; background:var(--soluk); animation:tdot 1.1s infinite; }
+.tchat__dots i:nth-child(2){ animation-delay:.18s; } .tchat__dots i:nth-child(3){ animation-delay:.36s; }
+@keyframes tdot{ 0%,60%,100%{ opacity:.3; transform:translateY(0); } 30%{ opacity:1; transform:translateY(-4px); } }
+
+.tchat__chips{ display:flex; flex-wrap:wrap; gap:8px; padding:0 14px 12px; background:var(--fildisi); }
+.tchat__chips button{
+  background:#fff; border:1px solid var(--cizgi); color:var(--murekkep);
+  border-radius:100px; padding:7px 13px; font-size:12.5px; font-family:var(--sans); cursor:pointer; transition:all .18s ease;
+}
+.tchat__chips button:hover{ border-color:var(--turkuaz); color:var(--turkuaz); }
+
+.tchat__bar{ display:flex; gap:9px; padding:11px 12px; border-top:1px solid var(--cizgi); background:#fff; }
+.tchat__bar input{
+  flex:1; padding:11px 14px; border-radius:100px; background:var(--fildisi);
+  border:1px solid var(--cizgi); color:var(--murekkep); font-family:var(--sans); font-size:13.8px;
+}
+.tchat__bar input:focus{ outline:none; border-color:var(--turkuaz); }
+.tchat__bar button{
+  width:42px; height:42px; border-radius:50%; border:none; cursor:pointer; flex:none;
+  background:var(--turkuaz); color:#fff; display:flex; align-items:center; justify-content:center;
+}
+.tchat__bar button svg{ width:18px; height:18px; }
+
+.tchat__foot{
+  display:flex; align-items:center; gap:6px; justify-content:center;
+  padding:8px; font-size:11px; color:var(--soluk); background:var(--fildisi-koyu); border-top:1px solid var(--cizgi);
+}
+
+@media (max-width:700px){
+  body.tchat-open{ overflow:hidden; }
+  .tchat__launch{ left:16px; bottom:16px; width:52px; height:52px; }
+  .tchat__panel{
+    left:10px; right:10px; width:auto; bottom:78px;
+    max-height:calc(100vh - 100px);
+    max-height:calc(100dvh - 100px);
+  }
+  .tchat__menu nav{ grid-template-columns:1fr; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .tchat__panel{ animation:none; }
+  .tchat__dots i{ animation:none; }
+}
