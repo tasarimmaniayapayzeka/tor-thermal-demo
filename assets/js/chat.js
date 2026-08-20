@@ -12,7 +12,7 @@
   var TEL = 'tel:+902126716968';
   var DEPO = 'torthermal_chat_v1';
   var ILK = 'Merhaba! 👋 Ben Tor Asistan. Daire ve villa tipleri, devre mülk süreci, wellness programları ya da lokasyon hakkında ne merak ediyorsun?';
-  var CIPLER = ['Daire tipleri neler?', 'Ödeme planı nasıl?', 'Devre mülk mü, devre tatil mi?', 'Nasıl ulaşırım?'];
+  var SES_DEPO = 'torthermal_sesli_v1';
   var MENU = [
     ['🏠', 'Daireler & Villalar', 'daireler.html'],
     ['📅', 'Dönem Bulucu', 'daire-donem-bulucu.html'],
@@ -34,6 +34,7 @@
       '<div class="tchat__head">' +
         '<div class="tchat__badge" aria-hidden="true">T</div>' +
         '<div><b>Tor Asistan</b><small id="tcDurum">yapay zekâ destekli</small></div>' +
+        '<button type="button" class="tchat__sil" id="tcSil" aria-label="Konuşmayı sil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></button>' +
         '<button type="button" class="tchat__close" id="tcClose" aria-label="Kapat">✕</button>' +
       '</div>' +
       '<div class="tchat__actions">' +
@@ -45,8 +46,8 @@
           'WhatsApp</a>' +
       '</div>' +
       '<div class="tchat__msgs" id="tcMsgs"></div>' +
-      '<div class="tchat__chips" id="tcChips"></div>' +
       '<div class="tchat__menu" id="tcMenu"><small>Hızlı bağlantılar</small><nav></nav></div>' +
+      '<label class="tchat__ses-ac" id="tcSesAc"><input type="checkbox" id="tcSesCheck"><span>🔊 Sesli yanıt</span></label>' +
       '<form class="tchat__bar" id="tcForm">' +
         '<button type="button" class="tchat__mik" id="tcMik" aria-label="Sesli yaz" hidden>' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M19 11a7 7 0 0 1-14 0M12 19v3"/></svg>' +
@@ -60,12 +61,18 @@
 
   var panel = document.getElementById('tcPanel');
   var msgs  = document.getElementById('tcMsgs');
-  var chips = document.getElementById('tcChips');
   var menu  = document.getElementById('tcMenu');
   var form  = document.getElementById('tcForm');
   var input = document.getElementById('tcInput');
   var durum = document.getElementById('tcDurum');
   var mikBtn = document.getElementById('tcMik');
+  var sesCheck = document.getElementById('tcSesCheck');
+
+  try { sesCheck.checked = localStorage.getItem(SES_DEPO) === '1'; } catch (e) {}
+  sesCheck.addEventListener('change', function () {
+    try { localStorage.setItem(SES_DEPO, sesCheck.checked ? '1' : '0'); } catch (e) {}
+  });
+  function sesliAcikMi() { return !!sesCheck.checked; }
 
   MENU.forEach(function (o) {
     var a = document.createElement('a');
@@ -111,8 +118,10 @@
      balonlarında değil) balonun ALTINA, kendi satırında, etiketli bir "Dinle"
      düğmesi eklenir. Önceki sürümde ikon metnin İÇİNE, cümlenin sonuna
      gömülüydü — çok küçük/soluk kaldığı ve fark edilmediği için (kullanıcı
-     geri bildirimi) ayrı, etiketli bir düğmeye çıkarıldı. */
-  function balon(rol, html, duzMetin) {
+     geri bildirimi) ayrı, etiketli bir düğmeye çıkarıldı.
+     otoOku=true ise (üstteki "Sesli yanıt" açıksa, yalnız YENİ yanıtlarda —
+     geçmiş tekrar çizilirken asla) balon eklenir eklenmez otomatik çalınır. */
+  function balon(rol, html, duzMetin, otoOku) {
     var d = document.createElement('div');
     d.className = 'tchat__msg tchat__msg--' + rol;
     d.innerHTML = html;
@@ -125,6 +134,7 @@
       satir.innerHTML = SES_IKON + '<span>Dinle</span>';
       msgs.appendChild(satir);
       satir.addEventListener('click', function () { sesliOku(duzMetin, satir); });
+      if (otoOku) sesliOku(duzMetin, satir);
     }
     msgs.scrollTop = msgs.scrollHeight;
     return d;
@@ -164,7 +174,6 @@
     msgs.innerHTML = '';
     balon('bot', linkle(ILK));
     tarih.forEach(function (m) { balon(m.role === 'assistant' ? 'bot' : 'me', linkle(m.content), m.role === 'assistant' ? m.content : null); });
-    chips.style.display = tarih.length ? 'none' : '';
     menu.style.display = tarih.length ? 'none' : '';
   }
 
@@ -174,7 +183,6 @@
     metin = (metin || '').trim();
     if (!metin || mesgul) return;
     mesgul = true;
-    chips.style.display = 'none';
     menu.style.display = 'none';
     balon('me', linkle(metin));
     tarih.push({ role: 'user', content: metin });
@@ -193,7 +201,7 @@
         if (j && j.ok && j.reply) {
           tarih.push({ role: 'assistant', content: j.reply });
           kaydet();
-          balon('bot', linkle(j.reply), j.reply);
+          balon('bot', linkle(j.reply), j.reply, sesliAcikMi());
           if (j.daireler && j.daireler.length) daireKartlari(j.daireler);
         } else if (j && j.offline) {
           cevrimdisi();
@@ -314,12 +322,11 @@
     if (acilacak) { ciz(); setTimeout(odakla, 60); }
   });
   document.getElementById('tcClose').addEventListener('click', function () { panelDurum(false); });
-  form.addEventListener('submit', function (e) { e.preventDefault(); gonder(input.value); });
-
-  CIPLER.forEach(function (c) {
-    var b = document.createElement('button');
-    b.type = 'button'; b.textContent = c;
-    b.addEventListener('click', function () { gonder(c); });
-    chips.appendChild(b);
+  document.getElementById('tcSil').addEventListener('click', function () {
+    if (aktifSes) { try { aktifSes.pause(); } catch (e) {} aktifSes = null; }
+    tarih = [];
+    try { sessionStorage.removeItem(DEPO); } catch (e) {}
+    ciz();
   });
+  form.addEventListener('submit', function (e) { e.preventDefault(); gonder(input.value); });
 })();
