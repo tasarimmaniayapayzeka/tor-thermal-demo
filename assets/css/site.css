@@ -96,6 +96,11 @@ p{ max-width:70ch; }
   padding:10px 20px !important; font-weight:700 !important;
 }
 .ust-cta:hover{ background:var(--turkuaz-acik); }
+.ust-giris{
+  border:1px solid rgba(255,255,255,.3) !important; border-radius:999px;
+  padding:8px 16px !important;
+}
+.ust-giris:hover{ border-color:#fff; background:rgba(255,255,255,.12) !important; }
 .menu-dugme{ display:none; }
 
 /* ---------------- Alt bar (mobil hızlı işlemler) ---------------- */
@@ -118,9 +123,11 @@ p{ max-width:70ch; }
   .alt-bar svg{ width:20px; height:20px; }
 }
 
-/* 9 maddeli menü masaüstünde tek satırda kalsın (taşma önlemi) */
+/* 10 maddeli menü masaüstünde tek satırda kalsın (taşma önlemi) */
 @media (min-width:1021px){
-  .ust-menu a{ font-size:13px; padding:9px 10px; }
+  .ust-menu a{ font-size:12.5px; padding:8px 9px; }
+  .ust-giris{ padding:7px 14px !important; }
+  .ust-cta{ padding:8px 18px !important; }
 }
 
 /* Mobil menü */
