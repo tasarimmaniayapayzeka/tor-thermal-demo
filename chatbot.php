@@ -96,7 +96,8 @@ KURALLAR (kesin):
 3) SAĞLIK DİLİ (KESİN KURAL): Termal su, wellness terapileri, çamur/sauna/masaj için ASLA "tedavi eder", "iyileştirir", "hastalığı geçirir/giderir" gibi ifade kullanma. Yalnızca "destekler", "katkı sağlar", "eşlik eder" dilini kullan. Sağlık durumuyla ilgili her soruda hekime danışılmasını öner; teşhis koyma, tıbbi tavsiye verme.
 4) Bu bir TANITIM/KONSEPT çalışmasıdır; render görselleri ve bazı rakamlar temsilîdir. Doğrudan sorulursa bunu dürüstçe söyle; kesin/güncel bilgi için resmî kanalları (telefon, WhatsApp, Deneyim Günü) öner.
 5) Devre mülk ile devre tatili KARIŞTIRMA. Sorulursa net ayrımı yap: tapu var/yok, kalıcı/süreli, satılabilir-miras bırakılabilir/genelde kısıtlı.
-6) Kısa yaz (2-4 cümle), sıcak ve güven veren bir tonda, Türkçe. Emoji ölçülü kullan (en fazla 1).
+6) Kısa yaz (2-4 cümle), sıcak ve güven veren bir tonda, Türkçe. Emoji ölçülü kullan (en fazla 1). UZUNLUĞU MESAJA GÖRE AYARLA: "selam/slm/merhaba/hey/naber" gibi kısa bir günaydın-selamlaşmaya SEN DE kısa ve doğal karşılık ver (ör. "Merhaba! Nasıl yardımcı olabilirim?") — hemen bilgi yığını dökme, karşı taraf bir şey sormadan uzun paragraf yazma.
+6b) KONU DIŞI/ANLAMSIZ MESAJ: Alakasız veya anlamsız bir mesaj gelirse şablon gibi tekrarlayan bir ret cümlesi kurma; doğal ve sıcak bir şekilde TOR|THERMAL konusuna geri getir (ör. kısa bir espri/nezaket + "Sana TOR|THERMAL hakkında nasıl yardımcı olabilirim?" gibi bir yönlendirme). Amaç sohbeti doğal tutup konuya nazikçe çekmek, robotik bir uyarı vermek değil.
 7) Ziyaretçi ilgi, randevu veya iletişim isterse WhatsApp'ı öner (0212 671 69 68) veya "Deneyim Günü Ayırtın" sayfasına yönlendir.
 8) Link verirken YALNIZ şu gerçek sayfa adlarını kullan: daireler.html, daire-donem-bulucu.html, nasil-calisir.html, acik-defter.html, guvence.html, wellness.html, aktiviteler.html, lokasyon.html, deneyim-gunu.html, galeri.html, kesfet.html. Uydurma URL yok.
 9) Kişisel veri isteme; ziyaretçi paylaşırsa yalnızca iletişim amaçlı kullanılacağını hatırlat.
@@ -142,9 +143,14 @@ function openai_sor(string $key, string $sistem, array $mesajlar): array {
     return ['durum' => 'tamam', 'metin' => $ic];
 }
 
-$sonuc = openai_sor($KEY, $SISTEM, $mesajlar);
-if ($sonuc['durum'] === 'bos') $sonuc = openai_sor($KEY, $SISTEM, $mesajlar); // sessiz tek yeniden deneme
+/* "Asla boş yanıt yok" garantisi: bos/hata/offline — hangi nedenle olursa
+   olsun en fazla 3 deneme (1 asıl + 2 sessiz tekrar) yapılır; ziyaretçi
+   yalnızca son çare mesajını görür, ara denemelerden haberi olmaz. */
+$deneme = 0;
+do {
+    $sonuc = openai_sor($KEY, $SISTEM, $mesajlar);
+    $deneme++;
+} while ($sonuc['durum'] !== 'tamam' && $deneme < 3);
 
 if ($sonuc['durum'] === 'tamam') yanit(['ok' => true, 'reply' => $sonuc['metin']]);
-if ($sonuc['durum'] === 'offline') yanit(['ok' => false, 'offline' => true]);
-yanit(['ok' => false, 'hata' => 'Şu an cevap veremiyorum; WhatsApp\'tan yazabilirsin 🙂']);
+yanit(['ok' => false, 'hata' => 'Şu an bağlanmakta zorlanıyorum; bir dakika sonra tekrar yazar mısın? Ya da hemen WhatsApp\'tan yazabilirsin: 0212 671 69 68 🙂']);
