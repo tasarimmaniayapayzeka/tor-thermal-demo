@@ -225,7 +225,11 @@ if (!$kartlar) {
 }
 
 $aracSonucMsj = ['role' => 'tool', 'tool_call_id' => $tool_call['id'], 'content' => json_encode(array_map(fn($k) => ['ad' => $k['ad'], 'ozet' => $k['ozet'], 'metraj' => $k['metraj'], 'kisi' => $k['kisi']], $kartlar), JSON_UNESCAPED_UNICODE)];
-$ikinciMesajlar = array_merge($mesajlar, [['role' => 'assistant', 'content' => null, 'tool_calls' => $secim['message']['tool_calls']]], [$aracSonucMsj]);
+/* Kartlar zaten metraj/kişi bilgisiyle görsel gösterilecek; sistem promptundaki
+   kural 11 tek başına yeterince ağırlık taşımayabiliyor (araç sonucundan hemen
+   sonra) — bu yüzden ikinci çağrıya özel, taze bir hatırlatma ekleniyor. */
+$hatirlatmaMsj = ['role' => 'system', 'content' => 'Az önce gösterdiğin kartlar metraj ve kişi bilgisini ZATEN görsel olarak içeriyor. Şimdi SADECE 1 kısa cümlelik doğal bir yönlendirme yaz (ör. hangisini merak ettiklerini sor ya da Deneyim Günü\'nü öner) — metrajı, kişi sayısını veya tip adlarını LİSTE/MADDE halinde TEKRARLAMA.'];
+$ikinciMesajlar = array_merge($mesajlar, [['role' => 'assistant', 'content' => null, 'tool_calls' => $secim['message']['tool_calls']]], [$aracSonucMsj, $hatirlatmaMsj]);
 
 $yaziYanit = null;
 for ($i = 0; $i < 2 && $yaziYanit === null; $i++) {
