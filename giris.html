@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Üye Girişi &amp; Kayıt Ol | TOR Thermal</title>
-<meta name="description" content="TOR Thermal devre mülk sahipleri için üye paneli — giriş yapın veya kayıt olun. (Tasarım konsepti)">
+<meta name="description" content="TOR Thermal devre mülk sahipleri için üye paneli — giriş yapın veya kayıt olun.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -43,7 +43,6 @@
   .giris-panel{ display:none; }
   .giris-panel.aktif{ display:block; animation:girisIn .2s ease; }
   @keyframes girisIn{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
-  .giris-not{ font-size:12.5px; color:var(--soluk); background:var(--fildisi-koyu); border:1px solid var(--cizgi); border-radius:10px; padding:10px 13px; margin-bottom:20px; }
   .giris-sifre-alan{ position:relative; }
   .giris-sifre-alan button{
     position:absolute; right:12px; top:11px; background:none; border:none; color:var(--soluk); cursor:pointer; padding:4px;
@@ -83,8 +82,6 @@
         <button type="button" id="sekmeGiris" class="aktif">Giriş Yap</button>
         <button type="button" id="sekmeKayit">Kayıt Olun</button>
       </div>
-
-      <div class="giris-not">Bu sayfa üye panelinin tasarım konseptidir; hesap oluşturma ve giriş işlemleri demo amaçlıdır.</div>
 
       <!-- ---- GİRİŞ ---- -->
       <div class="giris-panel aktif" id="panelGiris">
@@ -179,14 +176,14 @@
 
   document.getElementById('sifremiUnuttum').addEventListener('click', function(e){
     e.preventDefault();
-    alert('Demo sürümü — şifre sıfırlama bu konsept çalışmasında aktif değildir.');
+    alert('Şifre sıfırlama bağlantısı yakında hizmete girecek. Şimdilik WhatsApp\'tan bize ulaşabilirsiniz: 0212 671 69 68.');
   });
 
   document.getElementById('formGiris').addEventListener('submit', function(e){
     e.preventDefault();
     var ep = document.getElementById('g-eposta');
     if (!ep.value.trim()){ alert('Lütfen e-posta adresinizi yazın.'); ep.focus(); return; }
-    alert('Demo sürümü — üyelik sistemi bu konsept çalışmasında aktif değildir. Gerçek hesabınızla ilgili WhatsApp\'tan bize ulaşabilirsiniz: 0212 671 69 68.');
+    alert('Üye paneli yakında hizmetinizde olacak. Şimdilik WhatsApp\'tan bize ulaşabilirsiniz: 0212 671 69 68.');
   });
 
   document.getElementById('formKayit').addEventListener('submit', function(e){
@@ -195,7 +192,7 @@
     var kvkk = document.getElementById('k-kvkk');
     if (!ad.value.trim()){ alert('Lütfen adınızı ve soyadınızı yazın.'); ad.focus(); return; }
     if (!kvkk.checked){ alert('Devam etmek için KVKK onayı gereklidir.'); kvkk.focus(); return; }
-    alert('Demo sürümü — üyelik sistemi bu konsept çalışmasında aktif değildir. Deneyim Günü\'nden bize ulaşabilirsiniz.');
+    alert('Üye paneli yakında hizmetinizde olacak. Kaydınızı Deneyim Günü üzerinden şimdiden başlatabilirsiniz.');
   });
 })();
 </script>
