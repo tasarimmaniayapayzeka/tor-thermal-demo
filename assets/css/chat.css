@@ -76,7 +76,7 @@
 .tchat__menu a span{ font-size:14px; }
 .tchat__menu a:hover{ border-color:var(--turkuaz); color:var(--turkuaz); }
 
-.tchat__head,.tchat__actions,.tchat__ses-ac,.tchat__bar,.tchat__foot{ flex:none; }
+.tchat__head,.tchat__actions,.tchat__bar,.tchat__foot{ flex:none; }
 .tchat__menu{ flex:0 1 auto; min-height:0; overflow-y:auto; }
 .tchat__msgs{ flex:1; overflow-y:auto; padding:16px 14px; display:flex; flex-direction:column; gap:10px; min-height:120px; background:var(--fildisi); }
 .tchat__msg{ max-width:85%; padding:10px 14px; border-radius:14px; font-size:13.8px; line-height:1.55; }
@@ -88,12 +88,6 @@
 .tchat__dots i{ width:7px; height:7px; border-radius:50%; background:var(--soluk); animation:tdot 1.1s infinite; }
 .tchat__dots i:nth-child(2){ animation-delay:.18s; } .tchat__dots i:nth-child(3){ animation-delay:.36s; }
 @keyframes tdot{ 0%,60%,100%{ opacity:.3; transform:translateY(0); } 30%{ opacity:1; transform:translateY(-4px); } }
-
-.tchat__ses-ac{
-  display:flex; align-items:center; gap:7px; padding:9px 14px 0;
-  font-size:12px; color:var(--murekkep); cursor:pointer; user-select:none;
-}
-.tchat__ses-ac input{ width:15px; height:15px; accent-color:var(--turkuaz); cursor:pointer; }
 
 .tchat__bar{ display:flex; gap:9px; padding:11px 12px; border-top:1px solid var(--cizgi); background:#fff; }
 .tchat__bar input{
@@ -114,18 +108,6 @@
 .tchat__mik--acik{ background:#E5484D; color:#fff; border-color:#E5484D; animation:tmikPulse 1.3s infinite; }
 .tchat__mik--mesgul{ opacity:.55; pointer-events:none; }
 @keyframes tmikPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(229,72,77,.4); } 50%{ box-shadow:0 0 0 8px rgba(229,72,77,0); } }
-
-.tchat__sesli{
-  display:inline-flex; align-items:center; gap:5px; align-self:flex-start;
-  margin:-4px 0 0; padding:5px 11px; border-radius:100px;
-  border:1px solid var(--cizgi); background:#fff; color:var(--turkuaz); cursor:pointer;
-  font-family:var(--sans); font-size:11.5px; font-weight:700; transition:all .18s ease;
-}
-.tchat__sesli svg{ width:13px; height:13px; flex:none; }
-.tchat__sesli:hover{ border-color:var(--turkuaz); background:var(--fildisi-koyu); }
-.tchat__sesli--mesgul{ opacity:.55; pointer-events:none; }
-.tchat__sesli--calan{ background:var(--turkuaz); color:#fff; border-color:var(--turkuaz); animation:tsesPulse 1s infinite; }
-@keyframes tsesPulse{ 0%,100%{ opacity:1; } 50%{ opacity:.7; } }
 
 .tchat__kartlar{
   display:grid; grid-template-columns:1fr 1fr; gap:8px;

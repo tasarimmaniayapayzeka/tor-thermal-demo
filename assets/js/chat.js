@@ -1,10 +1,9 @@
 /* TOR|THERMAL — Tor Asistan ön yüzü
    Kendi DOM'unu kurar; chatbot.php'ye konuşur. PHP yoksa/anahtar yoksa
    dürüst "çevrimdışı" moduna düşer ve WhatsApp'a yönlendirir.
-   .wa-balon sağ altta durduğu için launcher SOL altta açılır.
-   Sesli giriş (mikrofon) ve sesli yanıt (hoparlör) İSTEĞE BAĞLI eklenir:
-   tarayıcı desteklemiyorsa düğme hiç görünmez; ağ/izin sorununda sessizce
-   normal yazılı sohbete düşer — hiçbir durumda arayüz kilitlenmez. */
+   Sesli giriş (mikrofon/STT) İSTEĞE BAĞLI eklenir: tarayıcı desteklemiyorsa
+   düğme hiç görünmez; ağ/izin sorununda sessizce normal yazılı sohbete
+   düşer. Sesli YANIT (TTS) kapalı — bot yalnız yazıyla cevap verir. */
 (function () {
   'use strict';
 
@@ -12,7 +11,6 @@
   var TEL = 'tel:+902126716968';
   var DEPO = 'torthermal_chat_v1';
   var ILK = 'Merhaba! 👋 Ben Tor Asistan. Daire ve villa tipleri, devre mülk süreci, wellness programları ya da lokasyon hakkında ne merak ediyorsun?';
-  var SES_DEPO = 'torthermal_sesli_v1';
   var MENU = [
     ['🏠', 'Daireler & Villalar', 'daireler.html'],
     ['📅', 'Dönem Bulucu', 'daire-donem-bulucu.html'],
@@ -47,7 +45,6 @@
       '</div>' +
       '<div class="tchat__msgs" id="tcMsgs"></div>' +
       '<div class="tchat__menu" id="tcMenu"><small>Hızlı bağlantılar</small><nav></nav></div>' +
-      '<label class="tchat__ses-ac" id="tcSesAc"><input type="checkbox" id="tcSesCheck"><span>🔊 Sesli yanıt</span></label>' +
       '<form class="tchat__bar" id="tcForm">' +
         '<button type="button" class="tchat__mik" id="tcMik" aria-label="Sesli yaz" hidden>' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M19 11a7 7 0 0 1-14 0M12 19v3"/></svg>' +
@@ -66,13 +63,6 @@
   var input = document.getElementById('tcInput');
   var durum = document.getElementById('tcDurum');
   var mikBtn = document.getElementById('tcMik');
-  var sesCheck = document.getElementById('tcSesCheck');
-
-  try { sesCheck.checked = localStorage.getItem(SES_DEPO) === '1'; } catch (e) {}
-  sesCheck.addEventListener('change', function () {
-    try { localStorage.setItem(SES_DEPO, sesCheck.checked ? '1' : '0'); } catch (e) {}
-  });
-  function sesliAcikMi() { return !!sesCheck.checked; }
 
   MENU.forEach(function (o) {
     var a = document.createElement('a');
@@ -112,30 +102,11 @@
     return t.replace(/\u0000(\d+)\u0000/g, function (m, i) { return linkler[+i]; });
   }
 
-  var SES_IKON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>';
-
-  /* rol==='bot' ve duzMetin verilmişse (gerçek AI yanıtı; daktilo/çevrimdışı
-     balonlarında değil) balonun ALTINA, kendi satırında, etiketli bir "Dinle"
-     düğmesi eklenir. Önceki sürümde ikon metnin İÇİNE, cümlenin sonuna
-     gömülüydü — çok küçük/soluk kaldığı ve fark edilmediği için (kullanıcı
-     geri bildirimi) ayrı, etiketli bir düğmeye çıkarıldı.
-     otoOku=true ise (üstteki "Sesli yanıt" açıksa, yalnız YENİ yanıtlarda —
-     geçmiş tekrar çizilirken asla) balon eklenir eklenmez otomatik çalınır. */
-  function balon(rol, html, duzMetin, otoOku) {
+  function balon(rol, html) {
     var d = document.createElement('div');
     d.className = 'tchat__msg tchat__msg--' + rol;
     d.innerHTML = html;
     msgs.appendChild(d);
-    if (rol === 'bot' && duzMetin) {
-      var satir = document.createElement('button');
-      satir.type = 'button';
-      satir.className = 'tchat__sesli';
-      satir.setAttribute('aria-label', 'Sesli dinle');
-      satir.innerHTML = SES_IKON + '<span>Dinle</span>';
-      msgs.appendChild(satir);
-      satir.addEventListener('click', function () { sesliOku(duzMetin, satir); });
-      if (otoOku) sesliOku(duzMetin, satir);
-    }
     msgs.scrollTop = msgs.scrollHeight;
     return d;
   }
@@ -173,7 +144,7 @@
   function ciz() {
     msgs.innerHTML = '';
     balon('bot', linkle(ILK));
-    tarih.forEach(function (m) { balon(m.role === 'assistant' ? 'bot' : 'me', linkle(m.content), m.role === 'assistant' ? m.content : null); });
+    tarih.forEach(function (m) { balon(m.role === 'assistant' ? 'bot' : 'me', linkle(m.content)); });
     menu.style.display = tarih.length ? 'none' : '';
   }
 
@@ -201,7 +172,7 @@
         if (j && j.ok && j.reply) {
           tarih.push({ role: 'assistant', content: j.reply });
           kaydet();
-          balon('bot', linkle(j.reply), j.reply, sesliAcikMi());
+          balon('bot', linkle(j.reply));
           if (j.daireler && j.daireler.length) daireKartlari(j.daireler);
         } else if (j && j.offline) {
           cevrimdisi();
@@ -211,34 +182,6 @@
       })
       .catch(function () { yaziyor(false); cevrimdisi(); })
       .finally(function () { mesgul = false; odakla(); });
-  }
-
-  /* ---------- sesli yanıt (TTS) — yalnız tıklanınca, hiçbir zaman otomatik ---------- */
-  var aktifSes = null;
-  function sesliOku(metin, btn) {
-    if (btn.classList.contains('tchat__sesli--mesgul')) return; // çift tıklama koruması
-    if (aktifSes) { try { aktifSes.pause(); } catch (e) {} aktifSes = null; }
-    btn.classList.add('tchat__sesli--mesgul');
-    var ctrl = window.AbortController ? new AbortController() : null;
-    var zamanAsimi = ctrl ? setTimeout(function () { ctrl.abort(); }, 20000) : null; // asla sonsuz beklemesin
-    fetch('chat-tts.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ metin: metin.slice(0, 600) }),
-      signal: ctrl ? ctrl.signal : undefined
-    })
-      .then(function (r) { if (zamanAsimi) clearTimeout(zamanAsimi); if (!r.ok) throw 0; return r.blob(); })
-      .then(function (b) {
-        var ses = new Audio(URL.createObjectURL(b));
-        aktifSes = ses;
-        btn.classList.add('tchat__sesli--calan');
-        function bitti() { btn.classList.remove('tchat__sesli--calan'); if (aktifSes === ses) aktifSes = null; }
-        ses.addEventListener('ended', bitti);
-        ses.addEventListener('error', bitti);
-        ses.play().catch(bitti);
-      })
-      .catch(function () {})
-      .finally(function () { btn.classList.remove('tchat__sesli--mesgul'); });
   }
 
   /* ---------- sesli giriş (STT) — tarayıcı desteklemiyorsa düğme hiç görünmez ---------- */
@@ -323,7 +266,6 @@
   });
   document.getElementById('tcClose').addEventListener('click', function () { panelDurum(false); });
   document.getElementById('tcSil').addEventListener('click', function () {
-    if (aktifSes) { try { aktifSes.pause(); } catch (e) {} aktifSes = null; }
     tarih = [];
     try { sessionStorage.removeItem(DEPO); } catch (e) {}
     ciz();
