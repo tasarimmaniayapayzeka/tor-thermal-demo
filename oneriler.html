@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOR|THERMAL — Dijital Pazarlama Stratejisi</title>
+<meta name="description" content="SEO, Meta Ads ve YouTube kanallarını kapsayan kurumsal dijital pazarlama stratejisi sunumu.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#14213A; --navy:#1B284B; --navy-deep:#0B1428;
+    --teal:#3E8FAE; --teal-soft:#D8E7EC; --teal-line:#BFD8E1;
+    --bronze:#A9754A; --bronze-soft:#EFDFCB;
+    --paper:#F7F4ED; --paper-raised:#FFFFFF;
+    --line:#E4DCC9; --muted:#5C6478;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --shadow:0 18px 46px rgba(11,20,40,.10);
+    --shadow-sm:0 8px 20px rgba(11,20,40,.08);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#EAEDF5; --navy:#26365E; --navy-deep:#070C18;
+      --teal:#6FB2CC; --teal-soft:#16283A; --teal-line:#274054;
+      --bronze:#C99A6C; --bronze-soft:#2E2113;
+      --paper:#0D1526; --paper-raised:#152036;
+      --line:rgba(255,255,255,.10); --muted:#93A0BE;
+      --shadow:0 18px 46px rgba(0,0,0,.45);
+      --shadow-sm:0 8px 20px rgba(0,0,0,.35);
+    }
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ animation:none !important; transition:none !important; } }
+  body{
+    margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans);
+    font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{ font-family:var(--serif); color:var(--ink); line-height:1.16; margin:0; text-wrap:balance; font-weight:400; }
+  p{ margin:0; }
+  a{ color:inherit; }
+  img,svg{ max-width:100%; }
+  .env{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .env{ padding:0 20px; } }
+
+  .geri{
+    display:inline-flex; align-items:center; gap:6px; color:#9FB0C4; font-size:13px;
+    text-decoration:none; position:relative; z-index:2;
+  }
+  .geri:hover{ color:#fff; }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--teal);
+  }
+  .eyebrow::before{ content:""; width:22px; height:1.5px; background:var(--teal); }
+
+  /* ---------------- KAPAK ---------------- */
+  .kapak{
+    background:
+      radial-gradient(1100px 520px at 82% -10%, rgba(62,143,174,.35), transparent 60%),
+      linear-gradient(175deg, var(--navy-deep), var(--navy) 78%);
+    color:#EAF1F5; padding:min(12vh,110px) 0 90px; position:relative; overflow:hidden;
+  }
+  .kapak::after{
+    content:""; position:absolute; right:-6%; bottom:-18%; width:56%; aspect-ratio:1;
+    border-radius:50%; border:1px solid rgba(255,255,255,.14);
+    background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.06), transparent 60%);
+  }
+  .kapak-ust{ display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:min(12vh,100px); position:relative; z-index:1; }
+  .marka{ display:flex; align-items:center; gap:12px; font-family:var(--serif); font-size:18px; letter-spacing:.02em; color:#fff; }
+  .marka b{ font-weight:700; }
+  .marka span{ color:#8FB7C8; font-weight:400; }
+  .marka-cizgi{ width:1px; height:22px; background:rgba(255,255,255,.25); }
+  .tarih-etiket{ font-size:12.5px; letter-spacing:.08em; color:#9FB0C4; }
+  @media (max-width:640px){ .tarih-etiket{ display:none; } }
+  .kapak h1{
+    color:#fff; font-size:clamp(32px,6vw,68px); max-width:14ch; margin:22px 0 26px; position:relative; z-index:1;
+  }
+  .kapak h1 em{ font-style:italic; color:var(--teal); }
+  .kapak-alt{ color:#C3D2DE; font-size:clamp(15.5px,1.7vw,19px); max-width:56ch; position:relative; z-index:1; }
+  .kapak-meta{
+    display:flex; gap:44px; flex-wrap:wrap; margin-top:56px; padding-top:26px;
+    border-top:1px solid rgba(255,255,255,.16); position:relative; z-index:1;
+  }
+  .kapak-meta div{ font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#8095AC; }
+  .kapak-meta strong{ display:block; font-family:var(--serif); font-size:17px; letter-spacing:0; text-transform:none; color:#fff; margin-top:6px; font-weight:400; }
+
+  /* ---------------- GENEL BÖLÜM ---------------- */
+  section.blok{ padding:100px 0; }
+  @media (max-width:780px){ section.blok{ padding:60px 0; } }
+  .blok-bas{ max-width:640px; margin-bottom:52px; }
+  @media (max-width:640px){ .blok-bas{ margin-bottom:36px; } }
+  .blok-bas h2{ font-size:clamp(26px,3.6vw,40px); margin-top:16px; }
+  .blok-bas p{ color:var(--muted); font-size:16.5px; margin-top:14px; max-width:60ch; }
+  .navy-zemin{ background:var(--navy); color:#EAF1F5; }
+  .navy-zemin .eyebrow{ color:var(--teal); }
+  .navy-zemin .eyebrow::before{ background:var(--teal); }
+  .navy-zemin h2{ color:#fff; }
+  .navy-zemin .blok-bas p{ color:#AEC0D2; }
+
+  /* ---------------- FIRSAT / İSTATİSTİK ---------------- */
+  .firsat-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start; }
+  @media (max-width:900px){ .firsat-grid{ grid-template-columns:1fr; gap:36px; } }
+  .firsat-metin p{ color:var(--ink); font-size:17px; line-height:1.85; }
+  .firsat-metin p + p{ margin-top:16px; }
+  .firsat-metin strong{ color:var(--navy); font-weight:700; }
+  .stat-liste{ display:flex; flex-direction:column; gap:0; }
+  .stat-satir{ display:flex; align-items:baseline; gap:18px; padding:18px 0; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  .stat-satir:first-child{ padding-top:0; }
+  .stat-sayi{ font-family:var(--serif); font-size:32px; color:var(--navy); font-variant-numeric:tabular-nums; flex:none; min-width:96px; }
+  .stat-etiket{ font-size:13.5px; color:var(--muted); line-height:1.5; }
+
+  /* ---------------- PERSONA ---------------- */
+  .persona-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  @media (max-width:900px){ .persona-grid{ grid-template-columns:1fr; } }
+  .persona{ background:var(--paper-raised); padding:30px 26px; }
+  .persona-ust{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
+  .persona-ad{ font-family:var(--serif); font-size:20px; }
+  .persona-yas{ font-size:12px; letter-spacing:.06em; color:var(--muted); background:var(--teal-soft); padding:5px 10px; border-radius:999px; border:1px solid var(--teal-line); white-space:nowrap; }
+  .persona-satir{ display:flex; gap:10px; font-size:13.8px; padding:10px 0; border-top:1px solid var(--line); flex-wrap:wrap; }
+  .persona-satir:first-of-type{ border-top:none; }
+  .persona-satir b{ flex:none; width:84px; color:var(--muted); font-weight:600; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; padding-top:2px; }
+  .persona-satir span{ color:var(--ink); flex:1; min-width:160px; }
+
+  /* ---------------- SACAYAK / PILLARS ---------------- */
+  .sacayak{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media (max-width:900px){ .sacayak{ grid-template-columns:1fr; } }
+  .direk{ background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius); padding:30px 26px; box-shadow:var(--shadow-sm); }
+  .direk-no{ font-family:var(--serif); font-size:14px; color:var(--bronze); letter-spacing:.06em; }
+  .direk h3{ font-size:20px; margin:14px 0 12px; }
+  .direk p{ color:var(--muted); font-size:14.8px; line-height:1.7; }
+  .direk-mesaj{ margin-top:18px; padding:14px 16px; background:var(--teal-soft); border-left:3px solid var(--teal); border-radius:6px; font-size:13.5px; font-style:italic; color:var(--ink); }
+
+  /* ---------------- KANAL BAŞLIĞI ---------------- */
+  .kanal-bas{ display:flex; align-items:baseline; gap:18px; margin-bottom:8px; flex-wrap:wrap; }
+  .kanal-harf{ font-family:var(--serif); font-size:15px; color:var(--bronze); border:1px solid var(--bronze-soft); border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; flex:none; }
+
+  /* ---------------- SEO: içerik sütunları ---------------- */
+  .pillar-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:8px; }
+  @media (max-width:980px){ .pillar-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .pillar-grid{ grid-template-columns:1fr; } }
+  .pillar{ border-top:3px solid var(--teal); padding-top:16px; }
+  .pillar h4{ font-family:var(--serif); font-size:17px; font-weight:400; margin-bottom:8px; }
+  .pillar ul{ margin:0; padding-left:18px; font-size:13.6px; color:var(--muted); line-height:1.85; }
+  .pillar ul li::marker{ color:var(--teal); }
+
+  .seo-alt{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:52px; }
+  @media (max-width:780px){ .seo-alt{ grid-template-columns:1fr; margin-top:36px; } }
+  .oncelik-kart{ background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius); padding:26px 26px; }
+  .oncelik-kart h4{ font-family:var(--serif); font-size:16.5px; font-weight:400; margin-bottom:12px; display:flex; align-items:center; gap:9px; }
+  .oncelik-kart h4 svg{ width:17px; height:17px; color:var(--teal); flex:none; }
+  .oncelik-kart p{ font-size:13.8px; color:var(--muted); line-height:1.75; }
+
+  /* ---------------- META: HUNI ---------------- */
+  .huni{ display:flex; flex-direction:column; gap:2px; margin-top:12px; }
+  .huni-asama{
+    display:grid; grid-template-columns:110px 1fr; gap:24px; align-items:center;
+    padding:24px 26px; background:var(--paper-raised); border:1px solid var(--line);
+  }
+  .huni-asama:first-child{ border-radius:var(--radius) var(--radius) 0 0; }
+  .huni-asama:last-child{ border-radius:0 0 var(--radius) var(--radius); }
+  .huni-asama + .huni-asama{ border-top:none; }
+  .huni-asama:nth-child(2){ margin:0 26px; width:calc(100% - 52px); }
+  .huni-asama:nth-child(3){ margin:0 52px; width:calc(100% - 104px); background:var(--navy); border-color:var(--navy); }
+  .huni-asama:nth-child(3) *{ color:#EAF1F5 !important; }
+  .huni-asama:nth-child(3) .huni-oran{ color:var(--teal) !important; }
+  @media (max-width:700px){
+    .huni-asama, .huni-asama:nth-child(2), .huni-asama:nth-child(3){ grid-template-columns:1fr; margin:0 !important; width:100% !important; gap:8px; text-align:left; padding:20px 20px; }
+    .huni-asama + .huni-asama{ margin-top:2px !important; }
+  }
+  .huni-etiket{ text-align:right; }
+  @media (max-width:700px){ .huni-etiket{ text-align:left; } }
+  .huni-oran{ font-family:var(--serif); font-size:24px; color:var(--navy); display:block; }
+  .huni-ad{ font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:4px; display:block; }
+  .huni-detay b{ display:block; font-size:15.5px; margin-bottom:6px; }
+  .huni-detay p{ font-size:13.6px; color:var(--muted); line-height:1.7; }
+  .huni-detay .rozet{ display:inline-block; font-size:11px; letter-spacing:.05em; text-transform:uppercase; background:var(--teal-soft); color:var(--teal); border:1px solid var(--teal-line); padding:3px 9px; border-radius:999px; margin-right:6px; margin-top:8px; }
+
+  /* ---------------- YOUTUBE: format matrisi ---------------- */
+  .format-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:8px; }
+  @media (max-width:900px){ .format-grid{ grid-template-columns:1fr; } }
+  .format-kart{ position:relative; padding:24px 22px 22px; border:1px solid var(--line); border-radius:var(--radius); background:var(--paper-raised); }
+  .format-tip{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--bronze); font-weight:700; }
+  .format-kart h4{ font-family:var(--serif); font-size:19px; font-weight:400; margin:10px 0 10px; }
+  .format-kart p{ font-size:13.8px; color:var(--muted); line-height:1.7; }
+  .format-sure{ margin-top:14px; font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; border-top:1px solid var(--line); padding-top:12px; }
+
+  /* ---------------- ROADMAP ---------------- */
+  .yol-haritasi{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; position:relative; margin-top:20px; }
+  @media (max-width:860px){ .yol-haritasi{ grid-template-columns:1fr; gap:34px; } }
+  .yol-haritasi::before{ content:""; position:absolute; top:26px; left:5%; right:5%; height:1px; background:rgba(255,255,255,.18); }
+  @media (max-width:860px){ .yol-haritasi::before{ display:none; } }
+  .faz{ position:relative; padding:0 24px; min-width:0; }
+  .faz:first-child{ padding-left:0; }
+  .faz:last-child{ padding-right:0; }
+  @media (max-width:860px){ .faz{ padding:0; } }
+  .faz-no{
+    width:52px; height:52px; border-radius:50%; background:var(--navy-deep); border:1px solid var(--teal);
+    color:var(--teal); font-family:var(--serif); font-size:19px; display:flex; align-items:center; justify-content:center;
+    position:relative; z-index:1; margin-bottom:22px;
+  }
+  .faz-sure{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:#8FA2BC; margin-bottom:10px; }
+  .faz h3{ color:#fff; font-size:22px; margin-bottom:14px; }
+  .faz ul{ margin:0; padding-left:18px; color:#C3D2DE; font-size:14px; line-height:1.9; }
+  .faz ul li::marker{ color:var(--teal); }
+
+  /* ---------------- KPI ---------------- */
+  .kpi-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-top:8px; }
+  @media (max-width:900px){ .kpi-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .kpi-grid{ grid-template-columns:1fr; } }
+  .kpi{ background:var(--paper-raised); padding:24px 20px; }
+  .kpi-kanal{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--bronze); font-weight:700; }
+  .kpi-baslik{ font-family:var(--serif); font-size:16px; margin:10px 0 14px; }
+  .kpi-metrik{ display:flex; align-items:baseline; gap:8px; margin-bottom:8px; flex-wrap:wrap; }
+  .kpi-metrik b{ font-family:var(--serif); font-size:15px; color:var(--navy); font-variant-numeric:tabular-nums; }
+  .kpi-metrik span{ font-size:12px; color:var(--muted); }
+  .kpi-bar{ height:5px; border-radius:3px; background:var(--teal-soft); margin-top:14px; overflow:hidden; }
+  .kpi-bar i{ display:block; height:100%; background:var(--teal); border-radius:3px; }
+
+  /* ---------------- MEVZUAT ---------------- */
+  .mevzuat{ background:var(--bronze-soft); border:1px solid var(--bronze); border-radius:var(--radius); padding:30px 32px; display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:flex-start; }
+  @media (max-width:640px){ .mevzuat{ grid-template-columns:1fr; padding:24px 20px; } }
+  .mevzuat svg{ width:26px; height:26px; color:var(--bronze); flex:none; }
+  .mevzuat h4{ font-family:var(--serif); font-size:18px; margin-bottom:10px; font-weight:400; }
+  .mevzuat ul{ margin:10px 0 0; padding-left:18px; font-size:14px; line-height:1.85; color:var(--ink); }
+  .mevzuat ul li::marker{ color:var(--bronze); }
+
+  footer.kapanis{ background:var(--navy-deep); color:#7F92AC; padding:40px 0; font-size:12.5px; }
+  .kapanis .env{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .kapanis strong{ color:#C3D2DE; font-weight:400; font-family:var(--serif); font-size:14px; }
+</style>
+</head>
+<body>
+
+<section class="kapak">
+  <div class="env">
+    <div class="kapak-ust">
+      <a class="geri" href="index.html">‹ Siteye Dön</a>
+      <div class="marka"><b>TOR</b><span>|</span><b>THERMAL</b></div>
+      <div class="marka-cizgi"></div>
+      <div class="tarih-etiket">AĞUSTOS 2026 · STRATEJİ ÖNERİSİ</div>
+    </div>
+    <div class="eyebrow">Dijital Pazarlama</div>
+    <h1>Suyun sessizliğini<br><em>doğru kitleye</em> duyurmak.</h1>
+    <p class="kapak-alt">SEO, Meta Ads ve YouTube kanallarını tek bir konumlandırma etrafında birleştiren, üç fazlı bir dijital pazarlama stratejisi. Longevity & Wellness Resort'un İstanbul'a 60 dakika mesafedeki fırsatını, doğru kitleye doğru kanaldan taşımak için.</p>
+    <div class="kapak-meta">
+      <div>Kapsam<strong>SEO · Meta Ads · YouTube</strong></div>
+      <div>Ufuk<strong>12 Aylık Yol Haritası</strong></div>
+      <div>Konumlandırma<strong>Longevity & Tapulu Güvence</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="env">
+    <div class="blok-bas">
+      <div class="eyebrow">Fırsat</div>
+      <h2>Neden şimdi, neden bu kategori</h2>
+    </div>
+    <div class="firsat-grid">
+      <div class="firsat-metin">
+        <p>TOR|THERMAL, Türkiye'de henüz doldurulmamış bir kesişimde duruyor: <strong>tapulu gayrimenkul güvencesi</strong> ile <strong>longevity/wellness yaşam tarzı</strong>'nın birleştiği tek yer. Rakiplerin çoğu ya klasik bir devre mülk (güvenli ama sıradan), ya da bir termal otel (deneyimli ama mülkiyetsiz) sunuyor. Bu ikisini aynı anda, İstanbul'a bir feribot mesafesinde sunan marka sayısı azdır.</p>
+        <p>Dijital pazarlamanın işi bu boşluğu doldurmak değil — <strong>bu boşluğu görünür kılmak</strong>. Kategori arayan biri "termal otel" ya da "devre mülk" arıyor; onu "longevity yaşam tarzı" kavramıyla da yakalayabilmek, hem daha az rekabetli hem de markanın gerçek farkını taşıyan bir arama alanı açıyor.</p>
+      </div>
+      <div class="stat-liste">
+        <div class="stat-satir"><span class="stat-sayi">60dk</span><span class="stat-etiket">Yenikapı'dan kapıya — İstanbul içi pek çok mesafeden kısa</span></div>
+        <div class="stat-satir"><span class="stat-sayi">332+82</span><span class="stat-etiket">Konut ve villa — kategori içinde ciddi bir envanter derinliği</span></div>
+        <div class="stat-satir"><span class="stat-sayi">13</span><span class="stat-etiket">Wellness programı — içerik pazarlaması için doğal bir maden</span></div>
+        <div class="stat-satir"><span class="stat-sayi">6</span><span class="stat-etiket">Yayında blog yazısı — SEO temeli zaten atılmış durumda</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" style="background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="env">
+    <div class="blok-bas">
+      <div class="eyebrow">Hedef Kitle</div>
+      <h2>Üç farklı motivasyon, tek marka</h2>
+      <p>Her kanal aynı kitleye aynı şekilde konuşmamalı. Üç ana persona, mesaj ve kanal önceliğini birlikte belirliyor.</p>
+    </div>
+    <div class="persona-grid">
+      <div class="persona">
+        <div class="persona-ust"><span class="persona-ad">Well-Aging Meraklısı</span><span class="persona-yas">50–65</span></div>
+        <div class="persona-satir"><b>Motivasyon</b><span>Emekliliğe yaklaşırken sağlıklı, huzurlu bir yaşam alanı arayışı</span></div>
+        <div class="persona-satir"><b>Tetikleyici</b><span>"Longevity", "well-aging" gibi global wellness trendlerini takip ediyor</span></div>
+        <div class="persona-satir"><b>Öncelikli Kanal</b><span>SEO içerik + YouTube uzman röportajları</span></div>
+      </div>
+      <div class="persona">
+        <div class="persona-ust"><span class="persona-ad">Hafta Sonu Yatırımcısı</span><span class="persona-yas">38–55</span></div>
+        <div class="persona-satir"><b>Motivasyon</b><span>Ailesiyle düzenli kaçabileceği, aynı zamanda değer koruyan bir mülk</span></div>
+        <div class="persona-satir"><b>Tetikleyici</b><span>İstanbul trafiğinden kısa sürede kaçış + miras bırakılabilir mülkiyet</span></div>
+        <div class="persona-satir"><b>Öncelikli Kanal</b><span>Meta Ads (carousel + retargeting) + YouTube resort turu</span></div>
+      </div>
+      <div class="persona">
+        <div class="persona-ust"><span class="persona-ad">Temkinli Araştırmacı</span><span class="persona-yas">45–60</span></div>
+        <div class="persona-satir"><b>Motivasyon</b><span>Devre mülk kararından önce güven ve şeffaflık arıyor</span></div>
+        <div class="persona-satir"><b>Tetikleyici</b><span>"Devre mülk dolandırıcılık", "tapulu mu" gibi güven odaklı aramalar</span></div>
+        <div class="persona-satir"><b>Öncelikli Kanal</b><span>SEO (Açık Defter, güvence içerikleri) + Meta retargeting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="env">
+    <div class="blok-bas">
+      <div class="eyebrow">Konumlandırma</div>
+      <h2>Her kanalda tekrarlanacak üç mesaj</h2>
+      <p>Kanal ne olursa olsun (arama sonucu, reklam metni, video senaryosu) mesaj bu üç sacayağından birine oturmalı.</p>
+    </div>
+    <div class="sacayak">
+      <div class="direk">
+        <div class="direk-no">01</div>
+        <h3>Tapulu Güvence</h3>
+        <p>"Devre mülk" kelimesinin taşıdığı güvensizliği doğrudan karşılayan mesaj: tapu sicilinde kayıtlı, satılabilir, miras bırakılabilir bir hak — üyelik değil.</p>
+        <div class="direk-mesaj">"Kiraladığınız bir hafta değil, adınıza kayıtlı bir mülk."</div>
+      </div>
+      <div class="direk">
+        <div class="direk-no">02</div>
+        <h3>Longevity Yaşam Tarzı</h3>
+        <p>Termal suyu bir "tedavi" değil, bir yaşam ritmi olarak konumlandırır. Sağlık iddiası taşımaz; destekleyici, sürdürülebilir bir alışkanlık dili kullanır.</p>
+        <div class="direk-mesaj">"Her yıl aynı haftada, bedeninize aynı iyiliği hatırlatan bir yer."</div>
+      </div>
+      <div class="direk">
+        <div class="direk-no">03</div>
+        <h3>60 Dakikalık Mesafe</h3>
+        <p>Bir tatil köyü kararının en büyük engeli mesafedir. Bu, kategoriye göre nadir bulunan bir avantaj — her mesajda somut sürelerle hatırlatılmalı.</p>
+        <div class="direk-mesaj">"İstanbul trafiğinde geçirdiğiniz süreden kısa bir yolculuk."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" style="background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="env">
+    <div class="kanal-bas"><span class="kanal-harf">A</span><div class="eyebrow" style="margin:0;">Organik Arama</div></div>
+    <div class="blok-bas" style="margin-top:14px;">
+      <h2>SEO Stratejisi</h2>
+      <p>Site zaten teknik olarak hazır: hızlı, şema işaretlemeli, 6 yazılık bir blog temeli var. Öncelik artık hacim ve yerel görünürlük.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h4>Güven & Eğitim</h4>
+        <ul><li>Devre mülk vs devre tatil farkı</li><li>Satın almadan önce 7 soru</li><li>Cayma hakkı, aidat şeffaflığı</li></ul>
+      </div>
+      <div class="pillar">
+        <h4>Destinasyon</h4>
+        <ul><li>Armutlu / Yalova bölge içerikleri</li><li>Termal suyun coğrafi hikâyesi</li><li>Kayak sonrası termal rotaları</li></ul>
+      </div>
+      <div class="pillar">
+        <h4>Longevity</h4>
+        <ul><li>Well-aging kavramı içerikleri</li><li>13 program tanıtım yazıları</li><li>Uzman görüşü destekli makaleler</li></ul>
+      </div>
+      <div class="pillar">
+        <h4>Mülkiyet & Yatırım</h4>
+        <ul><li>Miras bırakılabilirlik açısı</li><li>Dönem takvimi/haftalık kullanım</li><li>Aile için örnek gün rehberleri</li></ul>
+      </div>
+    </div>
+    <div class="seo-alt">
+      <div class="oncelik-kart">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Yerel SEO</h4>
+        <p>Fiziksel bir destinasyon olduğu için Google İşletme Profili kritik: "Yalova termal devre mülk", "Armutlu tatil köyü" gibi yerel+niş aramalar için harita paketi görünürlüğü, fotoğraf/yorum yönetimi ve konum sayfası optimizasyonu öncelik.</p>
+      </div>
+      <div class="oncelik-kart">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5z"/></svg>Yapısal İşaretleme</h4>
+        <p>Mevcut Resort şeması, blog yazılarına Article, daire tiplerine Product/Offer şemasıyla genişletilmeli. Sık sorulan sorular (FAQPage) özellikle "devre mülk mü devre tatil mi" içeriğinde zengin sonuç fırsatı taşıyor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="env">
+    <div class="kanal-bas"><span class="kanal-harf">B</span><div class="eyebrow" style="margin:0;">Meta Ads</div></div>
+    <div class="blok-bas" style="margin-top:14px;">
+      <h2>Facebook & Instagram Hunisi</h2>
+      <p>Üç aşamalı, birbirini besleyen bir yapı: geniş kitleye tanıtım, ziyaretçiye hatırlatma, kararlıya teklif.</p>
+    </div>
+    <div class="huni">
+      <div class="huni-asama">
+        <div class="huni-etiket"><span class="huni-oran">TOFU</span><span class="huni-ad">Farkındalık</span></div>
+        <div class="huni-detay">
+          <b>Geniş kitleye longevity konseptini tanıtmak</b>
+          <p>Kısa video/Reels — resort atmosferi, termal su, "her yıl aynı haftanız" fikri. Hedefleme: İstanbul + çevre iller, 38–65, lüks emlak/wellness/seyahat ilgi alanları.</p>
+          <span class="rozet">Video / Reels</span><span class="rozet">Geniş hedefleme</span>
+        </div>
+      </div>
+      <div class="huni-asama">
+        <div class="huni-etiket"><span class="huni-oran">MOFU</span><span class="huni-ad">Değerlendirme</span></div>
+        <div class="huni-detay">
+          <b>Siteyi ziyaret edenlere somut bilgi</b>
+          <p>Carousel — 8 daire/villa tipi tek reklamda; devre mülk/devre tatil farkını anlatan kısa video. Hedefleme: site ziyaretçisi + blog okuyucusu retargeting.</p>
+          <span class="rozet">Carousel</span><span class="rozet">Retargeting</span>
+        </div>
+      </div>
+      <div class="huni-asama">
+        <div class="huni-detay">
+          <b>Deneyim Günü'ne davet</b>
+          <p>Lead Ads formu — WhatsApp veya telefonla doğrudan bağlantı; "baskısız ziyaret" vurgusu güven eşiğini düşürür. Hedefleme: MOFU'da etkileşim veren, form açan.</p>
+          <span class="rozet">Lead Ads</span><span class="rozet">WhatsApp CTA</span>
+        </div>
+        <div class="huni-etiket"><span class="huni-oran">BOFU</span><span class="huni-ad">Dönüşüm</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" style="background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="env">
+    <div class="kanal-bas"><span class="kanal-harf">C</span><div class="eyebrow" style="margin:0;">YouTube</div></div>
+    <div class="blok-bas" style="margin-top:14px;">
+      <h2>Video İçerik & Reklam</h2>
+      <p>Prodüksiyonu zaten planlanan tanıtım filmi ("Suyun Yolculuğu") bu stratejinin çekirdeği; etrafına üç format daha eklenir.</p>
+    </div>
+    <div class="format-grid">
+      <div class="format-kart">
+        <span class="format-tip">Marka Filmi</span>
+        <h4>Suyun Yolculuğu</h4>
+        <p>Hazırlanan 90 saniyelik prodüksiyon paketi ana kanal videosu ve TrueView reklamı olarak kullanılır; 30sn ve dikey türevleri Meta/YouTube Shorts'a uyarlanır.</p>
+        <div class="format-sure">90sn ana film · 30sn + dikey türevler</div>
+      </div>
+      <div class="format-kart">
+        <span class="format-tip">Yerinde Tur</span>
+        <h4>Resort Walkthrough</h4>
+        <p>Daire tipleri, termal alan ve sosyal alanları tek çekimde gezdiren "yürüyerek keşif" videoları — arama niyeti yüksek, dönüşüme en yakın format.</p>
+        <div class="format-sure">3–5 dk · tip başına 1 video</div>
+      </div>
+      <div class="format-kart">
+        <span class="format-tip">Eğitici İçerik</span>
+        <h4>Longevity Rehberi</h4>
+        <p>Uzman görüşü destekli, "well-aging nedir" tarzı kısa eğitim videoları — tedavi iddiası taşımadan, arama trafiğini SEO içerikleriyle aynı niyete bağlar.</p>
+        <div class="format-sure">2–3 dk · aylık seri</div>
+      </div>
+    </div>
+    <div class="oncelik-kart" style="margin-top:28px;">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0z"/><path d="M12 8v4l3 3"/></svg>Reklam yaklaşımı</h4>
+      <p>Atlanabilir in-stream reklamlar (TrueView) — ilgi alanı hedeflemesinde lüks emlak ve termal turizm, custom intent hedeflemesinde "devre mülk", "termal otel" gibi arama niyeti yüksek terimler kullanılır. YouTube aynı zamanda ikinci büyük arama motoru olduğu için video başlık/açıklamaları SEO anahtar kelimeleriyle aynı sözlükten beslenmeli.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blok navy-zemin">
+  <div class="env">
+    <div class="blok-bas">
+      <div class="eyebrow">Uygulama</div>
+      <h2>12 Aylık Yol Haritası</h2>
+      <p>Üç faz — her biri bir öncekinin verisiyle beslenir, sıfırdan başlamaz.</p>
+    </div>
+    <div class="yol-haritasi">
+      <div class="faz">
+        <div class="faz-no">1</div>
+        <div class="faz-sure">0–3 Ay</div>
+        <h3>Temel</h3>
+        <ul>
+          <li>Google İşletme Profili + yerel SEO temizliği</li>
+          <li>Şema işaretlemesi genişletme (Article, Offer)</li>
+          <li>İlk TOFU Meta kampanyası + marka filmi yayını</li>
+          <li>YouTube kanalı kurulumu, ilk 3 walkthrough</li>
+        </ul>
+      </div>
+      <div class="faz">
+        <div class="faz-no">2</div>
+        <div class="faz-sure">3–6 Ay</div>
+        <h3>Hacim</h3>
+        <ul>
+          <li>Blog'da haftalık içerik ritmine geçiş</li>
+          <li>MOFU retargeting kampanyaları devreye alma</li>
+          <li>Longevity eğitim video serisi başlatma</li>
+          <li>İlk performans verisiyle hedefleme kalibrasyonu</li>
+        </ul>
+      </div>
+      <div class="faz">
+        <div class="faz-no">3</div>
+        <div class="faz-sure">6–12 Ay</div>
+        <h3>Ölçekleme</h3>
+        <ul>
+          <li>En iyi performans gösteren kreatiflere bütçe kaydırma</li>
+          <li>Lead Ads + WhatsApp hunisini otomasyonla bağlama</li>
+          <li>Yurt dışı Türk kitlesi için yaz sezonu kampanyası</li>
+          <li>Yıllık performans değerlendirmesi ve strateji revizyonu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="env">
+    <div class="blok-bas">
+      <div class="eyebrow">Ölçüm</div>
+      <h2>İzlenecek Göstergeler</h2>
+      <p>Kesin sayılar kampanya verisiyle netleşir; aşağıdakiler her kanal için başlangıç hedef aralıklarıdır.</p>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-kanal">SEO</div>
+        <div class="kpi-baslik">Organik Trafik</div>
+        <div class="kpi-metrik"><b>+%40–60</b><span>6 ayda büyüme hedefi</span></div>
+        <div class="kpi-bar"><i style="width:55%"></i></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-kanal">SEO</div>
+        <div class="kpi-baslik">Yerel Görünürlük</div>
+        <div class="kpi-metrik"><b>İlk 3</b><span>harita paketi hedef sırası</span></div>
+        <div class="kpi-bar"><i style="width:70%"></i></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-kanal">META</div>
+        <div class="kpi-baslik">Lead Maliyeti</div>
+        <div class="kpi-metrik"><b>Azalan</b><span>faz 1→3 arası hedef trend</span></div>
+        <div class="kpi-bar"><i style="width:45%"></i></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-kanal">META</div>
+        <div class="kpi-baslik">Deneyim Günü</div>
+        <div class="kpi-metrik"><b>Aylık</b><span>rezervasyon sayısı artışı</span></div>
+        <div class="kpi-bar"><i style="width:60%"></i></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-kanal">YOUTUBE</div>
+        <div class="kpi-baslik">İzlenme Tamamlama</div>
+        <div class="kpi-metrik"><b>Yüksek</b><span>walkthrough formatı önceliği</span></div>
+        <div class="kpi-bar"><i style="width:50%"></i></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-kanal">YOUTUBE</div>
+        <div class="kpi-baslik">Marka Arama Hacmi</div>
+        <div class="kpi-metrik"><b>Artan</b><span>"TOR Thermal" doğrudan aramalar</span></div>
+        <div class="kpi-bar"><i style="width:40%"></i></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-kanal">GENEL</div>
+        <div class="kpi-baslik">Kanal Karışımı</div>
+        <div class="kpi-metrik"><b>Dengeli</b><span>tek kanala bağımlılığı azaltma</span></div>
+        <div class="kpi-bar"><i style="width:65%"></i></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-kanal">GENEL</div>
+        <div class="kpi-baslik">İçerik Ritmi</div>
+        <div class="kpi-metrik"><b>Haftalık</b><span>faz 2 itibarıyla blog yayını</span></div>
+        <div class="kpi-bar"><i style="width:75%"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" style="padding-top:0;">
+  <div class="env">
+    <div class="mevzuat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/><path d="M12 8v5M12 16.5v.01"/></svg>
+      <div>
+        <h4>Mevzuat & Ton Notu</h4>
+        <p style="font-size:14px; color:var(--muted);">Sağlık Tanıtım Yönetmeliği (2025) ve dürüst pazarlama ilkeleri, tüm kanallarda geçerli:</p>
+        <ul>
+          <li>Termal su/wellness içerikleri "tedavi eder, iyileştirir" değil, "destekler, katkı sağlar" dilinde kalır.</li>
+          <li>Reklam ve içeriklerde rakip marka adı anılmaz, kıyaslama yapılmaz.</li>
+          <li>Kesin fiyat/müsaitlik iddiası taşınmaz — güncel bilgi için Deneyim Günü'ne yönlendirilir.</li>
+          <li>Sağlıkla ilgili her içerikte "hekiminize danışın" notu bulunur.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="kapanis">
+  <div class="env">
+    <div><strong>TOR|THERMAL</strong> — Dijital Pazarlama Stratejisi</div>
+    <div>Hazırlayan: TasarımMania · Ağustos 2026</div>
+  </div>
+</footer>
+</body>
+</html>
