@@ -87,21 +87,6 @@
   .olanak-ort, .olanak-ort p, .olanak-kart .kart-medya img{ transition:none; }
 }
 
-/* Fotoğrafsız metin kartları (at biniciliği, golf, spor kulübü, organik pazar) */
-.metin-kart{
-  background:linear-gradient(150deg, var(--lacivert), #26355E);
-  padding:26px 26px 24px;
-}
-.metin-kart h3{ color:#fff; }
-.metin-kart p{ color:#B9C6DA; font-size:14.3px; margin:0 0 16px; }
-.metin-kart .kart-link{ color:var(--turkuaz-acik); }
-.metin-ust{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }
-.metin-ust img{
-  width:54px; height:54px; border-radius:12px; object-fit:cover; flex:0 0 auto;
-  box-shadow:0 6px 16px rgba(0,0,0,.35);
-}
-.metin-ust h3{ margin:0; font-size:19px; }
-
 /* Kategori başlığındaki adet rozeti */
 .adet-rozet{
   display:inline-block; vertical-align:6px; margin-left:14px;
@@ -313,29 +298,41 @@
           <a class="kart-link" href="cocuk-kulubu.html">Çocuk Kulübü</a>
         </div>
       </article>
-      <article class="kart metin-kart">
-        <div class="metin-ust">
-          <img src="assets/img/icon/ikon-dambil.jpg" alt="" loading="lazy">
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/spor-kulubu-tesis.jpg" alt="Deniz manzaralı, geniş camlı çatı spor kulübü" loading="lazy">
+          <span class="olanak-etiket">Spor</span>
+          <div class="olanak-ort"><p>Kardiyo ve kuvvet alanları, deniz manzarasına açılan geniş camlarla.</p></div>
+        </div>
+        <div class="kart-icerik">
           <h3>Spor Kulübü</h3>
+          <p>Kardiyo ve kuvvet alanları, stüdyo dersleri ve su içi egzersiz seansları. Hareket planınız, longevity programınızın uzman ekibiyle birlikte kurgulanır.</p>
+          <a class="kart-link" href="wellness.html">Longevity Metodu</a>
         </div>
-        <p>Kardiyo ve kuvvet alanları, stüdyo dersleri ve su içi egzersiz seansları. Hareket planınız, longevity programınızın uzman ekibiyle birlikte kurgulanır.</p>
-        <a class="kart-link" href="wellness.html">Longevity Metodu</a>
       </article>
-      <article class="kart metin-kart">
-        <div class="metin-ust">
-          <img src="assets/img/icon/ikon-at.jpg" alt="" loading="lazy">
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/at-biniciligi.jpg" alt="Orman patikasında eyerli iki at" loading="lazy">
+          <span class="olanak-etiket">Macera</span>
+          <div class="olanak-ort"><p>Çam ormanında işaretli rotalar; eğitmen eşliğinde ilk biniş turları.</p></div>
+        </div>
+        <div class="kart-icerik">
           <h3>At Biniciliği</h3>
+          <p>Orman içi binicilik rotaları ve ilk kez binecekler için tanışma turları. Tüm binişler deneyimli eğitmen eşliğinde, koruyucu ekipmanla yapılır.</p>
+          <a class="kart-link" href="kesif-rotalari.html">Keşif Rotaları</a>
         </div>
-        <p>Orman içi binicilik rotaları ve ilk kez binecekler için tanışma turları. Tüm binişler deneyimli eğitmen eşliğinde, koruyucu ekipmanla yapılır.</p>
-        <a class="kart-link" href="kesif-rotalari.html">Keşif Rotaları</a>
       </article>
-      <article class="kart metin-kart">
-        <div class="metin-ust">
-          <img src="assets/img/icon/ikon-golf.jpg" alt="" loading="lazy">
-          <h3>Golf &amp; Konser Alanı</h3>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/golf-konser-alani.jpg" alt="Deniz manzaralı golf sahası, gün batımında" loading="lazy">
+          <span class="olanak-etiket">Spor</span>
+          <div class="olanak-ort"><p>Gündüz vuruş pratiği, yaz akşamları açık hava konser sahnesi.</p></div>
         </div>
-        <p>Vuruş pratiği için düzenlenmiş golf alanı, yaz akşamlarında açık hava konserlerine dönüşen geniş yeşil sahne. Tek alan, iki hayat.</p>
-        <a class="kart-link" href="kesfet.html">Vaziyet Planında Gör</a>
+        <div class="kart-icerik">
+          <h3>Golf &amp; Konser Alanı</h3>
+          <p>Vuruş pratiği için düzenlenmiş golf alanı, yaz akşamlarında açık hava konserlerine dönüşen geniş yeşil sahne. Tek alan, iki hayat.</p>
+          <a class="kart-link" href="kesfet.html">Vaziyet Planında Gör</a>
+        </div>
       </article>
     </div>
   </div>
@@ -509,13 +506,17 @@
           <p>Günlük ihtiyaçtan hediyelik ürüne, yerleşkeden çıkmadan her şey elinizin altında. Akşam yürüyüşlerinin de rotası.</p>
         </div>
       </article>
-      <article class="kart metin-kart">
-        <div class="metin-ust">
-          <img src="assets/img/icon/ikon-sepet.jpg" alt="" loading="lazy">
-          <h3>Organik Pazar</h3>
+      <article class="kart olanak-kart">
+        <div class="kart-medya">
+          <img src="assets/img/ai/organik-pazar.jpg" alt="Çam ormanı kenarında hafta sonu organik pazar tezgâhları" loading="lazy">
+          <span class="olanak-etiket">Çarşı</span>
+          <div class="olanak-ort"><p>Bölge üreticisinin taze sebze, meyve, bal ve zeytinyağı tezgâhları.</p></div>
         </div>
-        <p>Hafta sonları kurulan tezgâhlarda bölge üreticisinin sebzesi, meyvesi, balı ve zeytinyağı. Üreticiyle tanışarak alışveriş etme ayrıcalığı.</p>
-        <a class="kart-link" href="resort-yasami.html">Haftalık Ritim</a>
+        <div class="kart-icerik">
+          <h3>Organik Pazar</h3>
+          <p>Hafta sonları kurulan tezgâhlarda bölge üreticisinin sebzesi, meyvesi, balı ve zeytinyağı. Üreticiyle tanışarak alışveriş etme ayrıcalığı.</p>
+          <a class="kart-link" href="resort-yasami.html">Haftalık Ritim</a>
+        </div>
       </article>
     </div>
   </div>
