@@ -9,7 +9,8 @@
 <meta id="ogBaslik" property="og:title" content="Blog — TOR Thermal">
 <meta id="ogAciklama" property="og:description" content="TOR Thermal blog yazısı.">
 <meta property="og:type" content="article">
-<meta id="ogGorsel" property="og:image" content="assets/img/blog/devre-mulk-devre-tatil.jpg">
+<meta property="og:url" content="https://torthermal.tr/blog-yazi.html">
+<meta id="ogGorsel" property="og:image" content="https://torthermal.tr/assets/img/blog/devre-mulk-devre-tatil.jpg">
 <meta property="og:locale" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B284B'/%3E%3Cpath d='M20 22h24M32 22v22' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M22 50c3-4 7-4 10 0s7 4 10 0' stroke='%233E8FAE' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -150,7 +151,7 @@
   document.getElementById('metaAciklama').setAttribute('content', y.ozet);
   document.getElementById('ogBaslik').setAttribute('content', y.baslik);
   document.getElementById('ogAciklama').setAttribute('content', y.ozet);
-  document.getElementById('ogGorsel').setAttribute('content', y.hero);
+  document.getElementById('ogGorsel').setAttribute('content', 'https://torthermal.tr/' + y.hero);
   document.getElementById('yEtiket').textContent = y.kategori;
   document.getElementById('yMeta').textContent = tarihYaz(y.tarih) + ' · ' + y.okumaSuresi + ' okuma';
   document.getElementById('yBaslik').textContent = y.baslik;
