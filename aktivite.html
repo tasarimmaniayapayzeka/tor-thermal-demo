@@ -198,11 +198,13 @@
   for (var i = 0; i < LISTE.length; i++) { if (LISTE[i].id === id) { a = LISTE[i]; break; } }
 
   function detay(t) {
-    /* Doğada "rota", tesis içi sporda "kademe", sosyal alanda "bölüm" doğru karşılık. */
+    /* Doğada "rota", tesis içi sporda "kademe", sosyal alanda "bölüm",
+       çocuk atölyelerinde "yaş grubu" doğru karşılık. */
     var SOZLUK = {
       doga:   { ek: "Rotalar, Program ve Hazırlık",  aciklama: "Rota seçenekleri, süre ve zorluk bilgileri, hazırlık listesi ve güvenlik notları." },
       spor:   { ek: "Kademeler, Program ve Hazırlık", aciklama: "Kademe seçenekleri, seans süresi ve seviye bilgileri, hazırlık listesi ve güvenlik notları." },
-      sosyal: { ek: "Bölümler, Saatler ve Bilgiler",  aciklama: "Alanın bölümleri, açılış saatleri ve kapasite bilgileri, yanınıza almanız gerekenler ve güvenlik notları." }
+      sosyal: { ek: "Bölümler, Saatler ve Bilgiler",  aciklama: "Alanın bölümleri, açılış saatleri ve kapasite bilgileri, yanınıza almanız gerekenler ve güvenlik notları." },
+      cocuk:  { ek: "Yaş Grupları, Program ve Güvenlik", aciklama: "Yaş gruplarına göre program seçenekleri, seans süresi ve kontenjan bilgileri, hazırlık listesi ve güvenlik notları." }
     };
     var sz = SOZLUK[t.grup] || SOZLUK.doga;
     document.title = t.ad + " — " + sz.ek + " | TOR Thermal";
@@ -399,7 +401,8 @@
     var GRUPLAR = [
       { anahtar: "doga",   gozkasi: "Açık Havada",   baslik: "Doğa ve Macera Aktiviteleri" },
       { anahtar: "spor",   gozkasi: "Aktif Yaşam",   baslik: "Spor ve Fitness" },
-      { anahtar: "sosyal", gozkasi: "Bir Arada Olmak", baslik: "Sosyal Alanlar" }
+      { anahtar: "sosyal", gozkasi: "Bir Arada Olmak", baslik: "Sosyal Alanlar" },
+      { anahtar: "cocuk",  gozkasi: "Küçük Misafirler", baslik: "Çocuklara Yönelik Aktiviteler" }
     ];
     function kart(d, k) {
       return '<a class="dizin-kart gorun" style="transition-delay:' + (k % 4) * 60 + 'ms" href="aktivite.html?id=' + encodeURIComponent(d.id) + '">' +

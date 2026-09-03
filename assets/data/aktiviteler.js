@@ -2586,5 +2586,1237 @@ grup: "doga",
       "golf-konser",
       "seyir-teraslari"
     ]
+  },
+
+  /* ---------- Çocuklara Yönelik Aktiviteler (grup: cocuk) ---------- */
+  {
+    "id": "interaktif-egitim",
+    "ad": "İnteraktif Eğitim Atölyeleri",
+    "grup": "cocuk",
+    "ustyazi": "Bilim, Sanat ve Teknoloji Atölyeleri",
+    "kisa": "Bilim, sanat ve teknolojiyle öğrenmeyi eğlenceli kılar.",
+    "hero": "assets/img/ai/uzay-kulubu.jpg",
+    "ozet": "Deney masaları, mikroskop tezgâhı ve uzay temalı bir keşif köşesiyle kurulmuş atölye salonu: çocuklar burada anlatılanı dinlemek yerine kendi elleriyle dener, ölçer ve bulduklarını anlatır.",
+    "paragraflar": [
+      "Atölye salonu, çocuk kanadının güneş alan cephesinde, oyun odasıyla kütüphane arasındaki geniş bölümdedir. Ortada silinebilir yüzeyli dört deney masası, kenarda mikroskopların ve büyüteçlerin durduğu alçak bir tezgâh vardır. Salonun ucu uzay ve gökyüzü temalı bir keşif köşesine ayrılmıştır: duvarda gezegen kartları, tezgâhta dönen bir Dünya-Ay modeli, raflarda takımyıldız kartonları ve küçük bir yıldız haritası bulunur. Malzemeler açık raflarda, çocuk boyunda durur; her kutunun üzerinde resimli bir etiket vardır. Zemin yıkanabilir, masaların altı boya ve tutkal için hazırdır.",
+      "Her oturum tek bir soruyla başlar: suyun içine damlatılan boya neden dağılır, bir yaprağın altında ne var, ay neden her gece aynı görünmez. Eğitmen önce soruyu masaya bırakır, sonra çocuklar küçük ekipler hâlinde denemeye geçer. Malzeme dağıtımı ve ölçüm kısımları eğitmen ve yardımcı eğitmen gözetiminde yapılır; kesici, ısıtıcı ya da elektrikli hiçbir ekipmanı çocuklar tek başına kullanmaz. Denemenin sonunda her ekip bulduğunu kendi cümleleriyle anlatır; doğru cevaptan çok, denenen yolun anlatılması istenir. Yapılan iş bir karta yazılır ve panoya asılır.",
+      "Hava kararmaya yakın keşif köşesinin perdeleri çekilir ve gökyüzü kartları, yıldız haritası, gezegen modelleri öne çıkar; bu bölüm çocukların akşamki gökyüzü gözlemine hazırlandığı kısımdır. Ondan birkaç saat önce, öğleden sonra kuşağında salon sesini yükseltir: boya, kâğıt ve makas kısımları o saate denk gelir, masalar arasında ekipler birbirinin işine bakmaya gider. Günün ilk oturumu ise sakin ve gözlem ağırlıklı geçer; mikroskop tezgâhı en çok o saatte kullanılır. Gün sonunda masalar birlikte toplanır, panodaki kartlar ertesi güne kalır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Deney Salonunda",
+      "deneyimBaslik": "Masaya Bırakılan Soru",
+      "rotaGozkasi": "Atölye Kolları",
+      "rotaBaslik": "Aynı Salon, Değişen Ekipman",
+      "rotaGiris": "Atölye üç yaş kademesine ayrılmıştır: keşif köşesinde dokunarak ilerleyen küçük yaş kolu, deney masalarında ölçüm ve gözlem yapan orta yaş kolu ve uzay temasıyla kendi düzeneğini kuran büyük yaş kolu. Üçü de aynı salonda toplanır; fark, ekipmanın karmaşıklığında, oturum süresinde ve çocuğun ne kadarını kendi başına yaptığındadır.",
+      "rotaNot": "Buradaki rakamlar temsilîdir: oturum süresi, kontenjan ve yaş aralığı sezona, katılım sayısına ve atölyenin haftalık konu programına göre değişebilir.",
+      "galeriGozkasi": "Deney Masasından",
+      "galeriBaslik": "Mercek Altında Kalanlar",
+      "ctaGozkasi": "Atölye Programı",
+      "ctaBaslik": "Haftanın Konusunu Birlikte Seçin",
+      "ctaMetin": "Haftalık konu takvimini, çocuğunuzun yaşına uygun kolu ve gökyüzü köşesinin akşam gözlem saatiyle birleştiği oturumları resepsiyonla birlikte planlayabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Kanat ve kat",
+        "deger": "Çocuk kanadı, oyun odası ile kütüphane arasındaki atölye salonu"
+      },
+      {
+        "etiket": "Oturum saatleri",
+        "deger": "10.00-12.00, 14.00-16.00 ve 17.00-18.30 kuşakları (temsilî)"
+      },
+      {
+        "etiket": "Yaş aralığı",
+        "deger": "5-12 yaş; 5-6 yaş oturumlarında ebeveyn salonda kalabilir"
+      },
+      {
+        "etiket": "Katılım kaydı",
+        "deger": "Kontenjan sınırlı olduğu için bir gün önceden kayıt"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Çocuk kanadı, atölye salonu"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Oturum başına 8-12 çocuk"
+      },
+      {
+        "etiket": "Gözetim",
+        "deger": "Bir eğitmen ve bir yardımcı eğitmen"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Yıl boyu; kapalı atölye salonunda"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Küçük Kâşifler Kolu",
+        "sure": "45-55 dakika",
+        "mesafe": "Keşif köşesi, 10 çocuk",
+        "zorluk": "5-6 yaş",
+        "aciklama": "Dokunarak ilerleyen bir oturumdur: renk karışımları, su ve yağ denemeleri, büyüteçle yaprak ve tüy incelemesi. Malzemeler önceden ölçülüp kaplara ayrılmış hâlde gelir, çocuk yalnızca birleştirir ve gözlemler. Ebeveyn dilerse salonda kalabilir; oturum, herkesin kendi kartına bir çizim yapmasıyla biter."
+      },
+      {
+        "ad": "Deney Masası Kolu",
+        "sure": "60-75 dakika",
+        "mesafe": "Atölye salonu, 12 çocuk",
+        "zorluk": "7-9 yaş",
+        "aciklama": "Dörder kişilik ekipler kurulur ve her ekip aynı soruyu farklı bir yoldan dener. Mikroskop tezgâhında hazır lamlarla gözlem yapılır, basit ölçümler deftere yazılır, sonuçlar masalar arasında karşılaştırılır. Eğitmen ölçüm ve dağıtım kısımlarında masada durur; oturum, her ekibin bulduğunu iki cümleyle anlatmasıyla kapanır."
+      },
+      {
+        "ad": "Uzay ve Mucitlik Kolu",
+        "sure": "80-90 dakika",
+        "mesafe": "Gökyüzü köşesi ve maker tezgâhı, 8 çocuk",
+        "zorluk": "10-12 yaş",
+        "aciklama": "Çocuklar kendi düzeneklerini kurar: karton roket, basit devreli gece lambası, takımyıldız kartı ya da Ay evrelerini gösteren dönen model. Uzay köşesinin haritaları ve gezegen kartları çalışmanın kaynağıdır; akşam gökyüzü gözlemine katılacak çocuklar burada ne arayacağını önceden not eder. Yapılan iş oturumun sonunda panoya asılır ve hafta boyunca sergide kalır."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/interaktif-egitim-deney-masasi.jpg",
+        "ad": "Deney masasında ekip çalışması"
+      },
+      {
+        "src": "assets/img/ai/aktivite/interaktif-egitim-mikroskop-kesfi.jpg",
+        "ad": "Mikroskop tezgâhında gözlem"
+      },
+      {
+        "src": "assets/img/ai/aktivite/interaktif-egitim-uzay-kosesi.jpg",
+        "ad": "Uzay ve gökyüzü keşif köşesi"
+      },
+      {
+        "src": "assets/img/ai/aktivite/interaktif-egitim-sunum-ani.jpg",
+        "ad": "Bulunanın anlatıldığı kapanış"
+      }
+    ],
+    "hazirlik": [
+      "Boyanabilecek, rahat bir kıyafet; önlük atölyede verilir",
+      "Değişiklik ihtimaline karşı yedek bir tişört",
+      "Küçük bir su matarası",
+      "Varsa çocuğunuzun kendi defteri ya da kalem kutusu",
+      "Alerji, ilaç kullanımı veya dikkat edilmesi gereken bir durum varsa kayıt sırasında görevliye bildiriniz"
+    ],
+    "saglayanlar": [
+      "Bir eğitmen ve bir yardımcı eğitmen eşliğinde yaş grubuna göre kurgulanmış oturum programı",
+      "Önlük, koruyucu gözlük, deney kapları, mikroskop ve hazır gözlem lamları",
+      "Boya, kâğıt, karton, tutkal ve maker tezgâhı malzemeleri; künt uçlu çocuk makasları",
+      "Uzay köşesi materyalleri, yıldız haritası, gezegen kartları ve haftalık konu takvimi"
+    ],
+    "guvenlik": "Atölyede kesici, ısıtıcı ve elektrikli ekipmanlar yalnızca eğitmen tarafından kullanılır; çocuklara verilen malzemeler yaş grubuna göre seçilir, makaslar künt uçludur ve deney maddeleri gıda güvenliği ölçütlerine uygun, tahriş etmeyen malzemelerden oluşur. Her oturumda bir eğitmen ve bir yardımcı eğitmen salonda bulunur, çocuklar salondan tek başına ayrılmaz ve teslim alma yalnızca kayıtta belirtilen refakatçiye yapılır. Atölye öğrenmeyi ve merakı destekleyen bir etkinliktir; herhangi bir eğitsel ya da gelişimsel değerlendirme, tanı veya terapi hizmeti değildir. Çocuğunuzun alerjisi, kronik bir rahatsızlığı ya da hekim uyarısı varsa katılımdan önce hekiminize danışınız ve durumu görevliye bildiriniz. Bu sayfadaki süreler, saatler, kontenjanlar ve yaş aralıkları temsilîdir; resort işleyişine ve haftalık konu programına göre değişebilir.",
+    "ilgili": [
+      "robotik-kodlama",
+      "muzik-odasi",
+      "gokyuzu-gozlem"
+    ]
+  },
+  {
+    "id": "robotik-kodlama",
+    "ad": "Robotik Kodlama",
+    "grup": "cocuk",
+    "ustyazi": "Robot Kurma ve Kodlama Salonu",
+    "kisa": "Robot tasarlayıp kodlayarak problem çözme becerileri kazanın.",
+    "hero": "assets/img/ai/robotik-atolye.jpg",
+    "ozet": "Çocukların motor ve sensör kitleriyle kendi robotlarını kurduğu, ekranda blok blok kod yazıp bu kodu masadaki parkurda denediği bir atölye.",
+    "paragraflar": [
+      "Uzun ahşap masaların üzerinde dokunmatik ekranlı bilgisayarlar, yanlarında tekerleri, dişlileri, mesafe ve çizgi sensörleri ayrı ayrı kutulanmış kitler durur. Salon, çocuk kulübünün bitişiğindeki çalışma bölümüdür. Ortadaki zemin, üzerine bant çizgileri ve engelleri yerleştirilebilen düz bir test parkuruna ayrılmıştır. Duvarda, o hafta üzerinde çalışılan görevin adımlarını gösteren büyük bir pano asılıdır. Işık masa üstlerine yönlendirilmiştir; parçalar dağıldığında bile küçük vidalar görünür kalır.",
+      "Seans, panodaki görevin birlikte okunmasıyla başlar: robotun ne yapması isteniyor, hangi parça bu işe yarar. Çocuklar ikişerli çalışır; biri gövdeyi kurarken diğeri motor ve sensör bağlantılarını yapar, sonra rolleri değiştirirler. Kod ekranda blok sürükleyerek yazılır: ileri git, engeli gördüğünde dur, çizgiyi takip et. Yazılan kod robota gönderilir ve doğrudan parkurda denenir; robot durması gereken yerde durmazsa masaya dönülür, blok tek tek gözden geçirilir. Eğitmen cevabı söylemez, hangi bloğun ne yaptığını sorarak ilerletir.",
+      "Haftanın son seansında masalar kenara çekilir, parkur ortada bırakılır ve küçük bir tur düzenlenir: sırayla robotlar bırakılır, süre tutulur, biten takım kendi kodunu anlatır. Tur sonunda dereceden çok, en çok kez denenip düzeltilmiş kod konuşulur. Sıradan günlerde salonun temposu saate göre değişir: erken seanslarda parçalar ayrılır ve gövde kurulur, öğleden sonra parkur kalabalıklaşır, iki üç robot aynı anda çizgide dener ve salonda kısa bir uğultu oluşur. Her seansın sonunda kutular kapatılır, parçalar bölmelerine geri sayılarak yerleştirilir."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Çalışma Salonunda",
+      "deneyimBaslik": "Robot Neden Orada Durmadı?",
+      "rotaGozkasi": "Kademeli Kulvarlar",
+      "rotaBaslik": "Bloktan Metne Uzanan Kulvarlar",
+      "rotaGiris": "Atölye üç yaş kademesinde ilerler. Küçük yaş grubu hazır gövdelerle ve büyük bloklarla başlar, orta grup kendi robotunu kurup sensör okumalarıyla çalışır, büyük grup blok arayüzünden metin tabanlı koda geçer. Kademeler birbirinin üzerine binmez; bir çocuk yaşına uygun kulvarda başlar, hazır olduğunda eğitmenin önerisiyle bir üst kulvara geçer.",
+      "rotaNot": "Sayfadaki rakamlar temsilî verilmiştir; kademe süresi, masa kontenjanı ve yaş aralığı dönem programına, katılımcı sayısına ve grubun ilerleyişine göre değişebilir.",
+      "galeriGozkasi": "Parkur Kenarından",
+      "galeriBaslik": "Ekranda Yazılan, Masada Denenen",
+      "ctaGozkasi": "Seans Düzeni",
+      "ctaBaslik": "Kademeye Uygun Seansı Belirleyin",
+      "ctaMetin": "Yaş kademesine uygun seansı, haftalık gün ve saat düzenini ve turun yapıldığı kapanış seansını çocuk kulübü resepsiyonuyla birlikte planlayabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Çocuk kulübü yanı, çalışma salonu ve zemin test parkuru"
+      },
+      {
+        "etiket": "Yaş aralığı",
+        "deger": "7-15 yaş; üç ayrı kademede yürütülür"
+      },
+      {
+        "etiket": "Seans düzeni",
+        "deger": "Haftada üç gün, sabah ve öğleden sonra iki kuşak (temsilî)"
+      },
+      {
+        "etiket": "Kayıt",
+        "deger": "Kontenjan sınırlı; bir gün önceden çocuk kulübüne bildirim"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Alan",
+        "deger": "Çalışma salonu, 8 çalışma masası"
+      },
+      {
+        "etiket": "Kontenjan",
+        "deger": "Seans başına 12 çocuk, 2 eğitmen"
+      },
+      {
+        "etiket": "Süre",
+        "deger": "60-90 dakika, kademeye göre"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Dört mevsim, iç mekânda"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "İlk Bloklar",
+        "sure": "60 dakika",
+        "mesafe": "Çalışma salonu, 12 çocuk",
+        "zorluk": "7-9 yaş",
+        "aciklama": "Gövdesi hazır gelen küçük robotlarla başlanır; çocuklar tekerlek, motor ve tek bir mesafe sensörünü kendileri takar. Kod ekranda büyük renkli bloklarla kurulur: ileri git, dön, dur. Parkurda düz bir hat ve tek bir engel vardır, böylece her deneme kısa sürede sonuç verir. Eğitmen bu kademede masa başında sürekli bulunur."
+      },
+      {
+        "ad": "Sensörlü Robot Kurma",
+        "sure": "75 dakika",
+        "mesafe": "Çalışma salonu ve test parkuru, 10 çocuk",
+        "zorluk": "10-12 yaş",
+        "aciklama": "Robot kutudan tamamen boş çıkar; gövde, dişli aktarımı ve kablo düzeni çocuklara aittir. Çizgi izleme ve mesafe sensörünün okuduğu değerler ekranda izlenir, koşullu bloklarla karar verdirilir. Parkura viraj ve dar geçiş eklenir; takımlar denemelerini not defterine yazar. İkili çalışma sürer, roller seans ortasında değişir."
+      },
+      {
+        "ad": "Metin Tabanlı Kodlama",
+        "sure": "90 dakika",
+        "mesafe": "Çalışma salonu, 8 çocuk",
+        "zorluk": "13-15 yaş",
+        "aciklama": "Blok arayüzü bırakılır, aynı davranışlar metin tabanlı kodla yazılır; değişken, döngü ve fonksiyon bu kademede girer. Sensör verisi sayıyla okunur ve kod içinde eşik değerleri denenerek ayarlanır. Kapanış seansındaki parkur turunda süre tutulur, her takım kendi çözümünü kısaca anlatır. Eğitmen yönlendirir, çözümü yazmaz."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/robotik-kodlama-kodlama-ekrani.jpg",
+        "ad": "Ekranda blokların sıralanması"
+      },
+      {
+        "src": "assets/img/ai/aktivite/robotik-kodlama-robot-montaji.jpg",
+        "ad": "Motor ve sensör montajı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/robotik-kodlama-parkur-testi.jpg",
+        "ad": "Parkurda ilk deneme turu"
+      },
+      {
+        "src": "assets/img/ai/aktivite/robotik-kodlama-takim-calismasi.jpg",
+        "ad": "İkili takım çalışması"
+      }
+    ],
+    "hazirlik": [
+      "Kirlenmeyi dert etmeyeceğiniz rahat kıyafet ve kapalı ayakkabı",
+      "Not almak için küçük bir defter ve kalem",
+      "Uzun saçlar için toka; dişli ve tekerlek çalışmasında toplanması gerekir",
+      "Su matarası; seans arasında salonda içilir",
+      "Varsa gözlük ve alerji bilgisi notu, kayıt sırasında eğitmene iletilir"
+    ],
+    "saglayanlar": [
+      "Robot kitleri, motorlar, mesafe ve çizgi sensörleri, yedek parça kutuları",
+      "Kodlama ekranları ve kademeye göre blok ya da metin tabanlı çalışma ortamı",
+      "İki eğitmen eşliği; küçük yaş grubunda masa başında sürekli gözetim",
+      "Zemin test parkuru, engel setleri ve kapanış turunda süre tutma düzeni"
+    ],
+    "guvenlik": "Küçük parçalar, vidalar ve piller yalnızca eğitmen tarafından dağıtılır ve seans sonunda sayılarak kutulara geri konur; hiçbir çocuk salonda gözetimsiz kalmaz. Robotlar düşük gerilimli pil paketleriyle çalışır, şarj ve kablo bağlantıları çocuklara bırakılmaz; dönen dişli ve tekerleklerde parmak sıkışmasını önlemek için uzun saçların toplanması ve bol kollu kıyafetlerden kaçınılması istenir. Ekran karşısında geçen süre kademeye göre sınırlıdır ve her seansın ortasında salon dışında kısa bir ara verilir. Bu atölye bir eğitim ve deneyim etkinliğidir; hiçbir gelişimsel değerlendirme ya da yönlendirme iddiası taşımaz, çocuğunuzla ilgili bir sağlık durumu varsa hekiminize danışınız ve kayıt sırasında görevliye bildiriniz. Sayfadaki süreler, yaş aralıkları ve kontenjanlar temsilî değerlerdir; dönem programına ve grubun ilerleyişine göre farklılaşabilir.",
+    "ilgili": [
+      "interaktif-egitim",
+      "seramik-atolyesi",
+      "spor-kulubu"
+    ]
+  },
+  {
+    "id": "paintball",
+    "ad": "Paintball",
+    "grup": "cocuk",
+    "ustyazi": "Düşük Etkili Takım Oyunu",
+    "kisa": "Güvenlik ekipmanlarıyla takım ruhunu geliştiren heyecanlı oyunlar.",
+    "hero": "assets/img/ai/paintball.jpg",
+    "ozet": "Çam ormanının kenarında, doğal engellerle bölünmüş açık bir arena. Oyunlar tam donanımlı ekipmanla, gözetmen hakem eşliğinde ve yaş kademesine göre ayarlanmış düşük basınçlı işaretleyicilerle oynanır.",
+    "paragraflar": [
+      "Arena, çam sırasının hemen kenarında, ağaçların ve yükselti farkının alanı kendiliğinden böldüğü açık bir düzlükte kuruludur. Toprak zemine ahşap paletler, saman balyaları ve bel hizasında alçak siperler yerleştirilmiş; kenarlar yüksek koruma filesiyle çevrilmiştir. Sahanın iki ucunda birer takım üssü, ortada tek bir bayrak direği bulunur. Girişte üstü kapalı bir ekipman kabini vardır: maskeler, yelekler ve işaretleyiciler burada boy sırasına göre dizilidir. Kabinin yanındaki tahta pano üzerinde saha kuralları büyük harflerle asılıdır.",
+      "Her oyun, sahaya çıkmadan önce ekipman kabininin önünde yapılan kısa bir brifingle başlar. Gözetmen hakem kuralları anlatır, çocuklara maske, boyun koruması ve yelek takılır; maskenin oyun alanı içinde hiçbir koşulda çıkarılmayacağı ayrıca tekrar edilir. İşaretleyicilerin çıkış hızı sahaya girmeden önce kronografla ölçülür ve yaş kademesine göre düşük değerde sabitlenir; on üç yaşına kadar olan gruplarda yumuşak kapsüllü, düşük etkili varyant kullanılır. Namlu tıpaları yalnızca hakem düdüğünden sonra çıkarılır, oyun bitiminde ilk iş olarak geri takılır. Takımlar üsse çekilir, hakem sayar ve düdükle oyunu başlatır; her turda saha içinde en az bir hakem oyuncularla birlikte hareket eder.",
+      "İkindiden sonra hava yumuşar ve saha en kalabalık hâlini alır; orta ve büyük yaş kademeleri arka arkaya turlara girer. Günün ilk kuşağında zemin serindir ve toz azdır, çam gölgesi sahanın yarısını kaplar; küçük yaş grupları çoğunlukla o saatte oynar. Öğleye doğru gölge çekilir, oyunlar kısalır ve aralar uzar; su molası artık zorunlu bir duraktır. Günün sonunda oyuncular kabinin önünde toplanır, ekipmanı teslim eder ve sayım tahtası silinir. Boya izleri ertesi sabaha kadar toprakta durur; siperlerin arkası günün en çok konuşulan yeri olarak kalır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Arenada",
+      "deneyimBaslik": "Hakem Düdüğüyle Başlayan On Dakika",
+      "rotaGozkasi": "Saha Düzenleri",
+      "rotaBaslik": "Donanım ve Saha Kademeye Göre Değişir",
+      "rotaGiris": "Arena tek bir alan olsa da oyun düzeni yaş kademesine göre değişir: kullanılan işaretleyici tipi, sahanın açılan bölümü, tur süresi ve takım büyüklüğü her kademede ayrı ayarlanır. Küçük yaş grubunda düşük etkili donanım ve dar bir saha bölümü kullanılır; kademe yükseldikçe alan genişler ve tur sayısı artar. Kademeler ayrı saatlerde oynatılır, farklı yaş grupları aynı turda karşı karşıya getirilmez.",
+      "rotaNot": "Tur süresi, oyuncu sayısı ve yaş aralığı temsilî değerlerdir; grup büyüklüğüne, hava durumuna ve o gün sahada görevli gözetmen sayısına göre değişebilir.",
+      "galeriGozkasi": "Sahadan",
+      "galeriBaslik": "Ekipman Kabininden Siperlerin Arasına",
+      "ctaGozkasi": "Arena Saatleri",
+      "ctaBaslik": "Grubunuz İçin Bir Saat Bloğu Açtırın",
+      "ctaMetin": "Çocuğunuzun yaş kademesine uygun oyun saatini, grup kontenjanını ve düşük etkili donanım talebinizi resepsiyonla birlikte planlayabilirsiniz. Doğum günü ve grup organizasyonları için ayrı saat blokları açılabilir."
+    },
+    "bakista": [
+      {
+        "etiket": "Konum",
+        "deger": "Çam ormanı kenarı, doğal engelli açık arena"
+      },
+      {
+        "etiket": "Açılış saatleri",
+        "deger": "10.00-18.00, yaş kademeleri ayrı saat bloklarında (temsilî)"
+      },
+      {
+        "etiket": "Kimler katılabilir",
+        "deger": "8 yaş ve üzeri; 8-13 yaş yalnızca düşük etkili donanımla"
+      },
+      {
+        "etiket": "Kayıt",
+        "deger": "Önceden kayıt gerekir; veli onay formu girişte imzalanır"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Açık arena ve üstü kapalı ekipman kabini"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Turda 16 oyuncu, sahada en az iki gözetmen hakem"
+      },
+      {
+        "etiket": "Açılış",
+        "deger": "10.00-18.00, hava koşullarına bağlı"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "İlkbahardan sonbahara; yağışta kapalı"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Düşük Etkili Tanışma Oyunu",
+        "sure": "45-55 dakika",
+        "mesafe": "Arenanın küçük bölümü, 10 çocuk",
+        "zorluk": "8-10 yaş",
+        "aciklama": "Sahanın file ile ayrılmış dar bölümünde, yumuşak kapsüllü düşük etkili donanımla oynanır. Turlar kısadır ve her turun başında hakem kuralları yeniden hatırlatır. Amaç bayrak kapmak değil, hedefe isabet ve sipere doğru geçiş alışkanlığı kazanmaktır; oyun süresince iki hakem çocuklarla birlikte sahada durur."
+      },
+      {
+        "ad": "Orta Kademe Bayrak Oyunu",
+        "sure": "60-75 dakika",
+        "mesafe": "Arenanın orta bölümü, 12 çocuk",
+        "zorluk": "11-13 yaş",
+        "aciklama": "İki takım kendi üssünden başlar ve ortadaki tek bayrağı almaya çalışır. Bu kademede de yumuşak kapsüllü düşük etkili donanım kullanılır; işaretleyici çıkış hızı kronografla ölçülüp düşük değerde sabitlenir ve tur arası su molası zorunludur. Takım içi görev dağılımı brifingte konuşulur; isabet alan oyuncu elini kaldırıp sahadan çıkar ve bir sonraki turda geri döner."
+      },
+      {
+        "ad": "Büyük Yaş Turnuva Formatı",
+        "sure": "90 dakika",
+        "mesafe": "Tam arena, 16 oyuncu",
+        "zorluk": "14-16 yaş",
+        "aciklama": "Sahanın tamamı açılır ve turlar puanlı bir sıralamayla arka arkaya oynanır. Her tur arasında takımlar üs değiştirir, hakem puanları sayım tahtasına yazar. Donanım yine düşük basınçlıdır; kural ihlalinde oyuncu bir tur dışarıda bekler. Format grup organizasyonlarına ve doğum günlerine uyarlanabilir."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/paintball-ekipman-donanimi.jpg",
+        "ad": "Maske, boyun koruması ve yelek dağıtımı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/paintball-arena-siperleri.jpg",
+        "ad": "Doğal engelli arena ve ahşap siperler"
+      },
+      {
+        "src": "assets/img/ai/aktivite/paintball-takim-brifingi.jpg",
+        "ad": "Oyun öncesi takım brifingi"
+      },
+      {
+        "src": "assets/img/ai/aktivite/paintball-oyun-ani.jpg",
+        "ad": "Siper arkasında bir oyun anı"
+      }
+    ],
+    "hazirlik": [
+      "Kirlenebilecek uzun kollu üst ve uzun pantolon; boya izi kalabilir",
+      "Kapalı burunlu, tabanı tutan spor ayakkabı",
+      "Yedek kıyafet ve ıslak mendil için küçük bir çanta",
+      "Gözlük kullanan çocuklar için maske altına giren ince çerçeve",
+      "Yanınıza su alınız; veli onay formu için kimlik bilgisi hazır bulunsun"
+    ],
+    "saglayanlar": [
+      "Tam yüz maskesi, boyun koruması ve gövde yeleği; her kullanımdan sonra temizlenir",
+      "Yaş kademesine göre ayarlanmış, kronografla ölçülen düşük basınçlı işaretleyici ve namlu tıpası",
+      "Saha içinde oyuncularla birlikte hareket eden gözetmen hakem ve brifing eğitmeni",
+      "Su istasyonu, gölgeli bekleme alanı ve ilk yardım çantası bulunan görevli noktası"
+    ],
+    "guvenlik": "Maske, oyun alanı içinde hiçbir koşulda çıkarılmaz; namlu tıpası yalnızca hakem düdüğünden sonra sökülür ve tur biter bitmez geri takılır. İşaretleyicilerin çıkış hızı her turdan önce kronografla ölçülerek yaş kademesine uygun düşük değerde sabitlenir, 8-13 yaş gruplarında yumuşak kapsüllü düşük etkili donanım kullanılır ve yakın mesafeden atış yapılmaz. Katılım 8 yaş ve üzeri içindir; 18 yaş altı için veli onay formu girişte imzalanır. Çocuğunuzun astım, göz, işitme veya kas-iskelet sistemiyle ilgili bir durumu varsa ya da hekiminin yoğun fiziksel aktivite konusunda bir uyarısı varsa katılımdan önce hekiminize danışınız ve durumu brifing sırasında gözetmene bildiriniz. Buradaki tur süreleri, kontenjanlar, yaş aralıkları ve saatler temsilîdir; hava koşulları, grup büyüklüğü ve o gün sahadaki gözetmen sayısı bunları değiştirebilir.",
+    "ilgili": [
+      "aqua-park",
+      "glamping",
+      "macera-parkuru"
+    ]
+  },
+  {
+    "id": "aqua-park",
+    "ad": "Aqua Park",
+    "grup": "cocuk",
+    "ustyazi": "Çocuklara Özel Su Oyun Alanı",
+    "kisa": "Cankurtaran gözetiminde işleyen, kaydıraklı ve sığ havuzlu ayrı bir çocuk su alanı.",
+    "hero": "assets/img/ai/morf-aquapark.jpg",
+    "ozet": "Kaydırak hattı, sığ çocuk havuzu ve su oyun kalesinden oluşan, yalnızca çocuklar için kurulmuş ayrı bir su alanı. Termal havuzlardan bağımsız bir bölgede, cankurtaran gözetiminde işletilir.",
+    "paragraflar": [
+      "Alan üç parçadan oluşur: birbirine paralel inen kaydırak hattı, kenarı yumuşak eğimle inen sığ çocuk havuzu ve ortada duran çok katlı su oyun kalesi. Bu üçlü, sosyal alanın deniz tarafındaki çim düzlükte, termal havuz bölgesinden ayrı bir kotta kurulmuştur. Zemin boydan boya kaymayı azaltan dokulu kaplamayla döşenmiştir; havuz kenarları keskin köşe bırakmayacak biçimde yuvarlatılmıştır. Suyu termal kaynaktan gelmez; kendi devresinde ısıtılır ve gün boyu filtrelenerek dolaştırılır. Çevresinde gölgelikli oturma grupları ve ebeveynlerin alanın tamamını görebildiği bir bekleme terası bulunur.",
+      "Girişte her çocuğa renkli bir bileklik takılır; bileklik rengi çocuğun hangi bölümü kullanabileceğini gösterir. Kaydırak hattının başında bir boy çıtası vardır ve çıtanın altında kalan çocuklar bu hatta yönlendirilmez, sığ havuza ya da kaleye geçer. Sığ alan, derin bölümden hem şamandıra hattı hem de fiziksel bir bordürle ayrılmıştır; iki alan arasında geçiş yalnızca görevlinin bulunduğu kapıdan yapılır. Kaydırak tepesinde bir görevli sırayı yönetir, aşağıda ikinci bir görevli çıkış havuzunu boşaltır; kule üstündeki cankurtaran alanın tamamını görür. Yüzme bilmeyen çocuklar için can yeleği ve kolluk girişte verilir, kullanımı sığ alanda zorunludur.",
+      "Öğleye doğru kaydırak hattında sıra uzar, kalenin üstündeki devrilen kova düzenli aralıklarla boşalır ve alanın sesi yükselir. Öğleden sonra iki kısa ara verilir: bu aralarda havuz boşaltılır, su ölçümü yapılır ve zemin yıkanır. Akşamüstü güneş çam ormanının arkasına indiğinde ışık kaydırakların üzerinden yatık gelir, kalabalık seyrelir ve alan yeniden küçük yaş grubuna kalır. Günün en sessiz aralığı ise açılıştan hemen sonrasıdır; sığ havuzu o kuşakta çoğunlukla en küçükler kullanır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Aqua Parkta",
+      "deneyimBaslik": "Kuleden Bakınca Alanın Tamamı",
+      "rotaGozkasi": "Boy ve Yaş Ayrımı",
+      "rotaBaslik": "Bileklik Rengi Hangi Bölümü Açar?",
+      "rotaGiris": "Alan üç yaş kademesine ayrılır ve girişte takılan bilekliğin rengi çocuğun hangi bölümde başlayacağını gösterir: en küçükler sığ havuzda, orta yaş grubu su oyun kalesinde, büyükler kaydırak hattında. Bileklik verilirken yaşın yanında boy çıtası ölçüsüne de bakılır; iki ölçü birden tutmuyorsa çocuk bir alt bölüme yönlendirilir. Aynı ailedeki farklı yaştaki çocuklar bitişik bölümlerde oynayabilir, böylece ebeveyn tek bir noktadan hepsini görebilir.",
+      "rotaNot": "Bu karttaki süreler, kontenjanlar ve yaş aralıkları temsilîdir; mevsime, hava koşullarına ve günün doluluğuna göre değişebilir. Bölüm ayrımında son karar girişteki görevliye aittir.",
+      "galeriGozkasi": "Alandan",
+      "galeriBaslik": "Kovanın Devrildiği Anlar",
+      "ctaGozkasi": "Kuşak Düzeni",
+      "ctaBaslik": "Havuz Gününü Kuşaklara Göre Planlayın",
+      "ctaMetin": "Yaş kademelerine ayrılmış kuşakları, bakım aralarının saatlerini ve alanın en sakin olduğu zaman dilimlerini resepsiyonla birlikte planlayabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Konum",
+        "deger": "Sosyal alanın deniz tarafı, termal havuz bölgesinden ayrı kot"
+      },
+      {
+        "etiket": "Açılış saatleri",
+        "deger": "10.00-18.00, iki bakım arasıyla (temsilî)"
+      },
+      {
+        "etiket": "Kimler kullanabilir",
+        "deger": "3-13 yaş; kaydırak hattı için boy çıtası koşulu"
+      },
+      {
+        "etiket": "Gözetim",
+        "deger": "Kule cankurtaranı ve bölüm görevlileri, açık olduğu her saat"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Çim düzlük, açık alan"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Aynı anda 60 çocuk"
+      },
+      {
+        "etiket": "Su",
+        "deger": "Termal değil; ısıtmalı ve sürekli filtreli devre"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Haziran-Eylül arası açık"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Sığ Havuz Kuşağı",
+        "sure": "45-60 dakika",
+        "mesafe": "Sığ çocuk havuzu, aynı anda 20 çocuk",
+        "zorluk": "3-5 yaş",
+        "aciklama": "En küçükler için ayrılmış, dibi kademeli yükselen sığ havuzda geçer. Su derinliği bu bölümde diz hizasını aşmaz; alan derin bölümden bordür ve şamandıra hattıyla ayrılmıştır. Ebeveyn refakati zorunludur ve kolluk ile can yeleği girişte verilir. Bölümde sürekli bir görevli bulunur, çocuk sayısı kontenjanı aşarsa giriş sıraya alınır."
+      },
+      {
+        "ad": "Su Oyun Kalesi Turu",
+        "sure": "60-75 dakika",
+        "mesafe": "Su oyun kalesi ve çevresi, aynı anda 24 çocuk",
+        "zorluk": "6-9 yaş",
+        "aciklama": "Çok katlı kalede fıskiyeler, su tabancaları, kısa tüneller ve üstteki devrilen kova bulunur. Basamaklar ve platformlar kaymaz kaplamalıdır, korkuluklar çocuk boyuna göre alçaltılmıştır. Grup, bir animasyon görevlisi eşliğinde oyun turlarına katılır; kalenin altındaki su birikintisi ayak bileği derinliğindedir. Yüzme bilmeyen çocuklar bu bölümü de kullanabilir."
+      },
+      {
+        "ad": "Kaydırak Hattı Programı",
+        "sure": "75-90 dakika",
+        "mesafe": "Kaydırak hattı, aynı anda 16 çocuk",
+        "zorluk": "10-13 yaş",
+        "aciklama": "Paralel inen kaydıraklarda, tepede sıra yöneten bir görevli ve altta çıkış havuzunu boşaltan ikinci bir görevli eşliğinde ilerler. Hatta girmek için boy çıtasını geçmek ve yüzme biliyor olmak gerekir. İniş tek tek yapılır; bir sonraki çocuk, öndeki çıkış havuzundan ayrılmadan bırakılmaz. Çıkış havuzunun derinliği ayakta durulabilecek ölçüdedir ve kenarında tutunma barı vardır."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/aqua-park-kaydirak-hatti.jpg",
+        "ad": "Paralel inen kaydırak hattı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/aqua-park-sig-cocuk-havuzu.jpg",
+        "ad": "Sığ çocuk havuzu ve kademeli kenar"
+      },
+      {
+        "src": "assets/img/ai/aktivite/aqua-park-su-oyun-kalesi.jpg",
+        "ad": "Su oyun kalesi ve devrilen kova"
+      },
+      {
+        "src": "assets/img/ai/aktivite/aqua-park-cankurtaran-gozetimi.jpg",
+        "ad": "Kuleden cankurtaran gözetimi"
+      }
+    ],
+    "hazirlik": [
+      "Çocuğunuz için mayo ya da deniz şortu ve yedek bir takım",
+      "Sudan çıkışta kurulanmak için havlu ve rahat bir değişim kıyafeti",
+      "Şapka ve çocuklar için uygun, suya dayanıklı güneş koruyucu",
+      "Havuz kenarında giyilecek kaymaz tabanlı terlik",
+      "Varsa çocuğunuzun kendi kolluk ya da can yeleği; alanda da verilir"
+    ],
+    "saglayanlar": [
+      "Kule cankurtaranı ile kaydırak, kale ve sığ havuz bölüm görevlileri",
+      "Yaşa göre renkli giriş bilekliği, boy çıtası ölçümü ve bölüm yönlendirmesi",
+      "Kolluk, can yeleği ve simit; kullanım öncesi kontrol edilerek verilir",
+      "Gölgelikli ebeveyn terası, su sebili ve alan içinde ilk yardım noktası"
+    ],
+    "guvenlik": "Su alanında koşulmaz ve kaymaz tabanlı terlik kullanılması istenir; zemin dokulu kaplamalı olsa da ıslak yüzey her zaman kayma riski taşır. Sığ alan derin bölümden ayrılmış olsa da burası hiçbir koşulda refakatsiz bırakılacak bir yer değildir: cankurtaran gözetimi ebeveyn gözetiminin yerine geçmez, çocuğunuzu görebileceğiniz bir noktada kalınız. Kaydırak hattında boy çıtası ve yüzme bilme koşulu görevli tarafından uygulanır; kulak tüpü, işitme cihazı, açık yara, ateş ya da bulaşıcı bir durum söz konusuysa suya girmeden önce hekiminize danışınız ve girişte görevliye bildiriniz. Bu alan termal havuzlardan bağımsızdır ve suyu termal kaynaktan gelmez. Sayfada verilen saat, süre, kontenjan ve yaş bilgileri kesin taahhüt değil, temsilî değerlerdir; mevsime ve hava koşullarına göre değişir.",
+    "ilgili": [
+      "paintball",
+      "cocuk-wellness",
+      "acik-havuz"
+    ]
+  },
+  {
+    "id": "cocuk-wellness",
+    "ad": "Çocuk Wellness Programları",
+    "grup": "cocuk",
+    "ustyazi": "Yumuşak Zeminde Sakin Mola",
+    "kisa": "Yoga, pilates ve nefes çalışmalarıyla beden-zihin dengesini destekleyen çocuk seansları.",
+    "hero": "assets/img/ai/cocuk-wellness.jpg",
+    "ozet": "Çocuk ölçüsünde matlar, köpük bloklar ve halka biçiminde dizilen minderlerle kurulmuş bir stüdyo. Yoga, pilates ve nefes çalışmaları burada oyunlaştırılmış bir düzende, eğitmen eşliğinde yapılır.",
+    "paragraflar": [
+      "Zemin yumuşak mantar kaplamadır ve salona ayakkabıyla girilmez; duvar dibindeki alçak dolaplarda çocuk ölçüsünde matlar, köpük bloklar, denge yastıkları ve hafif tüy topları durur. Stüdyo, wellness kanadının üst katında, çam ormanına bakan cam cepheli bir salondur. Salonun bir yüzü bilerek aynasız bırakılmıştır; çocuklar birbirini değil, kendi hareketini takip eder. Ortada halka biçiminde dizilebilen on dört minder vardır ve her seans bu halkanın kurulmasıyla başlar. Ses yalıtımı yapılmış kapı kapandığında salonda duyulan tek şey, camın ardındaki çam dallarının sesidir.",
+      "Seanslar bir eğitmen ve bir yardımcı eşliğinde, yaş kademesine ayrılmış küçük gruplarla ilerler. Isınma bölümünde hareketler hayvan adlarıyla anılır: kedi esnemesi, kaplumbağa toplanması, leylek duruşu. Ardından denge yastıkları ve köpük bloklarla kurulan kısa oyun turları gelir; çocuklar sırayla dener, kimse yarıştırılmaz. Kapanışta ışık kısılır, halka yeniden kurulur ve birkaç dakikalık sakin bir nefes molası verilir. Katılım gönüllüdür; isteyen çocuk halkanın kenarında oturup izleyebilir, dilediğinde aradan girebilir.",
+      "Akşamüstü tempo kendiliğinden düşer; son seans genelde uzun bir nefes molasıyla biter ve çocuklar ailelerine sakinleşmiş bir hâlde teslim edilir. Öğleden sonraki kuşakta salon kalabalıklaşır, hareket turları uzar, minderler bir iki kez toplanıp yeniden dizilir. Günün ilk seansı ise en sessiz aralıktır: ışık camdan yatık girer, matlar henüz düzgün dizilidir, gruplar küçüktür. Salon kapandığında matlar üst üste konur, halka bozulur ve stüdyo ertesi sabaha hazır bırakılır."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Stüdyoda",
+      "deneyimBaslik": "Minderler Dizilir, Tempo Düşer",
+      "rotaGozkasi": "Halka Düzeni",
+      "rotaBaslik": "Halka Büyüdükçe Seans Uzar",
+      "rotaGiris": "Program üç yaş kademesine ayrılır; her kademenin süresi, kontenjanı ve hareket dağarcığı farklıdır. Küçüklerde oyun ağırlıklı kısa turlar, orta yaşlarda denge ve esneme çalışmaları, büyüklerde daha uzun bir akış ve nefes molası öne çıkar. Üçü de aynı salonda ve aynı eğitmen düzeninde geçer; fark, sürede ve hareketlerin ayrıntısındadır.",
+      "rotaNot": "Kademelere ait süre, kontenjan ve yaş bilgileri temsilîdir; grup mevcuduna, sezona ve eğitmen programına göre değişebilir.",
+      "galeriGozkasi": "Salondan",
+      "galeriBaslik": "Halkanın İçinden",
+      "ctaGozkasi": "Seans Planı",
+      "ctaBaslik": "Tanışma Seansıyla Başlayın",
+      "ctaMetin": "Yaş kademesine uygun günü ve saati, grup mevcudunu ve çocuğunuz ilk kez katılıyorsa tanışma seansını resepsiyonla birlikte planlayabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Kanat ve kat",
+        "deger": "Wellness kanadı üst katı, ormana bakan cam cepheli stüdyo"
+      },
+      {
+        "etiket": "Seans saatleri",
+        "deger": "10.00, 14.00 ve 17.00 kuşakları (temsilî)"
+      },
+      {
+        "etiket": "Kimler katılabilir",
+        "deger": "5-13 yaş; 5-6 yaşta ebeveyn salonda kalabilir"
+      },
+      {
+        "etiket": "Kayıt",
+        "deger": "Aynı gün resepsiyondan; ilk katılımda kısa bilgi formu"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Wellness kanadı, üst kat çocuk stüdyosu"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Seans başına en çok 14 çocuk"
+      },
+      {
+        "etiket": "Gözetim",
+        "deger": "Bir eğitmen ve bir yardımcı, seans boyunca salonda"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Yıl boyu, kapalı salonda"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Küçük Halka: Hareket Oyunları",
+        "sure": "30-40 dakika",
+        "mesafe": "Çocuk stüdyosu, 10 çocuk",
+        "zorluk": "5-6 yaş",
+        "aciklama": "Hayvan adlarıyla anılan basit duruşlar, köpük bloklarla kurulan kısa turlar ve yer değiştirme oyunları vardır. Sıra beklemek ve minderine dönmek oyunun parçasıdır. Bu kademede ebeveyn salonun arka tarafında oturarak kalabilir."
+      },
+      {
+        "ad": "Orta Halka: Denge ve Esneme",
+        "sure": "45-55 dakika",
+        "mesafe": "Çocuk stüdyosu, 12 çocuk",
+        "zorluk": "7-9 yaş",
+        "aciklama": "Denge yastıkları ve mat üzerinde ikişerli esneme çalışmalarına yer verilir; hareketler çocuk ölçüsüne uyarlanmış pilates ve yoga duruşlarından seçilir. Eğitmen her turda tek tek dolaşır ve hareketi elle değil, tarif ederek göstermeyi tercih eder. Seans, halkada üç dakikalık bir nefes molasıyla kapanır."
+      },
+      {
+        "ad": "Büyük Halka: Akış ve Nefes Molası",
+        "sure": "60-70 dakika",
+        "mesafe": "Stüdyo ve yan teras, 14 çocuk",
+        "zorluk": "10-13 yaş",
+        "aciklama": "Duruşlar kesintisiz bir akış hâlinde birleştirilir, aralarda kısa dinlenmeler verilir. Hava uygunsa son bölüm yan terasa taşınır ve nefes molası açık havada yapılır. Bu kademede çocuklar kendi matını serip toplamaktan da sorumludur."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/cocuk-wellness-nefes-molasi.jpg",
+        "ad": "Halkada nefes molası"
+      },
+      {
+        "src": "assets/img/ai/aktivite/cocuk-wellness-denge-durusu.jpg",
+        "ad": "Denge yastığında leylek duruşu"
+      },
+      {
+        "src": "assets/img/ai/aktivite/cocuk-wellness-esneme-oyunu.jpg",
+        "ad": "İkişerli esneme oyunu"
+      },
+      {
+        "src": "assets/img/ai/aktivite/cocuk-wellness-kapanis-halkasi.jpg",
+        "ad": "Işık kısıldığında kapanış halkası"
+      }
+    ],
+    "hazirlik": [
+      "Hareketi kısıtlamayan rahat bir eşofman ya da tayt",
+      "Kaymaz tabanlı çorap; salonda ayakkabıyla yürünmez",
+      "Kapağı sızdırmayan, üzerine adı yazılmış küçük bir su şişesi",
+      "Saçı toplamak için toka ya da lastik",
+      "Seans sonrası giymek üzere ince bir hırka veya sweatshirt"
+    ],
+    "saglayanlar": [
+      "Çocuk ölçüsünde mat, köpük blok, denge yastığı ve hafif toplar",
+      "Yaş kademesine göre ayrılmış küçük gruplar ve seans boyunca salonda kalan eğitmen ile yardımcı",
+      "Ayakkabılık, isimlik ve kişisel eşya için numaralı küçük dolap",
+      "Seans sonunda su ve salon dışındaki bekleme köşesinde oturma alanı"
+    ],
+    "guvenlik": "Programlar bir tedavi, terapi ya da düzeltme uygulaması değildir; beden-zihin dengesine eşlik eden, oyunlaştırılmış bir hareket ve dinlenme molasıdır. Çocuğunuzun bilinen bir sağlık durumu, yakın zamanda geçirdiği bir yaralanma ya da hareket kısıtı varsa katılımdan önce hekiminize danışınız ve kayıt sırasında eğitmene bildiriniz. Salonda ayakkabıyla yürünmez, hareketler yalnızca eğitmenin tarif ettiği biçimde ve mat üzerinde yapılır; çocuklar seans boyunca eğitmen ve yardımcı gözetiminde kalır, salona giriş çıkış tek kapıdan yapılır. Süreler, kontenjanlar, seans saatleri ve yaş aralıkları burada temsilî olarak verilmiştir; grup mevcudu ve eğitmen programı bunları değiştirebilir.",
+    "ilgili": [
+      "muzik-odasi",
+      "hobi-bahcesi",
+      "yoga"
+    ]
+  },
+  {
+    "id": "hobi-bahcesi",
+    "ad": "Hobi Bahçesi",
+    "grup": "cocuk",
+    "ustyazi": "Yükseltilmiş Yataklarda Ekim Bahçesi",
+    "kisa": "Toprağa dokunarak ekim, bakım ve hasadı deneyimleyin.",
+    "hero": "assets/img/ai/hobi-bahcesi.jpg",
+    "ozet": "Çam ormanının açıldığı güneşli bir yamaçta, ahşap çerçeveli yükseltilmiş yataklardan kurulu bir ekim bahçesi. Çocuklar kendi boylarına göre yapılmış aletlerle tohum eker, fide bakar ve mevsimi gelince hasat sepetini doldurur.",
+    "paragraflar": [
+      "Hobi bahçesi, sosyal alanların doğu ucunda, ormanın seyreldiği güneşli bir düzlükte kuruludur. Zemine değil, ahşap çerçeveli yükseltilmiş yataklara ekim yapılır; yatakların üst kenarı çocuk beline gelecek yükseklikte tutulmuştur, böylece eğilmeden çalışılır. Yatakların arası geniş bırakılmış, yürüyüş yolları çakıl yerine ince talaşla kaplanmıştır. Bir köşede alet dolabı, yanında omuz yüksekliğinde bir yıkama tezgâhı ve damlama hattının vanası bulunur. Alet dolabındaki kürek, tırmık ve sulama kabı yetişkin ekipmanının küçültülmüş hâli değil, çocuk eli için ayrıca yapılmış saplı takımlardır.",
+      "Her seans alet dolabının önünde toplanarak başlar: eğitmen o gün hangi yatağın sırası olduğunu söyler, eldivenler dağıtılır ve aletler tek tek elden ele verilir. Ekim haftalarında tohum derinliği ve sıra aralığı ip ve çubukla işaretlenir; bakım haftalarında yabani otlar ayıklanır, fideler bağlanır ve damlama hattı kontrol edilir. Her çocuğun kendi adının yazılı olduğu bir etiket vardır ve o etiket sezon boyunca aynı sırada durur, böylece kimin neyi ektiği takip edilebilir. Hasat zamanı toplanan ürün yıkama tezgâhında durulanır, hasır sepete yerleştirilir ve tartılır. Seans, aletlerin sayılarak dolaba geri konmasıyla biter.",
+      "Bahçenin en hareketli saati sabahın erken saatidir: sulama o kuşakta yapılır, toprak henüz serindir ve yapraklarda gecenin nemi durur. Öğleye doğru güneş dikleşince çalışma yatakların gölgeli tarafına kayar, çocuklar tenteli tezgâhın altında tohum ayıklar ya da etiket yazar. Geç ikindi hasat için ayrılmıştır; sepetler o saatte dolar ve mutfağa doğru yola çıkar. Toplanan ürünün bir bölümü pişirme dersleri programına gider, kalanı çocukların kendi paylarına ayrılır. Sezon ilerledikçe aynı yatağın hâli değişir: ilkbaharda düz toprak, yazın omuz hizasında yeşil bir duvar, sonbaharda boşalmış ve dinlenmeye bırakılmış bir çerçeve."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Bahçede",
+      "deneyimBaslik": "Tohumdan Sepete Giden Yol",
+      "rotaGozkasi": "Sorumluluk Kademeleri",
+      "rotaBaslik": "Tanışma Saati, Bakım Saati, Hasat Saati",
+      "rotaGiris": "Bahçe saatleri üç yaş kademesine ayrılmıştır ve kademeler birbirinin üzerine binmez. Küçük yaş grubu alçak yataklarda kısa ve gözetimli bir tanışma saati geçirir; orta yaş grubu ekim ve bakım işlerini baştan sona üstlenir; büyük yaş grubu ise hasat, ölçüm ve mutfağa teslim aşamasını yürütür. Üç kademe de aynı bahçede, aynı aletlerle çalışır; değişen şey sorumluluğun kapsamı ve seansın uzunluğudur.",
+      "rotaNot": "Buradaki seans uzunlukları, kontenjanlar ve yaş aralıkları temsilîdir; ekim takvimine, mevsime ve grup doluluğuna göre değişebilir.",
+      "galeriGozkasi": "Bahçeden",
+      "galeriBaslik": "Sepet Dolmadan Önce",
+      "ctaGozkasi": "Bahçe Programı",
+      "ctaBaslik": "Bahçede Bir Sıra Sahiplenin",
+      "ctaMetin": "Yaş kademesine uygun bahçe saatini, mevsimin ekim ya da hasat haftasına denk gelip gelmediğini ve hasadın pişirme dersleriyle aynı güne alınıp alınamayacağını resepsiyondaki sezon takviminden öğrenebilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Konum",
+        "deger": "Sosyal alanların doğu ucu, ormanın açıldığı güneşli düzlük"
+      },
+      {
+        "etiket": "Bahçe saatleri",
+        "deger": "Sulama 08.00-10.00, atölye 11.00-13.00, hasat 16.00-18.00 (temsilî)"
+      },
+      {
+        "etiket": "Yaş aralığı",
+        "deger": "4-13 yaş; 4-6 yaş ebeveyn ya da eğitmen refakatiyle"
+      },
+      {
+        "etiket": "Kayıt",
+        "deger": "Seans başına ön kayıt; sezonluk yatak sahiplenme ayrı listeden"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Doğu bahçe düzlüğü, açık alan"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Aynı anda 12 çocuk, 2 eğitmen"
+      },
+      {
+        "etiket": "Kurulum",
+        "deger": "18 yükseltilmiş yatak, damlama sulama hattı, çocuk boyu alet takımı"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Mart-Kasım; kış aylarında sera köşesinde sınırlı program"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Filizler Saati",
+        "sure": "40-50 dakika",
+        "mesafe": "Alçak yataklar bölümü, 10 çocuk",
+        "zorluk": "4-6 yaş, refakatle",
+        "aciklama": "Toprakla ilk tanışma saatidir. Çocuklar eldivenle toprağı elleyip kokusunu tanır, iri taneli tohumları parmak deliğine bırakır ve küçük sulama kabıyla kendi sıralarını sular. Kesici alet verilmez; kullanılan tek takım küçük plastik kürek ve sulama kabıdır. Seans, herkesin kendi adını yazdığı etiketi yatağa saplamasıyla biter."
+      },
+      {
+        "ad": "Bahçe Bakıcıları",
+        "sure": "60-75 dakika",
+        "mesafe": "Orta yataklar ve fidelik, 12 çocuk",
+        "zorluk": "7-9 yaş",
+        "aciklama": "Ekim ve bakım işlerinin tamamı bu kademede yürütülür. İple sıra çekilir, tohum derinliği çubukla ölçülür, fideler saksıdan yatağa aktarılır ve gövdeler bez şeritle sırığa bağlanır. Yabani ot ayıklama ve damlama hattı kontrolü her seansın sabit iki işidir. Küt uçlu el tırmığı ve mala eğitmen gözetiminde dağıtılır, seans sonunda sayılarak toplanır."
+      },
+      {
+        "ad": "Hasat Ekibi",
+        "sure": "90 dakika",
+        "mesafe": "Hasat parselleri ve yıkama tezgâhı, 8 çocuk",
+        "zorluk": "10-13 yaş",
+        "aciklama": "Olgunluk kontrolünden mutfağa teslime kadar olan bölüm bu gruba aittir. Hangi ürünün toplanmaya hazır olduğuna renk ve sertlikten karar verilir, hasat küt uçlu makasla yapılır ve makas yalnız bu kademede, eğitmen elinden alınıp eğitmen eline geri verilir. Toplanan ürün tezgâhta durulanır, tartılır ve sezon defterine kaydedilir. Sepetin mutfağa götürülmesi de ekibin işidir."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/hobi-bahcesi-ekim-yataklari.jpg",
+        "ad": "Yükseltilmiş ekim yatakları"
+      },
+      {
+        "src": "assets/img/ai/aktivite/hobi-bahcesi-fide-dikimi.jpg",
+        "ad": "Fidelerin yatağa aktarılması"
+      },
+      {
+        "src": "assets/img/ai/aktivite/hobi-bahcesi-sulama-zamani.jpg",
+        "ad": "Sabah sulama kuşağı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/hobi-bahcesi-hasat-sepeti.jpg",
+        "ad": "Tezgâhta dolan hasat sepeti"
+      }
+    ],
+    "hazirlik": [
+      "Kirlenebilecek rahat kıyafet ve kapalı burunlu ayakkabı",
+      "Geniş siperlikli şapka ve çocuk cildine uygun koruyucu krem",
+      "Yedek çorap ile ince bir mont ya da hırka; sabah kuşağında yataklar nemli olur",
+      "Sıcakta uzun süre kalınacağı için yeterli miktarda su; kabın üzerine adını yazınız",
+      "Bilinen bir polen, arı sokması ya da bitki hassasiyeti varsa girişte eğitmene bildirilecek kısa bir not"
+    ],
+    "saglayanlar": [
+      "Çocuk boyuna göre yapılmış küt uçlu kürek, tırmık, mala ve sulama kabı takımı",
+      "Çocuk bedeninde bahçe eldiveni, önlük ve isim etiketi",
+      "Tohum, fide, harç toprağı, bez bağ şeridi ve hasır hasat sepeti",
+      "İki eğitmen eşliği, gölge tentesi, yıkama tezgâhı ve ilk yardım dolabı"
+    ],
+    "guvenlik": "Bahçede kesici alet kullanımı yaş kademesine bağlıdır: 4-6 yaş grubuna yalnızca plastik kürek ve sulama kabı verilir, el tırmığı ve mala 7 yaşından itibaren eğitmen gözetiminde, küt uçlu hasat makası ise yalnız 10 yaş ve üzerinde eğitmen elinden teslim alınarak kullanılır; aletler her seans sonunda sayılarak dolaba kilitlenir. Yataklarda kimyasal gübre ve ilaç kullanılmaz, çalışma sonrası eller tezgâhta sabunla yıkanır ve toplanan ürün yıkanmadan yenmez. Bahçe açık alandadır; arı, polen ya da bitki teması konusunda bilinen bir hassasiyet varsa lütfen kayıt sırasında bildiriniz ve gerekiyorsa önceden hekiminize danışınız. Ekim takvimi, seans uzunlukları, kontenjanlar ve yaş aralıkları temsilî olarak yazılmıştır; bahçenin gerçek programı mevsimin gidişine ve hava koşullarına bağlıdır.",
+    "ilgili": [
+      "pisirme-dersleri",
+      "seramik-atolyesi",
+      "trekking"
+    ]
+  },
+  {
+    "id": "pisirme-dersleri",
+    "ad": "Pişirme Dersleri",
+    "grup": "cocuk",
+    "ustyazi": "Şef Eşliğinde Çocuk Mutfağı",
+    "kisa": "Şef eşliğinde eğlenceli ve öğretici mutfak atölyeleri.",
+    "hero": "assets/img/ai/pisirme-dersi.jpg",
+    "ozet": "Çocuk boyuna göre alçaltılmış tezgâhlar, kendi önlüğü ve ölçü kabıyla çalışan küçük eller; ocak ve fırın işini üstlenen bir şef eşliğinde ilerleyen mutfak atölyeleri.",
+    "paragraflar": [
+      "Tezgâhlar çocuk boyuna göre alçaltılmıştır ve her çocuğa bir ölçü kabı, bir tahta ve kendi adının yazıldığı bir tarif kartı düşer. Salon, çocuk kulübüne bir koridorla bağlanır ve pencereleri servis avlusuna bakar. Ocak, fırın ve keskin aletler tek bir şef tezgâhında toplanmıştır; oradaki her iş görevli şefe aittir. Salonun bir yanında cam bölmeli bir bekleme alanı vardır, veliler atölyeyi buradan izleyebilir. Duvardaki panoda o günkü tarif ve içindeki malzemeler büyük harflerle asılıdır.",
+      "Kayıt sırasında alerjen bildirim formu doldurulur; bu form zorunludur ve her atölye öncesi şefle birlikte tek tek gözden geçirilir. Çocuklar salona girince önlük ve saç bonesi giyer, tezgâha geçmeden önce ellerini yıkar. Kesme işleri yaş grubuna göre dişsiz plastik ya da uçları küt çocuk bıçaklarıyla yapılır; sıcak tencere, tepsi ve fırın kapağına yalnızca şef dokunur. Şef her adımı önce kendi tezgâhında gösterir, sonra çocuklar aynı adımı kendi tezgâhlarında tekrarlar. Bekleme süresi olan tariflerde ara verilir ve o aralıkta mutfak düzeni birlikte toplanır.",
+      "Öğleden sonraki atölyelerde malzemenin bir bölümü Hobi Bahçesi'nden gelir: sabah toplanan maydanoz, domates ya da nane sepetle mutfağa iner ve tarifin içine girer. Günün ilk atölyesi ise genellikle hamur işidir; un serpilen tezgâhlarda gürültü yüksektir, herkes kendi hamurunu yoğurur. Fırın açıldığında salonun kokusu değişir ve konuşmalar bir anlığına kesilir. Her oturumun son bölümü tabak sunumudur: herkes kendi tabağını süsler, fotoğrafını çektirir ve tarif kartını yanında götürür. Akşam servisine yakın saatlerde mutfak sessizleşir, tezgâhlar ertesi günün atölyesi için yeniden kurulur."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Mutfakta",
+      "deneyimBaslik": "Herkese Bir Tezgâh, Herkese Bir İş",
+      "rotaGozkasi": "Mutfakta Roller",
+      "rotaBaslik": "Tezgâh Kimin, Ocak Kimin",
+      "rotaGiris": "Atölyeler üç yaş kademesinde açılır ve her kademede çocuğun kendi yaptığı iş ile şefin üstlendiği iş farklıdır. Küçük yaşta ölçme, karıştırma ve süsleme öne çıkar; orta yaşta güvenli bıçak kullanımı ve hamur işi eklenir; büyük yaşta ise çok adımlı bir tarif ve tabak sunumu üzerinde çalışılır. Üç kademede de ocak, fırın ve keskin aletler şef tezgâhında kalır.",
+      "rotaNot": "Süreler, kontenjanlar ve yaş aralıkları temsilîdir; mevsime, doluluğa ve o günkü tarife göre değişebilir. Katılım için alerjen bildirim formunun doldurulması her kademede zorunludur.",
+      "galeriGozkasi": "Mutfaktan",
+      "galeriBaslik": "Un Bulaşmış Eller",
+      "ctaGozkasi": "Tarif Takvimi",
+      "ctaBaslik": "Mutfak Atölyesine Katılın",
+      "ctaMetin": "Yaş kademesine uygun atölye saatlerini, o hafta çalışılacak tarifleri ve alerjen bildirim formunu çocuk kulübü resepsiyonuyla birlikte planlayabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Çocuk kulübü yanı, servis avlusuna bakan atölye mutfağı"
+      },
+      {
+        "etiket": "Atölye saatleri",
+        "deger": "10.00-12.00 ve 15.00-17.00 arası iki oturum (temsilî)"
+      },
+      {
+        "etiket": "Yaş aralığı",
+        "deger": "5-13 yaş; kademelere ayrılmış gruplar hâlinde"
+      },
+      {
+        "etiket": "Alerjen bildirimi",
+        "deger": "Zorunlu; kayıt sırasında form doldurulur ve şefle gözden geçirilir"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Alan",
+        "deger": "Atölye mutfağı ve cam bölmeli veli bekleme alanı"
+      },
+      {
+        "etiket": "Kontenjan",
+        "deger": "Oturum başına en çok 12 çocuk"
+      },
+      {
+        "etiket": "Gözetim",
+        "deger": "Bir şef ve bir atölye görevlisi; ocak ve fırın yalnızca şefte"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Yıl boyu; malzemenin bir bölümü mevsime göre değişir"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Mini Şefler Tezgâhı",
+        "sure": "45-60 dakika",
+        "mesafe": "Atölye mutfağı, 8 çocuk",
+        "zorluk": "5-6 yaş",
+        "aciklama": "Kesme ve ısı işi yoktur; ölçme, karıştırma, kalıp basma ve süsleme üzerine kuruludur. Çocuklar hazır bekleyen soğuk malzemelerle çalışır, fırına giren ve fırından çıkan her tepsiyi şef taşır. Oturum sonunda herkes kendi kurabiyesini kutusuyla birlikte götürür."
+      },
+      {
+        "ad": "Güvenli Kesim ve Hamur",
+        "sure": "60-75 dakika",
+        "mesafe": "Atölye mutfağı, 12 çocuk",
+        "zorluk": "7-9 yaş",
+        "aciklama": "Uçları küt çocuk bıçaklarıyla güvenli kesim, hamur yoğurma ve basit soslar bu kademede öğrenilir. Şef önce kendi tezgâhında gösterir, ardından her çocuk aynı adımı kendi tahtasında tekrarlar. Sıcak tencere ve tepsi taşıma işi yine şefe aittir."
+      },
+      {
+        "ad": "Baştan Sona Bir Menü",
+        "sure": "90 dakika",
+        "mesafe": "Şef tezgâhı çevresi, 10 çocuk",
+        "zorluk": "10-13 yaş",
+        "aciklama": "Çok adımlı tek bir tarif baştan sona birlikte kurulur: malzeme hazırlığı, pişirme ve tabak sunumu. Ocak başındaki adımlar şefin hemen yanında ve tek tek sırayla yapılır. Katılımcılar tarif kartını ve kendi tabağının fotoğrafını yanlarında götürür."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/pisirme-dersleri-hamur-yogurma.jpg",
+        "ad": "Un serpilmiş tezgâhta hamur yoğurma"
+      },
+      {
+        "src": "assets/img/ai/aktivite/pisirme-dersleri-malzeme-hazirligi.jpg",
+        "ad": "Ölçü kaplarında malzeme hazırlığı"
+      },
+      {
+        "src": "assets/img/ai/aktivite/pisirme-dersleri-sef-esliginde.jpg",
+        "ad": "Şef eşliğinde adım adım anlatım"
+      },
+      {
+        "src": "assets/img/ai/aktivite/pisirme-dersleri-tabak-sunumu.jpg",
+        "ad": "Kendi tabağını sunan genç şef"
+      }
+    ],
+    "hazirlik": [
+      "Doldurulmuş alerjen bildirim formu; besin hassasiyeti varsa kayıt sırasında mutlaka belirtiniz",
+      "Kolları kısa ya da sıvanabilen, kirlenmesinde sakınca olmayan bir kıyafet",
+      "Kapalı burunlu, kaymayan ayakkabı",
+      "Saçı toplamak için lastik; önlük ve bone atölyede verilir",
+      "Sunum sonrası götürmek isterseniz küçük bir taşıma kabı"
+    ],
+    "saglayanlar": [
+      "Çocuk bedenine uygun önlük, saç bonesi ve adına yazılmış tarif kartı",
+      "Yaş kademesine göre dişsiz plastik ya da uçları küt çocuk bıçakları, ölçü kabı ve kesme tahtası",
+      "Tarifin tüm malzemeleri, içerik listesi ve alerjen bilgisiyle birlikte panoda ilan edilir",
+      "Bir şef ve bir atölye görevlisi; ocak, fırın ve sıcak tepsi işlerinin tamamı görevlilerde"
+    ],
+    "guvenlik": "Ocak, fırın, keskin aletler ve sıcak tepsiler görevli şefin tezgâhında toplanmıştır; çocuklar bu bölüme yaklaşmaz. Zemin un ve su nedeniyle kayganlaşabilir, bu yüzden kapalı burunlu ve kaymayan ayakkabı isteriz. Besin alerjisi bir güvenlik konusudur: kayıt sırasında verilen alerjen bildirim formu zorunludur, atölye öncesi şefle birlikte gözden geçirilir ve gerekiyorsa tarif ya da malzeme değiştirilir; formda beyan edilmeyen bir hassasiyet için önlem alınamaz. Herhangi bir sağlık durumu, ilaç kullanımı veya beslenme kısıtı söz konusuysa katılımdan önce hekiminize danışınız ve durumu görevliye bildiriniz. Atölye saatleri, süreler, kontenjanlar ve yaş aralıkları temsilîdir; o günkü tarif ve doluluk bu bilgileri değiştirebilir.",
+    "ilgili": [
+      "hobi-bahcesi",
+      "interaktif-egitim",
+      "acik-hava-sinemasi"
+    ]
+  },
+  {
+    "id": "muzik-odasi",
+    "ad": "Müzik Odası",
+    "grup": "cocuk",
+    "ustyazi": "Ritim Çemberi ve Enstrüman Odası",
+    "kisa": "Enstrümanlarla tanışma ve ritim atölyeleri.",
+    "hero": "assets/img/ai/muzik-odasi.jpg",
+    "ozet": "Sesi dışarı taşımayan, yalıtımlı duvarlarla kurulmuş bir çocuk müzik odası: ortada ritim çemberi, duvar boyunca askıda ve rafta duran enstrümanlar, köşede küçük bir dinleme ve kayıt bölümü.",
+    "paragraflar": [
+      "Kapı kapandığında koridordan içeri ses girmez, içeriden de dışarı çıkmaz; oda bu yüzden çocuk atölyeleri koridorunun en ucuna, komşusu az olan bir noktaya yerleştirilmiştir. Zeminde halı, ortada çocukların oturduğu bir ritim çemberi, çember çevresinde farklı boyda darbuka, bendir, marakas ve ksilofonlar bulunur. Duvarın bir yüzünde çocuk ölçülerine göre seçilmiş gitarlar ve ukulele askıda, karşı tarafta bir duvar piyanosu ve tabure durur. Köşedeki cam bölmeli bölüm dinleme ve kayıt için ayrılmıştır: bir mikrofon, bir hoparlör çifti ve çocukların kendi çaldıklarını geri dinlediği küçük bir düzenek vardır.",
+      "Atölye eğitmen eşliğinde ve yaş kademesine göre işler; her seansın başında enstrümanlar isimleriyle tanıtılır, nasıl tutulacağı ve nasıl bırakılacağı gösterilir. İlk bölüm çoğunlukla ritimle geçer: eğitmen bir kalıp verir, çocuklar sırayla tekrarlar, sonra çember hâlinde birlikte çalarlar. İkinci bölümde çocuklar sırayla farklı enstrümanların başına geçer; kimse tek bir enstrümanda kalmaz, herkes en az üç sesi denemiş olur. Kapanışta kısa bir toplu çalma yapılır ve isteyen gruplar bunu kayıt köşesinde bir kez daha çalıp geri dinler. Bu kısa kayıtlar, Amfi Tiyatro'da düzenlenen küçük gösterilerin de provası hâline gelebilir.",
+      "Odanın sesi gün içinde birkaç kez değişir. Erken seanslarda en küçük grup çalar; vuruş ve gülüşme sesi birbirine karışır. Öğleden sonra tempo değişir, tek tek çalınan notalar ve durup dinlenen aralıklar çoğalır. Akşamüstü büyük yaş grubu prova için toplandığında oda en düzenli hâline gelir: sandalyeler yarım daire dizilir, nota sehpaları çıkarılır ve aynı parça baştan sona birkaç kez tekrarlanır. Kapı kapandığında dışarıdan yalnızca boğuk bir ritim duyulur; koridorda bekleyen ebeveynler için oda kendi sesini içinde tutar."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Müzik Odasında",
+      "deneyimBaslik": "Enstrümanlar Elden Ele",
+      "rotaGozkasi": "Yaş Basamakları",
+      "rotaBaslik": "Odada Kim Ne Çalar?",
+      "rotaGiris": "Oda üç ayrı yaş kademesine göre programlanır: en küçüklerde ritim ve vuruş, orta yaşta enstrümanla birebir tanışma, büyük yaşta ise birlikte çalma ve prova öne çıkar. Üçü de aynı odada, aynı eğitmen düzeniyle geçer; fark, seansın uzunluğunda, grup büyüklüğünde ve çocuktan beklenen dikkat süresindedir.",
+      "rotaNot": "Süreler, kontenjanlar ve yaş aralıkları temsilîdir; grup mevcuduna, sezona ve eğitmen programına göre değişebilir. Kayıt sırasında çocuğunuzun yaşına en uygun kademe resepsiyonla birlikte belirlenir.",
+      "galeriGozkasi": "Enstrüman Köşesinden",
+      "galeriBaslik": "Vuruş, Tel ve Tuş",
+      "ctaGozkasi": "Müzik Saatleri",
+      "ctaBaslik": "Çocuğunuzu Müzik Odasına Yazdırın",
+      "ctaMetin": "Yaş kademesine uygun seans saatlerini, deneme atölyesi imkânını ve Amfi Tiyatro'daki küçük gösteri takvimini resepsiyonla birlikte planlayabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Kanat ve kat",
+        "deger": "Çocuk atölyeleri koridoru, en uçtaki yalıtımlı bölüm"
+      },
+      {
+        "etiket": "Seans saatleri",
+        "deger": "Hafta içi 10.00-18.00, hafta sonu 10.00-19.00 (temsilî)"
+      },
+      {
+        "etiket": "Kimler katılabilir",
+        "deger": "5-14 yaş; 5-7 yaş seanslarında ebeveyn odada bekleyebilir"
+      },
+      {
+        "etiket": "Kayıt",
+        "deger": "Kontenjan sınırlı olduğu için seans öncesi kayıt gerekir"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Çocuk atölyeleri koridoru, akustik yalıtımlı oda"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Seans başına en fazla 12 çocuk"
+      },
+      {
+        "etiket": "Gözetim",
+        "deger": "Her seansta bir müzik eğitmeni ve bir atölye görevlisi"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Yıl boyu, kapalı alanda"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Ritim Çemberi",
+        "sure": "40-45 dakika",
+        "mesafe": "Ritim çemberi, 10 çocuk",
+        "zorluk": "5-7 yaş",
+        "aciklama": "Çocuklar halının üzerinde çember olur; eğitmen basit bir vuruş kalıbı verir, herkes sırayla tekrarlar ve ardından birlikte çalarlar. Darbuka, bendir, marakas ve küçük ksilofon gibi tutması kolay enstrümanlar kullanılır. Seans boyunca oturma düzeni bozulmaz, böylece her çocuk eğitmenin görüş alanında kalır."
+      },
+      {
+        "ad": "Enstrümanla Tanışma",
+        "sure": "55-60 dakika",
+        "mesafe": "Enstrüman köşesi, 8 çocuk",
+        "zorluk": "8-10 yaş",
+        "aciklama": "Her çocuk seans içinde en az üç enstrümanın başına geçer: ukulele, duvar piyanosu ve bir perküsyon. Enstrümanın nasıl tutulacağı, nasıl kurulacağı ve seans sonunda nereye bırakılacağı tek tek gösterilir. Kapanışta çocuklar en çok sevdikleri sesi seçer ve o enstrümanla kısa bir bölüm çalar."
+      },
+      {
+        "ad": "Küçük Topluluk Provası",
+        "sure": "75-90 dakika",
+        "mesafe": "Prova alanı, 12 çocuk",
+        "zorluk": "11-14 yaş",
+        "aciklama": "Sandalyeler yarım daire dizilir, nota sehpaları çıkarılır ve grup tek bir parça üzerinde çalışır. Girişler, duraklar ve bitiş birlikte denenir; eğitmen tempoyu sayar, gerektiğinde bölümü baştan aldırır. Prova sonunda kayıt köşesinde bir deneme çalışı alınır ve grup kendi çaldığını geri dinler; hazır hisseden gruplar bunu Amfi Tiyatro'daki küçük gösteriye taşıyabilir."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/muzik-odasi-ritim-cemberi.jpg",
+        "ad": "Ritim çemberinde ilk vuruşlar"
+      },
+      {
+        "src": "assets/img/ai/aktivite/muzik-odasi-enstruman-tanisma.jpg",
+        "ad": "Enstrümanların tanıtıldığı köşe"
+      },
+      {
+        "src": "assets/img/ai/aktivite/muzik-odasi-kucuk-topluluk.jpg",
+        "ad": "Yarım daire düzeninde topluluk provası"
+      },
+      {
+        "src": "assets/img/ai/aktivite/muzik-odasi-kayit-kosesi.jpg",
+        "ad": "Kayıt köşesinde geri dinleme"
+      }
+    ],
+    "hazirlik": [
+      "Kolları rahat hareket ettiren, bol bir kıyafet",
+      "Halıda oturulduğu için çorap; ayakkabılar kapı önünde bırakılır",
+      "Bileklerde takı ve saat bulunmaması; saç uzunsa toplanmış olması",
+      "Küçük bir su matarası; oda içinde başka yiyecek bulundurulmaz",
+      "Varsa çocuğunuzun kendi enstrümanı ve kulak koruyucusuna dair notunuz"
+    ],
+    "saglayanlar": [
+      "Yaşa göre seçilmiş perküsyon, ukulele, gitar ve duvar piyanosu ile nota sehpaları",
+      "Müzik eğitmeni eşliği ve her seansta bir atölye görevlisi",
+      "Akustik yalıtımlı oda, halı zemin ve çocuk ölçülerine göre oturma düzeni",
+      "Kayıt köşesinde mikrofon, hoparlör ve geri dinleme düzeneği"
+    ],
+    "guvenlik": "Enstrümanlar yalnızca eğitmen gösterdikten sonra elden ele geçer ve seans sonunda görevli tarafından yerine kaldırılır; çocuklar odaya yalnız girmez, seans baştan sona eğitmen ve görevli gözetiminde yürütülür. Ses seviyesi çocuk kulağına uygun aralıkta tutulur, yüksek sesli bölümlerde isteyen çocuğa kulak koruyucu verilir; kaldıramayacağı ağırlıkta ya da boyunda enstrüman hiçbir yaş grubunda kullandırılmaz. İşitmeyle ilgili bir durumu, alerjisi ya da düzenli kullandığı bir ilacı varsa kayıt sırasında görevliye bildiriniz ve gerekiyorsa önceden hekiminize danışınız; atölye bir eğitim ve deneyim etkinliğidir, herhangi bir tedavi ya da terapi programı değildir. Seans süreleri, saatler, kontenjanlar ve yaş aralıkları temsilî olarak paylaşılmıştır; kesin program kayıt sırasında bildirilir.",
+    "ilgili": [
+      "seramik-atolyesi",
+      "interaktif-egitim",
+      "amfi-tiyatro"
+    ]
+  },
+  {
+    "id": "seramik-atolyesi",
+    "ad": "Seramik Atölyesi",
+    "grup": "cocuk",
+    "ustyazi": "Elle Şekillendirme ve Torna Atölyesi",
+    "kisa": "Çamura şekil vererek el becerisi ve yaratıcılığı geliştirin.",
+    "hero": "assets/img/ai/seramik-atolyesi.jpg",
+    "ozet": "Islak çamurun yoğrulmasından fırından çıkmış sert seramiğe kadar bütün aşamaların çocukların kendi elleriyle geçtiği, eğitmen gözetiminde çalışan küçük bir atölye.",
+    "paragraflar": [
+      "Atölye, kulüp binasının arka avlusuna açılan tek katlı bir yapıdadır ve kuzeye bakan geniş camlardan gün boyu dengeli bir ışık alır. İçeride alçak tabureli altı çalışma masası, duvar boyunca uzanan kuruma rafları ve pencere hizasına yerleştirilmiş üç elektrikli torna bulunur. Masaların ucundaki kapaklı kovalarda ıslak çamur, yanlarındaki tahta kutularda ise tahta ve tel araçlar durur. Zemin kolay silinen dökme malzemedir; her masanın yanında bir lavabo ve çamur tutucu süzgeç vardır. Fırın, ayrı bir odada ve yalnızca eğitmenlerin girdiği kapalı bir bölümdedir.",
+      "Seans önlük ve kolluk giyilerek başlar; her çocuğa avuç içi büyüklüğünde bir çamur topu verilir. İlk iş çamuru masaya vurarak yoğurmak, içindeki hava boşluklarını çıkarmaktır. Ardından yaş kademesine göre elle şekillendirme ya da torna başında çalışma gelir: küçükler çimdik ve fitil tekniğiyle kâse, tabak ya da küçük figürler yapar, büyükler tornada merkezleme ve çekme denemesi yapar. Eser bittiğinde çocuk altına kendi işaretini kazır, isim etiketi iliştirilir ve iş kuruma rafına kaldırılır. Eğitmen her masada dolaşır; tornaya ve kesici araçlara yalnızca kendi gözetiminde izin verilir.",
+      "Masalar gün boyunca el değiştirir: ilk seansta küçükler oturur, salon kalabalıktır ama tempo yavaştır. Öğleden sonra tornaların çalıştığı saatlerde çarkın uğultusu ve su sesi baskındır, akşam kapanışına doğru raflar dolduğu için atölye sessizleşir. Günün sonunda hiçbir eser sahibine verilmez; bu atölyenin en çok sorulan ayrıntısı da budur. Çamurun kendiliğinden kuruması iki-üç gün, ardından gelen ilk pişirim ve soğuma bir gün, sırlama ve ikinci pişirim ise bir gün daha sürer. Bu yüzden eserler seanstan yaklaşık dört-altı gün sonra teslim edilir; ayrılış tarihiniz daha önceyse resepsiyon işleri paketleyip adresinize gönderir ya da bir sonraki ziyaretinize kadar saklar."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Atölyede",
+      "deneyimBaslik": "Atölyede İki Saat, Fırında Üç Gün",
+      "rotaGozkasi": "Çalışma Masaları",
+      "rotaBaslik": "Her Yaşın Kendi Çamuru",
+      "rotaGiris": "Atölye tek salonda çalışır ama masalar yaş kademesine göre ayrılır: en küçükler elleriyle şekillendirir, ortancalar torna başında ilk denemesini yapar, büyükler kuruyan işleri sırlayıp bitirir. Üç program da aynı malzemeyle ve aynı eğitmen kadrosuyla ilerler; fark, kullanılan araçta ve çocuktan beklenen sabırdadır.",
+      "rotaNot": "Süreler, kontenjanlar ve pişirim-teslim günleri temsilîdir; doluluğa, çamurun kuruma hızına ve fırın programına göre değişebilir.",
+      "galeriGozkasi": "Atölyeden",
+      "galeriBaslik": "Çamur, Torna ve Sır",
+      "ctaGozkasi": "Fırın Takvimi",
+      "ctaBaslik": "Fırın Gününü Konaklamanızla Eşleştirin",
+      "ctaMetin": "Yaş grubuna uygun seans saatini, torna kontenjanını ve eserin fırından çıkacağı günü konaklama tarihlerinizle birlikte resepsiyonda planlayabilirsiniz; ayrılışınız pişirimden önceyse teslim biçimini de aynı görüşmede belirleyebilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Konum",
+        "deger": "Kulüp binasının arka avlusundaki tek katlı atölye yapısı"
+      },
+      {
+        "etiket": "Seans saatleri",
+        "deger": "10.00-12.00 ve 14.00-17.30 arası, günde üç seans (temsilî)"
+      },
+      {
+        "etiket": "Yaş aralığı",
+        "deger": "4-14 yaş; 4-6 yaş ebeveyn refakatiyle"
+      },
+      {
+        "etiket": "Eserin teslimi",
+        "deger": "Pişirim ve soğuma sonrası, seanstan yaklaşık 4-6 gün sonra"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Kulüp arka avlusu, tek katlı atölye"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "Seans başına 12 çocuk, 3 torna"
+      },
+      {
+        "etiket": "Gözetim",
+        "deger": "Her seansta iki atölye eğitmeni"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Yıl boyu açık"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Elle Şekillendirme Masası",
+        "sure": "45-60 dakika",
+        "mesafe": "Atölye salonu, 10 çocuk",
+        "zorluk": "4-6 yaş",
+        "aciklama": "Torna kullanılmaz; çocuklar çamuru avuçlarında yoğurup çimdik ve fitil tekniğiyle küçük kâse, tabak ya da figür yapar. Araçlar yalnızca tahta ve plastik uçlardan oluşur, kesici alet verilmez. Bu yaş grubunda bir ebeveynin masada bulunması istenir; seans sonunda eser isimlendirilip kuruma rafına kaldırılır."
+      },
+      {
+        "ad": "Torna Başında İlk Deneme",
+        "sure": "75 dakika",
+        "mesafe": "Torna bölümü, 8 çocuk",
+        "zorluk": "7-10 yaş",
+        "aciklama": "Seansın ilk yarısı masada geçer: çamuru yoğurma, top hâline getirme ve merkezleme çalışılır. İkinci yarıda çocuklar sırayla tornaya oturur, eğitmen elleriyle yönlendirerek ilk çekme denemesini yaptırır. Torna dönerken eğitmen her zaman çocuğun yanında durur ve pedal kontrolü onda kalır."
+      },
+      {
+        "ad": "Sırlama ve Bitirme Seansı",
+        "sure": "90 dakika",
+        "mesafe": "Sırlama masası, 8 çocuk",
+        "zorluk": "11-14 yaş",
+        "aciklama": "Daha önce yapılıp kurumuş ve ilk pişirimden geçmiş işler üzerinde çalışılır: yüzey zımparalanır, sır seçilir, fırça ya da daldırma ile uygulanır. Kullanılan sırlar kurşunsuz ve gıdaya uygun türdendir. Seans sonunda işler ikinci pişirim için fırın odasına teslim edilir; bu program ancak atölyeye en az iki kez gelen misafirler için anlamlıdır."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/seramik-atolyesi-torna-basinda.jpg",
+        "ad": "Eğitmen eşliğinde torna başında ilk deneme"
+      },
+      {
+        "src": "assets/img/ai/aktivite/seramik-atolyesi-sekillendirme.jpg",
+        "ad": "Masada elle şekillendirme çalışması"
+      },
+      {
+        "src": "assets/img/ai/aktivite/seramik-atolyesi-firin-oncesi.jpg",
+        "ad": "Kuruma rafında pişirim sırasını bekleyen işler"
+      },
+      {
+        "src": "assets/img/ai/aktivite/seramik-atolyesi-sirlama-masasi.jpg",
+        "ad": "Sırlama masası ve renk denemeleri"
+      }
+    ],
+    "hazirlik": [
+      "Kirlenmesinde sakınca olmayan kıyafet; önlük ve kolluk atölyede verilir",
+      "Seans sonrası giyilecek yedek bir üst ya da tişört",
+      "Tırnakların kısa kesilmiş, saçın toplanmış olması çamur işini kolaylaştırır",
+      "Ayrılış tarihiniz ve eserin gönderileceği adres bilgisi",
+      "Kapalı, tabanı kaymayan ayakkabı"
+    ],
+    "saglayanlar": [
+      "Çocuk bedenine uygun önlük, kolluk ve el havlusu",
+      "Çamur, tahta ve tel araçlar, sünger, kurşunsuz sır malzemeleri",
+      "Her seansta iki atölye eğitmeni ve torna başında birebir gözetim",
+      "Kuruma, iki aşamalı pişirim, paketleme ve teslim ya da adrese gönderim"
+    ],
+    "guvenlik": "Torna yalnızca eğitmen gözetiminde ve pedal kontrolü eğitmende kalarak çalıştırılır; kesici tel ve metal araçlar 4-6 yaş masasında hiç kullanılmaz. Fırın odası ayrı bir bölümdedir ve çocukların girişine kapalıdır; pişirim işlemleri seans saatleri dışında yapılır. Çocuğunuzun cilt hassasiyeti, toz alerjisi ya da hekiminizin uyardığı bir durumu varsa kayıt sırasında eğitmene bildiriniz ve gerekiyorsa önceden hekiminize danışınız. Saatler, kontenjanlar, yaş aralıkları ve pişirim-teslim süreleri temsilîdir; fırın programı ve atölye doluluğu bu süreleri uzatabilir ya da kısaltabilir.",
+    "ilgili": [
+      "muzik-odasi",
+      "pisirme-dersleri",
+      "studyo-dersleri"
+    ]
+  },
+  {
+    "id": "glamping",
+    "ad": "Glamping Alanları",
+    "grup": "cocuk",
+    "ustyazi": "Ailece Kurulu Çadır Konaklaması",
+    "kisa": "Konforlu çadırlarda ailece doğayla iç içe kamp deneyimi.",
+    "hero": "assets/img/ai/glamping.jpg",
+    "ozet": "Çam ormanının kıyısındaki düzlükte, ahşap platformlar üzerine kurulmuş kanvas aile çadırları. Kamp kurma zahmeti olmadan, gerçek yatakta uyunan ve akşamı ateş başında geçirilen bir doğa gecesi.",
+    "paragraflar": [
+      "Glamping alanı, yerleşkenin kuzeyinde, çam ormanının başladığı yerdeki hafif eğimli düzlüktedir. Sekiz kanvas çadır birbirini görmeyecek biçimde ağaçların arasına yerleştirilmiş, her biri ahşap bir platformun üzerine kurulmuştur. Çadırların içinde gerçek yatak, yatak takımı, gece lambası ve küçük bir saklama dolabı bulunur; girişte iki kişilik ahşap bir oturma köşesi vardır. Alanın ortasında taşla çevrilmiş bir ateş çukuru ve çevresinde kütük oturaklar yer alır. Ormanın sınırında, gökyüzünün açık göründüğü bir düzlük gözlem alanı olarak boş bırakılmıştır.",
+      "Giriş öğleden sonra yapılır: görevli aileyi çadırına götürür, alanın sınırlarını, ortak duş-tuvalet birimini ve ateş çukurunun kurallarını birlikte gezerek anlatır. Akşamüstü ateş görevli tarafından yakılır; çocuklar ateşin çevresindeki işaretli hattın dışında oturur, ikramlıklar uzun saplı şişlerle yetişkin eşliğinde hazırlanır. Hava karardıktan sonra isteyen aileler gözlem düzlüğüne geçer; burada Gökyüzü Gözlem programının teleskopları kurulur ve aynı görevli iki alanı birlikte yürütür. Gece boyunca alanda bir güvenlik görevlisi bulunur, ateş yatmadan önce söndürülür. Sabah kahvaltısı çadırların önündeki uzun ortak masaya kurulur.",
+      "Günün en hareketli aralığı gün batımından hemen önceki saattir: çocuklar ağaçların arasında koşar, aileler oturma köşelerine yerleşir, ateşin ilk dumanı çamların arasından yükselir. Karanlık bastıktan sonra alan kendiliğinden sessizleşir; konuşmalar kısılır, tek ses ateşin çıtırtısı ve uzaktan gelen deniz uğultusu olur. Yaz gecelerinde Marmara üzerinden esen serin bir hava çadırların arasından geçer, bu yüzden akşam için ince bir kat kıyafet önerilir. Sabah ise ormanın kuş sesleriyle erken açılır; kahvaltı masası kurulurken çadırların kanvası üzerinde çiy tabakası görünür."
+    ],
+    "bolum": {
+      "deneyimGozkasi": "Çadır Alanında",
+      "deneyimBaslik": "Sekiz Çadır ve Tek Bir Ateş",
+      "rotaGozkasi": "Konaklama Biçimleri",
+      "rotaBaslik": "Bir Akşam, Bir Gece ve Gözlem Düzeni",
+      "rotaGiris": "Alanı üç ayrı biçimde kullanabilirsiniz: yalnızca akşam saatlerini kapsayan bir kamp ateşi buluşması, çadırda geçirilen tam bir aile gecesi ya da gece geç saatlere uzayan bir gökyüzü gözlem programı. Üçü de aynı düzlükte geçer; fark, kaldığınız süre ve çocukların yaşına göre önerilen kademededir.",
+      "rotaNot": "Saatler, kontenjanlar ve yaş aralıkları temsilîdir; mevsime, hava durumuna ve alan doluluğuna göre değişebilir.",
+      "galeriGozkasi": "Ateşin Çevresinden",
+      "galeriBaslik": "Kanvas, Ateş ve Yıldızlar",
+      "ctaGozkasi": "Çadır Planlaması",
+      "ctaBaslik": "Ailece Bir Doğa Gecesi Ayırtın",
+      "ctaMetin": "Uygun çadır tarihlerini, çocuklarınızın yaşına göre önerilen programı ve gökyüzünün en açık göründüğü geceleri resepsiyonla birlikte planlayabilirsiniz."
+    },
+    "bakista": [
+      {
+        "etiket": "Konum",
+        "deger": "Yerleşkenin kuzeyi, çam ormanının kıyısındaki düzlük"
+      },
+      {
+        "etiket": "Çadır düzeni",
+        "deger": "Ahşap platform üzerinde 8 kanvas aile çadırı, her biri 4 kişilik"
+      },
+      {
+        "etiket": "Kimler katılabilir",
+        "deger": "Programa göre 4 yaş ve üzeri; 12 yaş altı çocuklar için ebeveyn refakati zorunlu"
+      },
+      {
+        "etiket": "Kayıt",
+        "deger": "Konaklamalı programlar için önceden rezervasyon; kamp ateşi akşamı aynı gün bildirimle"
+      }
+    ],
+    "kunye": [
+      {
+        "etiket": "Yerleşim",
+        "deger": "Kuzey düzlüğü, orman sınırı"
+      },
+      {
+        "etiket": "Kapasite",
+        "deger": "8 çadır, toplam 32 misafir"
+      },
+      {
+        "etiket": "Giriş ve çıkış",
+        "deger": "Giriş 16.00, çıkış ertesi gün 11.00 (temsilî)"
+      },
+      {
+        "etiket": "Mevsim",
+        "deger": "Nisan-Ekim arası açık"
+      }
+    ],
+    "rotalar": [
+      {
+        "ad": "Kamp Ateşi Akşamı",
+        "sure": "18.30-21.30 arası yaklaşık 3 saat",
+        "mesafe": "Ateş çukuru alanı, 8 aile",
+        "zorluk": "4 yaş ve üzeri, ebeveyn refakatiyle",
+        "aciklama": "Konaklama içermeyen kısa programdır. Ateş görevli tarafından yakılır, çocuklar işaretli oturma hattının dışında kalır ve şişte ikramlıklar yetişkin eşliğinde hazırlanır. Küçük yaş grubu için en uygun kademe budur; program karanlık iyice bastırmadan biter ve aileler kendi konutlarına döner."
+      },
+      {
+        "ad": "Tek Gece Aile Konaklaması",
+        "sure": "16.00 girişten ertesi gün 11.00 çıkışa",
+        "mesafe": "Kurulu aile çadırı, 2 yetişkin ve 2 çocuk",
+        "zorluk": "6 yaş ve üzeri çocuklar için önerilir",
+        "aciklama": "Alanın tam programıdır: yerleşme, alan tanıtımı, akşam ateşi ve çadırda geçen bir gece. Yataklar hazır kurulu gelir, yatak takımı ve ek battaniye çadırda bulunur. Sabah kahvaltısı ortak masada verilir; aileler dilerse öğleden önce ormana kısa bir yürüyüşle günü tamamlar."
+      },
+      {
+        "ad": "Yıldız İzleme Gecesi",
+        "sure": "22.00-00.30 arası yaklaşık 2,5 saat",
+        "mesafe": "Gözlem düzlüğü, 20 kişi",
+        "zorluk": "8 yaş ve üzeri",
+        "aciklama": "Konaklamaya eklenen ya da ayrı katılınabilen geç saatli programdır. Gökyüzü Gözlem ekibi teleskopları düzlüğe kurar, alan ışıkları kısılır ve el fenerleri kırmızı filtreyle kullanılır. Uyku düzeni geç saate uygun olan büyük yaş grubu için düşünülmüştür; bulutlu gecelerde program ateş başında anlatıma çevrilir."
+      }
+    ],
+    "galeri": [
+      {
+        "src": "assets/img/ai/aktivite/glamping-cadir-ici-duzen.jpg",
+        "ad": "Çadır içi yatak ve oturma düzeni"
+      },
+      {
+        "src": "assets/img/ai/aktivite/glamping-kamp-atesi-aksami.jpg",
+        "ad": "Ateş çukurunda akşam buluşması"
+      },
+      {
+        "src": "assets/img/ai/aktivite/glamping-kahvalti-masasi.jpg",
+        "ad": "Çadırların önünde ortak kahvaltı masası"
+      },
+      {
+        "src": "assets/img/ai/aktivite/glamping-yildizli-gece.jpg",
+        "ad": "Gözlem düzlüğünde yıldızlı gece"
+      }
+    ],
+    "hazirlik": [
+      "Gece serinliği için katmanlı kıyafet ve ince bir polar veya mont",
+      "Kapalı, kaymaz tabanlı ayakkabı; çadır içinde kullanmak üzere kalın çorap",
+      "Çocuklara ait ilaçlar, varsa alerji notu ve kişisel bakım ürünleri",
+      "Küçük bir el feneri ya da kafa lambası; gözlem sırasında kırmızı ışık tercih edilir",
+      "Uyku düzenini kolaylaştıran tanıdık bir oyuncak, battaniye ya da kitap"
+    ],
+    "saglayanlar": [
+      "Kurulu kanvas çadır: gerçek yatak, yatak takımı, yastık ve ek battaniye",
+      "Çadır başına gece lambası, priz hattı ve kilitlenebilir saklama dolabı",
+      "Ateş çukurunda görevli eşliğinde yakılan kamp ateşi, şiş ve ikramlık düzeni",
+      "Gece boyunca alanda bulunan görevli ile ortak sıcak duş ve tuvalet birimi"
+    ],
+    "guvenlik": "Glamping alanı yerleşke sınırları içindedir; çevresi çitle ayrılmış, girişi kontrollüdür ve gece boyunca alanda bir görevli bulunur. Ateş yalnızca görevli tarafından yakılır ve söndürülür; çocuklar ateş çukurunun çevresindeki işaretli hattın dışında kalır, şişle ikramlık hazırlama her zaman yetişkin eşliğinde yapılır. Çadırlarda açık alev, ısıtıcı ve mum kullanımı yasaktır. On iki yaş altındaki çocukların gece boyunca ebeveyn refakatinde olması zorunludur; çadır dışında dolaşılacaksa görevliye haber verilmesi rica olunur. Uyku düzeni, alerji ya da sağlık durumu konusunda bir tereddüdünüz varsa katılım öncesinde hekiminize danışınız ve girişte görevliyi bilgilendiriniz. Giriş-çıkış saatleri, çadır kontenjanı ve yaş sınırları temsilî olarak verilmiştir; kesin bilgi rezervasyon sırasında paylaşılır.",
+    "ilgili": [
+      "hobi-bahcesi",
+      "gokyuzu-gozlem",
+      "trekking"
+    ]
   }
 ];
